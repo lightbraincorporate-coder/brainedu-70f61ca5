@@ -19,6 +19,7 @@ const CatalogPage = ({ onAddToCart }: CatalogPageProps) => {
   const [selectedSerie, setSelectedSerie] = useState<string | null>(null);
   const [selectedClass, setSelectedClass] = useState<string | null>(null);
   const [selectedSubject, setSelectedSubject] = useState<string | null>(null);
+  const [selectedTrimester, setSelectedTrimester] = useState<string | null>(null);
   const [selectedCourse, setSelectedCourse] = useState<string | null>(null);
 
   const resetNavigation = () => {
@@ -27,11 +28,13 @@ const CatalogPage = ({ onAddToCart }: CatalogPageProps) => {
     setSelectedSerie(null);
     setSelectedClass(null);
     setSelectedSubject(null);
+    setSelectedTrimester(null);
     setSelectedCourse(null);
   };
 
   const handleBack = () => {
     if (selectedCourse) setSelectedCourse(null);
+    else if (selectedTrimester) setSelectedTrimester(null);
     else if (selectedSubject) setSelectedSubject(null);
     else if (selectedClass) setSelectedClass(null);
     else if (selectedSerie) setSelectedSerie(null);
@@ -48,7 +51,8 @@ const CatalogPage = ({ onAddToCart }: CatalogPageProps) => {
         name: selectedCourse,
         level: selectedLevel || '',
         class: selectedClass || '',
-        subject: selectedSubject || ''
+        subject: selectedSubject || '',
+        trimester: selectedTrimester || undefined
       } : undefined
     };
     onAddToCart(item);
@@ -56,7 +60,12 @@ const CatalogPage = ({ onAddToCart }: CatalogPageProps) => {
   };
 
   const getSubjectsForLevel = () => {
-    if (!selectedLevel) return [];
+    if (!selectedLevel || !selectedClass) return [];
+    
+    if (selectedLevel === 'primaire') {
+      const primaireSubjects = subjects.primaire as Record<string, string[]>;
+      return primaireSubjects[selectedClass] || [];
+    }
     
     if (selectedLevel === 'lycee' && selectedSerie) {
       const lyceeSubjects = subjects.lycee as Record<string, string[]>;
@@ -67,29 +76,75 @@ const CatalogPage = ({ onAddToCart }: CatalogPageProps) => {
     return Array.isArray(levelSubjects) ? levelSubjects : [];
   };
 
-  const getCoursesForSubject = () => {
+  const getTrimestersForSubject = () => {
     if (!selectedSubject) return [];
     
-    const key = selectedLevel === 'primaire' || selectedLevel === 'college'
-      ? `${selectedSubject}-${selectedLevel.charAt(0).toUpperCase() + selectedLevel.slice(1)}`
-      : selectedLevel === 'universite'
-      ? `${selectedSubject}-Universite`
-      : selectedSubject;
+    let key = '';
+    if (selectedLevel === 'primaire') {
+      key = `${selectedSubject}-${selectedClass}`;
+    } else if (selectedLevel === 'college') {
+      key = `${selectedSubject}-${selectedClass}`;
+    } else if (selectedLevel === 'lycee') {
+      key = `${selectedSubject}-Lycée`;
+    } else if (selectedLevel === 'universite') {
+      key = `${selectedSubject}-Université`;
+    }
     
-    return coursesBySubject[key] || [];
+    const coursesData = coursesBySubject[key];
+    return coursesData ? Object.keys(coursesData) : [];
+  };
+
+  const getCoursesForTrimester = () => {
+    if (!selectedSubject || !selectedTrimester) return [];
+    
+    let key = '';
+    if (selectedLevel === 'primaire') {
+      key = `${selectedSubject}-${selectedClass}`;
+    } else if (selectedLevel === 'college') {
+      key = `${selectedSubject}-${selectedClass}`;
+    } else if (selectedLevel === 'lycee') {
+      key = `${selectedSubject}-Lycée`;
+    } else if (selectedLevel === 'universite') {
+      key = `${selectedSubject}-Université`;
+    }
+    
+    const coursesData = coursesBySubject[key];
+    return coursesData && coursesData[selectedTrimester] ? coursesData[selectedTrimester] : [];
+  };
+
+  const getAvailableProducts = () => {
+    if (!selectedLevel || !selectedClass) return Object.entries(products);
+    
+    return Object.entries(products).filter(([_, product]) => {
+      if (!product.availableFrom) return true;
+      
+      if (product.availableFrom === 'college') {
+        return ['college', 'lycee', 'universite'].includes(selectedLevel);
+      }
+      
+      if (product.availableFrom === 'CM1') {
+        if (selectedLevel === 'primaire') {
+          return ['CM1', 'CM2'].includes(selectedClass || '');
+        }
+        return ['college', 'lycee', 'universite'].includes(selectedLevel);
+      }
+      
+      return true;
+    });
   };
 
   return (
     <div className="min-h-screen py-8 px-4">
       <div className="max-w-7xl mx-auto">
         {/* Breadcrumb */}
-        <div className="mb-6 flex items-center gap-2 text-sm text-muted-foreground">
+        <div className="mb-6 flex items-center gap-2 text-sm text-muted-foreground flex-wrap">
           <span className="cursor-pointer hover:text-foreground" onClick={resetNavigation}>Catalogue</span>
           {selectedLevel && <><span>/</span><span>{levels[selectedLevel].name}</span></>}
           {selectedType && <><span>/</span><span>{selectedType}</span></>}
           {selectedSerie && <><span>/</span><span>{selectedSerie}</span></>}
           {selectedClass && <><span>/</span><span>{selectedClass}</span></>}
           {selectedSubject && <><span>/</span><span>{selectedSubject}</span></>}
+          {selectedTrimester && <><span>/</span><span>{selectedTrimester}</span></>}
           {selectedCourse && <><span>/</span><span className="text-foreground font-medium">{selectedCourse}</span></>}
         </div>
 
@@ -217,12 +272,35 @@ const CatalogPage = ({ onAddToCart }: CatalogPageProps) => {
           </div>
         )}
 
+        {/* Trimester Selection */}
+        {selectedSubject && !selectedTrimester && (
+          <div className="animate-fade-in">
+            <h1 className="text-3xl font-bold mb-6">
+              Choisissez un {selectedLevel === 'universite' ? 'semestre' : 'trimestre'}
+            </h1>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {getTrimestersForSubject().map((trimester, index) => (
+                <Card 
+                  key={trimester}
+                  className="cursor-pointer hover:shadow-lg transition-all hover:-translate-y-1 animate-scale-in"
+                  style={{ animationDelay: `${index * 100}ms` }}
+                  onClick={() => setSelectedTrimester(trimester)}
+                >
+                  <CardHeader>
+                    <CardTitle className="text-lg">{trimester}</CardTitle>
+                  </CardHeader>
+                </Card>
+              ))}
+            </div>
+          </div>
+        )}
+
         {/* Course Selection */}
-        {selectedSubject && !selectedCourse && (
+        {selectedTrimester && !selectedCourse && (
           <div className="animate-fade-in">
             <h1 className="text-3xl font-bold mb-6">Choisissez un cours</h1>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {getCoursesForSubject().map((course, index) => (
+              {getCoursesForTrimester().map((course, index) => (
                 <Card 
                   key={course}
                   className="cursor-pointer hover:shadow-lg transition-all hover:-translate-y-1 animate-scale-in"
@@ -242,11 +320,11 @@ const CatalogPage = ({ onAddToCart }: CatalogPageProps) => {
         {selectedCourse && (
           <div className="animate-fade-in">
             <h1 className="text-3xl font-bold mb-2">{selectedCourse}</h1>
-            <p className="text-muted-foreground mb-8">{selectedClass} - {selectedSubject}</p>
+            <p className="text-muted-foreground mb-8">{selectedClass} - {selectedSubject} - {selectedTrimester}</p>
             
             <h2 className="text-2xl font-semibold mb-6">Choisissez votre produit</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {Object.entries(products).map(([key, product], index) => (
+              {getAvailableProducts().map(([key, product], index) => (
                 <Card 
                   key={key}
                   className="animate-scale-in hover:shadow-lg transition-all"
@@ -254,7 +332,10 @@ const CatalogPage = ({ onAddToCart }: CatalogPageProps) => {
                 >
                   <CardHeader>
                     <CardTitle className="flex items-center justify-between">
-                      {product.name}
+                      <span className="flex items-center gap-2">
+                        {product.icon && <span className="text-2xl">{product.icon}</span>}
+                        {product.name}
+                      </span>
                       <Badge variant="secondary">{product.price} F</Badge>
                     </CardTitle>
                   </CardHeader>

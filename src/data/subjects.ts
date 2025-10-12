@@ -1,5 +1,12 @@
 export const subjects: Record<string, string[] | Record<string, string[]>> = {
-  primaire: ['Mathématiques', 'Français', 'Histoire-Géographie', 'Sciences', 'Education Civique'],
+  primaire: {
+    'CP1': ['Mathématiques', 'Français', 'Sciences', 'Education Civique'],
+    'CP2': ['Mathématiques', 'Français', 'Sciences', 'Education Civique'],
+    'CE1': ['Mathématiques', 'Français', 'Histoire-Géographie', 'Sciences', 'Education Civique'],
+    'CE2': ['Mathématiques', 'Français', 'Histoire-Géographie', 'Sciences', 'Education Civique'],
+    'CM1': ['Mathématiques', 'Français', 'Histoire-Géographie', 'Sciences', 'Education Civique'],
+    'CM2': ['Mathématiques', 'Français', 'Histoire-Géographie', 'Sciences', 'Education Civique']
+  },
   college: ['Mathématiques', 'Français', 'Anglais', 'SVT', 'Physique-Chimie', 'Histoire-Géo', 'EPS'],
   lycee: {
     'Série A': ['Français', 'Philosophie', 'Histoire-Géo', 'Mathématiques', 'Anglais', 'Espagnol'],
@@ -13,67 +20,328 @@ export const subjects: Record<string, string[] | Record<string, string[]>> = {
   universite: ['Droit', 'Médecine', 'Ingénierie Informatique', 'Économie et Gestion', 'Pharmacie', 'Génie Civil', 'Lettres Modernes']
 };
 
-export const coursesBySubject: Record<string, string[]> = {
-  'Mathématiques-Primaire': [
-    'Les nombres de 0 à 10',
-    'Addition et soustraction',
-    'Les tables de multiplication',
-    'La division',
-    'Les formes géométriques',
-    'Mesures : longueur, poids, capacité'
-  ],
-  'Français-Primaire': [
-    'L\'alphabet et les sons',
-    'Lecture et compréhension',
-    'Écriture et copie',
-    'Le vocabulaire',
-    'La grammaire de base',
-    'Conjugaison'
-  ],
-  'Mathématiques-Collège': [
-    'Nombres relatifs',
-    'Fractions et opérations',
-    'Calcul littéral',
-    'Équations du premier degré',
-    'Proportionnalité',
-    'Théorème de Pythagore'
-  ],
-  'Mathématiques': [
-    'Ensembles et applications',
-    'Nombres complexes',
-    'Fonctions numériques',
-    'Suites numériques',
-    'Dérivées et primitives',
-    'Calcul intégral'
-  ],
-  'Physique-Chimie': [
-    'Mécanique',
-    'Électricité',
-    'Optique',
-    'Thermodynamique',
-    'Chimie organique',
-    'Réactions chimiques'
-  ],
-  'SVT': [
-    'Génétique',
-    'Évolution',
-    'Écologie',
-    'Physiologie humaine',
-    'Biologie cellulaire',
-    'Immunologie'
-  ],
-  'Droit': [
-    'Droit constitutionnel',
-    'Droit civil',
-    'Droit pénal',
-    'Histoire du droit',
-    'Procédure civile'
-  ],
-  'Médecine': [
-    'Anatomie générale',
-    'Physiologie humaine',
-    'Biochimie médicale',
-    'Histologie',
-    'Microbiologie'
-  ]
+export const coursesBySubject: Record<string, Record<string, string[]>> = {
+  'Mathématiques-CP1': {
+    'Trimestre 1': ['Les nombres de 0 à 5', 'Compter et dénombrer'],
+    'Trimestre 2': ['Les nombres de 6 à 10', 'Addition simple (0 à 5)'],
+    'Trimestre 3': ['Soustraction simple', 'Les formes : carré, rond, triangle']
+  },
+  'Français-CP1': {
+    'Trimestre 1': ['L\'alphabet (A-M)', 'Les voyelles', 'Sons simples'],
+    'Trimestre 2': ['L\'alphabet (N-Z)', 'Lecture de syllabes'],
+    'Trimestre 3': ['Lecture de mots simples', 'Écriture de lettres']
+  },
+  'Sciences-CP1': {
+    'Trimestre 1': ['Mon corps : les 5 sens'],
+    'Trimestre 2': ['Les animaux familiers'],
+    'Trimestre 3': ['Les plantes autour de moi']
+  },
+  'Education Civique-CP1': {
+    'Trimestre 1': ['Vivre ensemble à l\'école'],
+    'Trimestre 2': ['Le respect des camarades'],
+    'Trimestre 3': ['Les règles de propreté']
+  },
+  'Mathématiques-CP2': {
+    'Trimestre 1': ['Les nombres de 0 à 20', 'Addition (0 à 10)'],
+    'Trimestre 2': ['Les nombres de 20 à 50', 'Soustraction (0 à 10)'],
+    'Trimestre 3': ['Les doubles', 'Introduction à la multiplication']
+  },
+  'Français-CP2': {
+    'Trimestre 1': ['Lecture de phrases simples', 'Les sons complexes (ch, ou, on)'],
+    'Trimestre 2': ['Compréhension de textes courts', 'L\'écriture cursive'],
+    'Trimestre 3': ['Conjugaison : présent simple', 'Production d\'une phrase']
+  },
+  'Sciences-CP2': {
+    'Trimestre 1': ['L\'eau dans la nature'],
+    'Trimestre 2': ['Le cycle de vie des plantes'],
+    'Trimestre 3': ['Les saisons']
+  },
+  'Education Civique-CP2': {
+    'Trimestre 1': ['Mes droits et devoirs'],
+    'Trimestre 2': ['La sécurité à l\'école'],
+    'Trimestre 3': ['Aider les autres']
+  },
+  'Mathématiques-CE1': {
+    'Trimestre 1': ['Les nombres jusqu\'à 100', 'Addition posée'],
+    'Trimestre 2': ['Soustraction posée', 'Tables de multiplication (2, 5, 10)'],
+    'Trimestre 3': ['Introduction à la division', 'Les mesures : longueur']
+  },
+  'Français-CE1': {
+    'Trimestre 1': ['Lecture fluide', 'Le nom et l\'article'],
+    'Trimestre 2': ['Le verbe et le sujet', 'Conjugaison : présent, futur'],
+    'Trimestre 3': ['L\'adjectif qualificatif', 'Production de textes courts']
+  },
+  'Histoire-Géographie-CE1': {
+    'Trimestre 1': ['Se repérer dans le temps : hier, aujourd\'hui, demain'],
+    'Trimestre 2': ['Mon école, mon quartier'],
+    'Trimestre 3': ['Ma ville, mon pays']
+  },
+  'Sciences-CE1': {
+    'Trimestre 1': ['Le corps humain : squelette et muscles'],
+    'Trimestre 2': ['L\'alimentation'],
+    'Trimestre 3': ['L\'air et le vent']
+  },
+  'Education Civique-CE1': {
+    'Trimestre 1': ['Les règles de vie collective'],
+    'Trimestre 2': ['Le respect de l\'environnement'],
+    'Trimestre 3': ['Les symboles de mon pays']
+  },
+  'Mathématiques-CE2': {
+    'Trimestre 1': ['Les nombres jusqu\'à 1000', 'Toutes les tables de multiplication'],
+    'Trimestre 2': ['Division simple', 'Les fractions simples (1/2, 1/4)'],
+    'Trimestre 3': ['Géométrie : triangles, rectangles', 'Périmètre et aire']
+  },
+  'Français-CE2': {
+    'Trimestre 1': ['Grammaire : phrases simples et complexes', 'Le groupe nominal'],
+    'Trimestre 2': ['Conjugaison : passé composé, imparfait', 'L\'orthographe des sons'],
+    'Trimestre 3': ['Le dialogue dans un texte', 'Rédaction de petits textes']
+  },
+  'Histoire-Géographie-CE2': {
+    'Trimestre 1': ['Les grandes périodes de l\'histoire'],
+    'Trimestre 2': ['La préhistoire'],
+    'Trimestre 3': ['Cartes et paysages du Congo']
+  },
+  'Sciences-CE2': {
+    'Trimestre 1': ['Les états de la matière'],
+    'Trimestre 2': ['Les animaux : classification'],
+    'Trimestre 3': ['Le cycle de l\'eau']
+  },
+  'Education Civique-CE2': {
+    'Trimestre 1': ['Égalité filles-garçons'],
+    'Trimestre 2': ['La solidarité'],
+    'Trimestre 3': ['Les dangers domestiques']
+  },
+  'Mathématiques-CM1': {
+    'Trimestre 1': ['Les grands nombres (jusqu\'à 1 000 000)', 'Opérations sur les décimaux'],
+    'Trimestre 2': ['Fractions et décimaux', 'Proportionnalité simple'],
+    'Trimestre 3': ['Géométrie : cercles, polygones', 'Volumes et capacités']
+  },
+  'Français-CM1': {
+    'Trimestre 1': ['Analyse grammaticale complète', 'Les compléments d\'objet'],
+    'Trimestre 2': ['Tous les temps de l\'indicatif', 'Orthographe : accords complexes'],
+    'Trimestre 3': ['Rédaction : récit, description', 'Vocabulaire enrichi']
+  },
+  'Histoire-Géographie-CM1': {
+    'Trimestre 1': ['L\'Antiquité'],
+    'Trimestre 2': ['Le Moyen Âge'],
+    'Trimestre 3': ['Géographie : les continents']
+  },
+  'Sciences-CM1': {
+    'Trimestre 1': ['Le système solaire'],
+    'Trimestre 2': ['L\'énergie'],
+    'Trimestre 3': ['Les écosystèmes']
+  },
+  'Education Civique-CM1': {
+    'Trimestre 1': ['Les institutions de mon pays'],
+    'Trimestre 2': ['La démocratie'],
+    'Trimestre 3': ['Les droits de l\'enfant']
+  },
+  'Mathématiques-CM2': {
+    'Trimestre 1': ['Nombres et calculs avancés', 'Problèmes complexes'],
+    'Trimestre 2': ['Fractions et pourcentages', 'Proportionnalité et échelles'],
+    'Trimestre 3': ['Géométrie plane et dans l\'espace', 'Préparation au collège']
+  },
+  'Français-CM2': {
+    'Trimestre 1': ['Analyse logique : propositions', 'Conjugaison : subjonctif, conditionnel'],
+    'Trimestre 2': ['Orthographe : homophones grammaticaux', 'Vocabulaire : préfixes, suffixes'],
+    'Trimestre 3': ['Rédaction : argumentation, lettre', 'Préparation à la 6ème']
+  },
+  'Histoire-Géographie-CM2': {
+    'Trimestre 1': ['Les Temps modernes'],
+    'Trimestre 2': ['Le XIXe et XXe siècle'],
+    'Trimestre 3': ['Géographie : mon pays dans le monde']
+  },
+  'Sciences-CM2': {
+    'Trimestre 1': ['Le corps humain : respiration, circulation'],
+    'Trimestre 2': ['Les énergies renouvelables'],
+    'Trimestre 3': ['Préservation de l\'environnement']
+  },
+  'Education Civique-CM2': {
+    'Trimestre 1': ['La Constitution'],
+    'Trimestre 2': ['Citoyenneté et engagement'],
+    'Trimestre 3': ['Les enjeux du développement durable']
+  },
+  'Mathématiques-6ème': {
+    'Trimestre 1': ['Nombres décimaux', 'Opérations de base'],
+    'Trimestre 2': ['Fractions simples', 'Géométrie : droites, angles'],
+    'Trimestre 3': ['Proportionnalité', 'Aires et périmètres']
+  },
+  'Français-6ème': {
+    'Trimestre 1': ['Classes grammaticales', 'Le récit'],
+    'Trimestre 2': ['Conjugaison : révisions', 'La poésie'],
+    'Trimestre 3': ['Orthographe', 'Le théâtre']
+  },
+  'Anglais-6ème': {
+    'Trimestre 1': ['Greetings and introductions', 'Simple present'],
+    'Trimestre 2': ['Family and friends', 'There is/There are'],
+    'Trimestre 3': ['Daily routines', 'Present continuous']
+  },
+  'SVT-6ème': {
+    'Trimestre 1': ['L\'environnement proche'],
+    'Trimestre 2': ['Les êtres vivants et leur milieu'],
+    'Trimestre 3': ['La biodiversité']
+  },
+  'Physique-Chimie-6ème': {
+    'Trimestre 1': ['Mélanges et solutions'],
+    'Trimestre 2': ['États de la matière'],
+    'Trimestre 3': ['L\'eau dans notre environnement']
+  },
+  'Histoire-Géo-6ème': {
+    'Trimestre 1': ['L\'Orient ancien'],
+    'Trimestre 2': ['La Grèce antique'],
+    'Trimestre 3': ['Rome']
+  },
+  'EPS-6ème': {
+    'Trimestre 1': ['Athlétisme : course et saut'],
+    'Trimestre 2': ['Sports collectifs : football'],
+    'Trimestre 3': ['Gymnastique de base']
+  },
+  'Mathématiques-5ème': {
+    'Trimestre 1': ['Nombres relatifs', 'Opérations sur les relatifs'],
+    'Trimestre 2': ['Fractions : opérations', 'Triangles et parallélogrammes'],
+    'Trimestre 3': ['Proportionnalité', 'Statistiques']
+  },
+  'Français-5ème': {
+    'Trimestre 1': ['Fonctions grammaticales', 'Le roman d\'aventure'],
+    'Trimestre 2': ['La phrase complexe', 'La nouvelle'],
+    'Trimestre 3': ['Vocabulaire : sens propre et figuré', 'Poésie lyrique']
+  },
+  'Anglais-5ème': {
+    'Trimestre 1': ['Past simple', 'Describing people'],
+    'Trimestre 2': ['Food and meals', 'Comparatives'],
+    'Trimestre 3': ['Sports and hobbies', 'Modal verbs (can, must)']
+  },
+  'SVT-5ème': {
+    'Trimestre 1': ['Respiration et occupation des milieux'],
+    'Trimestre 2': ['Fonctionnement de l\'organisme'],
+    'Trimestre 3': ['Géologie externe']
+  },
+  'Physique-Chimie-5ème': {
+    'Trimestre 1': ['Électricité : circuits'],
+    'Trimestre 2': ['La lumière : sources et propagation'],
+    'Trimestre 3': ['Mélanges homogènes et hétérogènes']
+  },
+  'Histoire-Géo-5ème': {
+    'Trimestre 1': ['Le Moyen Âge : islam et chrétienté'],
+    'Trimestre 2': ['La Renaissance'],
+    'Trimestre 3': ['Géographie : ressources et développement']
+  },
+  'EPS-5ème': {
+    'Trimestre 1': ['Athlétisme : course de vitesse'],
+    'Trimestre 2': ['Sports collectifs : basketball'],
+    'Trimestre 3': ['Gymnastique acrobatique']
+  },
+  'Mathématiques-4ème': {
+    'Trimestre 1': ['Calcul littéral', 'Équations'],
+    'Trimestre 2': ['Théorème de Pythagore', 'Triangles égaux et semblables'],
+    'Trimestre 3': ['Proportionnalité et pourcentages', 'Probabilités']
+  },
+  'Français-4ème': {
+    'Trimestre 1': ['Propositions subordonnées', 'La lettre'],
+    'Trimestre 2': ['Discours direct et indirect', 'La nouvelle fantastique'],
+    'Trimestre 3': ['Temps du récit', 'Le portrait']
+  },
+  'Anglais-4ème': {
+    'Trimestre 1': ['Present perfect', 'Travel and tourism'],
+    'Trimestre 2': ['Passive voice', 'Technology'],
+    'Trimestre 3': ['Conditional sentences', 'Environment']
+  },
+  'SVT-4ème': {
+    'Trimestre 1': ['La reproduction humaine'],
+    'Trimestre 2': ['Le système nerveux'],
+    'Trimestre 3': ['Géologie : séismes et volcans']
+  },
+  'Physique-Chimie-4ème': {
+    'Trimestre 1': ['L\'air qui nous entoure'],
+    'Trimestre 2': ['Les combustions'],
+    'Trimestre 3': ['Lois de l\'électricité']
+  },
+  'Histoire-Géo-4ème': {
+    'Trimestre 1': ['Les grandes découvertes'],
+    'Trimestre 2': ['Les révolutions du XVIIIe siècle'],
+    'Trimestre 3': ['Géographie : mondialisation']
+  },
+  'EPS-4ème': {
+    'Trimestre 1': ['Course de demi-fond'],
+    'Trimestre 2': ['Sports collectifs : handball'],
+    'Trimestre 3': ['Natation']
+  },
+  'Mathématiques-3ème': {
+    'Trimestre 1': ['Racines carrées', 'Équations et inéquations'],
+    'Trimestre 2': ['Théorème de Thalès', 'Trigonométrie'],
+    'Trimestre 3': ['Fonctions affines', 'Probabilités et statistiques']
+  },
+  'Français-3ème': {
+    'Trimestre 1': ['Analyse logique complète', 'L\'autobiographie'],
+    'Trimestre 2': ['L\'argumentation', 'Le théâtre classique'],
+    'Trimestre 3': ['Préparation au brevet', 'Poésie engagée']
+  },
+  'Anglais-3ème': {
+    'Trimestre 1': ['All tenses review', 'Future forms'],
+    'Trimestre 2': ['Reported speech', 'Job and career'],
+    'Trimestre 3': ['Relative clauses', 'Global issues']
+  },
+  'SVT-3ème': {
+    'Trimestre 1': ['Génétique et hérédité'],
+    'Trimestre 2': ['Évolution des espèces'],
+    'Trimestre 3': ['Responsabilité humaine en santé et environnement']
+  },
+  'Physique-Chimie-3ème': {
+    'Trimestre 1': ['Électricité : puissance et énergie'],
+    'Trimestre 2': ['Chimie : acides, bases, pH'],
+    'Trimestre 3': ['Mécanique et énergie']
+  },
+  'Histoire-Géo-3ème': {
+    'Trimestre 1': ['Les deux guerres mondiales'],
+    'Trimestre 2': ['La Guerre froide'],
+    'Trimestre 3': ['Géographie : l\'Union Européenne et la France']
+  },
+  'EPS-3ème': {
+    'Trimestre 1': ['Course d\'orientation'],
+    'Trimestre 2': ['Sports collectifs : volley-ball'],
+    'Trimestre 3': ['Préparation physique au brevet']
+  },
+  'Mathématiques-Lycée': {
+    'Trimestre 1': ['Ensembles et applications', 'Nombres complexes'],
+    'Trimestre 2': ['Fonctions numériques', 'Suites numériques'],
+    'Trimestre 3': ['Dérivées et primitives', 'Calcul intégral']
+  },
+  'Physique-Chimie-Lycée': {
+    'Trimestre 1': ['Mécanique', 'Électricité'],
+    'Trimestre 2': ['Optique', 'Thermodynamique'],
+    'Trimestre 3': ['Chimie organique', 'Réactions chimiques']
+  },
+  'SVT-Lycée': {
+    'Trimestre 1': ['Génétique', 'Évolution'],
+    'Trimestre 2': ['Écologie', 'Physiologie humaine'],
+    'Trimestre 3': ['Biologie cellulaire', 'Immunologie']
+  },
+  'Droit-Université': {
+    'Semestre 1': ['Droit constitutionnel', 'Droit civil I', 'Histoire du droit'],
+    'Semestre 2': ['Droit pénal', 'Procédure civile', 'Droit des obligations']
+  },
+  'Médecine-Université': {
+    'Semestre 1': ['Anatomie générale', 'Physiologie humaine', 'Biochimie médicale'],
+    'Semestre 2': ['Histologie', 'Microbiologie', 'Pathologie générale']
+  },
+  'Ingénierie Informatique-Université': {
+    'Semestre 1': ['Algorithmique avancée', 'Bases de données SQL/NoSQL', 'Développement web full-stack'],
+    'Semestre 2': ['Intelligence artificielle', 'Réseaux et sécurité', 'Programmation objet']
+  },
+  'Économie et Gestion-Université': {
+    'Semestre 1': ['Microéconomie avancée', 'Macroéconomie', 'Comptabilité financière'],
+    'Semestre 2': ['Marketing stratégique', 'Gestion des ressources humaines', 'Finance d\'entreprise']
+  },
+  'Pharmacie-Université': {
+    'Semestre 1': ['Chimie organique', 'Pharmacologie générale', 'Galénique'],
+    'Semestre 2': ['Toxicologie', 'Biologie pharmaceutique', 'Pharmacie clinique']
+  },
+  'Génie Civil-Université': {
+    'Semestre 1': ['Mécanique des structures', 'Béton armé', 'Calcul de structures'],
+    'Semestre 2': ['Géotechnique', 'Hydraulique', 'Construction durable']
+  },
+  'Lettres Modernes-Université': {
+    'Semestre 1': ['Littérature française du XXe siècle', 'Théorie littéraire', 'Littérature comparée'],
+    'Semestre 2': ['Analyse stylistique', 'Histoire de la langue française', 'Écriture créative']
+  }
 };

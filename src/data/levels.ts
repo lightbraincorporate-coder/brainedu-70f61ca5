@@ -4,7 +4,7 @@ export const levels: Record<string, Level> = {
   primaire: {
     id: 'primaire',
     name: 'Primaire',
-    classes: ['CP', 'CE1', 'CE2', 'CM1', 'CM2']
+    classes: ['CP1', 'CP2', 'CE1', 'CE2', 'CM1', 'CM2']
   },
   college: {
     id: 'college',

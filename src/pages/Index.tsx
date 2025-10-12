@@ -143,15 +143,21 @@ const Index = () => {
                 <li className="flex items-center gap-2">
                   <Mail className="w-4 h-4 text-primary" />
                   <a href="mailto:LightBrain03@gmail.com" className="hover:text-primary transition-colors">
-                    LightBrain03@gmail.com
+                    Contactez-nous par email
                   </a>
                 </li>
                 <li className="flex items-start gap-2">
                   <Phone className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
                   <div className="space-y-1">
-                    <div>Congo: +242 06 501 29 67</div>
-                    <div>Côte d'Ivoire: +225 07 98 48 48 01</div>
-                    <div>Gabon: +241 07 64 98 23</div>
+                    <a href="https://wa.me/242065012967" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors block">
+                      Congo: Contactez-nous ici
+                    </a>
+                    <a href="https://wa.me/2250798484801" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors block">
+                      Côte d'Ivoire: Contactez-nous ici
+                    </a>
+                    <a href="https://wa.me/24107649823" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors block">
+                      Gabon: Contactez-nous ici
+                    </a>
                   </div>
                 </li>
                 <li className="flex items-center gap-2">

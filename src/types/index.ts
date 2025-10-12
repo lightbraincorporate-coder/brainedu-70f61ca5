@@ -2,6 +2,7 @@ export interface Product {
   name: string;
   price: number;
   icon?: string;
+  availableFrom?: string;
 }
 
 export interface Course {
@@ -9,6 +10,7 @@ export interface Course {
   level: string;
   class: string;
   subject: string;
+  trimester?: string;
 }
 
 export interface CartItem extends Product {

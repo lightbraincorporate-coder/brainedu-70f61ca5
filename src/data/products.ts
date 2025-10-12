@@ -1,13 +1,13 @@
 import { Product, PremiumPlan } from '@/types';
 
 export const products: Record<string, Product> = {
-  cours: { name: 'Cours complet', price: 50 },
-  resume_standard: { name: 'Résumé standard', price: 150 },
-  resume_livre: { name: 'Résumé de livre', price: 250 },
-  resume_cours: { name: 'Résumé de cours', price: 200 },
-  expose_simple: { name: 'Exposé simple', price: 350 },
-  expose_complet: { name: 'Exposé complet', price: 700 },
-  livre: { name: 'Livre', price: 100 }
+  cours: { name: 'Cours complet', price: 50, icon: '📚' },
+  resume_standard: { name: 'Résumé standard', price: 150, icon: '📝', availableFrom: 'college' },
+  resume_livre: { name: 'Résumé de livre', price: 250, icon: '📖' },
+  resume_cours: { name: 'Résumé de cours', price: 200, icon: '📄', availableFrom: 'CM1' },
+  expose_simple: { name: 'Exposé simple', price: 350, icon: '📊', availableFrom: 'college' },
+  expose_complet: { name: 'Exposé complet', price: 700, icon: '📑', availableFrom: 'college' },
+  livre: { name: 'Livre', price: 100, icon: '📕' }
 };
 
 export const specialProducts: Product[] = [

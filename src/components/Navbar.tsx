@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Menu, X, ShoppingCart, Search, BookOpen, Sparkles, Crown, HelpCircle, Info, Book } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import { ThemeToggle } from './ThemeToggle';
 
 interface NavbarProps {
   currentPage: string;
@@ -73,6 +74,8 @@ const Navbar = ({
 
           {/* Actions */}
           <div className="flex items-center space-x-2">
+            <ThemeToggle />
+            
             <Button
               variant="ghost"
               size="icon"
