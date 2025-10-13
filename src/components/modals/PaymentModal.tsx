@@ -20,9 +20,10 @@ const PaymentModal = ({ total, onClose, onComplete }: PaymentModalProps) => {
   const [format, setFormat] = useState('pdf');
 
   const paymentMethods = [
-    { id: 'moov', name: 'Moov Money', number: '*123#' },
-    { id: 'wave', name: 'Wave', number: 'App Wave' },
-    { id: 'airtel', name: 'Airtel Money', number: '*501#' }
+    { id: 'mobile', name: 'Mobile Money', number: '+242 065 012 967', code: '*105#' },
+    { id: 'airtel', name: 'Airtel Money', number: '+242 056 094 492', code: '*128#' },
+    { id: 'wave', name: 'Wave', number: '+225 [à compléter]', code: 'App Wave' },
+    { id: 'moov', name: 'Moov Money', number: '+225 [à compléter]', code: 'App Moov' }
   ];
 
   const formats = [
@@ -86,9 +87,13 @@ const PaymentModal = ({ total, onClose, onComplete }: PaymentModalProps) => {
                       <div key={method.id} className="flex items-center space-x-3 border rounded-lg p-4 hover:bg-accent cursor-pointer">
                         <RadioGroupItem value={method.id} id={method.id} />
                         <Label htmlFor={method.id} className="flex-1 cursor-pointer">
-                          <div className="flex items-center justify-between">
+                          <div className="flex flex-col gap-1">
                             <span className="font-medium">{method.name}</span>
-                            <span className="text-sm text-muted-foreground">{method.number}</span>
+                            <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                              <span className="font-mono">{method.code}</span>
+                              <span>•</span>
+                              <span>{method.number}</span>
+                            </div>
                           </div>
                         </Label>
                         <Smartphone className="w-5 h-5 text-muted-foreground" />
@@ -104,9 +109,9 @@ const PaymentModal = ({ total, onClose, onComplete }: PaymentModalProps) => {
                   Instructions de paiement
                 </h4>
                 <ol className="text-sm text-muted-foreground space-y-1 list-decimal list-inside">
-                  <li>Composez le code de votre service Mobile Money</li>
-                  <li>Envoyez {total} F CFA au numéro fourni</li>
-                  <li>Notez bien votre ID de transaction</li>
+                  <li>Composez le code USSD de votre service (affiché ci-dessus)</li>
+                  <li>Envoyez {total} F CFA au numéro indiqué pour le service choisi</li>
+                  <li>Notez bien votre ID de transaction reçu par SMS</li>
                   <li>Revenez ici pour valider votre paiement</li>
                 </ol>
               </div>
