@@ -1,10 +1,12 @@
+import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { ShoppingCart, Brain, Lightbulb, BookMarked } from 'lucide-react';
+import { ShoppingCart, Brain, Lightbulb, BookMarked, BookOpen } from 'lucide-react';
 import { specialProducts } from '@/data/products';
 import { CartItem } from '@/types';
 import { toast } from 'sonner';
+import BookOrderModal from './modals/BookOrderModal';
 
 interface SpecialPageProps {
   onAddToCart: (item: CartItem) => void;
@@ -12,6 +14,8 @@ interface SpecialPageProps {
 }
 
 const SpecialPage = ({ onAddToCart, onShowFlashcardForm }: SpecialPageProps) => {
+  const [showBookModal, setShowBookModal] = useState(false);
+
   const handleAddToCart = (product: { name: string; price: number; icon?: string }) => {
     const item: CartItem = {
       id: `${Date.now()}-${Math.random()}`,
@@ -22,9 +26,26 @@ const SpecialPage = ({ onAddToCart, onShowFlashcardForm }: SpecialPageProps) => 
     toast.success(`${product.name} ajouté au panier !`);
   };
 
+  const handleBookOrder = (bookInfo: { category: string; title: string; author: string }) => {
+    const item: CartItem = {
+      id: `book-${Date.now()}-${Math.random()}`,
+      name: `Livre: ${bookInfo.title}`,
+      price: 300,
+      course: {
+        name: bookInfo.title,
+        level: bookInfo.category,
+        class: bookInfo.author,
+        subject: 'Livre'
+      }
+    };
+    onAddToCart(item);
+    toast.success(`Commande de livre ajoutée au panier !`);
+  };
+
   const getIcon = (productName: string) => {
     if (productName.includes('calcul')) return <Lightbulb className="w-12 h-12" />;
     if (productName.includes('Culture')) return <BookMarked className="w-12 h-12" />;
+    if (productName.includes('Livre')) return <BookOpen className="w-12 h-12" />;
     return <Brain className="w-12 h-12" />;
   };
 
@@ -98,10 +119,16 @@ const SpecialPage = ({ onAddToCart, onShowFlashcardForm }: SpecialPageProps) => 
               <CardFooter>
                 <Button 
                   className="w-full gap-2"
-                  onClick={() => handleAddToCart(product)}
+                  onClick={() => {
+                    if (product.name.includes('Livre')) {
+                      setShowBookModal(true);
+                    } else {
+                      handleAddToCart(product);
+                    }
+                  }}
                 >
                   <ShoppingCart className="w-4 h-4" />
-                  Ajouter
+                  {product.name.includes('Livre') ? 'Commander' : 'Ajouter'}
                 </Button>
               </CardFooter>
             </Card>
@@ -135,6 +162,13 @@ const SpecialPage = ({ onAddToCart, onShowFlashcardForm }: SpecialPageProps) => 
           </CardContent>
         </Card>
       </div>
+
+      {showBookModal && (
+        <BookOrderModal
+          onClose={() => setShowBookModal(false)}
+          onOrder={handleBookOrder}
+        />
+      )}
     </div>
   );
 };

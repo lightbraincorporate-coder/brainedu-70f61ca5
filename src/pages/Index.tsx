@@ -11,6 +11,7 @@ import GuideModal from '@/components/modals/GuideModal';
 import FlashcardModal from '@/components/modals/FlashcardModal';
 import PaymentModal from '@/components/modals/PaymentModal';
 import SearchModal from '@/components/modals/SearchModal';
+import PremiumAccountModal from '@/components/modals/PremiumAccountModal';
 import { CartItem } from '@/types';
 import { Mail, Phone, MapPin } from 'lucide-react';
 
@@ -25,6 +26,7 @@ const Index = () => {
   const [showFlashcard, setShowFlashcard] = useState(false);
   const [showPayment, setShowPayment] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
+  const [showAccount, setShowAccount] = useState(false);
 
   const handleAddToCart = (item: CartItem) => {
     setCart([...cart, item]);
@@ -56,6 +58,7 @@ const Index = () => {
         onShowFAQ={() => setShowFAQ(true)}
         onShowAbout={() => setShowAbout(true)}
         onShowGuide={() => setShowGuide(true)}
+        onShowAccount={() => setShowAccount(true)}
       />
 
       {/* Pages */}
@@ -87,6 +90,15 @@ const Index = () => {
           total={getTotalCart()}
           onClose={() => setShowPayment(false)}
           onComplete={handlePaymentComplete}
+        />
+      )}
+      {showAccount && (
+        <PremiumAccountModal
+          onClose={() => setShowAccount(false)}
+          onUpgrade={() => {
+            setShowAccount(false);
+            setCurrentPage('premium');
+          }}
         />
       )}
 

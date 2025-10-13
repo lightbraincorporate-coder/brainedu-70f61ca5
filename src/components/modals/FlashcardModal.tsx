@@ -8,6 +8,7 @@ import { toast } from 'sonner';
 
 interface FlashcardModalProps {
   onClose: () => void;
+  onOrder?: (data: any) => void;
 }
 
 const FlashcardModal = ({ onClose }: FlashcardModalProps) => {

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Menu, X, ShoppingCart, Search, BookOpen, Sparkles, Crown, HelpCircle, Info, Book } from 'lucide-react';
+import { Menu, X, ShoppingCart, Search, BookOpen, Sparkles, Crown, HelpCircle, Info, Book, User } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { ThemeToggle } from './ThemeToggle';
@@ -12,6 +12,7 @@ interface NavbarProps {
   onShowFAQ: () => void;
   onShowAbout: () => void;
   onShowGuide: () => void;
+  onShowAccount: () => void;
 }
 
 const Navbar = ({ 
@@ -21,7 +22,8 @@ const Navbar = ({
   onSearch,
   onShowFAQ,
   onShowAbout,
-  onShowGuide
+  onShowGuide,
+  onShowAccount
 }: NavbarProps) => {
   const [showMenu, setShowMenu] = useState(false);
 
@@ -92,6 +94,16 @@ const Navbar = ({
               className="hidden sm:flex"
             >
               <HelpCircle className="w-5 h-5" />
+            </Button>
+
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={onShowAccount}
+              className="relative"
+              title="Compte Premium"
+            >
+              <User className="w-5 h-5" />
             </Button>
 
             <Button
