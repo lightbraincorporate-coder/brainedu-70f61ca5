@@ -87,7 +87,7 @@ const CatalogPage = ({ onAddToCart }: CatalogPageProps) => {
     } else if (selectedLevel === 'lycee') {
       key = `${selectedSubject}-Lycée`;
     } else if (selectedLevel === 'universite') {
-      key = `${selectedSubject}-Université`;
+      key = `${selectedSubject}-${selectedClass}`;
     }
     
     const coursesData = coursesBySubject[key];
@@ -105,7 +105,7 @@ const CatalogPage = ({ onAddToCart }: CatalogPageProps) => {
     } else if (selectedLevel === 'lycee') {
       key = `${selectedSubject}-Lycée`;
     } else if (selectedLevel === 'universite') {
-      key = `${selectedSubject}-Université`;
+      key = `${selectedSubject}-${selectedClass}`;
     }
     
     const coursesData = coursesBySubject[key];
