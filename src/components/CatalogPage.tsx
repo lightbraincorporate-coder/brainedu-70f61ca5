@@ -19,6 +19,7 @@ const CatalogPage = ({ onAddToCart }: CatalogPageProps) => {
   const [selectedSerie, setSelectedSerie] = useState<string | null>(null);
   const [selectedClass, setSelectedClass] = useState<string | null>(null);
   const [selectedSubject, setSelectedSubject] = useState<string | null>(null);
+  const [selectedBranch, setSelectedBranch] = useState<string | null>(null);
   const [selectedTrimester, setSelectedTrimester] = useState<string | null>(null);
   const [selectedCourse, setSelectedCourse] = useState<string | null>(null);
 
@@ -28,6 +29,7 @@ const CatalogPage = ({ onAddToCart }: CatalogPageProps) => {
     setSelectedSerie(null);
     setSelectedClass(null);
     setSelectedSubject(null);
+    setSelectedBranch(null);
     setSelectedTrimester(null);
     setSelectedCourse(null);
   };
@@ -35,6 +37,7 @@ const CatalogPage = ({ onAddToCart }: CatalogPageProps) => {
   const handleBack = () => {
     if (selectedCourse) setSelectedCourse(null);
     else if (selectedTrimester) setSelectedTrimester(null);
+    else if (selectedBranch) setSelectedBranch(null);
     else if (selectedSubject) setSelectedSubject(null);
     else if (selectedClass) setSelectedClass(null);
     else if (selectedSerie) setSelectedSerie(null);
@@ -76,6 +79,12 @@ const CatalogPage = ({ onAddToCart }: CatalogPageProps) => {
     return Array.isArray(levelSubjects) ? levelSubjects : [];
   };
 
+  const needsBranchSelection = () => {
+    return selectedLevel === 'universite' && 
+           selectedSubject === 'Droit' && 
+           (selectedClass === 'Licence 3' || selectedClass === 'Master 1');
+  };
+
   const getTrimestersForSubject = () => {
     if (!selectedSubject) return [];
     
@@ -87,7 +96,11 @@ const CatalogPage = ({ onAddToCart }: CatalogPageProps) => {
     } else if (selectedLevel === 'lycee') {
       key = `${selectedSubject}-Lycée`;
     } else if (selectedLevel === 'universite') {
-      key = `${selectedSubject}-${selectedClass}`;
+      if (needsBranchSelection() && selectedBranch) {
+        key = `${selectedSubject}-${selectedClass} (${selectedBranch})`;
+      } else {
+        key = `${selectedSubject}-${selectedClass}`;
+      }
     }
     
     const coursesData = coursesBySubject[key];
@@ -105,7 +118,11 @@ const CatalogPage = ({ onAddToCart }: CatalogPageProps) => {
     } else if (selectedLevel === 'lycee') {
       key = `${selectedSubject}-Lycée`;
     } else if (selectedLevel === 'universite') {
-      key = `${selectedSubject}-${selectedClass}`;
+      if (needsBranchSelection() && selectedBranch) {
+        key = `${selectedSubject}-${selectedClass} (${selectedBranch})`;
+      } else {
+        key = `${selectedSubject}-${selectedClass}`;
+      }
     }
     
     const coursesData = coursesBySubject[key];
@@ -144,6 +161,7 @@ const CatalogPage = ({ onAddToCart }: CatalogPageProps) => {
           {selectedSerie && <><span>/</span><span>{selectedSerie}</span></>}
           {selectedClass && <><span>/</span><span>{selectedClass}</span></>}
           {selectedSubject && <><span>/</span><span>{selectedSubject}</span></>}
+          {selectedBranch && <><span>/</span><span>{selectedBranch}</span></>}
           {selectedTrimester && <><span>/</span><span>{selectedTrimester}</span></>}
           {selectedCourse && <><span>/</span><span className="text-foreground font-medium">{selectedCourse}</span></>}
         </div>
@@ -272,8 +290,64 @@ const CatalogPage = ({ onAddToCart }: CatalogPageProps) => {
           </div>
         )}
 
+        {/* Branch Selection (for Droit Licence 3 and Master 1) */}
+        {selectedSubject && !selectedBranch && needsBranchSelection() && (
+          <div className="animate-fade-in">
+            <h1 className="text-3xl font-bold mb-6">
+              Choisissez votre {selectedClass === 'Master 1' ? 'filière' : 'branche'}
+            </h1>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              {selectedClass === 'Licence 3' ? (
+                <>
+                  <Card 
+                    className="cursor-pointer hover:shadow-lg transition-all hover:-translate-y-1 animate-scale-in"
+                    onClick={() => setSelectedBranch('Droit Public')}
+                  >
+                    <CardHeader>
+                      <CardTitle>Droit Public</CardTitle>
+                    </CardHeader>
+                  </Card>
+                  <Card 
+                    className="cursor-pointer hover:shadow-lg transition-all hover:-translate-y-1 animate-scale-in"
+                    style={{ animationDelay: '100ms' }}
+                    onClick={() => setSelectedBranch('Droit Privé')}
+                  >
+                    <CardHeader>
+                      <CardTitle>Droit Privé</CardTitle>
+                    </CardHeader>
+                  </Card>
+                </>
+              ) : (
+                <>
+                  <Card 
+                    className="cursor-pointer hover:shadow-lg transition-all hover:-translate-y-1 animate-scale-in"
+                    onClick={() => setSelectedBranch('Public')}
+                  >
+                    <CardHeader>
+                      <CardTitle>Master 1 Public</CardTitle>
+                      <CardDescription>Droit public général, Relations internationales, Finances publiques</CardDescription>
+                    </CardHeader>
+                  </Card>
+                  <Card 
+                    className="cursor-pointer hover:shadow-lg transition-all hover:-translate-y-1 animate-scale-in"
+                    style={{ animationDelay: '100ms' }}
+                    onClick={() => setSelectedBranch('Privé')}
+                  >
+                    <CardHeader>
+                      <CardTitle>Master 1 Privé</CardTitle>
+                      <CardDescription>Droit des affaires, carrières judiciaires, Propriété intellectuelle</CardDescription>
+                    </CardHeader>
+                  </Card>
+                </>
+              )}
+            </div>
+          </div>
+        )}
+
         {/* Trimester Selection */}
         {selectedSubject && !selectedTrimester && (
+          needsBranchSelection() ? selectedBranch !== null : true
+        ) && (
           <div className="animate-fade-in">
             <h1 className="text-3xl font-bold mb-6">
               Choisissez un {selectedLevel === 'universite' ? 'semestre' : 'trimestre'}
