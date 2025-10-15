@@ -316,9 +316,27 @@ export const coursesBySubject: Record<string, Record<string, string[]>> = {
     'Trimestre 2': ['Écologie', 'Physiologie humaine'],
     'Trimestre 3': ['Biologie cellulaire', 'Immunologie']
   },
-  'Droit-Université': {
-    'Semestre 1': ['Droit constitutionnel', 'Droit civil I', 'Histoire du droit'],
-    'Semestre 2': ['Droit pénal', 'Procédure civile', 'Droit des obligations']
+  'Droit-Licence 1': {
+    'Semestre 1': ['Introduction / Initiation au droit', 'Histoire du droit', 'Droit constitutionnel 1', 'Histoire du droit romain'],
+    'Semestre 2': ['Droit civil 2 (la famille)', 'Droit constitutionnel 2', 'Institutions communautaires']
+  },
+  'Droit-Licence 2': {
+    'Semestre 1': ['Droit administratif 1', 'Droit pénal / Droit civil', 'Histoire du droit colonial'],
+    'Semestre 2': ['Droit administratif 2', 'Procédure pénale / Procédure civile', 'Droit des contrats']
+  },
+  'Droit-Licence 3 (Droit Public)': {
+    'Semestre 1': ['Droit du contentieux administratif', 'Libertés et droits fondamentaux', 'Droit des collectivités territoriales', 'Droit international public'],
+    'Semestre 2': ['Droit de l\'espace', 'Droit électoral', 'Droit humanitaire', 'Introduction au droit de l\'environnement et de l\'urbanisme']
+  },
+  'Droit-Licence 3 (Droit Privé)': {
+    'Semestre 1': ['Droit du travail', 'Droit du commerce', 'Droit des sûretés'],
+    'Semestre 2': ['Droit de la santé', 'Droit international privé', 'Droit fiscal']
+  },
+  'Droit-Master 1 (Public)': {
+    'Année': ['Droit public général', 'Relations internationales', 'Finances publiques']
+  },
+  'Droit-Master 1 (Privé)': {
+    'Année': ['Droit des affaires, carrières judiciaires', 'Droit de la propriété intellectuelle']
   },
   'Médecine-Université': {
     'Semestre 1': ['Anatomie générale', 'Physiologie humaine', 'Biochimie médicale'],
