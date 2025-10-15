@@ -336,7 +336,7 @@ export const coursesBySubject: Record<string, Record<string, string[]>> = {
     'Année': ['Droit public général', 'Relations internationales', 'Finances publiques']
   },
   'Droit-Master 1 (Privé)': {
-    'Année': ['Droit des affaires, carrières judiciaires', 'Droit de la propriété intellectuelle']
+    'Année': ['Droit des affaires', 'Carrières judiciaires', 'Droit de la propriété intellectuelle']
   },
   'Médecine-Université': {
     'Semestre 1': ['Anatomie générale', 'Physiologie humaine', 'Biochimie médicale'],
