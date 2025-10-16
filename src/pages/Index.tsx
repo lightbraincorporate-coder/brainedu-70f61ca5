@@ -12,6 +12,7 @@ import FlashcardModal from '@/components/modals/FlashcardModal';
 import PaymentModal from '@/components/modals/PaymentModal';
 import SearchModal from '@/components/modals/SearchModal';
 import PremiumAccountModal from '@/components/modals/PremiumAccountModal';
+import CustomCourseModal from '@/components/modals/CustomCourseModal';
 import { CartItem } from '@/types';
 import { Mail, Phone, MapPin } from 'lucide-react';
 
@@ -27,6 +28,7 @@ const Index = () => {
   const [showPayment, setShowPayment] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
   const [showAccount, setShowAccount] = useState(false);
+  const [showCustomCourse, setShowCustomCourse] = useState(false);
 
   const handleAddToCart = (item: CartItem) => {
     setCart([...cart, item]);
@@ -59,6 +61,7 @@ const Index = () => {
         onShowAbout={() => setShowAbout(true)}
         onShowGuide={() => setShowGuide(true)}
         onShowAccount={() => setShowAccount(true)}
+        onShowCustomCourse={() => setShowCustomCourse(true)}
       />
 
       {/* Pages */}
@@ -85,6 +88,7 @@ const Index = () => {
       {showGuide && <GuideModal onClose={() => setShowGuide(false)} />}
       {showFlashcard && <FlashcardModal onClose={() => setShowFlashcard(false)} />}
       {showSearch && <SearchModal onClose={() => setShowSearch(false)} />}
+      {showCustomCourse && <CustomCourseModal onClose={() => setShowCustomCourse(false)} />}
       {showPayment && (
         <PaymentModal 
           total={getTotalCart()}

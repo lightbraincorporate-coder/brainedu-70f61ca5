@@ -179,6 +179,16 @@ const PaymentModal = ({ total, onClose, onComplete }: PaymentModalProps) => {
                 </p>
               </div>
 
+              <div className="bg-amber-50 dark:bg-amber-950/20 border border-amber-200 dark:border-amber-800 rounded-lg p-4 mb-6">
+                <p className="text-sm font-semibold text-amber-800 dark:text-amber-200 mb-2">⚠️ Avertissement Important</p>
+                <p className="text-sm text-amber-700 dark:text-amber-300">
+                  Nos cours sont des ressources <strong>globales et générales</strong> dispensées pour tous selon la classe. 
+                  Nous ne couvrons pas tous les programmes spécifiques de tous les pays du monde. 
+                  Chaque cours possède sa particularité selon le pays, le programme et le ministère de l'enseignement. 
+                  <strong> Il ne faut pas juste se fier aux cours sur notre site</strong> - adaptez-les toujours à vos cours locaux et votre programme officiel.
+                </p>
+              </div>
+
               <div>
                 <h3 className="text-lg font-semibold mb-4">Choisissez le format de téléchargement</h3>
                 <RadioGroup value={format} onValueChange={setFormat}>

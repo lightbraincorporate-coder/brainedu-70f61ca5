@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, ShoppingCart, Search, BookOpen, Sparkles, Crown, HelpCircle, Info, Book, User, Download } from 'lucide-react';
+import { Menu, X, ShoppingCart, Search, BookOpen, Sparkles, Crown, HelpCircle, Info, Book, User, Download, Target } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { ThemeToggle } from './ThemeToggle';
@@ -13,6 +13,7 @@ interface NavbarProps {
   onShowAbout: () => void;
   onShowGuide: () => void;
   onShowAccount: () => void;
+  onShowCustomCourse: () => void;
 }
 
 const Navbar = ({ 
@@ -23,7 +24,8 @@ const Navbar = ({
   onShowFAQ,
   onShowAbout,
   onShowGuide,
-  onShowAccount
+  onShowAccount,
+  onShowCustomCourse
 }: NavbarProps) => {
   const [showMenu, setShowMenu] = useState(false);
   const [deferredPrompt, setDeferredPrompt] = useState<any>(null);
@@ -143,6 +145,16 @@ const Navbar = ({
             <Button
               variant="ghost"
               size="icon"
+              onClick={onShowCustomCourse}
+              className="relative hidden lg:flex"
+              title="Cours Personnalisé"
+            >
+              <Target className="w-5 h-5" />
+            </Button>
+
+            <Button
+              variant="ghost"
+              size="icon"
               onClick={onShowAccount}
               className="relative"
               title="Compte Premium"
@@ -222,6 +234,17 @@ const Navbar = ({
             >
               <Info className="w-4 h-4" />
               À propos
+            </Button>
+            <Button
+              variant="ghost"
+              onClick={() => {
+                onShowCustomCourse();
+                setShowMenu(false);
+              }}
+              className="w-full justify-start gap-2"
+            >
+              <Target className="w-4 h-4" />
+              Cours Personnalisé
             </Button>
           </div>
         </div>

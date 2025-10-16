@@ -13,7 +13,8 @@ export const specialProducts: Product[] = [
   { name: 'Culture générale (5 infos)', price: 250, icon: '💡' },
   { name: 'Méthodologie mémoire basique', price: 350, icon: '🧠' },
   { name: 'Méthodologie mémoire avancée', price: 500, icon: '🧠' },
-  { name: 'Livre (commande personnalisée)', price: 300, icon: '📚' }
+  { name: 'Livre (commande personnalisée)', price: 300, icon: '📚' },
+  { name: 'Cours adapté et personnalisé', price: 250, icon: '🎯' }
 ];
 
 export const premiumPlans: PremiumPlan[] = [
