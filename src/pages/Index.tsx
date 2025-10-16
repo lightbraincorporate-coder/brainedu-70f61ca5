@@ -13,6 +13,10 @@ import PaymentModal from '@/components/modals/PaymentModal';
 import SearchModal from '@/components/modals/SearchModal';
 import PremiumAccountModal from '@/components/modals/PremiumAccountModal';
 import CustomCourseModal from '@/components/modals/CustomCourseModal';
+import { OfflineIndicator } from '@/components/OfflineIndicator';
+import { Toaster } from '@/components/ui/toaster';
+import { useFavorites } from '@/hooks/useFavorites';
+import { useHistory } from '@/hooks/useHistory';
 import { CartItem } from '@/types';
 import { Mail, Phone, MapPin } from 'lucide-react';
 
@@ -29,6 +33,9 @@ const Index = () => {
   const [showSearch, setShowSearch] = useState(false);
   const [showAccount, setShowAccount] = useState(false);
   const [showCustomCourse, setShowCustomCourse] = useState(false);
+  
+  const { favorites, addFavorite, removeFavorite, isFavorite } = useFavorites();
+  const { history, addToHistory } = useHistory();
 
   const handleAddToCart = (item: CartItem) => {
     setCart([...cart, item]);
@@ -189,6 +196,9 @@ const Index = () => {
           </div>
         </div>
       </footer>
+
+      <Toaster />
+      <OfflineIndicator />
     </div>
   );
 };

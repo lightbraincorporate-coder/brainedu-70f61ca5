@@ -49,7 +49,19 @@ const Navbar = ({
   }, []);
 
   const handleInstallClick = async () => {
-    if (!deferredPrompt) return;
+    if (!deferredPrompt) {
+      // Show manual installation instructions
+      alert(
+        "Pour installer BrainEdu:\n\n" +
+        "📱 Sur mobile:\n" +
+        "• iPhone: Appuyez sur le bouton Partager puis 'Sur l'écran d'accueil'\n" +
+        "• Android: Menu ⋮ puis 'Installer l'application'\n\n" +
+        "💻 Sur ordinateur:\n" +
+        "• Chrome: Cliquez sur l'icône ⊕ dans la barre d'adresse\n" +
+        "• Edge: Menu ... puis 'Applications' > 'Installer BrainEdu'"
+      );
+      return;
+    }
 
     deferredPrompt.prompt();
     const { outcome } = await deferredPrompt.userChoice;
@@ -112,17 +124,15 @@ const Navbar = ({
           <div className="flex items-center space-x-2">
             <ThemeToggle />
 
-            {showInstallButton && (
-              <Button
-                variant="default"
-                size="icon"
-                onClick={handleInstallClick}
-                className="relative animate-pulse"
-                title="Installer l'application"
-              >
-                <Download className="w-5 h-5" />
-              </Button>
-            )}
+            <Button
+              variant="default"
+              size="icon"
+              onClick={handleInstallClick}
+              className={showInstallButton ? "relative animate-pulse" : "relative"}
+              title="Installer l'application"
+            >
+              <Download className="w-5 h-5" />
+            </Button>
             
             <Button
               variant="ghost"
@@ -146,7 +156,7 @@ const Navbar = ({
               variant="ghost"
               size="icon"
               onClick={onShowCustomCourse}
-              className="relative hidden lg:flex"
+              className="relative"
               title="Cours Personnalisé"
             >
               <Target className="w-5 h-5" />
