@@ -301,20 +301,280 @@ export const coursesBySubject: Record<string, Record<string, string[]>> = {
     'Trimestre 2': ['Sports collectifs : volley-ball'],
     'Trimestre 3': ['Préparation physique au brevet']
   },
-  'Mathématiques-Lycée': {
-    'Trimestre 1': ['Ensembles et applications', 'Nombres complexes'],
-    'Trimestre 2': ['Fonctions numériques', 'Suites numériques'],
-    'Trimestre 3': ['Dérivées et primitives', 'Calcul intégral']
+  // Série C - Mathématiques
+  'Mathématiques-2nde C': {
+    'Trimestre 1': ['Ensembles et applications', 'Nombres et calculs'],
+    'Trimestre 2': ['Fonctions numériques', 'Géométrie analytique'],
+    'Trimestre 3': ['Statistiques', 'Vecteurs']
   },
-  'Physique-Chimie-Lycée': {
-    'Trimestre 1': ['Mécanique', 'Électricité'],
-    'Trimestre 2': ['Optique', 'Thermodynamique'],
-    'Trimestre 3': ['Chimie organique', 'Réactions chimiques']
+  'Mathématiques-1ère C': {
+    'Trimestre 1': ['Nombres complexes', 'Suites numériques'],
+    'Trimestre 2': ['Fonctions et limites', 'Dérivées'],
+    'Trimestre 3': ['Probabilités', 'Géométrie dans l\'espace']
   },
-  'SVT-Lycée': {
-    'Trimestre 1': ['Génétique', 'Évolution'],
-    'Trimestre 2': ['Écologie', 'Physiologie humaine'],
-    'Trimestre 3': ['Biologie cellulaire', 'Immunologie']
+  'Mathématiques-Terminale C': {
+    'Trimestre 1': ['Fonctions exponentielles et logarithmes', 'Primitives et intégrales'],
+    'Trimestre 2': ['Équations différentielles', 'Nombres complexes avancés'],
+    'Trimestre 3': ['Calcul intégral', 'Probabilités continues']
+  },
+  
+  // Série C - Physique-Chimie
+  'Physique-Chimie-2nde C': {
+    'Trimestre 1': ['Mécanique : cinématique', 'Électricité : circuits'],
+    'Trimestre 2': ['Optique géométrique', 'Chimie : atome et molécule'],
+    'Trimestre 3': ['Forces et mouvement', 'Réactions chimiques']
+  },
+  'Physique-Chimie-1ère C': {
+    'Trimestre 1': ['Dynamique : lois de Newton', 'Électromagnétisme'],
+    'Trimestre 2': ['Thermodynamique', 'Chimie organique'],
+    'Trimestre 3': ['Optique ondulatoire', 'Cinétique chimique']
+  },
+  'Physique-Chimie-Terminale C': {
+    'Trimestre 1': ['Mécanique du solide', 'Électricité avancée'],
+    'Trimestre 2': ['Ondes et vibrations', 'Chimie : acides et bases'],
+    'Trimestre 3': ['Physique nucléaire', 'Chimie organique avancée']
+  },
+
+  // Série C - SVT
+  'SVT-2nde C': {
+    'Trimestre 1': ['La cellule', 'Organisation du vivant'],
+    'Trimestre 2': ['Nutrition et métabolisme', 'Génétique de base'],
+    'Trimestre 3': ['Écologie', 'Géologie']
+  },
+  'SVT-1ère C': {
+    'Trimestre 1': ['Génétique moléculaire', 'Physiologie animale'],
+    'Trimestre 2': ['Évolution', 'Immunologie'],
+    'Trimestre 3': ['Géologie : tectonique', 'Écosystèmes']
+  },
+  'SVT-Terminale C': {
+    'Trimestre 1': ['Génétique des populations', 'Biologie cellulaire avancée'],
+    'Trimestre 2': ['Neurobiologie', 'Géologie : magmatisme'],
+    'Trimestre 3': ['Biotechnologies', 'Enjeux environnementaux']
+  },
+
+  // Série C - Français
+  'Français-2nde C': {
+    'Trimestre 1': ['Le roman et le récit', 'Grammaire avancée'],
+    'Trimestre 2': ['La poésie', 'L\'argumentation'],
+    'Trimestre 3': ['Le théâtre', 'Dissertation']
+  },
+  'Français-1ère C': {
+    'Trimestre 1': ['Le roman du XIXe siècle', 'Commentaire composé'],
+    'Trimestre 2': ['La poésie moderne', 'L\'essai'],
+    'Trimestre 3': ['Le théâtre contemporain', 'Techniques d\'écriture']
+  },
+
+  // Série C - Philosophie
+  'Philosophie-1ère C': {
+    'Trimestre 1': ['Introduction à la philosophie', 'La conscience'],
+    'Trimestre 2': ['La perception', 'Autrui'],
+    'Trimestre 3': ['Le désir', 'L\'existence']
+  },
+  'Philosophie-Terminale C': {
+    'Trimestre 1': ['La vérité', 'La raison et le réel'],
+    'Trimestre 2': ['La morale', 'La liberté'],
+    'Trimestre 3': ['Le devoir', 'La politique']
+  },
+
+  // Série C - Anglais
+  'Anglais-2nde C': {
+    'Trimestre 1': ['Grammar review', 'Reading comprehension'],
+    'Trimestre 2': ['Writing skills', 'Oral expression'],
+    'Trimestre 3': ['Literature introduction', 'Vocabulary expansion']
+  },
+  'Anglais-1ère C': {
+    'Trimestre 1': ['Advanced grammar', 'Essay writing'],
+    'Trimestre 2': ['British literature', 'Debate and discussion'],
+    'Trimestre 3': ['American literature', 'Presentation skills']
+  },
+  'Anglais-Terminale C': {
+    'Trimestre 1': ['Literary analysis', 'Advanced writing'],
+    'Trimestre 2': ['Contemporary issues', 'Translation'],
+    'Trimestre 3': ['Exam preparation', 'Public speaking']
+  },
+
+  // Série D - Mathématiques
+  'Mathématiques-2nde D': {
+    'Trimestre 1': ['Ensembles et applications', 'Nombres et calculs'],
+    'Trimestre 2': ['Fonctions numériques', 'Géométrie analytique'],
+    'Trimestre 3': ['Statistiques', 'Vecteurs']
+  },
+  'Mathématiques-1ère D': {
+    'Trimestre 1': ['Nombres complexes', 'Suites numériques'],
+    'Trimestre 2': ['Fonctions et limites', 'Dérivées'],
+    'Trimestre 3': ['Probabilités', 'Géométrie dans l\'espace']
+  },
+  'Mathématiques-Terminale D': {
+    'Trimestre 1': ['Fonctions exponentielles et logarithmes', 'Primitives et intégrales'],
+    'Trimestre 2': ['Équations différentielles', 'Nombres complexes avancés'],
+    'Trimestre 3': ['Calcul intégral', 'Probabilités continues']
+  },
+
+  // Série D - Physique-Chimie
+  'Physique-Chimie-2nde D': {
+    'Trimestre 1': ['Mécanique : cinématique', 'Électricité : circuits'],
+    'Trimestre 2': ['Optique géométrique', 'Chimie : atome et molécule'],
+    'Trimestre 3': ['Forces et mouvement', 'Réactions chimiques']
+  },
+  'Physique-Chimie-1ère D': {
+    'Trimestre 1': ['Dynamique : lois de Newton', 'Électromagnétisme'],
+    'Trimestre 2': ['Thermodynamique', 'Chimie organique'],
+    'Trimestre 3': ['Optique ondulatoire', 'Cinétique chimique']
+  },
+  'Physique-Chimie-Terminale D': {
+    'Trimestre 1': ['Mécanique du solide', 'Électricité avancée'],
+    'Trimestre 2': ['Ondes et vibrations', 'Chimie : acides et bases'],
+    'Trimestre 3': ['Physique nucléaire', 'Chimie organique avancée']
+  },
+
+  // Série D - SVT
+  'SVT-2nde D': {
+    'Trimestre 1': ['La cellule', 'Organisation du vivant'],
+    'Trimestre 2': ['Nutrition et métabolisme', 'Génétique de base'],
+    'Trimestre 3': ['Écologie', 'Géologie']
+  },
+  'SVT-1ère D': {
+    'Trimestre 1': ['Génétique moléculaire', 'Physiologie animale'],
+    'Trimestre 2': ['Évolution', 'Immunologie'],
+    'Trimestre 3': ['Géologie : tectonique', 'Écosystèmes']
+  },
+  'SVT-Terminale D': {
+    'Trimestre 1': ['Génétique des populations', 'Biologie cellulaire avancée'],
+    'Trimestre 2': ['Neurobiologie', 'Géologie : magmatisme'],
+    'Trimestre 3': ['Biotechnologies', 'Enjeux environnementaux']
+  },
+
+  // Série D - Français
+  'Français-2nde D': {
+    'Trimestre 1': ['Le roman et le récit', 'Grammaire avancée'],
+    'Trimestre 2': ['La poésie', 'L\'argumentation'],
+    'Trimestre 3': ['Le théâtre', 'Dissertation']
+  },
+  'Français-1ère D': {
+    'Trimestre 1': ['Le roman du XIXe siècle', 'Commentaire composé'],
+    'Trimestre 2': ['La poésie moderne', 'L\'essai'],
+    'Trimestre 3': ['Le théâtre contemporain', 'Techniques d\'écriture']
+  },
+
+  // Série D - Philosophie
+  'Philosophie-1ère D': {
+    'Trimestre 1': ['Introduction à la philosophie', 'La conscience'],
+    'Trimestre 2': ['La perception', 'Autrui'],
+    'Trimestre 3': ['Le désir', 'L\'existence']
+  },
+  'Philosophie-Terminale D': {
+    'Trimestre 1': ['La vérité', 'La raison et le réel'],
+    'Trimestre 2': ['La morale', 'La liberté'],
+    'Trimestre 3': ['Le devoir', 'La politique']
+  },
+
+  // Série D - Anglais
+  'Anglais-2nde D': {
+    'Trimestre 1': ['Grammar review', 'Reading comprehension'],
+    'Trimestre 2': ['Writing skills', 'Oral expression'],
+    'Trimestre 3': ['Literature introduction', 'Vocabulary expansion']
+  },
+  'Anglais-1ère D': {
+    'Trimestre 1': ['Advanced grammar', 'Essay writing'],
+    'Trimestre 2': ['British literature', 'Debate and discussion'],
+    'Trimestre 3': ['American literature', 'Presentation skills']
+  },
+  'Anglais-Terminale D': {
+    'Trimestre 1': ['Literary analysis', 'Advanced writing'],
+    'Trimestre 2': ['Contemporary issues', 'Translation'],
+    'Trimestre 3': ['Exam preparation', 'Public speaking']
+  },
+
+  // Série A
+  'Français-2nde A': {
+    'Trimestre 1': ['Le roman et le récit', 'Grammaire avancée'],
+    'Trimestre 2': ['La poésie', 'L\'argumentation'],
+    'Trimestre 3': ['Le théâtre', 'Dissertation']
+  },
+  'Français-1ère A': {
+    'Trimestre 1': ['Littérature française du XVIIe siècle', 'Le classicisme'],
+    'Trimestre 2': ['Le Siècle des Lumières', 'Essai et argumentation'],
+    'Trimestre 3': ['Le romantisme', 'Commentaire littéraire']
+  },
+  'Français-Terminale A': {
+    'Trimestre 1': ['Le roman réaliste et naturaliste', 'Analyse de texte'],
+    'Trimestre 2': ['Le surréalisme et la modernité', 'Dissertation littéraire'],
+    'Trimestre 3': ['Le théâtre contemporain', 'Préparation au bac']
+  },
+
+  'Philosophie-1ère A': {
+    'Trimestre 1': ['Introduction à la philosophie', 'La conscience et l\'inconscient'],
+    'Trimestre 2': ['La perception', 'Le langage'],
+    'Trimestre 3': ['Le désir', 'L\'existence et le temps']
+  },
+  'Philosophie-Terminale A': {
+    'Trimestre 1': ['La vérité et la raison', 'Théorie de la connaissance'],
+    'Trimestre 2': ['La morale et l\'éthique', 'La liberté'],
+    'Trimestre 3': ['Le devoir et la justice', 'La politique et l\'État']
+  },
+
+  'Histoire-Géo-2nde A': {
+    'Trimestre 1': ['L\'Antiquité méditerranéenne', 'Les grandes civilisations'],
+    'Trimestre 2': ['Le Moyen Âge européen', 'Géographie : la mondialisation'],
+    'Trimestre 3': ['Les grandes découvertes', 'Dynamiques territoriales']
+  },
+  'Histoire-Géo-1ère A': {
+    'Trimestre 1': ['Les révolutions du XVIIIe siècle', 'L\'Europe au XIXe'],
+    'Trimestre 2': ['Colonisation et impérialisme', 'Géographie économique'],
+    'Trimestre 3': ['La Première Guerre mondiale', 'Aménagement des territoires']
+  },
+  'Histoire-Géo-Terminale A': {
+    'Trimestre 1': ['La Seconde Guerre mondiale', 'La décolonisation'],
+    'Trimestre 2': ['La Guerre froide', 'Géopolitique contemporaine'],
+    'Trimestre 3': ['Le monde depuis 1989', 'Mondialisation et territoires']
+  },
+
+  'Mathématiques-2nde A': {
+    'Trimestre 1': ['Ensembles et logique', 'Nombres et calculs'],
+    'Trimestre 2': ['Fonctions de référence', 'Statistiques'],
+    'Trimestre 3': ['Géométrie plane', 'Probabilités']
+  },
+  'Mathématiques-1ère A': {
+    'Trimestre 1': ['Suites numériques', 'Fonctions'],
+    'Trimestre 2': ['Dérivation', 'Probabilités'],
+    'Trimestre 3': ['Statistiques', 'Géométrie analytique']
+  },
+  'Mathématiques-Terminale A': {
+    'Trimestre 1': ['Fonctions logarithmes', 'Primitives'],
+    'Trimestre 2': ['Probabilités conditionnelles', 'Lois de probabilité'],
+    'Trimestre 3': ['Intégration', 'Préparation au bac']
+  },
+
+  'Anglais-2nde A': {
+    'Trimestre 1': ['Grammar fundamentals', 'Reading and comprehension'],
+    'Trimestre 2': ['Writing essays', 'Speaking skills'],
+    'Trimestre 3': ['Introduction to literature', 'Cultural studies']
+  },
+  'Anglais-1ère A': {
+    'Trimestre 1': ['Advanced grammar structures', 'Literary analysis'],
+    'Trimestre 2': ['British and American culture', 'Debate techniques'],
+    'Trimestre 3': ['Creative writing', 'Oral presentations']
+  },
+  'Anglais-Terminale A': {
+    'Trimestre 1': ['Literary movements', 'Critical analysis'],
+    'Trimestre 2': ['Contemporary issues', 'Translation techniques'],
+    'Trimestre 3': ['Exam preparation', 'Advanced communication']
+  },
+
+  'Espagnol-2nde A': {
+    'Trimestre 1': ['Grammaire de base', 'Compréhension orale'],
+    'Trimestre 2': ['Expression écrite', 'Culture hispanique'],
+    'Trimestre 3': ['Conversation', 'Littérature hispanique']
+  },
+  'Espagnol-1ère A': {
+    'Trimestre 1': ['Grammaire avancée', 'Textes littéraires'],
+    'Trimestre 2': ['Civilisation espagnole et latino-américaine', 'Débat'],
+    'Trimestre 3': ['Rédaction', 'Expression orale']
+  },
+  'Espagnol-Terminale A': {
+    'Trimestre 1': ['Analyse littéraire', 'Essai argumentatif'],
+    'Trimestre 2': ['Actualités hispaniques', 'Traduction'],
+    'Trimestre 3': ['Préparation au bac', 'Communication avancée']
   },
   'Droit-Licence 1': {
     'Semestre 1': ['Introduction / Initiation au droit', 'Histoire du droit', 'Droit constitutionnel 1', 'Histoire du droit romain'],

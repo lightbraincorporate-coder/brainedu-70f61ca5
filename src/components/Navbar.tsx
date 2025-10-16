@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { Menu, X, ShoppingCart, Search, BookOpen, Sparkles, Crown, HelpCircle, Info, Book, User } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { Menu, X, ShoppingCart, Search, BookOpen, Sparkles, Crown, HelpCircle, Info, Book, User, Download } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { ThemeToggle } from './ThemeToggle';
@@ -26,6 +26,38 @@ const Navbar = ({
   onShowAccount
 }: NavbarProps) => {
   const [showMenu, setShowMenu] = useState(false);
+  const [deferredPrompt, setDeferredPrompt] = useState<any>(null);
+  const [showInstallButton, setShowInstallButton] = useState(false);
+
+  useEffect(() => {
+    const handler = (e: Event) => {
+      e.preventDefault();
+      setDeferredPrompt(e);
+      setShowInstallButton(true);
+    };
+
+    window.addEventListener('beforeinstallprompt', handler);
+
+    // Check if already installed
+    if (window.matchMedia('(display-mode: standalone)').matches) {
+      setShowInstallButton(false);
+    }
+
+    return () => window.removeEventListener('beforeinstallprompt', handler);
+  }, []);
+
+  const handleInstallClick = async () => {
+    if (!deferredPrompt) return;
+
+    deferredPrompt.prompt();
+    const { outcome } = await deferredPrompt.userChoice;
+    
+    if (outcome === 'accepted') {
+      setShowInstallButton(false);
+    }
+    
+    setDeferredPrompt(null);
+  };
 
   const navItems = [
     { id: 'home', label: 'Accueil', icon: BookOpen },
@@ -77,6 +109,18 @@ const Navbar = ({
           {/* Actions */}
           <div className="flex items-center space-x-2">
             <ThemeToggle />
+
+            {showInstallButton && (
+              <Button
+                variant="default"
+                size="icon"
+                onClick={handleInstallClick}
+                className="relative animate-pulse"
+                title="Installer l'application"
+              >
+                <Download className="w-5 h-5" />
+              </Button>
+            )}
             
             <Button
               variant="ghost"
