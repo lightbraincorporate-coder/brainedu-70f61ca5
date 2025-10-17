@@ -53,12 +53,13 @@ const PaymentModal = ({ total, onClose, onComplete }: PaymentModalProps) => {
   };
 
   const handleDownload = () => {
-    toast.success(`Téléchargement de vos fichiers en format ${format.toUpperCase()}...`);
+    toast.info('Les fichiers seront disponibles une fois uploadés par l\'administrateur.');
+    toast.info('En attendant, votre commande a été enregistrée avec succès !');
     setTimeout(() => {
-      toast.success('Commande complétée avec succès !');
+      toast.success('Commande complétée ! Vous serez notifié quand les fichiers seront disponibles.');
       onComplete();
       onClose();
-    }, 1500);
+    }, 2000);
   };
 
   return (
