@@ -14,7 +14,48 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      course_files: {
+        Row: {
+          class_name: string
+          course_name: string
+          created_at: string | null
+          file_format: string
+          file_path: string
+          file_type: string
+          id: string
+          level: string
+          subject: string
+          trimester: string | null
+          updated_at: string | null
+        }
+        Insert: {
+          class_name: string
+          course_name: string
+          created_at?: string | null
+          file_format: string
+          file_path: string
+          file_type: string
+          id?: string
+          level: string
+          subject: string
+          trimester?: string | null
+          updated_at?: string | null
+        }
+        Update: {
+          class_name?: string
+          course_name?: string
+          created_at?: string | null
+          file_format?: string
+          file_path?: string
+          file_type?: string
+          id?: string
+          level?: string
+          subject?: string
+          trimester?: string | null
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
