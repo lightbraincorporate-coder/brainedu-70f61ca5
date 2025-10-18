@@ -1,6 +1,7 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { BookOpen, Sparkles, Crown, GraduationCap, FileText, Presentation, Brain } from 'lucide-react';
+import BrainCorpInfo from './BrainCorpInfo';
 
 interface HomePageProps {
   onNavigate: (page: string) => void;
@@ -145,6 +146,9 @@ const HomePage = ({ onNavigate }: HomePageProps) => {
           </div>
         </div>
       </section>
+
+      {/* BrainCorp Info Section */}
+      <BrainCorpInfo />
 
       {/* CTA Section */}
       <section className="py-16 px-4 bg-gradient-primary text-primary-foreground">

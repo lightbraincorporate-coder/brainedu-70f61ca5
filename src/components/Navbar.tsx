@@ -167,7 +167,7 @@ const Navbar = ({
             <Button
               variant="ghost"
               size="icon"
-              onClick={() => navigate('/admin')}
+              onClick={() => navigate('/admin-login')}
               className="relative"
               title="Administration"
             >
@@ -271,7 +271,7 @@ const Navbar = ({
             <Button
               variant="ghost"
               onClick={() => {
-                navigate('/admin');
+                navigate('/admin-login');
                 setShowMenu(false);
               }}
               className="w-full justify-start gap-2"
