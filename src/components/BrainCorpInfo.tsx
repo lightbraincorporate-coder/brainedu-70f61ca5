@@ -25,7 +25,7 @@ export default function BrainCorpInfo() {
       icon: Shield,
       description: 'Aidez vos enfants à progresser grâce à un suivi personnalisé, des tests adaptés et une analyse approfondie de leur parcours scolaire.',
       color: 'from-purple-500 to-purple-600',
-      url: '#',
+      url: 'https://brainsecure.lovable.app',
       current: false
     }
   ];
@@ -75,7 +75,7 @@ export default function BrainCorpInfo() {
                     {platform.description}
                   </CardDescription>
                 </CardHeader>
-                {!platform.current && platform.url !== '#' && (
+                {!platform.current && (
                   <CardContent>
                     <Button
                       variant="outline"
@@ -85,13 +85,6 @@ export default function BrainCorpInfo() {
                       Découvrir
                       <ExternalLink className="ml-2 w-4 h-4" />
                     </Button>
-                  </CardContent>
-                )}
-                {platform.url === '#' && (
-                  <CardContent>
-                    <p className="text-sm text-muted-foreground text-center">
-                      Bientôt disponible
-                    </p>
                   </CardContent>
                 )}
               </Card>

@@ -1,10 +1,11 @@
 import { useState } from 'react';
-import { X, CreditCard, Check, Smartphone } from 'lucide-react';
+import { X, CreditCard, Check, Smartphone, Upload, FileText, Hash, Camera } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
+import { Textarea } from '@/components/ui/textarea';
 import { toast } from 'sonner';
 
 interface PaymentModalProps {
@@ -16,7 +17,10 @@ interface PaymentModalProps {
 const PaymentModal = ({ total, onClose, onComplete }: PaymentModalProps) => {
   const [step, setStep] = useState(1);
   const [paymentMethod, setPaymentMethod] = useState('moov');
+  const [validationMethod, setValidationMethod] = useState<'id' | 'screenshot' | 'message'>('id');
   const [transactionId, setTransactionId] = useState('');
+  const [transactionMessage, setTransactionMessage] = useState('');
+  const [screenshot, setScreenshot] = useState<File | null>(null);
   const [format, setFormat] = useState('pdf');
 
   const paymentMethods = [
@@ -41,14 +45,37 @@ const PaymentModal = ({ total, onClose, onComplete }: PaymentModalProps) => {
   };
 
   const handleValidateTransaction = () => {
-    if (!transactionId.trim()) {
-      toast.error('Veuillez entrer votre ID de transaction');
-      return;
+    if (validationMethod === 'id') {
+      if (!transactionId.trim()) {
+        toast.error('Veuillez entrer votre ID de transaction');
+        return;
+      }
+      if (!/^\d{10}$/.test(transactionId)) {
+        toast.error('L\'ID doit contenir exactement 10 chiffres');
+        return;
+      }
+    } else if (validationMethod === 'screenshot') {
+      if (!screenshot) {
+        toast.error('Veuillez uploader une capture d\'écran');
+        return;
+      }
+      if (!screenshot.type.startsWith('image/')) {
+        toast.error('Seuls les fichiers images sont acceptés');
+        return;
+      }
+    } else if (validationMethod === 'message') {
+      if (!transactionMessage.trim()) {
+        toast.error('Veuillez coller le message de transaction');
+        return;
+      }
+      // Vérifier que le message contient les éléments clés
+      if (!transactionMessage.includes('ID:') || !transactionMessage.includes('FCFA')) {
+        toast.error('Le message ne semble pas être un message de transaction valide');
+        return;
+      }
     }
-    if (transactionId.length < 8) {
-      toast.error('L\'ID de transaction semble invalide');
-      return;
-    }
+    
+    toast.info('Votre preuve est en cours de vérification par notre système IA...');
     setStep(3);
   };
 
@@ -123,36 +150,139 @@ const PaymentModal = ({ total, onClose, onComplete }: PaymentModalProps) => {
             </div>
           )}
 
-          {/* Step 2: Transaction ID */}
+          {/* Step 2: Transaction Validation */}
           {step === 2 && (
             <div className="space-y-6 animate-fade-in">
               <div>
                 <h3 className="text-lg font-semibold mb-4">Validez votre paiement</h3>
                 <p className="text-sm text-muted-foreground mb-4">
                   Après avoir effectué le paiement via {paymentMethods.find(m => m.id === paymentMethod)?.name}, 
-                  entrez l'ID de transaction que vous avez reçu.
+                  choisissez comment vous souhaitez prouver votre transaction.
                 </p>
                 
-                <div className="space-y-2">
-                  <Label htmlFor="transaction">ID de Transaction *</Label>
-                  <Input
-                    id="transaction"
-                    placeholder="Ex: MPxxxxxxxx ou WVxxxxxxxx"
-                    value={transactionId}
-                    onChange={(e) => setTransactionId(e.target.value)}
-                    className="text-lg"
-                  />
-                  <p className="text-xs text-muted-foreground">
-                    L'ID se trouve dans le SMS de confirmation de paiement
-                  </p>
+                {/* Validation Method Selection */}
+                <div className="space-y-3 mb-6">
+                  <Label>Méthode de validation</Label>
+                  <RadioGroup value={validationMethod} onValueChange={(value) => setValidationMethod(value as 'id' | 'screenshot' | 'message')}>
+                    <div className="flex items-start space-x-3 border rounded-lg p-4 hover:bg-accent cursor-pointer">
+                      <RadioGroupItem value="id" id="id" className="mt-1" />
+                      <Label htmlFor="id" className="flex-1 cursor-pointer">
+                        <div className="flex items-center gap-2 font-medium mb-1">
+                          <Hash className="w-4 h-4" />
+                          ID de transaction
+                        </div>
+                        <p className="text-sm text-muted-foreground">
+                          Entrez l'ID à 10 chiffres reçu dans votre SMS de confirmation (Ex: "ID: 1234567890")
+                        </p>
+                      </Label>
+                    </div>
+                    
+                    <div className="flex items-start space-x-3 border rounded-lg p-4 hover:bg-accent cursor-pointer">
+                      <RadioGroupItem value="screenshot" id="screenshot" className="mt-1" />
+                      <Label htmlFor="screenshot" className="flex-1 cursor-pointer">
+                        <div className="flex items-center gap-2 font-medium mb-1">
+                          <Camera className="w-4 h-4" />
+                          Capture d'écran
+                        </div>
+                        <p className="text-sm text-muted-foreground">
+                          Uploadez une capture d'écran du SMS de confirmation de transaction
+                        </p>
+                      </Label>
+                    </div>
+                    
+                    <div className="flex items-start space-x-3 border rounded-lg p-4 hover:bg-accent cursor-pointer">
+                      <RadioGroupItem value="message" id="message" className="mt-1" />
+                      <Label htmlFor="message" className="flex-1 cursor-pointer">
+                        <div className="flex items-center gap-2 font-medium mb-1">
+                          <FileText className="w-4 h-4" />
+                          Message complet
+                        </div>
+                        <p className="text-sm text-muted-foreground">
+                          Copiez et collez l'intégralité du message de confirmation reçu
+                        </p>
+                      </Label>
+                    </div>
+                  </RadioGroup>
                 </div>
+
+                {/* ID Input */}
+                {validationMethod === 'id' && (
+                  <div className="space-y-2 animate-fade-in">
+                    <Label htmlFor="transaction">ID de Transaction (10 chiffres) *</Label>
+                    <Input
+                      id="transaction"
+                      placeholder="Ex: 6773613622"
+                      value={transactionId}
+                      onChange={(e) => setTransactionId(e.target.value.replace(/\D/g, '').slice(0, 10))}
+                      className="text-lg font-mono"
+                      maxLength={10}
+                    />
+                    <p className="text-xs text-muted-foreground">
+                      Suite de 10 chiffres qui apparaît dans votre SMS (Ex: "ID: 6773613622")
+                    </p>
+                  </div>
+                )}
+
+                {/* Screenshot Upload */}
+                {validationMethod === 'screenshot' && (
+                  <div className="space-y-2 animate-fade-in">
+                    <Label htmlFor="screenshot-upload">Capture d'écran *</Label>
+                    <div className="border-2 border-dashed rounded-lg p-6 text-center hover:bg-accent transition-colors">
+                      <input
+                        id="screenshot-upload"
+                        type="file"
+                        accept="image/*"
+                        onChange={(e) => setScreenshot(e.target.files?.[0] || null)}
+                        className="hidden"
+                      />
+                      <Label htmlFor="screenshot-upload" className="cursor-pointer">
+                        <Upload className="w-8 h-8 mx-auto mb-2 text-muted-foreground" />
+                        {screenshot ? (
+                          <div>
+                            <p className="font-medium text-sm">{screenshot.name}</p>
+                            <p className="text-xs text-muted-foreground mt-1">
+                              {(screenshot.size / 1024).toFixed(1)} KB
+                            </p>
+                          </div>
+                        ) : (
+                          <div>
+                            <p className="font-medium text-sm">Cliquez pour uploader</p>
+                            <p className="text-xs text-muted-foreground mt-1">
+                              Formats acceptés: JPG, PNG, WEBP
+                            </p>
+                          </div>
+                        )}
+                      </Label>
+                    </div>
+                    <p className="text-xs text-muted-foreground">
+                      Prenez une capture d'écran claire du SMS de confirmation de transaction
+                    </p>
+                  </div>
+                )}
+
+                {/* Message Text */}
+                {validationMethod === 'message' && (
+                  <div className="space-y-2 animate-fade-in">
+                    <Label htmlFor="message-text">Message de transaction *</Label>
+                    <Textarea
+                      id="message-text"
+                      placeholder="Ex: Vous avez envoye 50 FCFA a DISTELLA NZEMBAYI 242065012967 le 2025-10-19 10:58:12. Solde: 383 FCFA. ID: 6773613622."
+                      value={transactionMessage}
+                      onChange={(e) => setTransactionMessage(e.target.value)}
+                      className="min-h-[100px] text-sm font-mono"
+                    />
+                    <p className="text-xs text-muted-foreground">
+                      Copiez l'intégralité du SMS de confirmation reçu après la transaction
+                    </p>
+                  </div>
+                )}
               </div>
 
-              <div className="bg-destructive/10 border border-destructive/20 rounded-lg p-4">
-                <p className="text-sm font-semibold text-destructive mb-1">Important</p>
-                <p className="text-sm text-muted-foreground">
-                  Assurez-vous d'avoir bien effectué le paiement avant de valider. 
-                  Les fausses déclarations peuvent entraîner le blocage de votre compte.
+              <div className="bg-amber-50 dark:bg-amber-950/20 border border-amber-200 dark:border-amber-800 rounded-lg p-4">
+                <p className="text-sm font-semibold text-amber-800 dark:text-amber-200 mb-1">🤖 Vérification IA</p>
+                <p className="text-sm text-amber-700 dark:text-amber-300">
+                  Votre preuve sera automatiquement vérifiée par notre système d'intelligence artificielle. 
+                  Les transactions frauduleuses seront rejetées et peuvent entraîner le blocage du compte.
                 </p>
               </div>
 
@@ -161,7 +291,7 @@ const PaymentModal = ({ total, onClose, onComplete }: PaymentModalProps) => {
                   Retour
                 </Button>
                 <Button className="flex-1" onClick={handleValidateTransaction}>
-                  Valider
+                  Soumettre pour vérification
                 </Button>
               </div>
             </div>
@@ -176,7 +306,7 @@ const PaymentModal = ({ total, onClose, onComplete }: PaymentModalProps) => {
                 </div>
                 <h3 className="text-lg font-semibold mb-2">Paiement validé !</h3>
                 <p className="text-sm text-muted-foreground">
-                  Transaction ID: <span className="font-mono font-semibold">{transactionId}</span>
+                  Votre preuve a été soumise et est en cours de vérification par notre IA.
                 </p>
               </div>
 
