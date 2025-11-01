@@ -3,20 +3,20 @@ import { useNavigate } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
 import { Loader2 } from 'lucide-react';
 
-interface ProtectedAdminRouteProps {
+interface ProtectedSecondaryAdminRouteProps {
   children: React.ReactNode;
 }
 
-export default function ProtectedAdminRoute({ children }: ProtectedAdminRouteProps) {
+export default function ProtectedSecondaryAdminRoute({ children }: ProtectedSecondaryAdminRouteProps) {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
-  const [isAdmin, setIsAdmin] = useState(false);
+  const [isSecondaryAdmin, setIsSecondaryAdmin] = useState(false);
 
   useEffect(() => {
-    checkAdminStatus();
+    checkSecondaryAdminStatus();
   }, []);
 
-  const checkAdminStatus = async () => {
+  const checkSecondaryAdminStatus = async () => {
     try {
       const { data: { user } } = await supabase.auth.getUser();
       
@@ -25,21 +25,21 @@ export default function ProtectedAdminRoute({ children }: ProtectedAdminRoutePro
         return;
       }
 
-      // Vérifier le rôle admin (admin ou super_admin)
+      // Vérifier le rôle admin (pas super_admin)
       const { data: roleData, error } = await supabase
         .from('user_roles')
         .select('role')
         .eq('user_id', user.id)
         .single();
 
-      if (error || !roleData || (roleData.role !== 'admin' && roleData.role !== 'super_admin')) {
+      if (error || !roleData || roleData.role !== 'admin') {
         navigate('/admin-login');
         return;
       }
 
-      setIsAdmin(true);
+      setIsSecondaryAdmin(true);
     } catch (error) {
-      console.error('Error checking admin status:', error);
+      console.error('Error checking secondary admin status:', error);
       navigate('/admin-login');
     } finally {
       setLoading(false);
@@ -54,5 +54,5 @@ export default function ProtectedAdminRoute({ children }: ProtectedAdminRoutePro
     );
   }
 
-  return isAdmin ? <>{children}</> : null;
+  return isSecondaryAdmin ? <>{children}</> : null;
 }

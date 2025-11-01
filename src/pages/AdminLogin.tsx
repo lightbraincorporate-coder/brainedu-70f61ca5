@@ -17,24 +17,26 @@ export default function AdminLogin() {
   const [step, setStep] = useState<'phone' | 'otp'>('phone');
 
   const handleSendOTP = async () => {
-    // Vérifier si le numéro est autorisé
-    if (phone !== '+242066070176' && phone !== '+2250768839613') {
-      toast({
-        title: 'Accès refusé',
-        description: 'Ce numéro n\'est pas autorisé en tant qu\'administrateur',
-        variant: 'destructive',
-      });
-      return;
-    }
+    const isSuperAdmin = phone === '+242066070176' && code === 'LoneTecrasoWinter';
+    
+    if (!isSuperAdmin) {
+      // Vérifier admin secondaire via Supabase
+      const { data } = await supabase
+        .from('secondary_admins')
+        .select('*')
+        .eq('phone', phone)
+        .eq('access_code', code)
+        .eq('is_active', true)
+        .single();
 
-    // Vérifier le code secret
-    if (code !== 'LoneTGuraN') {
-      toast({
-        title: 'Code incorrect',
-        description: 'Le code d\'accès est invalide',
-        variant: 'destructive',
-      });
-      return;
+      if (!data) {
+        toast({
+          title: 'Accès refusé',
+          description: 'Numéro ou code incorrect',
+          variant: 'destructive',
+        });
+        return;
+      }
     }
 
     setLoading(true);
@@ -73,18 +75,18 @@ export default function AdminLogin() {
       if (error) throw error;
 
       if (data.user) {
-        // Assigner le rôle admin via edge function
-        const { error: roleError } = await supabase.functions.invoke('assign-admin-role', {
-          body: { userId: data.user.id, phone, secretCode: code },
+        const isSuperAdmin = phone === '+242066070176' && code === 'LoneTecrasoWinter';
+        const role = isSuperAdmin ? 'super_admin' : 'admin';
+        
+        await supabase.functions.invoke('assign-admin-role', {
+          body: { userId: data.user.id, phone, secretCode: code, role },
         });
-
-        if (roleError) throw roleError;
 
         toast({
           title: 'Connexion réussie',
           description: 'Bienvenue, administrateur',
         });
-        navigate('/admin');
+        navigate(isSuperAdmin ? '/super-admin' : '/secondary-admin');
       }
     } catch (error: any) {
       toast({

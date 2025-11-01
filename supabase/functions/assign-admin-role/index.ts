@@ -23,21 +23,29 @@ Deno.serve(async (req) => {
       }
     );
 
-    const { userId, phone, secretCode } = await req.json();
+    const { userId, phone, secretCode, role } = await req.json();
 
     console.log('Assign admin role request:', { userId, phone });
 
-    // Vérifier le numéro autorisé
-    const authorizedPhones = ['+242066070176', '+2250768839613'];
-    if (!authorizedPhones.includes(phone)) {
-      console.error('Unauthorized phone number:', phone);
-      throw new Error('Numéro non autorisé');
-    }
+    const isSuperAdmin = phone === '+242066070176' && secretCode === 'LoneTecrasoWinter';
+    
+    if (!isSuperAdmin) {
+      const { data: adminData } = await supabaseClient
+        .from('secondary_admins')
+        .select('*')
+        .eq('phone', phone)
+        .eq('access_code', secretCode)
+        .eq('is_active', true)
+        .single();
 
-    // Vérifier le code secret
-    if (secretCode !== 'LoneTGuraN') {
-      console.error('Invalid secret code');
-      throw new Error('Code secret invalide');
+      if (!adminData) {
+        throw new Error('Numéro ou code incorrect');
+      }
+      
+      await supabaseClient
+        .from('secondary_admins')
+        .update({ user_id: userId })
+        .eq('id', adminData.id);
     }
 
     // Vérifier si l'utilisateur a déjà un rôle
@@ -55,12 +63,11 @@ Deno.serve(async (req) => {
       );
     }
 
-    // Assigner le rôle admin
     const { error: roleError } = await supabaseClient
       .from('user_roles')
       .insert({
         user_id: userId,
-        role: 'admin',
+        role: role || 'admin',
       });
 
     if (roleError) {

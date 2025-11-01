@@ -3,20 +3,20 @@ import { useNavigate } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
 import { Loader2 } from 'lucide-react';
 
-interface ProtectedAdminRouteProps {
+interface ProtectedSuperAdminRouteProps {
   children: React.ReactNode;
 }
 
-export default function ProtectedAdminRoute({ children }: ProtectedAdminRouteProps) {
+export default function ProtectedSuperAdminRoute({ children }: ProtectedSuperAdminRouteProps) {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
-  const [isAdmin, setIsAdmin] = useState(false);
+  const [isSuperAdmin, setIsSuperAdmin] = useState(false);
 
   useEffect(() => {
-    checkAdminStatus();
+    checkSuperAdminStatus();
   }, []);
 
-  const checkAdminStatus = async () => {
+  const checkSuperAdminStatus = async () => {
     try {
       const { data: { user } } = await supabase.auth.getUser();
       
@@ -25,21 +25,21 @@ export default function ProtectedAdminRoute({ children }: ProtectedAdminRoutePro
         return;
       }
 
-      // Vérifier le rôle admin (admin ou super_admin)
+      // Vérifier le rôle super_admin
       const { data: roleData, error } = await supabase
         .from('user_roles')
         .select('role')
         .eq('user_id', user.id)
         .single();
 
-      if (error || !roleData || (roleData.role !== 'admin' && roleData.role !== 'super_admin')) {
+      if (error || !roleData || roleData.role !== 'super_admin') {
         navigate('/admin-login');
         return;
       }
 
-      setIsAdmin(true);
+      setIsSuperAdmin(true);
     } catch (error) {
-      console.error('Error checking admin status:', error);
+      console.error('Error checking super admin status:', error);
       navigate('/admin-login');
     } finally {
       setLoading(false);
@@ -54,5 +54,5 @@ export default function ProtectedAdminRoute({ children }: ProtectedAdminRoutePro
     );
   }
 
-  return isAdmin ? <>{children}</> : null;
+  return isSuperAdmin ? <>{children}</> : null;
 }

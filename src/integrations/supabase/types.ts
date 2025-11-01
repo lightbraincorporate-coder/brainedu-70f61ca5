@@ -56,6 +56,119 @@ export type Database = {
         }
         Relationships: []
       }
+      payment_proofs: {
+        Row: {
+          amount: number
+          assigned_admin_id: string | null
+          country: string
+          created_at: string | null
+          id: string
+          payment_platform: string
+          proof_data: string
+          proof_type: string
+          status: string | null
+          user_id: string
+          validated_at: string | null
+          validated_by: string | null
+        }
+        Insert: {
+          amount: number
+          assigned_admin_id?: string | null
+          country: string
+          created_at?: string | null
+          id?: string
+          payment_platform: string
+          proof_data: string
+          proof_type: string
+          status?: string | null
+          user_id: string
+          validated_at?: string | null
+          validated_by?: string | null
+        }
+        Update: {
+          amount?: number
+          assigned_admin_id?: string | null
+          country?: string
+          created_at?: string | null
+          id?: string
+          payment_platform?: string
+          proof_data?: string
+          proof_type?: string
+          status?: string | null
+          user_id?: string
+          validated_at?: string | null
+          validated_by?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "payment_proofs_assigned_admin_id_fkey"
+            columns: ["assigned_admin_id"]
+            isOneToOne: false
+            referencedRelation: "secondary_admins"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      secondary_admins: {
+        Row: {
+          access_code: string
+          country: string
+          created_at: string | null
+          created_by: string
+          id: string
+          is_active: boolean | null
+          payment_number: string
+          payment_platform: string
+          phone: string
+          user_id: string
+        }
+        Insert: {
+          access_code: string
+          country: string
+          created_at?: string | null
+          created_by: string
+          id?: string
+          is_active?: boolean | null
+          payment_number: string
+          payment_platform: string
+          phone: string
+          user_id: string
+        }
+        Update: {
+          access_code?: string
+          country?: string
+          created_at?: string | null
+          created_by?: string
+          id?: string
+          is_active?: boolean | null
+          payment_number?: string
+          payment_platform?: string
+          phone?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      super_admin_backup: {
+        Row: {
+          created_at: string | null
+          created_by: string
+          id: string
+          phone: string
+        }
+        Insert: {
+          created_at?: string | null
+          created_by: string
+          id?: string
+          phone: string
+        }
+        Update: {
+          created_at?: string | null
+          created_by?: string
+          id?: string
+          phone?: string
+        }
+        Relationships: []
+      }
       user_roles: {
         Row: {
           created_at: string | null
