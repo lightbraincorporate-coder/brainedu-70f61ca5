@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { X, CreditCard, Check, Smartphone, Upload, FileText, Hash, Camera } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -6,7 +6,9 @@ import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Textarea } from '@/components/ui/textarea';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { toast } from 'sonner';
+import { supabase } from '@/integrations/supabase/client';
 
 interface PaymentModalProps {
   total: number;
@@ -14,21 +16,62 @@ interface PaymentModalProps {
   onComplete: () => void;
 }
 
+const AFRICAN_COUNTRIES = [
+  "Afrique du Sud", "Algérie", "Angola", "Bénin", "Botswana", "Burkina Faso", "Burundi",
+  "Cameroun", "Cap-Vert", "Comores", "Congo", "Côte d'Ivoire", "Djibouti", "Égypte",
+  "Érythrée", "Eswatini", "Éthiopie", "Gabon", "Gambie", "Ghana", "Guinée", "Guinée-Bissau",
+  "Guinée équatoriale", "Kenya", "Lesotho", "Libéria", "Libye", "Madagascar", "Malawi",
+  "Mali", "Maroc", "Maurice", "Mauritanie", "Mozambique", "Namibie", "Niger", "Nigeria",
+  "Ouganda", "RD Congo", "Rwanda", "Sao Tomé-et-Principe", "Sénégal", "Seychelles",
+  "Sierra Leone", "Somalie", "Soudan", "Soudan du Sud", "Tanzanie", "Tchad", "Togo",
+  "Tunisie", "Zambie", "Zimbabwe"
+];
+
+const PAYMENT_PLATFORMS = [
+  "MTN Mobile Money",
+  "Airtel Money",
+  "Orange Money",
+  "Moov Money",
+  "Wave",
+  "Flooz",
+  "M-Pesa",
+  "Ecobank Mobile",
+  "UBA Mobile"
+];
+
 const PaymentModal = ({ total, onClose, onComplete }: PaymentModalProps) => {
   const [step, setStep] = useState(1);
-  const [paymentMethod, setPaymentMethod] = useState('moov');
+  const [country, setCountry] = useState('');
+  const [paymentPlatform, setPaymentPlatform] = useState('');
+  const [paymentNumber, setPaymentNumber] = useState('');
   const [validationMethod, setValidationMethod] = useState<'id' | 'screenshot' | 'message'>('id');
   const [transactionId, setTransactionId] = useState('');
   const [transactionMessage, setTransactionMessage] = useState('');
   const [screenshot, setScreenshot] = useState<File | null>(null);
   const [format, setFormat] = useState('pdf');
 
-  const paymentMethods = [
-    { id: 'mobile', name: 'Mobile Money', number: '+242 065 012 967', code: '*105#' },
-    { id: 'airtel', name: 'Airtel Money', number: '+242 056 094 492', code: '*128#' },
-    { id: 'wave', name: 'Wave', number: '+225 [à compléter]', code: 'App Wave' },
-    { id: 'moov', name: 'Moov Money', number: '+225 [à compléter]', code: 'App Moov' }
-  ];
+  useEffect(() => {
+    if (country && paymentPlatform) {
+      loadPaymentNumber();
+    }
+  }, [country, paymentPlatform]);
+
+  const loadPaymentNumber = async () => {
+    const { data } = await supabase
+      .from('secondary_admins')
+      .select('payment_number')
+      .eq('country', country)
+      .eq('payment_platform', paymentPlatform)
+      .eq('is_active', true)
+      .single();
+
+    if (data) {
+      setPaymentNumber(data.payment_number);
+    } else {
+      setPaymentNumber('');
+      toast.error('Aucun administrateur disponible pour ce pays et cette plateforme');
+    }
+  };
 
   const formats = [
     { id: 'pdf', name: 'PDF', desc: 'Recommandé' },
@@ -36,15 +79,19 @@ const PaymentModal = ({ total, onClose, onComplete }: PaymentModalProps) => {
     { id: 'txt', name: 'TXT', desc: 'Texte simple' }
   ];
 
-  const handlePaymentMethodSelect = () => {
-    if (!paymentMethod) {
-      toast.error('Veuillez sélectionner un mode de paiement');
+  const handleCountryPlatformSelect = () => {
+    if (!country || !paymentPlatform) {
+      toast.error('Veuillez sélectionner un pays et une plateforme');
+      return;
+    }
+    if (!paymentNumber) {
+      toast.error('Aucun numéro de paiement disponible pour cette configuration');
       return;
     }
     setStep(2);
   };
 
-  const handleValidateTransaction = () => {
+  const handleValidateTransaction = async () => {
     if (validationMethod === 'id') {
       if (!transactionId.trim()) {
         toast.error('Veuillez entrer votre ID de transaction');
@@ -68,13 +115,77 @@ const PaymentModal = ({ total, onClose, onComplete }: PaymentModalProps) => {
         toast.error('Veuillez coller le message de transaction');
         return;
       }
-      // Vérifier que le message contient les éléments clés
       if (!transactionMessage.includes('ID:') || !transactionMessage.includes('FCFA')) {
         toast.error('Le message ne semble pas être un message de transaction valide');
         return;
       }
     }
     
+    // Trouver l'admin assigné
+    const { data: adminData } = await supabase
+      .from('secondary_admins')
+      .select('id')
+      .eq('country', country)
+      .eq('payment_platform', paymentPlatform)
+      .eq('is_active', true)
+      .single();
+
+    if (!adminData) {
+      toast.error('Erreur: administrateur non trouvé');
+      return;
+    }
+
+    // Créer la preuve de paiement
+    const { data: { user } } = await supabase.auth.getUser();
+    
+    let proofData = '';
+    let proofType = '';
+    
+    if (validationMethod === 'id') {
+      proofData = transactionId;
+      proofType = 'transaction_id';
+    } else if (validationMethod === 'message') {
+      proofData = transactionMessage;
+      proofType = 'message';
+    } else if (screenshot) {
+      // Upload screenshot to storage
+      const fileName = `${user?.id}_${Date.now()}_${screenshot.name}`;
+      const { data: uploadData, error: uploadError } = await supabase.storage
+        .from('payment-proofs')
+        .upload(fileName, screenshot);
+
+      if (uploadError) {
+        toast.error('Erreur lors de l\'upload de l\'image');
+        return;
+      }
+      
+      const { data: { publicUrl } } = supabase.storage
+        .from('payment-proofs')
+        .getPublicUrl(fileName);
+      
+      proofData = publicUrl;
+      proofType = 'screenshot';
+    }
+
+    const { error: insertError } = await supabase
+      .from('payment_proofs')
+      .insert({
+        user_id: user?.id || 'anonymous',
+        assigned_admin_id: adminData.id,
+        amount: total,
+        payment_platform: paymentPlatform,
+        country: country,
+        proof_type: proofType,
+        proof_data: proofData,
+        status: 'pending'
+      });
+
+    if (insertError) {
+      toast.error('Erreur lors de l\'enregistrement de la preuve');
+      console.error(insertError);
+      return;
+    }
+
     toast.info('Votre preuve est en cours de vérification par notre système IA...');
     setStep(3);
   };
@@ -104,31 +215,51 @@ const PaymentModal = ({ total, onClose, onComplete }: PaymentModalProps) => {
           </Button>
         </CardHeader>
         <CardContent className="pt-6">
-          {/* Step 1: Payment Method */}
+          {/* Step 1: Country and Payment Platform Selection */}
           {step === 1 && (
             <div className="space-y-6 animate-fade-in">
               <div>
-                <h3 className="text-lg font-semibold mb-4">Choisissez votre mode de paiement</h3>
-                <RadioGroup value={paymentMethod} onValueChange={setPaymentMethod}>
-                  <div className="space-y-3">
-                    {paymentMethods.map((method) => (
-                      <div key={method.id} className="flex items-center space-x-3 border rounded-lg p-4 hover:bg-accent cursor-pointer">
-                        <RadioGroupItem value={method.id} id={method.id} />
-                        <Label htmlFor={method.id} className="flex-1 cursor-pointer">
-                          <div className="flex flex-col gap-1">
-                            <span className="font-medium">{method.name}</span>
-                            <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                              <span className="font-mono">{method.code}</span>
-                              <span>•</span>
-                              <span>{method.number}</span>
-                            </div>
-                          </div>
-                        </Label>
-                        <Smartphone className="w-5 h-5 text-muted-foreground" />
-                      </div>
-                    ))}
+                <h3 className="text-lg font-semibold mb-4">Choisissez votre pays et mode de paiement</h3>
+                
+                <div className="space-y-4">
+                  <div>
+                    <Label>Pays</Label>
+                    <Select value={country} onValueChange={setCountry}>
+                      <SelectTrigger>
+                        <SelectValue placeholder="Sélectionner votre pays" />
+                      </SelectTrigger>
+                      <SelectContent className="max-h-[300px]">
+                        {AFRICAN_COUNTRIES.map((c) => (
+                          <SelectItem key={c} value={c}>{c}</SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
                   </div>
-                </RadioGroup>
+
+                  <div>
+                    <Label>Plateforme de paiement</Label>
+                    <Select value={paymentPlatform} onValueChange={setPaymentPlatform}>
+                      <SelectTrigger>
+                        <SelectValue placeholder="Sélectionner une plateforme" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        {PAYMENT_PLATFORMS.map((p) => (
+                          <SelectItem key={p} value={p}>{p}</SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                  </div>
+
+                  {paymentNumber && (
+                    <div className="bg-primary/10 rounded-lg p-4 border border-primary/20">
+                      <Label className="text-sm font-medium mb-2 block">Numéro de paiement</Label>
+                      <div className="flex items-center gap-2">
+                        <Smartphone className="w-5 h-5 text-primary" />
+                        <span className="text-lg font-mono font-semibold">{paymentNumber}</span>
+                      </div>
+                    </div>
+                  )}
+                </div>
               </div>
 
               <div className="bg-muted rounded-lg p-4">
@@ -137,14 +268,14 @@ const PaymentModal = ({ total, onClose, onComplete }: PaymentModalProps) => {
                   Instructions de paiement
                 </h4>
                 <ol className="text-sm text-muted-foreground space-y-1 list-decimal list-inside">
-                  <li>Composez le code USSD de votre service (affiché ci-dessus)</li>
-                  <li>Envoyez {total} F CFA au numéro indiqué pour le service choisi</li>
+                  <li>Sélectionnez votre pays et votre plateforme de paiement</li>
+                  <li>Envoyez {total} F CFA au numéro indiqué ci-dessus</li>
                   <li>Notez bien votre ID de transaction reçu par SMS</li>
                   <li>Revenez ici pour valider votre paiement</li>
                 </ol>
               </div>
 
-              <Button size="lg" className="w-full" onClick={handlePaymentMethodSelect}>
+              <Button size="lg" className="w-full" onClick={handleCountryPlatformSelect}>
                 Continuer
               </Button>
             </div>
@@ -156,7 +287,7 @@ const PaymentModal = ({ total, onClose, onComplete }: PaymentModalProps) => {
               <div>
                 <h3 className="text-lg font-semibold mb-4">Validez votre paiement</h3>
                 <p className="text-sm text-muted-foreground mb-4">
-                  Après avoir effectué le paiement via {paymentMethods.find(m => m.id === paymentMethod)?.name}, 
+                  Après avoir effectué le paiement via {paymentPlatform} au numéro {paymentNumber}, 
                   choisissez comment vous souhaitez prouver votre transaction.
                 </p>
                 

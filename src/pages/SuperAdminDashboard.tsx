@@ -20,6 +20,7 @@ export default function SuperAdminDashboard() {
   const [paymentProofs, setPaymentProofs] = useState<any[]>([]);
   const [backupPhone, setBackupPhone] = useState('');
   const [stats, setStats] = useState<any>({});
+  const [pendingCount, setPendingCount] = useState(0);
 
   // État pour l'ajout d'admin secondaire
   const [newAdmin, setNewAdmin] = useState({
@@ -34,6 +35,28 @@ export default function SuperAdminDashboard() {
     loadSecondaryAdmins();
     loadPaymentProofs();
     loadStats();
+
+    // Écouter les nouveaux paiements en temps réel
+    const channel = supabase
+      .channel('payment-proofs-changes')
+      .on(
+        'postgres_changes',
+        {
+          event: 'INSERT',
+          schema: 'public',
+          table: 'payment_proofs'
+        },
+        () => {
+          loadPaymentProofs();
+          loadStats();
+          toast({ title: "Nouveau paiement", description: "Un nouveau paiement nécessite validation" });
+        }
+      )
+      .subscribe();
+
+    return () => {
+      supabase.removeChannel(channel);
+    };
   }, []);
 
   const loadSecondaryAdmins = async () => {
@@ -59,6 +82,8 @@ export default function SuperAdminDashboard() {
       toast({ title: "Erreur", description: error.message, variant: "destructive" });
     } else {
       setPaymentProofs(data || []);
+      const pending = data?.filter(p => p.status === 'pending').length || 0;
+      setPendingCount(pending);
     }
   };
 
@@ -206,7 +231,15 @@ export default function SuperAdminDashboard() {
           <TabsList className="grid w-full grid-cols-5">
             <TabsTrigger value="admins"><Users className="mr-2 h-4 w-4" />Admins</TabsTrigger>
             <TabsTrigger value="files"><FileUp className="mr-2 h-4 w-4" />Fichiers</TabsTrigger>
-            <TabsTrigger value="payments"><CheckCircle className="mr-2 h-4 w-4" />Paiements</TabsTrigger>
+            <TabsTrigger value="payments" className="relative">
+              <CheckCircle className="mr-2 h-4 w-4" />
+              Paiements
+              {pendingCount > 0 && (
+                <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                  {pendingCount}
+                </span>
+              )}
+            </TabsTrigger>
             <TabsTrigger value="backup"><Shield className="mr-2 h-4 w-4" />Secours</TabsTrigger>
             <TabsTrigger value="stats"><Users className="mr-2 h-4 w-4" />Statistiques</TabsTrigger>
           </TabsList>
@@ -247,28 +280,88 @@ export default function SuperAdminDashboard() {
                         placeholder="Code secret"
                       />
                     </div>
-                    <div>
-                      <Label>Pays</Label>
-                      <Input
-                        value={newAdmin.country}
-                        onChange={(e) => setNewAdmin({ ...newAdmin, country: e.target.value })}
-                        placeholder="Congo, Cameroun..."
-                      />
-                    </div>
-                    <div>
-                      <Label>Plateforme de paiement</Label>
-                      <Select value={newAdmin.paymentPlatform} onValueChange={(value) => setNewAdmin({ ...newAdmin, paymentPlatform: value })}>
-                        <SelectTrigger>
-                          <SelectValue placeholder="Sélectionner" />
-                        </SelectTrigger>
-                        <SelectContent>
-                          <SelectItem value="MTN">MTN Mobile Money</SelectItem>
-                          <SelectItem value="Airtel">Airtel Money</SelectItem>
-                          <SelectItem value="Moov">Moov Money</SelectItem>
-                          <SelectItem value="Wave">Wave</SelectItem>
-                        </SelectContent>
-                      </Select>
-                    </div>
+                     <div>
+                       <Label>Pays</Label>
+                       <Select value={newAdmin.country} onValueChange={(value) => setNewAdmin({ ...newAdmin, country: value })}>
+                         <SelectTrigger>
+                           <SelectValue placeholder="Sélectionner un pays" />
+                         </SelectTrigger>
+                         <SelectContent className="max-h-[300px]">
+                           <SelectItem value="Afrique du Sud">Afrique du Sud</SelectItem>
+                           <SelectItem value="Algérie">Algérie</SelectItem>
+                           <SelectItem value="Angola">Angola</SelectItem>
+                           <SelectItem value="Bénin">Bénin</SelectItem>
+                           <SelectItem value="Botswana">Botswana</SelectItem>
+                           <SelectItem value="Burkina Faso">Burkina Faso</SelectItem>
+                           <SelectItem value="Burundi">Burundi</SelectItem>
+                           <SelectItem value="Cameroun">Cameroun</SelectItem>
+                           <SelectItem value="Cap-Vert">Cap-Vert</SelectItem>
+                           <SelectItem value="Comores">Comores</SelectItem>
+                           <SelectItem value="Congo">Congo</SelectItem>
+                           <SelectItem value="Côte d'Ivoire">Côte d'Ivoire</SelectItem>
+                           <SelectItem value="Djibouti">Djibouti</SelectItem>
+                           <SelectItem value="Égypte">Égypte</SelectItem>
+                           <SelectItem value="Érythrée">Érythrée</SelectItem>
+                           <SelectItem value="Eswatini">Eswatini</SelectItem>
+                           <SelectItem value="Éthiopie">Éthiopie</SelectItem>
+                           <SelectItem value="Gabon">Gabon</SelectItem>
+                           <SelectItem value="Gambie">Gambie</SelectItem>
+                           <SelectItem value="Ghana">Ghana</SelectItem>
+                           <SelectItem value="Guinée">Guinée</SelectItem>
+                           <SelectItem value="Guinée-Bissau">Guinée-Bissau</SelectItem>
+                           <SelectItem value="Guinée équatoriale">Guinée équatoriale</SelectItem>
+                           <SelectItem value="Kenya">Kenya</SelectItem>
+                           <SelectItem value="Lesotho">Lesotho</SelectItem>
+                           <SelectItem value="Libéria">Libéria</SelectItem>
+                           <SelectItem value="Libye">Libye</SelectItem>
+                           <SelectItem value="Madagascar">Madagascar</SelectItem>
+                           <SelectItem value="Malawi">Malawi</SelectItem>
+                           <SelectItem value="Mali">Mali</SelectItem>
+                           <SelectItem value="Maroc">Maroc</SelectItem>
+                           <SelectItem value="Maurice">Maurice</SelectItem>
+                           <SelectItem value="Mauritanie">Mauritanie</SelectItem>
+                           <SelectItem value="Mozambique">Mozambique</SelectItem>
+                           <SelectItem value="Namibie">Namibie</SelectItem>
+                           <SelectItem value="Niger">Niger</SelectItem>
+                           <SelectItem value="Nigeria">Nigeria</SelectItem>
+                           <SelectItem value="Ouganda">Ouganda</SelectItem>
+                           <SelectItem value="RD Congo">RD Congo</SelectItem>
+                           <SelectItem value="Rwanda">Rwanda</SelectItem>
+                           <SelectItem value="Sao Tomé-et-Principe">Sao Tomé-et-Principe</SelectItem>
+                           <SelectItem value="Sénégal">Sénégal</SelectItem>
+                           <SelectItem value="Seychelles">Seychelles</SelectItem>
+                           <SelectItem value="Sierra Leone">Sierra Leone</SelectItem>
+                           <SelectItem value="Somalie">Somalie</SelectItem>
+                           <SelectItem value="Soudan">Soudan</SelectItem>
+                           <SelectItem value="Soudan du Sud">Soudan du Sud</SelectItem>
+                           <SelectItem value="Tanzanie">Tanzanie</SelectItem>
+                           <SelectItem value="Tchad">Tchad</SelectItem>
+                           <SelectItem value="Togo">Togo</SelectItem>
+                           <SelectItem value="Tunisie">Tunisie</SelectItem>
+                           <SelectItem value="Zambie">Zambie</SelectItem>
+                           <SelectItem value="Zimbabwe">Zimbabwe</SelectItem>
+                         </SelectContent>
+                       </Select>
+                     </div>
+                     <div>
+                       <Label>Plateforme de paiement</Label>
+                       <Select value={newAdmin.paymentPlatform} onValueChange={(value) => setNewAdmin({ ...newAdmin, paymentPlatform: value })}>
+                         <SelectTrigger>
+                           <SelectValue placeholder="Sélectionner" />
+                         </SelectTrigger>
+                         <SelectContent>
+                           <SelectItem value="MTN Mobile Money">MTN Mobile Money</SelectItem>
+                           <SelectItem value="Airtel Money">Airtel Money</SelectItem>
+                           <SelectItem value="Orange Money">Orange Money</SelectItem>
+                           <SelectItem value="Moov Money">Moov Money</SelectItem>
+                           <SelectItem value="Wave">Wave</SelectItem>
+                           <SelectItem value="Flooz">Flooz</SelectItem>
+                           <SelectItem value="M-Pesa">M-Pesa</SelectItem>
+                           <SelectItem value="Ecobank Mobile">Ecobank Mobile</SelectItem>
+                           <SelectItem value="UBA Mobile">UBA Mobile</SelectItem>
+                         </SelectContent>
+                       </Select>
+                     </div>
                     <div>
                       <Label>Numéro de paiement</Label>
                       <Input
@@ -297,27 +390,30 @@ export default function SuperAdminDashboard() {
                       </TableRow>
                     </TableHeader>
                     <TableBody>
-                      {secondaryAdmins.map((admin) => (
-                        <TableRow key={admin.id}>
-                          <TableCell>{admin.phone}</TableCell>
-                          <TableCell>{admin.country}</TableCell>
-                          <TableCell>{admin.payment_platform}</TableCell>
-                          <TableCell>
-                            <Badge variant={admin.is_active ? "default" : "secondary"}>
-                              {admin.is_active ? "Actif" : "Inactif"}
-                            </Badge>
-                          </TableCell>
-                          <TableCell>
-                            <Button
-                              variant="destructive"
-                              size="sm"
-                              onClick={() => handleRemoveAdmin(admin.id)}
-                            >
-                              <Trash2 className="h-4 w-4" />
-                            </Button>
-                          </TableCell>
-                        </TableRow>
-                      ))}
+                       {secondaryAdmins.map((admin) => {
+                         const maskedPhone = `+××× ×××${admin.phone.slice(-4)}`;
+                         return (
+                           <TableRow key={admin.id}>
+                             <TableCell>{maskedPhone}</TableCell>
+                             <TableCell>{admin.country}</TableCell>
+                             <TableCell>{admin.payment_platform}</TableCell>
+                             <TableCell>
+                               <Badge variant={admin.is_active ? "default" : "secondary"}>
+                                 {admin.is_active ? "Actif" : "Inactif"}
+                               </Badge>
+                             </TableCell>
+                             <TableCell>
+                               <Button
+                                 variant="destructive"
+                                 size="sm"
+                                 onClick={() => handleRemoveAdmin(admin.id)}
+                               >
+                                 <Trash2 className="h-4 w-4" />
+                               </Button>
+                             </TableCell>
+                           </TableRow>
+                         );
+                       })}
                     </TableBody>
                   </Table>
                 </div>
@@ -440,17 +536,20 @@ export default function SuperAdminDashboard() {
                       <TableHead>Paiements validés</TableHead>
                     </TableRow>
                   </TableHeader>
-                  <TableBody>
-                    {Object.entries(stats).map(([adminId, data]: [string, any]) => (
-                      <TableRow key={adminId}>
-                        <TableCell>{data.phone}</TableCell>
-                        <TableCell>{data.country}</TableCell>
-                        <TableCell>
-                          <Badge>{data.count}</Badge>
-                        </TableCell>
-                      </TableRow>
-                    ))}
-                  </TableBody>
+                   <TableBody>
+                     {Object.entries(stats).map(([adminId, data]: [string, any]) => {
+                       const maskedPhone = data.phone ? `+××× ×××${data.phone.slice(-4)}` : 'N/A';
+                       return (
+                         <TableRow key={adminId}>
+                           <TableCell>{maskedPhone}</TableCell>
+                           <TableCell>{data.country}</TableCell>
+                           <TableCell>
+                             <Badge>{data.count}</Badge>
+                           </TableCell>
+                         </TableRow>
+                       );
+                     })}
+                   </TableBody>
                 </Table>
               </CardContent>
             </Card>

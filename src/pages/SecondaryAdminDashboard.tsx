@@ -15,11 +15,44 @@ export default function SecondaryAdminDashboard() {
   const [paymentProofs, setPaymentProofs] = useState<any[]>([]);
   const [stats, setStats] = useState({ approved: 0, pending: 0, rejected: 0 });
   const [adminInfo, setAdminInfo] = useState<any>(null);
+  const [pendingCount, setPendingCount] = useState(0);
 
   useEffect(() => {
     loadAdminInfo();
     loadPaymentProofs();
     loadStats();
+
+    // Écouter les nouveaux paiements en temps réel
+    const channel = supabase
+      .channel('secondary-admin-payments')
+      .on(
+        'postgres_changes',
+        {
+          event: 'INSERT',
+          schema: 'public',
+          table: 'payment_proofs'
+        },
+        async (payload) => {
+          const { data: { user } } = await supabase.auth.getUser();
+          const { data: adminData } = await supabase
+            .from('secondary_admins')
+            .select('id, country')
+            .eq('user_id', user?.id)
+            .single();
+
+          // Vérifier si le paiement est pour ce pays
+          if (adminData && payload.new.country === adminData.country) {
+            loadPaymentProofs();
+            loadStats();
+            toast({ title: "Nouveau paiement", description: "Un nouveau paiement nécessite validation" });
+          }
+        }
+      )
+      .subscribe();
+
+    return () => {
+      supabase.removeChannel(channel);
+    };
   }, []);
 
   const loadAdminInfo = async () => {
@@ -58,6 +91,8 @@ export default function SecondaryAdminDashboard() {
         toast({ title: "Erreur", description: error.message, variant: "destructive" });
       } else {
         setPaymentProofs(data || []);
+        const pending = data?.filter(p => p.status === 'pending').length || 0;
+        setPendingCount(pending);
       }
     }
   };
@@ -155,7 +190,15 @@ export default function SecondaryAdminDashboard() {
 
         <Tabs defaultValue="payments" className="space-y-6">
           <TabsList className="grid w-full grid-cols-2">
-            <TabsTrigger value="payments"><CheckCircle className="mr-2 h-4 w-4" />Paiements</TabsTrigger>
+            <TabsTrigger value="payments" className="relative">
+              <CheckCircle className="mr-2 h-4 w-4" />
+              Paiements
+              {pendingCount > 0 && (
+                <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                  {pendingCount}
+                </span>
+              )}
+            </TabsTrigger>
             <TabsTrigger value="files"><FileUp className="mr-2 h-4 w-4" />Fichiers</TabsTrigger>
           </TabsList>
 

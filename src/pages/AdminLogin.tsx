@@ -12,75 +12,63 @@ export default function AdminLogin() {
   const { toast } = useToast();
   const [phone, setPhone] = useState('');
   const [code, setCode] = useState('');
-  const [otp, setOtp] = useState('');
   const [loading, setLoading] = useState(false);
-  const [step, setStep] = useState<'phone' | 'otp'>('phone');
 
-  const handleSendOTP = async () => {
-    const isSuperAdmin = phone === '+242066070176' && code === 'LoneTecrasoWinter';
-    
-    if (!isSuperAdmin) {
-      // Vérifier admin secondaire via Supabase
-      const { data } = await supabase
-        .from('secondary_admins')
-        .select('*')
-        .eq('phone', phone)
-        .eq('access_code', code)
-        .eq('is_active', true)
-        .single();
+  const handleLogin = async () => {
+    setLoading(true);
+    try {
+      const isSuperAdmin = phone === '+242066070176' && code === 'LoneTecrasoWinter';
+      
+      let adminData = null;
+      if (!isSuperAdmin) {
+        // Vérifier admin secondaire via Supabase
+        const { data } = await supabase
+          .from('secondary_admins')
+          .select('*')
+          .eq('phone', phone)
+          .eq('access_code', code)
+          .eq('is_active', true)
+          .single();
 
-      if (!data) {
-        toast({
-          title: 'Accès refusé',
-          description: 'Numéro ou code incorrect',
-          variant: 'destructive',
-        });
-        return;
+        if (!data) {
+          toast({
+            title: 'Accès refusé',
+            description: 'Numéro ou code incorrect',
+            variant: 'destructive',
+          });
+          return;
+        }
+        adminData = data;
       }
-    }
 
-    setLoading(true);
-    try {
-      const { error } = await supabase.auth.signInWithOtp({
-        phone,
+      // Créer ou obtenir un compte anonyme pour cet admin
+      const { data: { user }, error: signInError } = await supabase.auth.signInAnonymously({
+        options: {
+          data: {
+            phone: phone,
+            admin_code: code,
+            is_super_admin: isSuperAdmin
+          }
+        }
       });
 
-      if (error) throw error;
+      if (signInError) throw signInError;
 
-      toast({
-        title: 'Code envoyé',
-        description: 'Un code de vérification a été envoyé à votre téléphone',
-      });
-      setStep('otp');
-    } catch (error: any) {
-      toast({
-        title: 'Erreur',
-        description: error.message,
-        variant: 'destructive',
-      });
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const handleVerifyOTP = async () => {
-    setLoading(true);
-    try {
-      const { data, error } = await supabase.auth.verifyOtp({
-        phone,
-        token: otp,
-        type: 'sms',
-      });
-
-      if (error) throw error;
-
-      if (data.user) {
-        const isSuperAdmin = phone === '+242066070176' && code === 'LoneTecrasoWinter';
+      if (user) {
         const role = isSuperAdmin ? 'super_admin' : 'admin';
         
+        // Assigner le rôle
         await supabase.functions.invoke('assign-admin-role', {
-          body: { userId: data.user.id, phone, secretCode: code, role },
+          body: { userId: user.id, phone, secretCode: code, role },
         });
+
+        // Mettre à jour l'user_id de l'admin secondaire si nécessaire
+        if (adminData) {
+          await supabase
+            .from('secondary_admins')
+            .update({ user_id: user.id })
+            .eq('id', adminData.id);
+        }
 
         toast({
           title: 'Connexion réussie',
@@ -91,7 +79,7 @@ export default function AdminLogin() {
     } catch (error: any) {
       toast({
         title: 'Erreur',
-        description: error.message,
+        description: error.message || 'Erreur de connexion',
         variant: 'destructive',
       });
     } finally {
@@ -120,77 +108,40 @@ export default function AdminLogin() {
             </p>
           </div>
 
-          {step === 'phone' ? (
-            <div className="space-y-4">
-              <div>
-                <label className="block text-sm font-medium mb-2">
-                  Numéro de téléphone
-                </label>
-                <Input
-                  type="tel"
-                  placeholder="+242066070176"
-                  value={phone}
-                  onChange={(e) => setPhone(e.target.value)}
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium mb-2">
-                  Code d'accès secret
-                </label>
-                <Input
-                  type="password"
-                  placeholder="Entrez le code d'accès"
-                  value={code}
-                  onChange={(e) => setCode(e.target.value)}
-                />
-              </div>
-
-              <Button
-                onClick={handleSendOTP}
-                disabled={loading || !phone || !code}
-                className="w-full"
-                size="lg"
-              >
-                {loading ? 'Envoi...' : 'Envoyer le code de vérification'}
-              </Button>
+          <div className="space-y-4">
+            <div>
+              <label className="block text-sm font-medium mb-2">
+                Numéro de téléphone
+              </label>
+              <Input
+                type="tel"
+                placeholder="+242066070176"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+              />
             </div>
-          ) : (
-            <div className="space-y-4">
-              <div>
-                <label className="block text-sm font-medium mb-2">
-                  Code de vérification
-                </label>
-                <Input
-                  type="text"
-                  placeholder="000000"
-                  value={otp}
-                  onChange={(e) => setOtp(e.target.value)}
-                  maxLength={6}
-                />
-                <p className="text-sm text-muted-foreground mt-2">
-                  Entrez le code reçu par SMS
-                </p>
-              </div>
 
-              <Button
-                onClick={handleVerifyOTP}
-                disabled={loading || otp.length !== 6}
-                className="w-full"
-                size="lg"
-              >
-                {loading ? 'Vérification...' : 'Vérifier et se connecter'}
-              </Button>
-
-              <Button
-                variant="ghost"
-                onClick={() => setStep('phone')}
-                className="w-full"
-              >
-                Retour
-              </Button>
+            <div>
+              <label className="block text-sm font-medium mb-2">
+                Code d'accès secret
+              </label>
+              <Input
+                type="password"
+                placeholder="Entrez le code d'accès"
+                value={code}
+                onChange={(e) => setCode(e.target.value)}
+              />
             </div>
-          )}
+
+            <Button
+              onClick={handleLogin}
+              disabled={loading || !phone || !code}
+              className="w-full"
+              size="lg"
+            >
+              {loading ? 'Connexion...' : 'Se connecter'}
+            </Button>
+          </div>
         </Card>
       </div>
     </div>
