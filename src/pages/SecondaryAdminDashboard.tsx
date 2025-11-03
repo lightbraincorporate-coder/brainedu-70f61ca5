@@ -190,7 +190,7 @@ export default function SecondaryAdminDashboard() {
 
         <Tabs defaultValue="payments" className="space-y-6">
           <TabsList className="grid w-full grid-cols-2">
-            <TabsTrigger value="payments" className="relative">
+            <TabsTrigger value="payments" className="relative" onClick={(e) => e.preventDefault()}>
               <CheckCircle className="mr-2 h-4 w-4" />
               Paiements
               {pendingCount > 0 && (
@@ -199,7 +199,7 @@ export default function SecondaryAdminDashboard() {
                 </span>
               )}
             </TabsTrigger>
-            <TabsTrigger value="files"><FileUp className="mr-2 h-4 w-4" />Fichiers</TabsTrigger>
+            <TabsTrigger value="files" onClick={(e) => e.preventDefault()}><FileUp className="mr-2 h-4 w-4" />Fichiers</TabsTrigger>
           </TabsList>
 
           <TabsContent value="payments">

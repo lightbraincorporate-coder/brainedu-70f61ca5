@@ -229,9 +229,9 @@ export default function SuperAdminDashboard() {
       <main className="container mx-auto px-4 py-8">
         <Tabs defaultValue="admins" className="space-y-6">
           <TabsList className="grid w-full grid-cols-5">
-            <TabsTrigger value="admins"><Users className="mr-2 h-4 w-4" />Admins</TabsTrigger>
-            <TabsTrigger value="files"><FileUp className="mr-2 h-4 w-4" />Fichiers</TabsTrigger>
-            <TabsTrigger value="payments" className="relative">
+            <TabsTrigger value="admins" onClick={(e) => e.preventDefault()}><Users className="mr-2 h-4 w-4" />Admins</TabsTrigger>
+            <TabsTrigger value="files" onClick={(e) => e.preventDefault()}><FileUp className="mr-2 h-4 w-4" />Fichiers</TabsTrigger>
+            <TabsTrigger value="payments" className="relative" onClick={(e) => e.preventDefault()}>
               <CheckCircle className="mr-2 h-4 w-4" />
               Paiements
               {pendingCount > 0 && (
@@ -240,8 +240,8 @@ export default function SuperAdminDashboard() {
                 </span>
               )}
             </TabsTrigger>
-            <TabsTrigger value="backup"><Shield className="mr-2 h-4 w-4" />Secours</TabsTrigger>
-            <TabsTrigger value="stats"><Users className="mr-2 h-4 w-4" />Statistiques</TabsTrigger>
+            <TabsTrigger value="backup" onClick={(e) => e.preventDefault()}><Shield className="mr-2 h-4 w-4" />Secours</TabsTrigger>
+            <TabsTrigger value="stats" onClick={(e) => e.preventDefault()}><Users className="mr-2 h-4 w-4" />Statistiques</TabsTrigger>
           </TabsList>
 
           <TabsContent value="admins">
