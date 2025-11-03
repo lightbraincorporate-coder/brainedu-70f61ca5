@@ -11,6 +11,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { LogOut, UserPlus, Users, FileUp, Shield, CheckCircle, XCircle, Trash2 } from 'lucide-react';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { Badge } from '@/components/ui/badge';
+import { maskPhone } from '@/lib/phoneUtils';
+import { encryptPaymentDetails, decryptPaymentDetails } from '@/lib/encryption';
 
 export default function SuperAdminDashboard() {
   const navigate = useNavigate();
@@ -122,6 +124,9 @@ export default function SuperAdminDashboard() {
     setLoading(true);
     const { data: { user } } = await supabase.auth.getUser();
 
+    // Chiffrer les détails de paiement
+    const encryptedPaymentNumber = encryptPaymentDetails(newAdmin.paymentNumber);
+
     const { error } = await supabase
       .from('secondary_admins')
       .insert({
@@ -129,9 +134,9 @@ export default function SuperAdminDashboard() {
         access_code: newAdmin.accessCode,
         country: newAdmin.country,
         payment_platform: newAdmin.paymentPlatform,
-        payment_number: newAdmin.paymentNumber,
+        payment_number: encryptedPaymentNumber,
         created_by: user?.id,
-        user_id: user?.id // Temporaire jusqu'à ce que l'admin se connecte
+        user_id: user?.id
       });
 
     setLoading(false);
@@ -391,10 +396,11 @@ export default function SuperAdminDashboard() {
                     </TableHeader>
                     <TableBody>
                        {secondaryAdmins.map((admin) => {
-                         const maskedPhone = `+××× ×××${admin.phone.slice(-4)}`;
+                         const maskedPhoneDisplay = maskPhone(admin.phone);
+                         const decryptedPaymentNumber = decryptPaymentDetails(admin.payment_number);
                          return (
                            <TableRow key={admin.id}>
-                             <TableCell>{maskedPhone}</TableCell>
+                             <TableCell>{maskedPhoneDisplay}</TableCell>
                              <TableCell>{admin.country}</TableCell>
                              <TableCell>{admin.payment_platform}</TableCell>
                              <TableCell>
@@ -538,10 +544,10 @@ export default function SuperAdminDashboard() {
                   </TableHeader>
                    <TableBody>
                      {Object.entries(stats).map(([adminId, data]: [string, any]) => {
-                       const maskedPhone = data.phone ? `+××× ×××${data.phone.slice(-4)}` : 'N/A';
+                       const maskedPhoneDisplay = data.phone ? maskPhone(data.phone) : 'N/A';
                        return (
                          <TableRow key={adminId}>
-                           <TableCell>{maskedPhone}</TableCell>
+                           <TableCell>{maskedPhoneDisplay}</TableCell>
                            <TableCell>{data.country}</TableCell>
                            <TableCell>
                              <Badge>{data.count}</Badge>

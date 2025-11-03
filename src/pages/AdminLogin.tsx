@@ -6,6 +6,8 @@ import { Card } from '@/components/ui/card';
 import { useToast } from '@/hooks/use-toast';
 import { Shield, ArrowLeft } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { decodeCaesar, ENCODED_SUPER_ADMIN_CODE, ENCODED_SUPER_ADMIN_PHONE } from '@/lib/caesarCipher';
+import { phoneToEmail } from '@/lib/phoneUtils';
 
 export default function AdminLogin() {
   const navigate = useNavigate();
@@ -17,7 +19,9 @@ export default function AdminLogin() {
   const handleLogin = async () => {
     setLoading(true);
     try {
-      const isSuperAdmin = phone === '+242066070176' && code === 'LoneTecrasoWinter';
+      // Vérifier si c'est le super admin (code encodé)
+      const decodedSuperAdminCode = decodeCaesar(ENCODED_SUPER_ADMIN_CODE);
+      const isSuperAdmin = phone === ENCODED_SUPER_ADMIN_PHONE && code === decodedSuperAdminCode;
       
       let adminData = null;
       if (!isSuperAdmin) {
@@ -41,18 +45,34 @@ export default function AdminLogin() {
         adminData = data;
       }
 
-      // Créer ou obtenir un compte anonyme pour cet admin
-      const { data: { user }, error: signInError } = await supabase.auth.signInAnonymously({
-        options: {
-          data: {
-            phone: phone,
-            admin_code: code,
-            is_super_admin: isSuperAdmin
-          }
-        }
+      // Générer l'email à partir du téléphone
+      const email = phoneToEmail(phone);
+      const password = code;
+
+      // Tenter de se connecter avec le compte existant
+      let { data: { user }, error: signInError } = await supabase.auth.signInWithPassword({
+        email,
+        password,
       });
 
-      if (signInError) throw signInError;
+      // Si le compte n'existe pas, le créer
+      if (signInError && signInError.message.includes('Invalid login credentials')) {
+        const { data: signUpData, error: signUpError } = await supabase.auth.signUp({
+          email,
+          password,
+          options: {
+            data: {
+              phone: phone,
+              is_super_admin: isSuperAdmin
+            }
+          }
+        });
+
+        if (signUpError) throw signUpError;
+        user = signUpData.user;
+      } else if (signInError) {
+        throw signInError;
+      }
 
       if (user) {
         const role = isSuperAdmin ? 'super_admin' : 'admin';
