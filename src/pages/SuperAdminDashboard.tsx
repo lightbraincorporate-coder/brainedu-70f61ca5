@@ -13,6 +13,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@
 import { Badge } from '@/components/ui/badge';
 import { maskPhone } from '@/lib/phoneUtils';
 import { encryptPaymentDetails, decryptPaymentDetails } from '@/lib/encryption';
+import { useAirtableSync } from '@/hooks/useAirtableSync';
 
 export default function SuperAdminDashboard() {
   const navigate = useNavigate();
@@ -164,8 +165,17 @@ export default function SuperAdminDashboard() {
     }
   };
 
+  const { syncPaymentValidation } = useAirtableSync();
+
   const handleValidatePayment = async (proofId: string, status: 'approved' | 'rejected') => {
     const { data: { user } } = await supabase.auth.getUser();
+
+    // Get payment proof details first
+    const { data: paymentProof } = await supabase
+      .from('payment_proofs')
+      .select('*')
+      .eq('id', proofId)
+      .single();
 
     const { error } = await supabase
       .from('payment_proofs')
@@ -180,6 +190,25 @@ export default function SuperAdminDashboard() {
       toast({ title: "Erreur", description: error.message, variant: "destructive" });
     } else {
       toast({ title: "Succès", description: `Paiement ${status === 'approved' ? 'validé' : 'refusé'}` });
+      
+      // Sync to Airtable if approved
+      if (status === 'approved' && paymentProof) {
+        try {
+          await syncPaymentValidation({
+            user_id: paymentProof.user_id,
+            amount: paymentProof.amount,
+            country: paymentProof.country,
+            payment_platform: paymentProof.payment_platform,
+            validated_by: user?.id,
+            validated_at: new Date().toISOString()
+          });
+          console.log('Paiement synchronisé avec Airtable');
+        } catch (err) {
+          console.error('Erreur de synchronisation Airtable:', err);
+          // Don't show error to user, just log it
+        }
+      }
+      
       loadPaymentProofs();
       loadStats();
     }
