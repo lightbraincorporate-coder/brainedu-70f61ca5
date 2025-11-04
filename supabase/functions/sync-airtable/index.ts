@@ -8,6 +8,14 @@ const corsHeaders = {
 const AIRTABLE_API_KEY = Deno.env.get('AIRTABLE_API_KEY')!
 const AIRTABLE_BASE_ID = 'appBW99WIVu9ZUami'
 
+// Correct table names
+const TABLES = {
+  USERS: 'users',
+  PAYMENTS: 'payments',
+  COURSES: 'courses',
+  EXERCISES: 'exercises'
+}
+
 interface AirtableRecord {
   fields: Record<string, any>
 }
@@ -58,38 +66,56 @@ Deno.serve(async (req) => {
 
     switch (type) {
       case 'payment_validated':
-        // Synchroniser le paiement validé
-        result = await sendToAirtable('paiements', {
+        // Sync validated payment
+        result = await sendToAirtable(TABLES.PAYMENTS, {
           fields: {
             'User ID': data.user_id,
-            'Montant': data.amount,
-            'Pays': data.country,
-            'Plateforme': data.payment_platform,
-            'Statut': 'Validé',
-            'Date de validation': data.validated_at || new Date().toISOString(),
-            'Validé par': data.validated_by,
+            'Amount': data.amount,
+            'Country': data.country,
+            'Platform': data.payment_platform,
+            'Status': 'Approved',
+            'Validated At': data.validated_at || new Date().toISOString(),
+            'Validated By': data.validated_by,
           }
         })
         console.log('Payment synced to Airtable:', result)
         break
 
       case 'new_user':
-        // Créer un nouvel utilisateur
-        result = await sendToAirtable('utilisateurs', {
+        // Create new user
+        result = await sendToAirtable(TABLES.USERS, {
           fields: {
             'User ID': data.user_id,
-            'Téléphone': data.phone || '',
+            'Phone': data.phone || '',
             'Email': data.email || '',
-            'Date inscription': new Date().toISOString(),
-            'Statut compte': data.is_premium ? 'Premium' : 'Gratuit',
+            'Registration Date': new Date().toISOString(),
+            'Account Status': data.is_premium ? 'Premium' : 'Free',
           }
         })
         console.log('User synced to Airtable:', result)
         break
 
+      case 'course_added':
+        // Sync course to Airtable
+        result = await sendToAirtable(TABLES.COURSES, {
+          fields: {
+            'Course ID': data.id,
+            'Level': data.level,
+            'Class': data.class_name,
+            'Subject': data.subject,
+            'Trimester': data.trimester || '',
+            'Course Name': data.course_name,
+            'File Type': data.file_type,
+            'Format': data.file_format,
+            'Google Drive Link': data.google_drive_link || '',
+            'Created At': data.created_at,
+          }
+        })
+        console.log('Course synced to Airtable:', result)
+        break
+
       case 'download_request':
-        // Préparer le téléchargement depuis Google Drive
-        // Les liens Google Drive doivent être publics
+        // Prepare download from Google Drive
         result = {
           message: 'Download ready',
           download_url: data.google_drive_link,

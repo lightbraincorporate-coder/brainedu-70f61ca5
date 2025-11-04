@@ -22,6 +22,7 @@ export type Database = {
           file_format: string
           file_path: string
           file_type: string
+          google_drive_link: string | null
           id: string
           level: string
           subject: string
@@ -35,6 +36,7 @@ export type Database = {
           file_format: string
           file_path: string
           file_type: string
+          google_drive_link?: string | null
           id?: string
           level: string
           subject: string
@@ -48,6 +50,7 @@ export type Database = {
           file_format?: string
           file_path?: string
           file_type?: string
+          google_drive_link?: string | null
           id?: string
           level?: string
           subject?: string
@@ -105,6 +108,41 @@ export type Database = {
             columns: ["assigned_admin_id"]
             isOneToOne: false
             referencedRelation: "secondary_admins"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      premium_users: {
+        Row: {
+          activated_at: string | null
+          expires_at: string | null
+          id: string
+          is_active: boolean | null
+          payment_proof_id: string | null
+          user_id: string
+        }
+        Insert: {
+          activated_at?: string | null
+          expires_at?: string | null
+          id?: string
+          is_active?: boolean | null
+          payment_proof_id?: string | null
+          user_id: string
+        }
+        Update: {
+          activated_at?: string | null
+          expires_at?: string | null
+          id?: string
+          is_active?: boolean | null
+          payment_proof_id?: string | null
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "premium_users_payment_proof_id_fkey"
+            columns: ["payment_proof_id"]
+            isOneToOne: false
+            referencedRelation: "payment_proofs"
             referencedColumns: ["id"]
           },
         ]
@@ -168,6 +206,38 @@ export type Database = {
           phone?: string
         }
         Relationships: []
+      }
+      user_downloads: {
+        Row: {
+          download_count: number | null
+          downloaded_at: string | null
+          file_id: string
+          id: string
+          user_id: string
+        }
+        Insert: {
+          download_count?: number | null
+          downloaded_at?: string | null
+          file_id: string
+          id?: string
+          user_id: string
+        }
+        Update: {
+          download_count?: number | null
+          downloaded_at?: string | null
+          file_id?: string
+          id?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "user_downloads_file_id_fkey"
+            columns: ["file_id"]
+            isOneToOne: false
+            referencedRelation: "course_files"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       user_roles: {
         Row: {

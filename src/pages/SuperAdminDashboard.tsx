@@ -194,6 +194,26 @@ export default function SuperAdminDashboard() {
       // Sync to Airtable if approved
       if (status === 'approved' && paymentProof) {
         try {
+          // Activate premium account
+          const { error: premiumError } = await supabase
+            .from('premium_users')
+            .upsert({
+              user_id: paymentProof.user_id,
+              payment_proof_id: proofId,
+              is_active: true,
+              activated_at: new Date().toISOString(),
+              expires_at: null, // Lifetime access
+            }, {
+              onConflict: 'user_id'
+            });
+
+          if (premiumError) {
+            console.error('Premium activation error:', premiumError);
+          } else {
+            console.log('Compte Premium activé');
+          }
+
+          // Sync to Airtable
           await syncPaymentValidation({
             user_id: paymentProof.user_id,
             amount: paymentProof.amount,
@@ -204,8 +224,7 @@ export default function SuperAdminDashboard() {
           });
           console.log('Paiement synchronisé avec Airtable');
         } catch (err) {
-          console.error('Erreur de synchronisation Airtable:', err);
-          // Don't show error to user, just log it
+          console.error('Erreur de synchronisation:', err);
         }
       }
       

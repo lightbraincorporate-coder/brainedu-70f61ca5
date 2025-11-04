@@ -40,6 +40,7 @@ export default function Admin() {
     courseName: '',
     fileType: '' as 'cours' | 'resume' | 'exercices' | '',
     fileFormat: '' as 'pdf' | 'epub' | 'txt' | '',
+    googleDriveLink: '',
   });
   
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
@@ -58,16 +59,16 @@ export default function Admin() {
   };
 
   const handleUpload = async () => {
-    if (!selectedFile) {
+    if (!selectedFile && !formData.googleDriveLink) {
       toast({
         title: 'Erreur',
-        description: 'Veuillez sélectionner un fichier',
+        description: 'Veuillez sélectionner un fichier OU fournir un lien Google Drive',
         variant: 'destructive',
       });
       return;
     }
 
-    const { level, className, subject, trimester, courseName, fileType, fileFormat } = formData;
+    const { level, className, subject, trimester, courseName, fileType, fileFormat, googleDriveLink } = formData;
     
     if (!level || !className || !subject || !courseName || !fileType || !fileFormat) {
       toast({
@@ -99,7 +100,7 @@ export default function Admin() {
       if (uploadError) throw uploadError;
 
       // Save metadata to database
-      const { error: dbError } = await supabase
+      const { data: courseData, error: dbError } = await supabase
         .from('course_files')
         .insert({
           level,
@@ -109,10 +110,28 @@ export default function Admin() {
           course_name: courseName,
           file_type: fileType,
           file_path: filePath,
-          file_format: fileFormat
-        });
+          file_format: fileFormat,
+          google_drive_link: googleDriveLink || null
+        })
+        .select()
+        .single();
 
       if (dbError) throw dbError;
+
+      // Sync to Airtable
+      if (courseData) {
+        try {
+          await supabase.functions.invoke('sync-airtable', {
+            body: { 
+              type: 'course_added', 
+              data: courseData
+            }
+          });
+          console.log('Course synced to Airtable');
+        } catch (err) {
+          console.error('Airtable sync error:', err);
+        }
+      }
 
       toast({
         title: 'Succès',
@@ -128,6 +147,7 @@ export default function Admin() {
         courseName: '',
         fileType: '',
         fileFormat: '',
+        googleDriveLink: '',
       });
       setSelectedFile(null);
       
@@ -265,7 +285,19 @@ export default function Admin() {
             </div>
 
             <div>
-              <label className="block text-sm font-medium mb-2">Fichier</label>
+              <label className="block text-sm font-medium mb-2">Lien Google Drive (optionnel)</label>
+              <Input
+                value={formData.googleDriveLink}
+                onChange={(e) => setFormData(prev => ({ ...prev, googleDriveLink: e.target.value }))}
+                placeholder="https://drive.google.com/file/d/..."
+              />
+              <p className="text-xs text-muted-foreground mt-1">
+                Si fourni, le téléchargement se fera depuis Google Drive
+              </p>
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium mb-2">Fichier (optionnel si lien Google Drive fourni)</label>
               <Input
                 id="file-upload"
                 type="file"

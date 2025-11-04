@@ -36,6 +36,10 @@ export const useAirtableSync = () => {
     return syncToAirtable('new_user', userData);
   };
 
+  const syncCourse = async (courseData: any) => {
+    return syncToAirtable('course_added', courseData);
+  };
+
   const prepareDownload = async (downloadData: any) => {
     return syncToAirtable('download_request', downloadData);
   };
@@ -43,6 +47,7 @@ export const useAirtableSync = () => {
   return {
     syncPaymentValidation,
     syncNewUser,
+    syncCourse,
     prepareDownload,
   };
 };
