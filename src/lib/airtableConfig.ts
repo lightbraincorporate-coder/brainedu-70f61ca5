@@ -2,10 +2,13 @@
 export const AIRTABLE_CONFIG = {
   BASE_ID: 'appBW99WIVu9ZUami',
   TABLES: {
-    USERS: 'utilisateurs',
-    PAYMENTS: 'paiements',
-    COURSES: 'cours',
-    EXERCISES: 'exercices'
+    USERS: 'users',
+    PAYMENTS: 'payments',
+    COURSES: 'courses',
+    COURSE_RESUMES: 'course_resumes',
+    EXPOSES: 'exposes',
+    EXERCISES: 'exercises',
+    CORRECTED_EXERCISES: 'corrected_exercises'
   }
 };
 
