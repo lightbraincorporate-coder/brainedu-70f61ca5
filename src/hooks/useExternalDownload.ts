@@ -1,4 +1,4 @@
-import { externalSupabase } from "@/integrations/supabase/external-client";
+import { supabase } from "@/integrations/supabase/external-client";
 import { useToast } from "@/hooks/use-toast";
 
 export const useExternalDownload = () => {
@@ -7,7 +7,7 @@ export const useExternalDownload = () => {
   const downloadFile = async (fileId: string, googleDriveLink: string) => {
     try {
       // Check if user is authenticated
-      const { data: { user } } = await externalSupabase.auth.getUser();
+      const { data: { user } } = await supabase.auth.getUser();
       
       if (!user) {
         toast({
@@ -19,7 +19,7 @@ export const useExternalDownload = () => {
       }
 
       // Check if user has premium access
-      const { data: premiumData, error: premiumError } = await externalSupabase
+      const { data: premiumData, error: premiumError } = await supabase
         .from('premium_users')
         .select('*')
         .eq('user_id', user.id)
@@ -42,7 +42,7 @@ export const useExternalDownload = () => {
       }
 
       // Track download in database
-      const { error: downloadError } = await externalSupabase
+      const { error: downloadError } = await supabase
         .from('user_downloads')
         .insert({
           user_id: user.id,

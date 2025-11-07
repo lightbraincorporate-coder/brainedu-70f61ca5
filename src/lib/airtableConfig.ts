@@ -5,14 +5,11 @@ export const AIRTABLE_CONFIG = {
     USERS: 'users',
     PAYMENTS: 'payments',
     COURSES: 'courses',
-    COURSE_RESUMES: 'course_resumes',
-    EXPOSES: 'exposes',
-    EXERCISES: 'exercises',
-    CORRECTED_EXERCISES: 'corrected_exercises'
+    EXERCISES: 'exercises'
   }
 };
 
-// Helper pour converter les données vers Airtable
+// Helper pour convertir les données vers Airtable
 export const formatPaymentForAirtable = (payment: any) => ({
   fields: {
     'User ID': payment.user_id,

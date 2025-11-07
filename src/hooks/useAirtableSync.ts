@@ -1,4 +1,4 @@
-import { externalSupabase } from "@/integrations/supabase/external-client";
+import { supabase } from "@/integrations/supabase/external-client";
 import { useToast } from "@/hooks/use-toast";
 
 export const useAirtableSync = () => {
@@ -6,7 +6,7 @@ export const useAirtableSync = () => {
 
   const syncToAirtable = async (type: string, data: any) => {
     try {
-      const { data: result, error } = await externalSupabase.functions.invoke('sync-airtable', {
+      const { data: result, error } = await supabase.functions.invoke('sync-airtable', {
         body: { type, data }
       });
 
