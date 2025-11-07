@@ -12,25 +12,40 @@ export const AIRTABLE_CONFIG = {
   }
 };
 
-// Helper pour convertir les données de BrainEdu vers Airtable
+// Helper pour converter les données vers Airtable
 export const formatPaymentForAirtable = (payment: any) => ({
   fields: {
     'User ID': payment.user_id,
-    'Montant': payment.amount,
-    'Pays': payment.country,
-    'Plateforme': payment.payment_platform,
-    'Statut': 'Validé',
-    'Date de validation': payment.validated_at,
-    'Validé par': payment.validated_by,
+    'Amount': payment.amount,
+    'Country': payment.country,
+    'Platform': payment.payment_platform,
+    'Status': 'Approved',
+    'Validated At': payment.validated_at,
+    'Validated By': payment.validated_by,
   }
 });
 
 export const formatUserForAirtable = (user: any) => ({
   fields: {
     'User ID': user.user_id,
-    'Téléphone': user.phone || '',
+    'Phone': user.phone || '',
     'Email': user.email || '',
-    'Date inscription': new Date().toISOString(),
-    'Statut compte': user.is_premium ? 'Premium' : 'Gratuit',
+    'Registration Date': new Date().toISOString(),
+    'Account Status': user.is_premium ? 'Premium' : 'Free',
+  }
+});
+
+export const formatCourseForAirtable = (course: any) => ({
+  fields: {
+    'Course ID': course.id,
+    'Level': course.level,
+    'Class': course.class_name,
+    'Subject': course.subject,
+    'Trimester': course.trimester || '',
+    'Course Name': course.course_name,
+    'File Type': course.file_type,
+    'Format': course.file_format,
+    'Google Drive Link': course.google_drive_link || '',
+    'Created At': course.created_at || new Date().toISOString(),
   }
 });
