@@ -161,6 +161,7 @@ export const coursesBySubject: Record<string, Record<string, string[]>> = {
     'Trimestre 2': ['Citoyenneté et engagement'],
     'Trimestre 3': ['Les enjeux du développement durable']
   },
+
   'Mathématiques-6ème': {
     'Trimestre 1': ['Nombres décimaux', 'Opérations de base'],
     'Trimestre 2': ['Fractions simples', 'Géométrie : droites, angles'],
@@ -301,7 +302,98 @@ export const coursesBySubject: Record<string, Record<string, string[]>> = {
     'Trimestre 2': ['Sports collectifs : volley-ball'],
     'Trimestre 3': ['Préparation physique au brevet']
   },
-  // Série C - Mathématiques
+
+  'Français-2nde A': {
+    'Trimestre 1': ['Le roman et le récit', 'Grammaire : analyse de la phrase', 'Étude d\'œuvres littéraires'],
+    'Trimestre 2': ['La poésie classique', 'L\'argumentation', 'Techniques de dissertation'],
+    'Trimestre 3': ['Le théâtre', 'Commentaire de texte', 'Expression écrite']
+  },
+  'Français-1ère A': {
+    'Trimestre 1': ['Le roman du XIXe siècle', 'Commentaire composé', 'Les figures de style'],
+    'Trimestre 2': ['La poésie moderne', 'L\'essai littéraire', 'Dissertation littéraire'],
+    'Trimestre 3': ['Le théâtre contemporain', 'Techniques d\'écriture', 'Analyse stylistique']
+  },
+  'Français-Terminale A': {
+    'Trimestre 1': ['Littérature du XXe siècle', 'Dissertation philosophique', 'Analyse critique'],
+    'Trimestre 2': ['Le récit moderne', 'L\'autobiographie', 'Techniques argumentatives'],
+    'Trimestre 3': ['Préparation au BAC', 'Synthèse littéraire', 'Commentaire composé avancé']
+  },
+  'Philosophie-2nde A': {
+    'Trimestre 1': ['Introduction à la réflexion philosophique', 'Qu\'est-ce que philosopher?', 'Les grands courants'],
+    'Trimestre 2': ['La conscience de soi', 'La perception', 'Le langage'],
+    'Trimestre 3': ['La culture', 'L\'art', 'La technique']
+  },
+  'Philosophie-1ère A': {
+    'Trimestre 1': ['La conscience', 'L\'inconscient', 'Autrui'],
+    'Trimestre 2': ['Le désir', 'L\'existence et le temps', 'La liberté'],
+    'Trimestre 3': ['Le devoir', 'Le bonheur', 'La morale']
+  },
+  'Philosophie-Terminale A': {
+    'Trimestre 1': ['La vérité', 'La raison et le réel', 'Théorie et expérience'],
+    'Trimestre 2': ['La démonstration', 'L\'interprétation', 'Le vivant'],
+    'Trimestre 3': ['La matière et l\'esprit', 'La société', 'La justice et le droit']
+  },
+  'Histoire-Géo-2nde A': {
+    'Trimestre 1': ['L\'Europe et le monde au XIXe siècle', 'La Révolution industrielle'],
+    'Trimestre 2': ['Les grandes puissances européennes', 'Géographie : population mondiale'],
+    'Trimestre 3': ['Les transformations sociales', 'Développement durable']
+  },
+  'Histoire-Géo-1ère A': {
+    'Trimestre 1': ['La Première Guerre mondiale', 'La Révolution russe'],
+    'Trimestre 2': ['L\'entre-deux-guerres', 'Géographie : mondialisation'],
+    'Trimestre 3': ['La Seconde Guerre mondiale', 'Les enjeux énergétiques']
+  },
+  'Histoire-Géo-Terminale A': {
+    'Trimestre 1': ['La Guerre froide', 'Décolonisation'],
+    'Trimestre 2': ['Le monde depuis 1991', 'Géographie : puissances mondiales'],
+    'Trimestre 3': ['Les conflits contemporains', 'L\'Afrique dans le monde']
+  },
+  'Mathématiques-2nde A': {
+    'Trimestre 1': ['Fonctions numériques', 'Équations du premier degré'],
+    'Trimestre 2': ['Statistiques descriptives', 'Géométrie plane'],
+    'Trimestre 3': ['Proportionnalité', 'Trigonométrie de base']
+  },
+  'Mathématiques-1ère A': {
+    'Trimestre 1': ['Suites numériques', 'Fonctions de référence'],
+    'Trimestre 2': ['Dérivation', 'Probabilités'],
+    'Trimestre 3': ['Statistiques', 'Géométrie analytique']
+  },
+  'Mathématiques-Terminale A': {
+    'Trimestre 1': ['Fonctions logarithmes', 'Primitives'],
+    'Trimestre 2': ['Intégrales', 'Probabilités conditionnelles'],
+    'Trimestre 3': ['Suites et limites', 'Préparation au BAC']
+  },
+  'Anglais-2nde A': {
+    'Trimestre 1': ['Grammar fundamentals', 'Reading comprehension', 'Vocabulary building'],
+    'Trimestre 2': ['Writing skills', 'Oral expression', 'British culture'],
+    'Trimestre 3': ['Literature introduction', 'Debate and discussion', 'American culture']
+  },
+  'Anglais-1ère A': {
+    'Trimestre 1': ['Advanced grammar', 'Essay writing', 'Literary analysis'],
+    'Trimestre 2': ['British literature', 'Argumentation', 'Translation'],
+    'Trimestre 3': ['American literature', 'Presentation skills', 'Critical thinking']
+  },
+  'Anglais-Terminale A': {
+    'Trimestre 1': ['Literary criticism', 'Advanced writing', 'Shakespeare studies'],
+    'Trimestre 2': ['Contemporary issues', 'Debate preparation', 'Poetry analysis'],
+    'Trimestre 3': ['BAC preparation', 'Public speaking', 'Cultural studies']
+  },
+  'Espagnol-2nde A': {
+    'Trimestre 1': ['Gramática básica', 'Comprensión lectora', 'Vocabulario cotidiano'],
+    'Trimestre 2': ['Expresión escrita', 'Conversación', 'Cultura hispana'],
+    'Trimestre 3': ['Literatura introducción', 'Debate', 'Civilización española']
+  },
+  'Espagnol-1ère A': {
+    'Trimestre 1': ['Gramática avanzada', 'Redacción', 'Literatura española'],
+    'Trimestre 2': ['Argumentación', 'Literatura latinoamericana', 'Traducción'],
+    'Trimestre 3': ['Análisis literario', 'Presentaciones', 'Cultura contemporánea']
+  },
+  'Espagnol-Terminale A': {
+    'Trimestre 1': ['Crítica literaria', 'Escritura avanzada', 'Cervantes'],
+    'Trimestre 2': ['Temas contemporáneos', 'Debate avanzado', 'Poesía'],
+    'Trimestre 3': ['Preparación BAC', 'Expresión oral', 'Estudios culturales']
+  },
+
   'Mathématiques-2nde C': {
     'Trimestre 1': ['Ensembles et applications', 'Nombres et calculs'],
     'Trimestre 2': ['Fonctions numériques', 'Géométrie analytique'],
@@ -317,8 +409,6 @@ export const coursesBySubject: Record<string, Record<string, string[]>> = {
     'Trimestre 2': ['Équations différentielles', 'Nombres complexes avancés'],
     'Trimestre 3': ['Calcul intégral', 'Probabilités continues']
   },
-  
-  // Série C - Physique-Chimie
   'Physique-Chimie-2nde C': {
     'Trimestre 1': ['Mécanique : cinématique', 'Électricité : circuits'],
     'Trimestre 2': ['Optique géométrique', 'Chimie : atome et molécule'],
@@ -334,8 +424,6 @@ export const coursesBySubject: Record<string, Record<string, string[]>> = {
     'Trimestre 2': ['Ondes et vibrations', 'Chimie : acides et bases'],
     'Trimestre 3': ['Physique nucléaire', 'Chimie organique avancée']
   },
-
-  // Série C - SVT
   'SVT-2nde C': {
     'Trimestre 1': ['La cellule', 'Organisation du vivant'],
     'Trimestre 2': ['Nutrition et métabolisme', 'Génétique de base'],
@@ -351,8 +439,6 @@ export const coursesBySubject: Record<string, Record<string, string[]>> = {
     'Trimestre 2': ['Neurobiologie', 'Géologie : magmatisme'],
     'Trimestre 3': ['Biotechnologies', 'Enjeux environnementaux']
   },
-
-  // Série C - Français
   'Français-2nde C': {
     'Trimestre 1': ['Le roman et le récit', 'Grammaire avancée'],
     'Trimestre 2': ['La poésie', 'L\'argumentation'],
@@ -363,20 +449,16 @@ export const coursesBySubject: Record<string, Record<string, string[]>> = {
     'Trimestre 2': ['La poésie moderne', 'L\'essai'],
     'Trimestre 3': ['Le théâtre contemporain', 'Techniques d\'écriture']
   },
-
-  // Série C - Philosophie
   'Philosophie-1ère C': {
     'Trimestre 1': ['Introduction à la philosophie', 'La conscience'],
     'Trimestre 2': ['La perception', 'Autrui'],
     'Trimestre 3': ['Le désir', 'L\'existence']
   },
-  'Philosophie-Terminale C': {
+'Philosophie-Terminale C': {
     'Trimestre 1': ['La vérité', 'La raison et le réel'],
     'Trimestre 2': ['La morale', 'La liberté'],
     'Trimestre 3': ['Le devoir', 'La politique']
   },
-
-  // Série C - Anglais
   'Anglais-2nde C': {
     'Trimestre 1': ['Grammar review', 'Reading comprehension'],
     'Trimestre 2': ['Writing skills', 'Oral expression'],
@@ -393,7 +475,6 @@ export const coursesBySubject: Record<string, Record<string, string[]>> = {
     'Trimestre 3': ['Exam preparation', 'Public speaking']
   },
 
-  // Série D - Mathématiques
   'Mathématiques-2nde D': {
     'Trimestre 1': ['Ensembles et applications', 'Nombres et calculs'],
     'Trimestre 2': ['Fonctions numériques', 'Géométrie analytique'],
@@ -409,8 +490,6 @@ export const coursesBySubject: Record<string, Record<string, string[]>> = {
     'Trimestre 2': ['Équations différentielles', 'Nombres complexes avancés'],
     'Trimestre 3': ['Calcul intégral', 'Probabilités continues']
   },
-
-  // Série D - Physique-Chimie
   'Physique-Chimie-2nde D': {
     'Trimestre 1': ['Mécanique : cinématique', 'Électricité : circuits'],
     'Trimestre 2': ['Optique géométrique', 'Chimie : atome et molécule'],
@@ -426,8 +505,6 @@ export const coursesBySubject: Record<string, Record<string, string[]>> = {
     'Trimestre 2': ['Ondes et vibrations', 'Chimie : acides et bases'],
     'Trimestre 3': ['Physique nucléaire', 'Chimie organique avancée']
   },
-
-  // Série D - SVT
   'SVT-2nde D': {
     'Trimestre 1': ['La cellule', 'Organisation du vivant'],
     'Trimestre 2': ['Nutrition et métabolisme', 'Génétique de base'],
@@ -443,8 +520,6 @@ export const coursesBySubject: Record<string, Record<string, string[]>> = {
     'Trimestre 2': ['Neurobiologie', 'Géologie : magmatisme'],
     'Trimestre 3': ['Biotechnologies', 'Enjeux environnementaux']
   },
-
-  // Série D - Français
   'Français-2nde D': {
     'Trimestre 1': ['Le roman et le récit', 'Grammaire avancée'],
     'Trimestre 2': ['La poésie', 'L\'argumentation'],
@@ -455,8 +530,6 @@ export const coursesBySubject: Record<string, Record<string, string[]>> = {
     'Trimestre 2': ['La poésie moderne', 'L\'essai'],
     'Trimestre 3': ['Le théâtre contemporain', 'Techniques d\'écriture']
   },
-
-  // Série D - Philosophie
   'Philosophie-1ère D': {
     'Trimestre 1': ['Introduction à la philosophie', 'La conscience'],
     'Trimestre 2': ['La perception', 'Autrui'],
@@ -467,8 +540,6 @@ export const coursesBySubject: Record<string, Record<string, string[]>> = {
     'Trimestre 2': ['La morale', 'La liberté'],
     'Trimestre 3': ['Le devoir', 'La politique']
   },
-
-  // Série D - Anglais
   'Anglais-2nde D': {
     'Trimestre 1': ['Grammar review', 'Reading comprehension'],
     'Trimestre 2': ['Writing skills', 'Oral expression'],
@@ -485,97 +556,311 @@ export const coursesBySubject: Record<string, Record<string, string[]>> = {
     'Trimestre 3': ['Exam preparation', 'Public speaking']
   },
 
-  // Série A
-  'Français-2nde A': {
-    'Trimestre 1': ['Le roman et le récit', 'Grammaire avancée'],
-    'Trimestre 2': ['La poésie', 'L\'argumentation'],
-    'Trimestre 3': ['Le théâtre', 'Dissertation']
+  'Mathématiques-2nde F1': {
+    'Trimestre 1': ['Calcul numérique et algébrique', 'Fonctions linéaires'],
+    'Trimestre 2': ['Géométrie plane', 'Trigonométrie'],
+    'Trimestre 3': ['Statistiques', 'Vecteurs']
   },
-  'Français-1ère A': {
-    'Trimestre 1': ['Littérature française du XVIIe siècle', 'Le classicisme'],
-    'Trimestre 2': ['Le Siècle des Lumières', 'Essai et argumentation'],
-    'Trimestre 3': ['Le romantisme', 'Commentaire littéraire']
+  'Mathématiques-1ère F1': {
+    'Trimestre 1': ['Suites numériques', 'Dérivées'],
+    'Trimestre 2': ['Fonctions polynômes', 'Probabilités'],
+    'Trimestre 3': ['Géométrie dans l\'espace', 'Équations différentielles simples']
   },
-  'Français-Terminale A': {
-    'Trimestre 1': ['Le roman réaliste et naturaliste', 'Analyse de texte'],
-    'Trimestre 2': ['Le surréalisme et la modernité', 'Dissertation littéraire'],
-    'Trimestre 3': ['Le théâtre contemporain', 'Préparation au bac']
+  'Mathématiques-Terminale F1': {
+    'Trimestre 1': ['Calcul intégral', 'Nombres complexes'],
+    'Trimestre 2': ['Équations différentielles', 'Statistiques avancées'],
+    'Trimestre 3': ['Mathématiques appliquées', 'Préparation BAC']
+  },
+  'Physique-2nde F1': {
+    'Trimestre 1': ['Mécanique : forces et mouvements', 'Statique'],
+    'Trimestre 2': ['Dynamique', 'Travail et énergie'],
+    'Trimestre 3': ['Électricité : circuits DC', 'Résistances']
+  },
+  'Physique-1ère F1': {
+    'Trimestre 1': ['Cinématique', 'Lois de Newton'],
+    'Trimestre 2': ['Électromagnétisme', 'Circuits AC'],
+    'Trimestre 3': ['Thermodynamique', 'Optique géométrique']
+  },
+  'Physique-Terminale F1': {
+    'Trimestre 1': ['Mécanique des fluides', 'Électricité industrielle'],
+    'Trimestre 2': ['Ondes', 'Machines électriques'],
+    'Trimestre 3': ['Automatismes', 'Préparation BAC']
+  },
+  'Technologie-2nde F1': {
+    'Trimestre 1': ['Initiation aux systèmes mécaniques', 'Outils et mesures'],
+    'Trimestre 2': ['Matériaux et leurs propriétés', 'Procédés de fabrication'],
+    'Trimestre 3': ['Dessin technique de base', 'Sécurité en atelier']
+  },
+  'Technologie-1ère F1': {
+    'Trimestre 1': ['Systèmes mécaniques avancés', 'Résistance des matériaux'],
+    'Trimestre 2': ['Machines-outils', 'CAO introduction'],
+    'Trimestre 3': ['Maintenance industrielle', 'Automatisation']
+  },
+  'Technologie-Terminale F1': {
+    'Trimestre 1': ['Conception mécanique', 'Étude de fabrication'],
+    'Trimestre 2': ['Systèmes automatisés', 'Gestion de production'],
+    'Trimestre 3': ['Projet technique', 'Préparation BAC']
+  },
+  'Dessin Technique-2nde F1': {
+    'Trimestre 1': ['Normes de dessin', 'Projections orthogonales'],
+    'Trimestre 2': ['Coupes et sections', 'Cotation'],
+    'Trimestre 3': ['Perspective', 'Lecture de plans']
+  },
+  'Dessin Technique-1ère F1': {
+    'Trimestre 1': ['Dessin d\'ensemble', 'Dessin de définition'],
+    'Trimestre 2': ['Schémas cinématiques', 'DAO'],
+    'Trimestre 3': ['Tolérances et ajustements', 'Plans de montage']
+  },
+  'Dessin Technique-Terminale F1': {
+    'Trimestre 1': ['CAO avancée', 'Modélisation 3D'],
+    'Trimestre 2': ['Plans d\'exécution', 'Nomenclatures'],
+    'Trimestre 3': ['Dossier technique complet', 'Préparation BAC']
+  },
+  'Français-2nde F1': {
+    'Trimestre 1': ['Communication professionnelle', 'Compte-rendu technique'],
+    'Trimestre 2': ['Correspondance administrative', 'Rapport de stage'],
+    'Trimestre 3': ['Expression orale professionnelle', 'Note de synthèse']
+  },
+  'Français-1ère F1': {
+    'Trimestre 1': ['Rédaction technique', 'Documentation professionnelle'],
+    'Trimestre 2': ['Argumentation', 'Présentation orale'],
+    'Trimestre 3': ['Dossier professionnel', 'Communication en entreprise']
+  },
+  'Français-Terminale F1': {
+    'Trimestre 1': ['Rapport de projet', 'Communication technique'],
+    'Trimestre 2': ['Synthèse documentaire', 'Soutenance de projet'],
+    'Trimestre 3': ['Préparation BAC', 'Insertion professionnelle']
   },
 
-  'Philosophie-1ère A': {
-    'Trimestre 1': ['Introduction à la philosophie', 'La conscience et l\'inconscient'],
-    'Trimestre 2': ['La perception', 'Le langage'],
-    'Trimestre 3': ['Le désir', 'L\'existence et le temps']
+  'Mathématiques-2nde F2': {
+    'Trimestre 1': ['Calcul numérique', 'Algèbre de base'],
+    'Trimestre 2': ['Fonctions', 'Trigonométrie'],
+    'Trimestre 3': ['Nombres complexes introduction', 'Vecteurs']
   },
-  'Philosophie-Terminale A': {
-    'Trimestre 1': ['La vérité et la raison', 'Théorie de la connaissance'],
-    'Trimestre 2': ['La morale et l\'éthique', 'La liberté'],
-    'Trimestre 3': ['Le devoir et la justice', 'La politique et l\'État']
+  'Mathématiques-1ère F2': {
+    'Trimestre 1': ['Nombres complexes', 'Suites'],
+    'Trimestre 2': ['Dérivation', 'Fonctions exponentielles'],
+    'Trimestre 3': ['Équations différentielles', 'Probabilités']
+  },
+  'Mathématiques-Terminale F2': {
+    'Trimestre 1': ['Intégrales', 'Transformées'],
+    'Trimestre 2': ['Mathématiques pour l\'électronique', 'Statistiques'],
+    'Trimestre 3': ['Applications pratiques', 'Préparation BAC']
+  },
+  'Physique-2nde F2': {
+    'Trimestre 1': ['Électricité de base', 'Loi d\'Ohm'],
+    'Trimestre 2': ['Circuits électriques', 'Puissance électrique'],
+    'Trimestre 3': ['Magnétisme', 'Électromagnétisme']
+  },
+  'Physique-1ère F2': {
+    'Trimestre 1': ['Circuits AC', 'Impédance'],
+    'Trimestre 2': ['Transformateurs', 'Machines électriques'],
+    'Trimestre 3': ['Électronique analogique', 'Semiconducteurs']
+  },
+  'Physique-Terminale F2': {
+    'Trimestre 1': ['Électronique de puissance', 'Filtres'],
+    'Trimestre 2': ['Amplificateurs', 'Oscillateurs'],
+    'Trimestre 3': ['Systèmes électroniques', 'Préparation BAC']
+  },
+  'Électronique-2nde F2': {
+    'Trimestre 1': ['Composants passifs', 'Diodes'],
+    'Trimestre 2': ['Transistors', 'Circuits de base'],
+    'Trimestre 3': ['Amplification', 'Alimentation']
+  },
+  'Électronique-1ère F2': {
+    'Trimestre 1': ['Amplificateurs opérationnels', 'Filtres actifs'],
+    'Trimestre 2': ['Oscillateurs', 'Modulation'],
+    'Trimestre 3': ['Électronique numérique', 'Logique combinatoire']
+  },
+  'Électronique-Terminale F2': {
+    'Trimestre 1': ['Circuits intégrés', 'Microcontrôleurs'],
+    'Trimestre 2': ['Systèmes embarqués', 'Programmation'],
+    'Trimestre 3': ['Projet électronique', 'Préparation BAC']
+  },
+  'Technologie-2nde F2': {
+    'Trimestre 1': ['Technologie des composants', 'Lecture de schémas'],
+    'Trimestre 2': ['Montage électronique', 'Soudure'],
+    'Trimestre 3': ['Mesures électroniques', 'Oscilloscope']
+  },
+  'Technologie-1ère F2': {
+    'Trimestre 1': ['Systèmes électroniques', 'CAO électronique'],
+    'Trimestre 2': ['Circuits imprimés', 'Tests et mesures'],
+    'Trimestre 3': ['Maintenance électronique', 'Diagnostic de pannes']
+  },
+  'Technologie-Terminale F2': {
+    'Trimestre 1': ['Conception de systèmes', 'Prototypage'],
+    'Trimestre 2': ['Automatisation', 'Interfaçage'],
+    'Trimestre 3': ['Projet technique', 'Préparation BAC']
+  },
+  'Français-2nde F2': {
+    'Trimestre 1': ['Communication technique', 'Documentation'],
+    'Trimestre 2': ['Rapport technique', 'Correspondance'],
+    'Trimestre 3': ['Expression professionnelle', 'Compte-rendu']
+  },
+  'Français-1ère F2': {
+    'Trimestre 1': ['Rédaction technique', 'Note de synthèse'],
+    'Trimestre 2': ['Argumentation', 'Présentation orale'],
+    'Trimestre 3': ['Dossier technique', 'Communication']
+  },
+  'Français-Terminale F2': {
+    'Trimestre 1': ['Rapport de projet', 'Documentation technique'],
+    'Trimestre 2': ['Synthèse', 'Soutenance'],
+    'Trimestre 3': ['Préparation BAC', 'Communication professionnelle']
   },
 
-  'Histoire-Géo-2nde A': {
-    'Trimestre 1': ['L\'Antiquité méditerranéenne', 'Les grandes civilisations'],
-    'Trimestre 2': ['Le Moyen Âge européen', 'Géographie : la mondialisation'],
-    'Trimestre 3': ['Les grandes découvertes', 'Dynamiques territoriales']
+  'Mathématiques-2nde F3': {
+    'Trimestre 1': ['Calcul pour l\'électricité', 'Algèbre appliquée'],
+    'Trimestre 2': ['Trigonométrie pour l\'électrotechnique', 'Nombres complexes'],
+    'Trimestre 3': ['Vecteurs de Fresnel', 'Statistiques']
   },
-  'Histoire-Géo-1ère A': {
-    'Trimestre 1': ['Les révolutions du XVIIIe siècle', 'L\'Europe au XIXe'],
-    'Trimestre 2': ['Colonisation et impérialisme', 'Géographie économique'],
-    'Trimestre 3': ['La Première Guerre mondiale', 'Aménagement des territoires']
+  'Mathématiques-1ère F3': {
+    'Trimestre 1': ['Nombres complexes en électricité', 'Suites'],
+    'Trimestre 2': ['Dérivation', 'Fonctions sinusoïdales'],
+    'Trimestre 3': ['Équations différentielles', 'Transformées']
   },
-  'Histoire-Géo-Terminale A': {
-    'Trimestre 1': ['La Seconde Guerre mondiale', 'La décolonisation'],
-    'Trimestre 2': ['La Guerre froide', 'Géopolitique contemporaine'],
-    'Trimestre 3': ['Le monde depuis 1989', 'Mondialisation et territoires']
+  'Mathématiques-Terminale F3': {
+    'Trimestre 1': ['Calcul vectoriel', 'Intégrales'],
+    'Trimestre 2': ['Mathématiques pour l\'électrotechnique', 'Fourier'],
+    'Trimestre 3': ['Applications pratiques', 'Préparation BAC']
+  },
+  'Électricité-2nde F3': {
+    'Trimestre 1': ['Électricité de base', 'Lois fondamentales'],
+    'Trimestre 2': ['Circuits électriques', 'Analyse de circuits'],
+    'Trimestre 3': ['Puissance électrique', 'Facteur de puissance']
+  },
+  'Électricité-1ère F3': {
+    'Trimestre 1': ['Régimes sinusoïdaux', 'Triphasé'],
+    'Trimestre 2': ['Transformateurs', 'Machines électriques'],
+    'Trimestre 3': ['Distribution électrique', 'Protection']
+  },
+  'Électricité-Terminale F3': {
+    'Trimestre 1': ['Électrotechnique industrielle', 'Automatismes électriques'],
+    'Trimestre 2': ['Variation de vitesse', 'Électronique de puissance'],
+    'Trimestre 3': ['Installation électrique', 'Préparation BAC']
+  },
+  'Électronique-2nde F3': {
+    'Trimestre 1': ['Composants électroniques', 'Semiconducteurs'],
+    'Trimestre 2': ['Circuits électroniques de base', 'Amplification'],
+    'Trimestre 3': ['Alimentation électronique', 'Redressement']
+  },
+  'Électronique-1ère F3': {
+    'Trimestre 1': ['Électronique de puissance', 'Thyristors'],
+    'Trimestre 2': ['Variateurs électroniques', 'Commande'],
+    'Trimestre 3': ['Régulation', 'Asservissement']
+  },
+  'Électronique-Terminale F3': {
+    'Trimestre 1': ['Systèmes de commande', 'Automates'],
+    'Trimestre 2': ['Supervision', 'Communication industrielle'],
+    'Trimestre 3': ['Projet électrotechnique', 'Préparation BAC']
+  },
+  'Technologie-2nde F3': {
+    'Trimestre 1': ['Technologie des installations', 'Schémas électriques'],
+    'Trimestre 2': ['Appareillage électrique', 'Câblage'],
+    'Trimestre 3': ['Mesures électriques', 'Sécurité électrique']
+  },
+  'Technologie-1ère F3': {
+    'Trimestre 1': ['Installations industrielles', 'Distribution'],
+    'Trimestre 2': ['Automatismes', 'Commande'],
+    'Trimestre 3': ['Maintenance électrique', 'Diagnostic']
+  },
+  'Technologie-Terminale F3': {
+    'Trimestre 1': ['Conception d\'installations', 'Dimensionnement'],
+    'Trimestre 2': ['Gestion de l\'énergie', 'Qualité de l\'énergie'],
+    'Trimestre 3': ['Projet d\'installation', 'Préparation BAC']
+  },
+  'Français-2nde F3': {
+    'Trimestre 1': ['Communication technique', 'Vocabulaire professionnel'],
+    'Trimestre 2': ['Rapport d\'intervention', 'Compte-rendu'],
+    'Trimestre 3': ['Expression professionnelle', 'Documentation']
+  },
+  'Français-1ère F3': {
+    'Trimestre 1': ['Rédaction technique', 'Dossier technique'],
+    'Trimestre 2': ['Argumentation', 'Présentation'],
+    'Trimestre 3': ['Communication en entreprise', 'Rapport']
+  },
+  'Français-Terminale F3': {
+    'Trimestre 1': ['Rapport de projet', 'Documentation technique'],
+    'Trimestre 2': ['Note de synthèse', 'Soutenance'],
+    'Trimestre 3': ['Préparation BAC', 'Insertion professionnelle']
   },
 
-  'Mathématiques-2nde A': {
-    'Trimestre 1': ['Ensembles et logique', 'Nombres et calculs'],
-    'Trimestre 2': ['Fonctions de référence', 'Statistiques'],
-    'Trimestre 3': ['Géométrie plane', 'Probabilités']
+  'Économie-2nde G': {
+    'Trimestre 1': ['Introduction à l\'économie', 'Les agents économiques'],
+    'Trimestre 2': ['Le marché', 'La production'],
+    'Trimestre 3': ['La consommation', 'L\'épargne']
   },
-  'Mathématiques-1ère A': {
-    'Trimestre 1': ['Suites numériques', 'Fonctions'],
-    'Trimestre 2': ['Dérivation', 'Probabilités'],
-    'Trimestre 3': ['Statistiques', 'Géométrie analytique']
+  'Économie-1ère G': {
+    'Trimestre 1': ['Microéconomie', 'La concurrence'],
+    'Trimestre 2': ['Macroéconomie', 'Croissance économique'],
+    'Trimestre 3': ['Commerce international', 'Monnaie et crédit']
   },
-  'Mathématiques-Terminale A': {
-    'Trimestre 1': ['Fonctions logarithmes', 'Primitives'],
-    'Trimestre 2': ['Probabilités conditionnelles', 'Lois de probabilité'],
-    'Trimestre 3': ['Intégration', 'Préparation au bac']
+  'Économie-Terminale G': {
+    'Trimestre 1': ['Politiques économiques', 'Développement économique'],
+    'Trimestre 2': ['Économie internationale', 'Mondialisation'],
+    'Trimestre 3': ['Économie du développement', 'Préparation BAC']
+  },
+  'Comptabilité-2nde G': {
+    'Trimestre 1': ['Introduction à la comptabilité', 'Le bilan'],
+    'Trimestre 2': ['Le compte de résultat', 'Les opérations courantes'],
+    'Trimestre 3': ['La TVA', 'Les salaires']
+  },
+  'Comptabilité-1ère G': {
+    'Trimestre 1': ['Comptabilité approfondie', 'Les immobilisations'],
+    'Trimestre 2': ['Les stocks', 'Les provisions'],
+    'Trimestre 3': ['Comptabilité analytique', 'Calcul des coûts']
+  },
+  'Comptabilité-Terminale G': {
+    'Trimestre 1': ['Analyse financière', 'Les ratios'],
+    'Trimestre 2': ['Gestion budgétaire', 'Contrôle de gestion'],
+    'Trimestre 3': ['Audit comptable', 'Préparation BAC']
+  },
+  'Mathématiques-2nde G': {
+    'Trimestre 1': ['Mathématiques financières', 'Pourcentages'],
+    'Trimestre 2': ['Proportionnalité', 'Statistiques'],
+    'Trimestre 3': ['Fonctions', 'Graphiques']
+  },
+  'Mathématiques-1ère G': {
+    'Trimestre 1': ['Intérêts simples et composés', 'Annuités'],
+    'Trimestre 2': ['Amortissements', 'Probabilités'],
+    'Trimestre 3': ['Statistiques descriptives', 'Indices']
+  },
+  'Mathématiques-Terminale G': {
+    'Trimestre 1': ['Mathématiques appliquées à la gestion', 'Programmation linéaire'],
+    'Trimestre 2': ['Statistiques inférentielles', 'Échantillonnage'],
+    'Trimestre 3': ['Recherche opérationnelle', 'Préparation BAC']
+  },
+  'Droit-2nde G': {
+    'Trimestre 1': ['Introduction au droit', 'Les sources du droit'],
+    'Trimestre 2': ['Les personnes', 'La capacité juridique'],
+    'Trimestre 3': ['Les biens', 'La propriété']
+  },
+  'Droit-1ère G': {
+    'Trimestre 1': ['Droit civil', 'Les contrats'],
+    'Trimestre 2': ['Droit commercial', 'Les sociétés'],
+    'Trimestre 3': ['Droit du travail', 'Le contrat de travail']
+  },
+  'Droit-Terminale G': {
+    'Trimestre 1': ['Droit des affaires', 'Droit fiscal'],
+    'Trimestre 2': ['Droit social avancé', 'Droit de la concurrence'],
+    'Trimestre 3': ['Contentieux', 'Préparation BAC']
+  },
+  'Français-2nde G': {
+    'Trimestre 1': ['Communication professionnelle', 'Correspondance commerciale'],
+    'Trimestre 2': ['Le rapport', 'La note de service'],
+    'Trimestre 3': ['Expression écrite professionnelle', 'Compte-rendu']
+  },
+  'Français-1ère G': {
+    'Trimestre 1': ['Rédaction administrative', 'Le procès-verbal'],
+    'Trimestre 2': ['Argumentation commerciale', 'Présentation orale'],
+    'Trimestre 3': ['Communication d\'entreprise', 'Dossier professionnel']
+  },
+  'Français-Terminale G': {
+    'Trimestre 1': ['Communication managériale', 'Négociation'],
+    'Trimestre 2': ['Synthèse documentaire', 'Soutenance'],
+    'Trimestre 3': ['Préparation BAC', 'Techniques de communication']
   },
 
-  'Anglais-2nde A': {
-    'Trimestre 1': ['Grammar fundamentals', 'Reading and comprehension'],
-    'Trimestre 2': ['Writing essays', 'Speaking skills'],
-    'Trimestre 3': ['Introduction to literature', 'Cultural studies']
-  },
-  'Anglais-1ère A': {
-    'Trimestre 1': ['Advanced grammar structures', 'Literary analysis'],
-    'Trimestre 2': ['British and American culture', 'Debate techniques'],
-    'Trimestre 3': ['Creative writing', 'Oral presentations']
-  },
-  'Anglais-Terminale A': {
-    'Trimestre 1': ['Literary movements', 'Critical analysis'],
-    'Trimestre 2': ['Contemporary issues', 'Translation techniques'],
-    'Trimestre 3': ['Exam preparation', 'Advanced communication']
-  },
-
-  'Espagnol-2nde A': {
-    'Trimestre 1': ['Grammaire de base', 'Compréhension orale'],
-    'Trimestre 2': ['Expression écrite', 'Culture hispanique'],
-    'Trimestre 3': ['Conversation', 'Littérature hispanique']
-  },
-  'Espagnol-1ère A': {
-    'Trimestre 1': ['Grammaire avancée', 'Textes littéraires'],
-    'Trimestre 2': ['Civilisation espagnole et latino-américaine', 'Débat'],
-    'Trimestre 3': ['Rédaction', 'Expression orale']
-  },
-  'Espagnol-Terminale A': {
-    'Trimestre 1': ['Analyse littéraire', 'Essai argumentatif'],
-    'Trimestre 2': ['Actualités hispaniques', 'Traduction'],
-    'Trimestre 3': ['Préparation au bac', 'Communication avancée']
-  },
+  // ===== UNIVERSITÉ - DROIT =====
   'Droit-Licence 1': {
     'Semestre 1': ['Introduction / Initiation au droit', 'Histoire du droit', 'Droit constitutionnel 1', 'Histoire du droit romain'],
     'Semestre 2': ['Droit civil 2 (la famille)', 'Droit constitutionnel 2', 'Institutions communautaires']
@@ -585,41 +870,117 @@ export const coursesBySubject: Record<string, Record<string, string[]>> = {
     'Semestre 2': ['Droit administratif 2', 'Procédure pénale / Procédure civile', 'Droit des contrats']
   },
   'Droit-Licence 3 (Droit Public)': {
-    'Semestre 1': ['Droit du contentieux administratif', 'Libertés et droits fondamentaux', 'Droit des collectivités territoriales', 'Droit international public'],
-    'Semestre 2': ['Droit de l\'espace', 'Droit électoral', 'Droit humanitaire', 'Introduction au droit de l\'environnement et de l\'urbanisme']
+    'Semestre 1': ['Droit public général', 'Finances publiques', 'Relations internationales'],
+    'Semestre 2': ['Droit administratif des biens', 'Libertés publiques', 'Institutions judiciaires']
   },
   'Droit-Licence 3 (Droit Privé)': {
-    'Semestre 1': ['Droit du travail', 'Droit du commerce', 'Droit des sûretés'],
-    'Semestre 2': ['Droit de la santé', 'Droit international privé', 'Droit fiscal']
+    'Semestre 1': ['Droit des affaires', 'Droit du travail', 'Voies d\'exécution'],
+    'Semestre 2': ['Droit commercial', 'Droit des sociétés', 'Procédures collectives']
   },
   'Droit-Master 1 (Public)': {
-    'Année': ['Droit public général', 'Relations internationales', 'Finances publiques']
+    'Semestre 1': ['Droit public général approfondi', 'Finances publiques avancées', 'Relations internationales'],
+    'Semestre 2': ['Contentieux administratif', 'Droit de l\'urbanisme', 'Droit de l\'environnement']
   },
   'Droit-Master 1 (Privé)': {
-    'Année': ['Droit des affaires', 'Carrières judiciaires', 'Droit de la propriété intellectuelle']
+    'Semestre 1': ['Droit des affaires avancé', 'Droit social approfondi', 'Propriété intellectuelle'],
+    'Semestre 2': ['Droit bancaire', 'Droit des assurances', 'Arbitrage commercial']
   },
-  'Médecine-Université': {
-    'Semestre 1': ['Anatomie générale', 'Physiologie humaine', 'Biochimie médicale'],
-    'Semestre 2': ['Histologie', 'Microbiologie', 'Pathologie générale']
+
+  'Médecine-1ère Année': {
+    'Semestre 1': ['Anatomie générale', 'Biologie cellulaire', 'Biochimie', 'Physique médicale'],
+    'Semestre 2': ['Anatomie systémique', 'Physiologie', 'Histologie', 'Embryologie']
   },
-  'Ingénierie Informatique-Université': {
-    'Semestre 1': ['Algorithmique avancée', 'Bases de données SQL/NoSQL', 'Développement web full-stack'],
-    'Semestre 2': ['Intelligence artificielle', 'Réseaux et sécurité', 'Programmation objet']
+  'Médecine-2ème Année': {
+    'Semestre 1': ['Sémiologie médicale', 'Pathologie générale', 'Microbiologie', 'Parasitologie'],
+    'Semestre 2': ['Pharmacologie générale', 'Immunologie', 'Anatomie pathologique', 'Radiologie']
   },
-  'Économie et Gestion-Université': {
-    'Semestre 1': ['Microéconomie avancée', 'Macroéconomie', 'Comptabilité financière'],
-    'Semestre 2': ['Marketing stratégique', 'Gestion des ressources humaines', 'Finance d\'entreprise']
+  'Médecine-3ème Année': {
+    'Semestre 1': ['Pathologie cardiovasculaire', 'Pathologie respiratoire', 'Pathologie digestive'],
+    'Semestre 2': ['Pathologie rénale', 'Endocrinologie', 'Hématologie', 'Dermatologie']
   },
-  'Pharmacie-Université': {
-    'Semestre 1': ['Chimie organique', 'Pharmacologie générale', 'Galénique'],
-    'Semestre 2': ['Toxicologie', 'Biologie pharmaceutique', 'Pharmacie clinique']
+
+  'Ingénierie Informatique-Licence 1': {
+    'Semestre 1': ['Algorithmique et programmation', 'Architecture des ordinateurs', 'Mathématiques discrètes', 'Algèbre linéaire'],
+    'Semestre 2': ['Programmation orientée objet', 'Structures de données', 'Systèmes d\'exploitation', 'Probabilités et statistiques']
   },
-  'Génie Civil-Université': {
-    'Semestre 1': ['Mécanique des structures', 'Béton armé', 'Calcul de structures'],
-    'Semestre 2': ['Géotechnique', 'Hydraulique', 'Construction durable']
+  'Ingénierie Informatique-Licence 2': {
+    'Semestre 1': ['Base de données', 'Réseaux informatiques', 'Programmation web', 'Théorie des graphes'],
+    'Semestre 2': ['Génie logiciel','Compilation', 'Intelligence artificielle', 'Analyse numérique']
   },
-  'Lettres Modernes-Université': {
-    'Semestre 1': ['Littérature française du XXe siècle', 'Théorie littéraire', 'Littérature comparée'],
-    'Semestre 2': ['Analyse stylistique', 'Histoire de la langue française', 'Écriture créative']
+  'Ingénierie Informatique-Licence 3': {
+    'Semestre 1': ['Développement mobile', 'Sécurité informatique', 'Cloud computing', 'Big Data'],
+    'Semestre 2': ['Machine Learning', 'Systèmes distribués', 'Architecture logicielle', 'Projet de fin d\'études']
+  },
+  'Ingénierie Informatique-Master 1': {
+    'Semestre 1': ['Deep Learning', 'Blockchain', 'DevOps', 'IoT'],
+    'Semestre 2': ['Traitement d\'images', 'Réalité virtuelle', 'Cybersécurité avancée', 'Recherche opérationnelle']
+  },
+
+  'Économie et Gestion-Licence 1': {
+    'Semestre 1': ['Microéconomie 1', 'Macroéconomie 1', 'Mathématiques pour économistes', 'Comptabilité générale'],
+    'Semestre 2': ['Microéconomie 2', 'Macroéconomie 2', 'Statistiques descriptives', 'Gestion d\'entreprise']
+  },
+  'Économie et Gestion-Licence 2': {
+    'Semestre 1': ['Économétrie', 'Finance d\'entreprise', 'Marketing', 'Droit des affaires'],
+    'Semestre 2': ['Théorie des organisations', 'Gestion des ressources humaines', 'Contrôle de gestion', 'Commerce international']
+  },
+  'Économie et Gestion-Licence 3': {
+    'Semestre 1': ['Stratégie d\'entreprise', 'Finance de marché', 'Audit et contrôle', 'Entrepreneuriat'],
+    'Semestre 2': ['Gestion de projet', 'E-commerce', 'Management international', 'Stage professionnel']
+  },
+  'Économie et Gestion-Master 1': {
+    'Semestre 1': ['Finance internationale', 'Management stratégique avancé', 'Innovation et R&D', 'Analyse financière approfondie'],
+    'Semestre 2': ['Gestion des risques', 'Private equity', 'Supply chain management', 'Business intelligence']
+  },
+
+  'Pharmacie-1ère Année': {
+    'Semestre 1': ['Chimie générale et minérale', 'Biologie cellulaire', 'Physique appliquée', 'Mathématiques'],
+    'Semestre 2': ['Chimie organique', 'Biochimie', 'Anatomie', 'Physiologie']
+  },
+  'Pharmacie-2ème Année': {
+    'Semestre 1': ['Pharmacologie générale', 'Pharmacognosie', 'Chimie analytique', 'Microbiologie'],
+    'Semestre 2': ['Galénique', 'Toxicologie', 'Immunologie', 'Parasitologie']
+  },
+  'Pharmacie-3ème Année': {
+    'Semestre 1': ['Pharmacologie spéciale', 'Pharmacie clinique', 'Chimie thérapeutique', 'Biopharmacie'],
+    'Semestre 2': ['Pharmacocinétique', 'Pharmacovigilance', 'Législation pharmaceutique', 'Gestion officinale']
+  },
+  'Pharmacie-4ème Année': {
+    'Semestre 1': ['Thérapeutique', 'Pharmaco-économie', 'Assurance qualité', 'Phytothérapie'],
+    'Semestre 2': ['Stage hospitalier', 'Conseil pharmaceutique', 'Médicaments génériques', 'Homéopathie']
+  },
+
+  'Génie Civil-Licence 1': {
+    'Semestre 1': ['Mathématiques pour ingénieurs', 'Physique générale', 'Mécanique des solides', 'Dessin technique'],
+    'Semestre 2': ['Résistance des matériaux', 'Topographie', 'Matériaux de construction', 'Informatique appliquée']
+  },
+  'Génie Civil-Licence 2': {
+    'Semestre 1': ['Béton armé 1', 'Mécanique des fluides', 'Géotechnique', 'Construction métallique'],
+    'Semestre 2': ['Béton armé 2', 'Hydraulique', 'Routes et voiries', 'Calcul des structures']
+  },
+  'Génie Civil-Licence 3': {
+    'Semestre 1': ['Béton précontraint', 'Ponts et ouvrages d\'art', 'Assainissement', 'Gestion de chantier'],
+    'Semestre 2': ['Dynamique des structures', 'Bâtiments', 'Métrés et devis', 'Projet de fin d\'études']
+  },
+  'Génie Civil-Master 1': {
+    'Semestre 1': ['Structures en béton avancées', 'Génie parasismique', 'Calcul par éléments finis', 'BIM (Building Information Modeling)'],
+    'Semestre 2': ['Réhabilitation des structures', 'Géotechnique avancée', 'Environnement et développement durable', 'Management de projets']
+  },
+
+  'Lettres Modernes-Licence 1': {
+    'Semestre 1': ['Littérature française du Moyen Âge', 'Grammaire française', 'Linguistique générale', 'Latin'],
+    'Semestre 2': ['Littérature française du XVIe siècle', 'Stylistique', 'Phonétique et phonologie', 'Langue ancienne']
+  },
+  'Lettres Modernes-Licence 2': {
+    'Semestre 1': ['Littérature française du XVIIe siècle', 'Littérature comparée', 'Sémantique', 'Ancien français'],
+    'Semestre 2': ['Littérature française du XVIIIe siècle', 'Théories littéraires', 'Sociolinguistique', 'Littérature francophone']
+  },
+  'Lettres Modernes-Licence 3': {
+    'Semestre 1': ['Littérature française du XIXe siècle', 'Narratologie', 'Lexicologie', 'Littératures francophones d\'Afrique'],
+    'Semestre 2': ['Littérature française du XXe siècle', 'Critique littéraire', 'Analyse du discours', 'Mémoire de recherche']
+  },
+  'Lettres Modernes-Master 1': {
+    'Semestre 1': ['Poétique moderne', 'Histoire de la langue française', 'Littérature et société', 'Méthodologie de la recherche'],
+    'Semestre 2': ['Littérature contemporaine', 'Linguistique textuelle', 'Édition et critique génétique', 'Séminaire de recherche']
   }
 };
