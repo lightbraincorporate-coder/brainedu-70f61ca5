@@ -94,7 +94,7 @@ const CatalogPage = ({ onAddToCart }: CatalogPageProps) => {
     } else if (selectedLevel === 'college') {
       key = `${selectedSubject}-${selectedClass}`;
     } else if (selectedLevel === 'lycee') {
-      key = `${selectedSubject}-Lycée`;
+      key = `${selectedSubject}-$ {selectedClass}`;
     } else if (selectedLevel === 'universite') {
       if (needsBranchSelection() && selectedBranch) {
         key = `${selectedSubject}-${selectedClass} (${selectedBranch})`;
