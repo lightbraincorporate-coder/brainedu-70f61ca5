@@ -94,7 +94,8 @@ const CatalogPage = ({ onAddToCart }: CatalogPageProps) => {
     } else if (selectedLevel === 'college') {
       key = `${selectedSubject}-${selectedClass}`;
     } else if (selectedLevel === 'lycee') {
-      key = `${selectedSubject}-$ {selectedClass}`;
+      // ✅ CORRECTION ICI - utilise selectedClass au lieu de "Lycée"
+      key = `${selectedSubject}-${selectedClass}`;
     } else if (selectedLevel === 'universite') {
       if (needsBranchSelection() && selectedBranch) {
         key = `${selectedSubject}-${selectedClass} (${selectedBranch})`;
@@ -116,7 +117,8 @@ const CatalogPage = ({ onAddToCart }: CatalogPageProps) => {
     } else if (selectedLevel === 'college') {
       key = `${selectedSubject}-${selectedClass}`;
     } else if (selectedLevel === 'lycee') {
-      key = `${selectedSubject}-Lycée`;
+      // ✅ CORRECTION ICI - utilise selectedClass au lieu de "Lycée"
+      key = `${selectedSubject}-${selectedClass}`;
     } else if (selectedLevel === 'universite') {
       if (needsBranchSelection() && selectedBranch) {
         key = `${selectedSubject}-${selectedClass} (${selectedBranch})`;
@@ -124,8 +126,8 @@ const CatalogPage = ({ onAddToCart }: CatalogPageProps) => {
         key = `${selectedSubject}-${selectedClass}`;
       }
     }
-    
-    const coursesData = coursesBySubject[key];
+
+const coursesData = coursesBySubject[key];
     return coursesData && coursesData[selectedTrimester] ? coursesData[selectedTrimester] : [];
   };
 
@@ -254,7 +256,7 @@ const CatalogPage = ({ onAddToCart }: CatalogPageProps) => {
                 ? levels.lycee.types![selectedType].series[selectedSerie]
                 : levels[selectedLevel].classes || []
               ).map((cls, index) => (
-                <Card 
+                <Card
                   key={cls}
                   className="cursor-pointer hover:shadow-lg transition-all hover:-translate-y-1 animate-scale-in text-center"
                   style={{ animationDelay: `${index * 50}ms` }}
@@ -368,8 +370,7 @@ const CatalogPage = ({ onAddToCart }: CatalogPageProps) => {
             </div>
           </div>
         )}
-
-        {/* Course Selection */}
+{/* Course Selection */}
         {selectedTrimester && !selectedCourse && (
           <div className="animate-fade-in">
             <h1 className="text-3xl font-bold mb-6">Choisissez un cours</h1>
