@@ -1,4 +1,3 @@
-
 export const subjects: Record<string, string[] | Record<string, string[]>> = {
   primaire: {
     'CP1': ['Mathématiques', 'Français', 'Sciences', 'Education Civique'],
@@ -995,3 +994,1070 @@ export const coursesBySubject: Record<string, Record<string, string[]>> = {
       'L\'avenir de notre planète'
     ]
   },
+'Mathématiques-6ème': {
+    'Trimestre 1': [
+      'Les nombres décimaux : lecture et écriture',
+      'Comparer des nombres décimaux',
+      'Ranger des nombres décimaux',
+      'Addition de nombres décimaux',
+      'Soustraction de nombres décimaux',
+      'Multiplication de nombres décimaux',
+      'Division de nombres décimaux',
+      'Ordre de grandeur',
+      'Problèmes avec les décimaux',
+      'Les nombres entiers : diviseurs et multiples'
+    ],
+    'Trimestre 2': [
+      'Les fractions : écriture',
+      'Fractions égales',
+      'Simplifier une fraction',
+      'Comparer des fractions',
+      'Addition de fractions',
+      'Géométrie : les droites',
+      'Droites parallèles',
+      'Droites perpendiculaires',
+      'Les angles : mesure',
+      'Les angles : construction'
+    ],
+    'Trimestre 3': [
+      'La proportionnalité',
+      'Tableaux de proportionnalité',
+      'Les pourcentages',
+      'Les échelles',
+      'Aires : unités',
+      'Aire du rectangle',
+      'Aire du triangle',
+      'Périmètre du cercle',
+      'Aire du disque',
+      'Les solides : pavé droit'
+    ]
+  },
+  'Français-6ème': {
+    'Trimestre 1': [
+      'Les classes grammaticales',
+      'Le nom',
+      'Les déterminants',
+      'Les adjectifs',
+      'Les pronoms',
+      'Le verbe',
+      'Les adverbes',
+      'Les prépositions',
+      'Le récit : structure',
+      'Lecture : contes traditionnels'
+    ],
+    'Trimestre 2': [
+      'Conjugaison : révisions',
+      'Le présent de l\'indicatif',
+      'L\'imparfait',
+      'Le passé simple',
+      'Le futur simple',
+      'Le passé composé',
+      'Les temps composés',
+      'La poésie : les vers',
+      'La poésie : les rimes',
+      'Vocabulaire : la nature'
+    ],
+    'Trimestre 3': [
+      'Orthographe : les accords',
+      'Accord sujet-verbe',
+      'Accord dans le groupe nominal',
+      'Les homophones grammaticaux',
+      'Le théâtre : découverte',
+      'Les répliques et les didascalies',
+      'Jouer une scène',
+      'Expression écrite : le portrait',
+      'Expression écrite : le dialogue',
+      'Lecture cursive'
+    ]
+  },
+  'Anglais-6ème': {
+    'Trimestre 1': [
+      'Greetings and introductions',
+      'The alphabet',
+      'Numbers 1-100',
+      'Colors',
+      'Days of the week',
+      'Months of the year',
+      'Simple present : to be',
+      'Simple present : to have',
+      'Personal pronouns',
+      'Asking questions : What\'s your name?'
+    ],
+    'Trimestre 2': [
+      'Family members',
+      'Friends and people',
+      'Describing people : physical appearance',
+      'Describing people : personality',
+      'There is / There are',
+      'Prepositions of place',
+      'My house and my room',
+      'School subjects',
+      'Telling the time',
+      'Daily routines'
+    ],
+    'Trimestre 3': [
+      'Daily activities',
+      'Hobbies and free time',
+      'Sports',
+      'Present continuous',
+      'Present simple vs present continuous',
+      'Food and drinks',
+      'Likes and dislikes',
+      'Can for ability',
+      'Describing animals',
+      'Weather'
+    ]
+  },
+'SVT-6ème': {
+    'Trimestre 1': [
+      'L\'environnement proche',
+      'Observer le paysage',
+      'Les composantes du paysage',
+      'Les êtres vivants',
+      'Les éléments non vivants',
+      'Les interactions',
+      'La classification des êtres vivants',
+      'Les végétaux',
+      'Les animaux',
+      'Les micro-organismes'
+    ],
+    'Trimestre 2': [
+      'Les êtres vivants et leur milieu',
+      'Les besoins des végétaux',
+      'Les besoins des animaux',
+      'L\'adaptation au milieu',
+      'Les relations alimentaires',
+      'Les chaînes alimentaires',
+      'Les réseaux alimentaires',
+      'Les producteurs',
+      'Les consommateurs',
+      'Les décomposeurs'
+    ],
+    'Trimestre 3': [
+      'La biodiversité',
+      'Qu\'est-ce que la biodiversité ?',
+      'La diversité des espèces',
+      'La diversité des milieux',
+      'Les menaces sur la biodiversité',
+      'La déforestation',
+      'La pollution',
+      'Les espèces menacées',
+      'Protéger la biodiversité',
+      'Les actions de conservation'
+    ]
+  },
+  'Physique-Chimie-6ème': {
+    'Trimestre 1': [
+      'Mélanges et solutions',
+      'Mélanger des liquides',
+      'Mélanges homogènes',
+      'Mélanges hétérogènes',
+      'La dissolution',
+      'Les solutions',
+      'La solubilité',
+      'Séparer les constituants d\'un mélange',
+      'La filtration',
+      'La décantation'
+    ],
+    'Trimestre 2': [
+      'Les états de la matière',
+      'L\'état solide',
+      'L\'état liquide',
+      'L\'état gazeux',
+      'Les changements d\'état',
+      'La fusion',
+      'La solidification',
+      'La vaporisation',
+      'La liquéfaction',
+      'La sublimation'
+    ],
+    'Trimestre 3': [
+      'L\'eau dans notre environnement',
+      'L\'eau dans la nature',
+      'Le cycle de l\'eau',
+      'Les changements d\'état de l\'eau',
+      'L\'eau et la vie',
+      'L\'eau potable',
+      'Le traitement de l\'eau',
+      'La pollution de l\'eau',
+      'Économiser l\'eau',
+      'L\'importance de l\'eau'
+    ]
+  },
+  'Histoire-Géo-6ème': {
+    'Trimestre 1': [
+      'L\'Orient ancien',
+      'Les premières civilisations',
+      'La Mésopotamie',
+      'L\'invention de l\'écriture',
+      'Les ziggourats',
+      'L\'Égypte ancienne',
+      'Les pharaons',
+      'Les pyramides',
+      'Les hiéroglyphes',
+      'La religion égyptienne'
+    ],
+    'Trimestre 2': [
+      'La Grèce antique',
+      'Les cités grecques',
+      'Athènes',
+      'Sparte',
+      'La démocratie athénienne',
+      'Les dieux grecs',
+      'La mythologie',
+      'Les Jeux Olympiques',
+      'Le théâtre grec',
+      'Alexandre le Grand'
+    ],
+    'Trimestre 3': [
+      'Rome',
+      'La fondation de Rome',
+      'La République romaine',
+      'L\'Empire romain',
+      'Jules César',
+      'Auguste',
+      'La société romaine',
+      'Les conquêtes romaines',
+      'Les gladiateurs',
+      'La chute de l\'Empire romain'
+    ]
+  },
+'EPS-6ème': {
+    'Trimestre 1': [
+      'Athlétisme : course de vitesse',
+      'Le départ',
+      'La course',
+      'L\'arrivée',
+      'Athlétisme : saut en longueur',
+      'L\'élan',
+      'L\'impulsion',
+      'La réception',
+      'Échauffement',
+      'Étirements'
+    ],
+    'Trimestre 2': [
+      'Sports collectifs : football',
+      'Les règles du jeu',
+      'Dribbler',
+      'Passer',
+      'Tirer',
+      'Se placer',
+      'Défendre',
+      'Attaquer',
+      'Le jeu en équipe',
+      'Fair-play'
+    ],
+    'Trimestre 3': [
+      'Gymnastique de base',
+      'La roulade avant',
+      'La roulade arrière',
+      'L\'équilibre',
+      'La roue',
+      'Le poirier',
+      'Les enchaînements',
+      'La souplesse',
+      'La coordination',
+      'La sécurité'
+    ]
+  },
+
+  'Mathématiques-5ème': {
+    'Trimestre 1': [
+      'Les nombres relatifs',
+      'Nombres positifs et négatifs',
+      'La droite graduée',
+      'Comparer des nombres relatifs',
+      'Addition de nombres relatifs',
+      'Soustraction de nombres relatifs',
+      'Règles des signes',
+      'Distance entre deux nombres',
+      'Problèmes avec les relatifs',
+      'Calcul mental'
+    ],
+    'Trimestre 2': [
+      'Les fractions : opérations',
+      'Addition de fractions',
+      'Soustraction de fractions',
+      'Multiplication de fractions',
+      'Division de fractions',
+      'Problèmes avec fractions',
+      'Les triangles',
+      'Triangles particuliers',
+      'Construction de triangles',
+      'Les parallélogrammes'
+    ],
+    'Trimestre 3': [
+      'La proportionnalité',
+      'Reconnaître la proportionnalité',
+      'Tableaux de proportionnalité',
+      'Coefficient de proportionnalité',
+      'Pourcentages',
+      'Échelles',
+      'Les statistiques',
+      'Moyenne',
+      'Diagrammes',
+      'Graphiques'
+    ]
+  },
+  'Français-5ème': {
+    'Trimestre 1': [
+      'Les fonctions grammaticales',
+      'Le sujet',
+      'Les compléments d\'objet',
+      'Les compléments circonstanciels',
+      'L\'attribut du sujet',
+      'Le complément du nom',
+      'L\'apposition',
+      'Le roman d\'aventure',
+      'Les personnages',
+      'Les péripéties'
+    ],
+    'Trimestre 2': [
+      'La phrase complexe',
+      'Propositions indépendantes',
+      'Propositions principales',
+      'Propositions subordonnées',
+      'Les relatives',
+      'Les conjonctives',
+      'La nouvelle',
+      'Structure de la nouvelle',
+      'La chute',
+      'Écrire une nouvelle'
+    ],
+    'Trimestre 3': [
+      'Vocabulaire : sens propre et figuré',
+      'Les comparaisons',
+      'Les métaphores',
+      'Les expressions imagées',
+      'Poésie lyrique',
+      'Les thèmes lyriques',
+      'L\'expression des sentiments',
+      'Les figures de style',
+      'Analyser un poème',
+      'Écrire un poème'
+    ]
+  },
+  'Anglais-5ème': {
+    'Trimestre 1': [
+      'Past simple : regular verbs',
+      'Past simple : irregular verbs',
+      'Past simple : questions and negatives',
+      'Time expressions',
+      'Describing people : physical appearance',
+      'Describing people : personality',
+      'Describing people : clothes',
+      'Comparative adjectives',
+      'Talking about the past',
+      'Biography'
+    ],
+    'Trimestre 2': [
+      'Food and meals',
+      'At the restaurant',
+      'Recipes',
+      'Countable and uncountable nouns',
+      'Some and any',
+      'Much and many',
+      'Comparatives',
+      'Superlatives',
+      'Expressing preferences',
+      'Healthy eating'
+    ],
+    'Trimestre 3': [
+      'Sports and hobbies',
+      'Playing and doing',
+      'Going + -ing',
+      'Frequency adverbs',
+      'Modal verbs : can',
+      'Modal verbs : must',
+      'Modal verbs : should',
+      'Giving advice',
+      'Expressing ability',
+      'Expressing obligation'
+    ]
+  },
+'SVT-5ème': {
+    'Trimestre 1': [
+      'Respiration et occupation des milieux',
+      'La respiration des animaux',
+      'Les organes respiratoires',
+      'Respiration aquatique',
+      'Respiration aérienne',
+      'La respiration des végétaux',
+      'Les échanges gazeux',
+      'L\'adaptation au milieu',
+      'L\'occupation des milieux',
+      'Les migrations'
+    ],
+    'Trimestre 2': [
+      'Fonctionnement de l\'organisme',
+      'La digestion',
+      'Le tube digestif',
+      'Les nutriments',
+      'L\'absorption intestinale',
+      'La circulation sanguine',
+      'Le cœur',
+      'Les vaisseaux sanguins',
+      'Le sang',
+      'L\'élimination des déchets'
+    ],
+    'Trimestre 3': [
+      'Géologie externe',
+      'Le paysage : évolution',
+      'L\'érosion',
+      'Le transport',
+      'La sédimentation',
+      'Les roches sédimentaires',
+      'Les fossiles',
+      'L\'action de l\'eau',
+      'L\'action du vent',
+      'L\'action humaine'
+    ]
+  },
+  'Physique-Chimie-5ème': {
+    'Trimestre 1': [
+      'Électricité : les circuits',
+      'Le circuit électrique simple',
+      'Circuit en série',
+      'Circuit en dérivation',
+      'Les dipôles',
+      'Les générateurs',
+      'Les récepteurs',
+      'Court-circuit',
+      'La sécurité électrique',
+      'Les dangers du courant'
+    ],
+    'Trimestre 2': [
+      'La lumière : sources',
+      'Sources primaires',
+      'Sources secondaires',
+      'Propagation de la lumière',
+      'La lumière se propage en ligne droite',
+      'Ombres et pénombre',
+      'Les éclipses',
+      'La vitesse de la lumière',
+      'Les couleurs',
+      'La lumière blanche'
+    ],
+    'Trimestre 3': [
+      'Mélanges homogènes et hétérogènes',
+      'Identifier un mélange',
+      'Mélange et corps pur',
+      'Miscibilité',
+      'Solubilité',
+      'Saturation d\'une solution',
+      'Techniques de séparation',
+      'La distillation',
+      'La chromatographie',
+      'Applications pratiques'
+    ]
+  },
+  'Histoire-Géo-5ème': {
+    'Trimestre 1': [
+      'Le Moyen Âge : islam et chrétienté',
+      'La naissance de l\'islam',
+      'Mahomet',
+      'Les conquêtes musulmanes',
+      'La civilisation islamique',
+      'La chrétienté médiévale',
+      'L\'Église catholique',
+      'Les croisades',
+      'Les contacts entre civilisations',
+      'Échanges culturels'
+    ],
+    'Trimestre 2': [
+      'La Renaissance',
+      'Les grandes découvertes',
+      'Christophe Colomb',
+      'Vasco de Gama',
+      'Magellan',
+      'La Renaissance artistique',
+      'Léonard de Vinci',
+      'Michel-Ange',
+      'L\'humanisme',
+      'L\'imprimerie'
+    ],
+    'Trimestre 3': [
+      'Géographie : ressources et développement',
+      'Les ressources naturelles',
+      'L\'eau',
+      'L\'énergie',
+      'Les ressources alimentaires',
+      'Le développement',
+      'Les inégalités',
+      'Le développement durable',
+      'Préserver les ressources',
+      'Les enjeux du XXIe siècle'
+    ]
+  },
+  'EPS-5ème': {
+    'Trimestre 1': [
+      'Athlétisme : course de vitesse',
+      'Technique de course',
+      'Les starting-blocks',
+      'Le 100 mètres',
+      'Les relais',
+      'Passer le témoin',
+      'Chronométrage',
+      'Améliorer sa performance',
+      'L\'entraînement',
+      'La récupération'
+    ],
+    'Trimestre 2': [
+      'Sports collectifs : basketball',
+      'Les règles du jeu',
+      'Le dribble',
+      'La passe',
+      'Le tir',
+      'Le lay-up',
+      'La défense',
+      'L\'attaque',
+      'Les tactiques de jeu',
+      'L\'esprit d\'équipe'
+    ],
+    'Trimestre 3': [
+      'Gymnastique acrobatique',
+      'Les figures au sol',
+      'Les appuis',
+      'Les équilibres',
+      'Les portés',
+      'Les pyramides',
+      'La chorégraphie',
+      'La synchronisation',
+      'L\'expression corporelle',
+      'La présentation'
+    ]
+  },
+
+  'Mathématiques-4ème': {
+    'Trimestre 1': [
+      'Calcul littéral',
+      'Réduire une expression',
+      'Développer une expression',
+      'Factoriser une expression',
+      'Double distributivité',
+      'Identités remarquables',
+      'Équations du premier degré',
+      'Résoudre une équation',
+      'Problèmes avec équations',
+      'Inéquations'
+    ],
+    'Trimestre 2': [
+      'Théorème de Pythagore',
+      'Dans le triangle rectangle',
+      'Calculer une longueur',
+      'Réciproque du théorème',
+      'Vérifier si un triangle est rectangle',
+      'Triangles égaux',
+      'Triangles semblables',
+      'Théorème de Thalès',
+      'Configuration de Thalès',
+      'Applications'
+    ],
+'Trimestre 3': [
+      'Proportionnalité et pourcentages',
+      'Situations de proportionnalité',
+      'Coefficient de proportionnalité',
+      'Représentation graphique',
+      'Calculer un pourcentage',
+      'Augmentation et réduction',
+      'Probabilités',
+      'Expériences aléatoires',
+      'Calculer des probabilités',
+      'Arbres de probabilités'
+    ]
+  },
+  'Français-4ème': {
+    'Trimestre 1': [
+      'Les propositions subordonnées',
+      'Les subordonnées relatives',
+      'Les subordonnées conjonctives',
+      'Les subordonnées complétives',
+      'Les subordonnées circonstancielles',
+      'La lettre',
+      'Lettre formelle',
+      'Lettre informelle',
+      'Structure d\'une lettre',
+      'Formules de politesse'
+    ],
+    'Trimestre 2': [
+      'Discours direct et indirect',
+      'Transformer le discours',
+      'Les verbes introducteurs',
+      'La concordance des temps',
+      'La nouvelle fantastique',
+      'Les caractéristiques du fantastique',
+      'L\'atmosphère',
+      'Le doute et l\'hésitation',
+      'Analyser une nouvelle',
+      'Écrire du fantastique'
+    ],
+    'Trimestre 3': [
+      'Les temps du récit',
+      'Imparfait et passé simple',
+      'La valeur des temps',
+      'Le système des temps',
+      'Le portrait',
+      'Portrait physique',
+      'Portrait moral',
+      'Portrait en action',
+      'Les registres de langue',
+      'Expression écrite argumentative'
+    ]
+  },
+  'Anglais-4ème': {
+    'Trimestre 1': [
+      'Present perfect',
+      'Formation du present perfect',
+      'Ever and never',
+      'Already, yet, just',
+      'For and since',
+      'Present perfect vs past simple',
+      'Travel and tourism',
+      'At the airport',
+      'At the hotel',
+      'Asking for directions'
+    ],
+    'Trimestre 2': [
+      'Passive voice',
+      'Formation of the passive',
+      'Passive in different tenses',
+      'By + agent',
+      'Technology',
+      'Computers and internet',
+      'Social media',
+      'Mobile phones',
+      'Advantages and disadvantages',
+      'Future technologies'
+    ],
+    'Trimestre 3': [
+      'Conditional sentences',
+      'Zero conditional',
+      'First conditional',
+      'Second conditional',
+      'Environment',
+      'Climate change',
+      'Pollution',
+      'Endangered species',
+      'Recycling',
+      'Protecting the environment'
+    ]
+  },
+  'SVT-4ème': {
+    'Trimestre 1': [
+      'La reproduction humaine',
+      'L\'appareil reproducteur masculin',
+      'L\'appareil reproducteur féminin',
+      'La puberté',
+      'Les gamètes',
+      'La fécondation',
+      'Le développement embryonnaire',
+      'La grossesse',
+      'L\'accouchement',
+      'La contraception'
+    ],
+    'Trimestre 2': [
+      'Le système nerveux',
+      'Les organes des sens',
+      'Les récepteurs sensoriels',
+      'Les nerfs',
+      'Le cerveau',
+      'La moelle épinière',
+      'Le message nerveux',
+      'La communication nerveuse',
+      'Les réflexes',
+      'Les drogues et le système nerveux'
+    ],
+    'Trimestre 3': [
+      'Géologie : séismes et volcans',
+      'Les séismes',
+      'L\'origine des séismes',
+      'Les ondes sismiques',
+      'Mesurer un séisme',
+      'Prévenir les risques sismiques',
+      'Les volcans',
+      'Les éruptions volcaniques',
+      'Les types de volcans',
+      'Le risque volcanique'
+    ]
+  },
+  'Physique-Chimie-4ème': {
+    'Trimestre 1': [
+      'L\'air qui nous entoure',
+      'Composition de l\'air',
+      'Le dioxygène',
+      'Le diazote',
+      'Les autres gaz',
+      'La pression atmosphérique',
+      'Mesurer la pression',
+      'Propriétés de l\'air',
+      'Volume et masse de l\'air',
+      'La pollution de l\'air'
+    ],
+    'Trimestre 2': [
+      'Les combustions',
+      'Qu\'est-ce qu\'une combustion ?',
+      'Combustibles et comburants',
+      'Les produits de combustion',
+      'Combustions complètes',
+      'Combustions incomplètes',
+      'Le triangle du feu',
+      'Dangers des combustions',
+      'Prévenir les incendies',
+      'Éteindre un feu'
+    ],
+    'Trimestre 3': [
+      'Lois de l\'électricité',
+      'L\'intensité du courant',
+      'Mesurer l\'intensité',
+      'Loi d\'unicité de l\'intensité',
+      'Loi d\'additivité des intensités',
+      'La tension électrique',
+      'Mesurer la tension',
+      'Loi d\'unicité de la tension',
+      'Loi d\'additivité des tensions',
+      'Résistance électrique'
+    ]
+  },
+ 'Histoire-Géo-4ème': {
+    'Trimestre 1': [
+      'Les grandes découvertes',
+      'Les motivations des explorateurs',
+      'Les progrès techniques',
+      'Christophe Colomb et l\'Amérique',
+      'Les conquistadors',
+      'Les empires coloniaux',
+      'L\'esclavage et la traite',
+      'Les échanges',
+      'Le commerce triangulaire',
+      'Les conséquences'
+    ],
+    'Trimestre 2': [
+      'Les révolutions du XVIIIe siècle',
+      'Les Lumières',
+      'Les philosophes',
+      'Les idées nouvelles',
+      'La Révolution française',
+      '1789 : l\'année décisive',
+      'La Déclaration des droits',
+      'La Terreur',
+      'Napoléon Bonaparte',
+      'L\'Empire'
+    ],
+    'Trimestre 3': [
+      'Géographie : la mondialisation',
+      'Qu\'est-ce que la mondialisation ?',
+      'Les acteurs de la mondialisation',
+      'Les flux',
+      'Les échanges commerciaux',
+      'Les migrations',
+      'Les firmes multinationales',
+      'Les inégalités',
+      'Les territoires dans la mondialisation',
+      'Les métropoles mondiales'
+    ]
+  },
+  'EPS-4ème': {
+    'Trimestre 1': [
+      'Course de demi-fond',
+      'L\'endurance',
+      'Le souffle',
+      'Gérer son effort',
+      'L\'allure de course',
+      'Le 1000 mètres',
+      'Le 1500 mètres',
+      'Le cross-country',
+      'L\'entraînement en endurance',
+      'Récupération et hydratation'
+    ],
+    'Trimestre 2': [
+      'Sports collectifs : handball',
+      'Les règles du handball',
+      'La manipulation du ballon',
+      'Le dribble',
+      'La passe',
+      'Le tir en course',
+      'Le tir en suspension',
+      'Le gardien de but',
+      'Les tactiques défensives',
+      'Les tactiques offensives'
+    ],
+    'Trimestre 3': [
+      'Natation',
+      'La respiration aquatique',
+      'La flottaison',
+      'Les battements de jambes',
+      'Les mouvements de bras',
+      'Le crawl',
+      'La brasse',
+      'Le dos crawlé',
+      'Le plongeon',
+      'La sécurité aquatique'
+    ]
+  },
+
+  'Mathématiques-3ème': {
+    'Trimestre 1': [
+      'Les racines carrées',
+      'Définition de la racine carrée',
+      'Calculer une racine carrée',
+      'Simplifier une racine carrée',
+      'Opérations avec les racines',
+      'Équations du premier degré',
+      'Équations produits',
+      'Inéquations',
+      'Systèmes d\'équations',
+      'Résolution par substitution'
+    ],
+    'Trimestre 2': [
+      'Théorème de Thalès',
+      'Configuration de Thalès',
+      'Calcul de longueurs',
+      'Réciproque du théorème',
+      'Agrandissement et réduction',
+      'Trigonométrie',
+      'Cosinus d\'un angle aigu',
+      'Sinus d\'un angle aigu',
+      'Tangente d\'un angle aigu',
+      'Calculs trigonométriques'
+    ],
+    'Trimestre 3': [
+      'Les fonctions affines',
+      'Notion de fonction',
+      'Représentation graphique',
+      'Fonction linéaire',
+      'Fonction affine',
+      'Coefficient directeur',
+      'Équation de droite',
+      'Probabilités',
+      'Arbre de probabilités',
+      'Statistiques : moyenne, médiane, étendue'
+    ]
+  },
+  'Français-3ème': {
+    'Trimestre 1': [
+      'Analyse logique complète',
+      'Les propositions',
+      'Nature des propositions',
+      'Fonction des propositions',
+      'L\'autobiographie',
+      'Les caractéristiques',
+      'Le pacte autobiographique',
+      'Mémoires et souvenirs',
+      'Analyser un texte autobiographique',
+      'Écrire un récit autobiographique'
+    ],
+    'Trimestre 2': [
+      'L\'argumentation',
+      'Thèse et arguments',
+      'Les exemples',
+      'Les connecteurs logiques',
+      'Convaincre et persuader',
+      'Le théâtre classique',
+      'Les règles du théâtre',
+      'La tragédie',
+      'La comédie',
+      'Analyser une scène'
+    ],
+    'Trimestre 3': [
+      'Préparation au brevet',
+      'La dictée',
+      'Les questions sur texte',
+      'La réécriture',
+      'La rédaction',
+      'Argumentation écrite',
+      'Récit d\'imagination',
+      'Poésie engagée',
+      'La poésie de résistance',
+      'Analyser un poème engagé'
+    ]
+  },
+  'Anglais-3ème': {
+    'Trimestre 1': [
+      'All tenses review',
+      'Present simple and continuous',
+      'Past simple and continuous',
+      'Present perfect',
+      'Past perfect',
+      'Future forms',
+      'Will and going to',
+      'Present continuous for future',
+      'Future continuous',
+      'Mixed tenses exercises'
+    ],
+'Trimestre 2': [
+      'Reported speech',
+      'Statements',
+      'Questions',
+      'Commands',
+      'Time expressions changes',
+      'Job and career',
+      'Jobs and professions',
+      'Skills and qualifications',
+      'Job interviews',
+      'Writing a CV'
+    ],
+    'Trimestre 3': [
+      'Relative clauses',
+      'Defining relative clauses',
+      'Non-defining relative clauses',
+      'Relative pronouns',
+      'Global issues',
+      'Poverty',
+      'Education',
+      'Human rights',
+      'Peace and war',
+      'Making a difference'
+    ]
+  },
+  'SVT-3ème': {
+    'Trimestre 1': [
+      'Génétique et hérédité',
+      'Les chromosomes',
+      'L\'ADN',
+      'Les gènes',
+      'La division cellulaire',
+      'La mitose',
+      'La méiose',
+      'L\'information génétique',
+      'La transmission des caractères',
+      'Les arbres généalogiques'
+    ],
+    'Trimestre 2': [
+      'Évolution des espèces',
+      'La théorie de l\'évolution',
+      'Darwin et la sélection naturelle',
+      'Les preuves de l\'évolution',
+      'Les fossiles',
+'L'anatomie comparée',
+'Les parentés',
+'La classification phylogénétique',
+'L'évolution humaine',
+'Homo sapiens'
+],
+'Trimestre 3': [
+'Responsabilité humaine en santé',
+'Le système immunitaire',
+'Les microbes',
+'Les réactions immunitaires',
+'Les vaccins',
+'Les antibiotiques',
+'Responsabilité environnementale',
+'Le développement durable',
+'Les énergies renouvelables',
+'Préserver la biodiversité'
+]
+},
+'Physique-Chimie-3ème': {
+'Trimestre 1': [
+'Électricité : puissance et énergie',
+'La puissance électrique',
+'Relation P = U × I',
+'L'énergie électrique',
+'Relation E = P × t',
+'Le coût de l'énergie',
+'Économiser l'énergie',
+'Les appareils électriques',
+'La sécurité électrique',
+'Les fusibles et disjoncteurs'
+],
+'Trimestre 2': [
+'Chimie : acides, bases, pH',
+'Les solutions acides',
+'Les solutions basiques',
+'Les solutions neutres',
+'Le pH',
+'Mesurer le pH',
+'Les indicateurs colorés',
+'Les ions',
+'Les réactions acide-base',
+'Dilution et concentration'
+],
+'Trimestre 3': [
+'Mécanique et énergie',
+'La vitesse',
+'Calculer une vitesse',
+'La gravitation',
+'Le poids',
+'L'énergie cinétique',
+'L'énergie potentielle',
+'La conservation de l'énergie',
+'Les transferts d'énergie',
+'Les sources d'énergie'
+]
+},
+'Histoire-Géo-3ème': {
+'Trimestre 1': [
+'Les deux guerres mondiales',
+'La Première Guerre mondiale',
+'Les causes',
+'Le déroulement',
+'Les conséquences',
+'Le génocide arménien',
+'La Seconde Guerre mondiale',
+'Les causes',
+'Le déroulement',
+'La Shoah'
+],
+'Trimestre 2': [
+'La Guerre froide',
+'L'opposition Est-Ouest',
+'Le bloc de l'Ouest',
+'Le bloc de l'Est',
+'Le mur de Berlin',
+'La crise de Cuba',
+'La course aux armements',
+'La décolonisation',
+'Les indépendances',
+'Les nouveaux États'
+],
+'Trimestre 3': [
+'Géographie : l'Union Européenne',
+'La construction européenne',
+'Les institutions',
+'L'euro',
+'La France',
+'Les territoires français',
+'Les régions',
+'L'aménagement du territoire',
+'Les défis de la France',
+'Préparation au brevet'
+]
+},
+'EPS-3ème': {
+'Trimestre 1': [
+'Course d'orientation',
+'Lire une carte',
+'Les symboles',
+'L'échelle',
+'La boussole',
+'S'orienter',
+'Les azimuts',
+'Établir un itinéraire',
+'Les balises',
+'Stratégies de course'
+],
+'Trimestre 2': [
+'Sports collectifs : volley-ball',
+'Les règles du volley',
+'La touche de balle',
+'Le service',
+'La manchette',
+'La passe',
+'Le smash',
+'Le contre',
+'Les rotations',
+'Les tactiques'
+],
+'Trimestre 3': [
+'Préparation physique au brevet',
+'Course d'endurance',
+'Natation de distance',
+'Les épreuves du brevet',
+'S'entraîner efficacement',
+'L'alimentation du sportif',
+'L'hydratation',
+'Gérer son stress',
+'La récupération',
+'Objectif brevet'
+]
+},
