@@ -6,13 +6,11 @@ export const levels: Record<string, Level> = {
     name: 'Primaire',
     classes: ['CP1', 'CP2', 'CE1', 'CE2', 'CM1', 'CM2']
   },
-  
   college: {
     id: 'college',
     name: 'Collège',
     classes: ['6ème', '5ème', '4ème', '3ème']
   },
-  
   lycee: {
     id: 'lycee',
     name: 'Lycée',
@@ -34,7 +32,6 @@ export const levels: Record<string, Level> = {
       }
     }
   },
-  
   universite: {
     id: 'universite',
     name: 'Université',
