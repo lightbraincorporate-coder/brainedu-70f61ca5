@@ -8,6 +8,14 @@ export const products: Record<string, Product> = {
   expose_complet: { name: 'Exposé complet', price: 700, icon: '📑', availableFrom: 'college' }
 };
 
+export const productsUniversite: Record<string, Product> = {
+  cours: { name: 'Cours complet', price: 350, icon: '📚' },
+  resume_cours: { name: 'Résumé de cours', price: 400, icon: '📄' },
+  exercices: { name: 'Exercices et corrigés', price: 300, icon: '✏️' },
+  expose_simple: { name: 'Exposé simple', price: 1000, icon: '📊' },
+  expose_complet: { name: 'Exposé complet', price: 1500, icon: '📑' }
+};
+
 export const specialProducts: Product[] = [
   { name: 'Astuces de calcul', price: 100, icon: '🧮' },
   { name: 'Culture générale (5 infos)', price: 250, icon: '💡' },
