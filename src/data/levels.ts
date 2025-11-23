@@ -38,52 +38,6 @@ export const levels: Record<string, Level> = {
   universite: {
     id: 'universite',
     name: 'Université',
-    // Filières standard (Licence 1 à Master 2)
-    programs: {
-      'Droit': {
-        'Licence 1': ['Licence 1'],
-        'Licence 2': ['Licence 2'],
-        'Licence 3': {
-          branches: ['Droit Privé', 'Droit Public']
-        },
-        'Master 1': {
-          branches: ['Privé', 'Public']
-        },
-        'Master 2': {
-          branches: ['Privé', 'Public']
-        }
-      },
-      'Ingénierie Informatique': {
-        'Licence 1': ['Licence 1'],
-        'Licence 2': ['Licence 2'],
-        'Licence 3': ['Licence 3'],
-        'Master 1': ['Master 1'],
-        'Master 2': ['Master 2']
-      },
-      'Économie et Gestion': {
-        'Licence 1': ['Licence 1'],
-        'Licence 2': ['Licence 2'],
-        'Licence 3': ['Licence 3'],
-        'Master 1': ['Master 1'],
-        'Master 2': ['Master 2']
-      },
-      'Génie Civil': {
-        'Licence 1': ['Licence 1'],
-        'Licence 2': ['Licence 2'],
-        'Licence 3': ['Licence 3'],
-        'Master 1': ['Master 1'],
-        'Master 2': ['Master 2']
-      },
-      'Lettres Modernes': {
-        'Licence 1': ['Licence 1'],
-        'Licence 2': ['Licence 2'],
-        'Licence 3': ['Licence 3'],
-        'Master 1': ['Master 1'],
-        'Master 2': ['Master 2']
-      }
-    },
-      'Médecine': ['1ère Année', '2ème Année', '3ème Année', '4ème Année', '5ème Année', '6ème Année', '7ème Année'],
-      'Pharmacie': ['1ère Année', '2ème Année', '3ème Année', '4ème Année', '5ème Année']
-    }
+    classes: ['Licence 1', 'Licence 2', 'Licence 3', 'Master 1', 'Master 2']
   }
 };
