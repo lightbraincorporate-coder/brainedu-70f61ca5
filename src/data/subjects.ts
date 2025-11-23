@@ -2061,3 +2061,1905 @@ export const coursesBySubject: Record<string, Record<string, string[]>> = {
 'Objectif brevet'
 ]
 },
+'Français-2nde A': {
+    'Trimestre 1': [
+      'Le roman et le récit du XIXe siècle',
+      'Le roman réaliste',
+      'Balzac : Le Père Goriot',
+      'Stendhal : Le Rouge et le Noir',
+      'Le roman naturaliste',
+      'Zola et le naturalisme',
+      'Grammaire : l\'analyse de la phrase',
+      'Les propositions subordonnées',
+      'Les fonctions grammaticales',
+      'Méthodologie : la lecture analytique'
+    ],
+    'Trimestre 2': [
+      'La poésie du XIXe au XXe siècle',
+      'Le romantisme : Lamartine, Hugo',
+      'Le symbolisme : Baudelaire',
+      'Les Fleurs du mal',
+      'Rimbaud et Verlaine',
+      'L\'argumentation',
+      'Convaincre et persuader',
+      'Les procédés argumentatifs',
+      'Techniques de dissertation',
+      'Le plan dialectique'
+    ],
+    'Trimestre 3': [
+      'Le théâtre du XVIIe au XXIe siècle',
+      'La tragédie classique',
+      'Racine : Phèdre',
+      'La comédie classique',
+      'Molière : Le Misanthrope',
+      'Le théâtre moderne',
+      'Le commentaire de texte',
+      'Introduction et conclusion',
+      'Expression écrite',
+      'L\'essai littéraire'
+    ]
+  },
+  'Français-1ère A': {
+    'Trimestre 1': [
+      'Le roman du XIXe siècle',
+      'Le roman psychologique',
+      'Madame Bovary de Flaubert',
+      'L\'étude des personnages',
+      'Les techniques narratives',
+      'Le point de vue narratif',
+      'Le commentaire composé',
+      'L\'introduction rédigée',
+      'Les axes d\'analyse',
+      'Les figures de style avancées'
+    ],
+    'Trimestre 2': [
+      'La poésie moderne et contemporaine',
+      'Apollinaire : Alcools',
+      'Le surréalisme',
+      'Paul Éluard',
+      'L\'essai littéraire',
+      'Montaigne : Les Essais',
+      'L\'autobiographie',
+      'Rousseau : Les Confessions',
+      'La dissertation littéraire',
+      'Le plan thématique'
+    ],
+    'Trimestre 3': [
+      'Le théâtre contemporain',
+      'Le théâtre de l\'absurde',
+      'Ionesco : La Cantatrice chauve',
+      'Beckett : En attendant Godot',
+      'Les techniques d\'écriture',
+      'L\'écriture d\'invention',
+      'L\'analyse stylistique',
+      'Les registres littéraires',
+      'Préparation aux épreuves',
+      'Méthodologie complète'
+    ]
+  },
+  'Français-Terminale A': {
+    'Trimestre 1': [
+      'Littérature du XXe siècle',
+      'Le nouveau roman',
+      'Sartre : La Nausée',
+      'Camus : L\'Étranger',
+      'L\'existentialisme',
+      'La dissertation philosophique',
+      'Problématiser un sujet',
+      'Argumenter efficacement',
+      'Analyse critique',
+      'Les œuvres au programme'
+    ],
+    'Trimestre 2': [
+      'Le récit moderne',
+      'Proust : Du côté de chez Swann',
+      'La mémoire involontaire',
+      'L\'autobiographie moderne',
+      'Marguerite Duras',
+      'Les techniques argumentatives',
+      'La rhétorique',
+      'Les sophismes',
+      'L\'éloquence',
+      'L\'oral du bac'
+    ],
+    'Trimestre 3': [
+      'Préparation au BAC',
+      'Révision des œuvres',
+      'Les mouvements littéraires',
+      'Du classicisme au contemporain',
+      'Le commentaire composé avancé',
+      'La dissertation complète',
+      'L\'écriture d\'invention créative',
+      'L\'entretien oral',
+      'Gestion du temps',
+      'Stratégies d\'examen'
+    ]
+  },
+'Philosophie-2nde A': {
+    'Trimestre 1': [
+      'Introduction à la réflexion philosophique',
+      'Qu\'est-ce que philosopher ?',
+      'Les origines de la philosophie',
+      'Socrate et la maïeutique',
+      'Platon et les Idées',
+      'Aristote et la logique',
+      'Les grands courants philosophiques',
+      'Le rationalisme',
+      'L\'empirisme',
+      'L\'existentialisme'
+    ],
+    'Trimestre 2': [
+      'La conscience de soi',
+      'Descartes : le cogito',
+      'La conscience et l\'inconscient',
+      'Freud et la psychanalyse',
+      'La perception',
+      'Les sens et la connaissance',
+      'L\'illusion et l\'erreur',
+      'Le langage',
+      'Le langage et la pensée',
+      'Communication et expression'
+    ],
+    'Trimestre 3': [
+      'La culture',
+      'Nature et culture',
+      'L\'art',
+      'Qu\'est-ce que l\'art ?',
+      'Le beau et l\'utile',
+      'L\'œuvre d\'art',
+      'La technique',
+      'L\'homme et l\'outil',
+      'Progrès technique',
+      'Technique et éthique'
+    ]
+  },
+  'Philosophie-1ère A': {
+    'Trimestre 1': [
+      'La conscience',
+      'Conscience immédiate et réflexive',
+      'La conscience de soi',
+      'La conscience morale',
+      'L\'inconscient',
+      'L\'hypothèse de l\'inconscient',
+      'Le ça, le moi, le surmoi',
+      'Autrui',
+      'La reconnaissance',
+      'L\'altérité'
+    ],
+    'Trimestre 2': [
+      'Le désir',
+      'Désir et besoin',
+      'Le manque et la satisfaction',
+      'Épicure et le bonheur',
+      'L\'existence et le temps',
+      'Être et temps',
+      'La finitude',
+      'La liberté',
+      'Liberté et déterminisme',
+      'Le libre arbitre'
+    ],
+    'Trimestre 3': [
+      'Le devoir',
+      'L\'obligation morale',
+      'Kant et l\'impératif catégorique',
+      'Le bonheur',
+      'Qu\'est-ce que le bonheur ?',
+      'Bonheur et plaisir',
+      'La morale',
+      'Morale et éthique',
+      'Les fondements de la morale',
+      'Dissertation philosophique'
+    ]
+  },
+  'Philosophie-Terminale A': {
+    'Trimestre 1': [
+      'La vérité',
+      'Vérité et opinion',
+      'Les critères de vérité',
+      'La raison et le réel',
+      'Raison et expérience',
+      'Théorie et expérience',
+      'La démonstration',
+      'Mathématiques et vérité',
+      'L\'interprétation',
+      'Sens et interprétation'
+    ],
+    'Trimestre 2': [
+      'Le vivant',
+      'La vie et la matière',
+      'L\'âme et le corps',
+      'La matière et l\'esprit',
+      'Le dualisme cartésien',
+      'Le matérialisme',
+      'La société',
+      'L\'état de nature',
+      'Le contrat social',
+      'Hobbes et Rousseau'
+    ],
+    'Trimestre 3': [
+      'La justice et le droit',
+      'Justice et égalité',
+      'Le droit naturel',
+      'Le droit positif',
+      'L\'État',
+      'Légitimité du pouvoir',
+      'La démocratie',
+      'Préparation intensive au BAC',
+      'Révision des notions',
+      'Méthodologie de la dissertation'
+    ]
+  },
+  'Histoire-Géo-2nde A': {
+    'Trimestre 1': [
+      'L\'Europe et le monde au XIXe siècle',
+      'L\'industrialisation',
+      'La Révolution industrielle en Europe',
+      'Les transformations économiques',
+      'Les transformations sociales',
+      'La bourgeoisie',
+      'Le prolétariat',
+      'Les grandes puissances européennes',
+      'L\'Empire britannique',
+      'La France au XIXe'
+    ],
+    'Trimestre 2': [
+      'Géographie : population mondiale',
+      'La croissance démographique',
+      'La transition démographique',
+      'Les migrations internationales',
+      'L\'urbanisation',
+      'Les métropoles',
+      'Les mégapoles',
+      'Développement durable',
+      'Les ressources',
+      'Les défis environnementaux'
+    ],
+    'Trimestre 3': [
+      'Les transformations sociales',
+      'Le mouvement ouvrier',
+      'Le socialisme',
+      'Les luttes sociales',
+      'L\'évolution de la famille',
+      'La place des femmes',
+      'L\'instruction publique',
+      'Les loisirs',
+      'Culture de masse',
+      'La Belle Époque'
+    ]
+  },
+  'Histoire-Géo-1ère A': {
+    'Trimestre 1': [
+      'La Première Guerre mondiale',
+      'Les causes du conflit',
+      'La guerre de mouvement',
+      'La guerre de tranchées',
+      'La guerre totale',
+      'Le génocide arménien',
+      'La Révolution russe de 1917',
+      'Lénine et les bolcheviks',
+      'La guerre civile',
+      'La naissance de l\'URSS'
+    ],
+    'Trimestre 2': [
+      'L\'entre-deux-guerres',
+      'Les traités de paix',
+      'La SDN',
+      'La crise de 1929',
+      'Les régimes totalitaires',
+      'Stalinisme',
+      'Nazisme',
+      'Géographie : la mondialisation',
+      'Les acteurs',
+      'Les flux'
+    ],
+    'Trimestre 3': [
+      'La Seconde Guerre mondiale',
+      'Les causes',
+      'Les phases du conflit',
+      'La France dans la guerre',
+      'Vichy et la Résistance',
+      'Le génocide juif',
+      'Les enjeux énergétiques',
+      'Les hydrocarbures',
+      'Les énergies renouvelables',
+      'Géopolitique de l\'énergie'
+    ]
+  },
+  'Histoire-Géo-Terminale A': {
+    'Trimestre 1': [
+      'La Guerre froide',
+      'La bipolarisation du monde',
+      'Le plan Marshall',
+      'Le blocus de Berlin',
+      'La guerre de Corée',
+      'La crise de Cuba',
+      'La coexistence pacifique',
+      'La décolonisation',
+      'L\'indépendance de l\'Inde',
+      'Les guerres d\'indépendance'
+    ],
+    'Trimestre 2': [
+      'Le monde depuis 1991',
+      'La chute du mur de Berlin',
+      'La fin de l\'URSS',
+      'L\'hyperpuissance américaine',
+      'Les nouvelles puissances',
+      'La Chine',
+      'Géographie : les puissances mondiales',
+      'Les États-Unis',
+      'L\'Union Européenne',
+      'Les puissances émergentes'
+    ],
+    'Trimestre 3': [
+      'Les conflits contemporains',
+      'Le Moyen-Orient',
+      'Les conflits en Afrique',
+      'Le terrorisme',
+      'L\'Afrique dans le monde',
+      'Les défis du continent',
+      'Les opportunités',
+      'L\'intégration régionale',
+      'Préparation au BAC',
+      'Composition et étude de documents'
+    ]
+  },
+'Mathématiques-2nde A': {
+    'Trimestre 1': [
+      'Les fonctions numériques',
+      'Notion de fonction',
+      'Domaine de définition',
+      'Image et antécédent',
+      'Représentation graphique',
+      'Lecture graphique',
+      'Équations du premier degré',
+      'Résolution d\'équations',
+      'Inéquations',
+      'Systèmes d\'équations'
+    ],
+    'Trimestre 2': [
+      'Les fonctions de référence',
+      'Fonction linéaire',
+      'Fonction affine',
+      'Fonction carré',
+      'Fonction inverse',
+      'Variations de fonctions',
+      'Statistiques descriptives',
+      'Moyenne, médiane, quartiles',
+      'Diagrammes',
+      'Géométrie plane'
+    ],
+    'Trimestre 3': [
+      'Proportionnalité',
+      'Situations de proportionnalité',
+      'Pourcentages',
+      'Échelles',
+      'Trigonométrie de base',
+      'Cosinus, sinus, tangente',
+      'Résolution de triangles',
+      'Vecteurs',
+      'Coordonnées',
+      'Opérations sur les vecteurs'
+    ]
+  },
+  'Mathématiques-1ère A': {
+    'Trimestre 1': [
+      'Les suites numériques',
+      'Définition d\'une suite',
+      'Suites arithmétiques',
+      'Suites géométriques',
+      'Sens de variation',
+      'Les fonctions de référence',
+      'Fonction polynôme du second degré',
+      'Fonction racine carrée',
+      'Fonction valeur absolue',
+      'Transformations de fonctions'
+    ],
+    'Trimestre 2': [
+      'La dérivation',
+      'Nombre dérivé',
+      'Fonction dérivée',
+      'Dérivées des fonctions usuelles',
+      'Opérations sur les dérivées',
+      'Applications de la dérivée',
+      'Étude de variations',
+      'Les probabilités',
+      'Probabilités conditionnelles',
+      'Indépendance'
+    ],
+    'Trimestre 3': [
+      'Les statistiques',
+      'Variables statistiques',
+      'Paramètres de position',
+      'Paramètres de dispersion',
+      'La géométrie analytique',
+      'Équations de droites',
+      'Systèmes linéaires',
+      'Vecteurs du plan',
+      'Produit scalaire',
+      'Applications géométriques'
+    ]
+  },
+  'Mathématiques-Terminale A': {
+    'Trimestre 1': [
+      'Les fonctions logarithmes',
+      'Fonction logarithme népérien',
+      'Propriétés algébriques',
+      'Dérivée',
+      'Étude de fonctions',
+      'Les primitives',
+      'Primitives usuelles',
+      'Calcul de primitives',
+      'Intégration par parties',
+      'Changement de variable'
+    ],
+    'Trimestre 2': [
+      'Les intégrales',
+      'Intégrale définie',
+      'Calcul d\'aires',
+      'Valeur moyenne',
+      'Probabilités conditionnelles',
+      'Formule des probabilités totales',
+      'Formule de Bayes',
+      'Variables aléatoires',
+      'Loi binomiale',
+      'Espérance et variance'
+    ],
+    'Trimestre 3': [
+      'Suites et limites',
+      'Limite d\'une suite',
+      'Opérations sur les limites',
+      'Suites convergentes',
+      'Comportement asymptotique',
+      'Préparation intensive au BAC',
+      'Exercices types',
+      'Problèmes de synthèse',
+      'Stratégies de résolution',
+      'Gestion du temps'
+    ]
+  },
+  'Anglais-2nde A': {
+    'Trimestre 1': [
+      'Grammar fundamentals',
+      'Tenses review',
+      'Present perfect continuous',
+      'Past perfect',
+      'Future perfect',
+      'Reading comprehension',
+      'Analyzing texts',
+      'Literary devices',
+      'Vocabulary building',
+      'Idiomatic expressions'
+    ],
+    'Trimestre 2': [
+      'Writing skills',
+      'Essay structure',
+      'Paragraphing',
+      'Linking words',
+      'Oral expression',
+      'Presentations',
+      'Debates',
+      'British culture',
+      'History and traditions',
+      'British literature'
+    ],
+    'Trimestre 3': [
+      'Literature introduction',
+      'Short stories',
+      'Poetry analysis',
+      'Shakespeare introduction',
+      'Debate and discussion',
+      'Expressing opinions',
+      'Agreeing and disagreeing',
+      'American culture',
+      'US history',
+      'American way of life'
+    ]
+  },
+  'Anglais-1ère A': {
+    'Trimestre 1': [
+      'Advanced grammar',
+      'Modal verbs advanced',
+      'Subjunctive',
+      'Conditionals review',
+      'Reported speech advanced',
+      'Essay writing',
+      'Argumentative essay',
+      'Descriptive writing',
+      'Narrative writing',
+      'Literary analysis'
+    ],
+    'Trimestre 2': [
+      'British literature',
+      'Victorian literature',
+      'Charles Dickens',
+      'The Brontë sisters',
+      'Romantic poetry',
+      'William Wordsworth',
+      'Argumentation',
+      'Persuasive techniques',
+      'Translation',
+      'Version and thème'
+    ],
+    'Trimestre 3': [
+      'American literature',
+      'Mark Twain',
+      'Edgar Allan Poe',
+      'F. Scott Fitzgerald',
+      'Presentation skills',
+      'Public speaking',
+      'Body language',
+      'Critical thinking',
+      'Analyzing arguments',
+      'Debate skills'
+    ]
+  },
+  'Anglais-Terminale A': {
+    'Trimestre 1': [
+      'Literary criticism',
+      'Critical approaches',
+      'Formalism',
+      'Structuralism',
+      'Post-colonialism',
+      'Advanced writing',
+      'Academic writing',
+      'Research papers',
+      'Shakespeare studies',
+      'Hamlet analysis'
+    ],
+    'Trimestre 2': [
+      'Contemporary issues',
+      'Globalization',
+      'Environmental challenges',
+      'Social justice',
+      'Debate preparation',
+      'Advanced debating',
+      'Refutation techniques',
+      'Poetry analysis',
+      'Metaphysical poets',
+      'Modern poetry'
+    ],
+    'Trimestre 3': [
+      'BAC preparation',
+      'Exam strategies',
+      'Time management',
+      'Public speaking',
+      'Oral exam preparation',
+      'Cultural studies',
+      'Commonwealth literature',
+      'Postcolonial writers',
+      'Mock exams',
+      'Final revision'
+    ]
+  },
+'Espagnol-2nde A': {
+    'Trimestre 1': [
+      'Gramática básica',
+      'Los tiempos verbales',
+      'Presente de indicativo',
+      'Pretérito perfecto',
+      'Pretérito indefinido',
+      'Comprensión lectora',
+      'Textos narrativos',
+      'Textos descriptivos',
+      'Vocabulario cotidiano',
+      'La familia'
+    ],
+    'Trimestre 2': [
+      'Expresión escrita',
+      'La carta',
+      'El diario',
+      'La descripción',
+      'Conversación',
+      'Diálogos cotidianos',
+      'Expresar opiniones',
+      'Cultura hispana',
+      'España',
+      'América Latina'
+    ],
+    'Trimestre 3': [
+      'Literatura introducción',
+      'El cuento',
+      'La poesía',
+      'Autores hispanos',
+      'Debate',
+      'Argumentar en español',
+      'Defender un punto de vista',
+      'Civilización española',
+      'Historia de España',
+      'Tradiciones'
+    ]
+  },
+  'Espagnol-1ère A': {
+    'Trimestre 1': [
+      'Gramática avanzada',
+      'El subjuntivo',
+      'Usos del subjuntivo',
+      'Imperativo',
+      'Condicional',
+      'Redacción',
+      'El ensayo',
+      'La argumentación',
+      'Literatura española',
+      'El Siglo de Oro'
+    ],
+    'Trimestre 2': [
+      'Argumentación',
+      'Conectores lógicos',
+      'Técnicas argumentativas',
+      'Literatura latinoamericana',
+      'García Márquez',
+      'Realismo mágico',
+      'Traducción',
+      'Versión',
+      'Tema',
+      'Técnicas de traducción'
+    ],
+    'Trimestre 3': [
+      'Análisis literario',
+      'Comentario de texto',
+      'Figuras retóricas',
+      'Presentaciones',
+      'Expresión oral avanzada',
+      'Cultura contemporánea',
+      'Cine hispano',
+      'Música latina',
+      'Arte español',
+      'Preparación exámenes'
+    ]
+  },
+  'Espagnol-Terminale A': {
+    'Trimestre 1': [
+      'Crítica literaria',
+      'Análisis crítico',
+      'Movimientos literarios',
+      'Escritura avanzada',
+      'El ensayo académico',
+      'Investigación',
+      'Cervantes',
+      'Don Quijote',
+      'La novela picaresca',
+      'Literatura del exilio'
+    ],
+    'Trimestre 2': [
+      'Temas contemporáneos',
+      'La inmigración',
+      'Desigualdades sociales',
+      'Ecología',
+      'Debate avanzado',
+      'Retórica',
+      'Poesía',
+      'Generación del 27',
+      'García Lorca',
+      'Poesía contemporánea'
+    ],
+    'Trimestre 3': [
+      'Preparación BAC',
+      'Estrategias de examen',
+      'Expresión oral',
+      'El oral del BAC',
+      'Estudios culturales',
+      'Hispanoamérica',
+      'Identidad cultural',
+      'Exámenes blancos',
+      'Revisión final',
+      'Metodología'
+    ]
+  },
+
+  'Mathématiques-2nde C': {
+    'Trimestre 1': [
+      'Ensembles et applications',
+      'Ensembles de nombres',
+      'Opérations sur les ensembles',
+      'Applications',
+      'Injection, surjection, bijection',
+      'Nombres et calculs',
+      'Calcul numérique',
+      'Puissances',
+      'Racines carrées',
+      'Valeur absolue'
+    ],
+    'Trimestre 2': [
+      'Fonctions numériques',
+      'Généralités sur les fonctions',
+      'Fonctions de référence',
+      'Fonction affine',
+      'Fonction carré',
+      'Fonction inverse',
+      'Géométrie analytique',
+      'Repère du plan',
+      'Équations de droites',
+      'Systèmes d\'équations'
+    ],
+    'Trimestre 3': [
+      'Statistiques',
+      'Paramètres de position',
+      'Paramètres de dispersion',
+      'Représentations graphiques',
+      'Vecteurs',
+      'Opérations sur les vecteurs',
+      'Colinéarité',
+      'Coordonnées',
+      'Géométrie vectorielle',
+      'Applications'
+    ]
+  },
+  'Mathématiques-1ère C': {
+    'Trimestre 1': [
+      'Nombres complexes',
+      'Forme algébrique',
+      'Opérations',
+      'Conjugué',
+      'Module',
+      'Forme trigonométrique',
+      'Suites numériques',
+      'Suites arithmétiques',
+      'Suites géométriques',
+      'Limite d\'une suite'
+    ],
+    'Trimestre 2': [
+      'Fonctions et limites',
+      'Limite d\'une fonction',
+      'Limites et opérations',
+      'Asymptotes',
+      'Continuité',
+      'Dérivées',
+      'Dérivées usuelles',
+      'Opérations sur les dérivées',
+      'Étude de fonctions',
+      'Théorème des valeurs intermédiaires'
+    ],
+    'Trimestre 3': [
+      'Probabilités',
+      'Dénombrement',
+      'Combinaisons',
+      'Arrangements',
+      'Probabilités conditionnelles',
+      'Indépendance',
+      'Géométrie dans l\'espace',
+      'Droites et plans',
+      'Orthogonalité',
+      'Produit scalaire'
+    ]
+  },
+  'Mathématiques-Terminale C': {
+    'Trimestre 1': [
+      'Fonctions exponentielles et logarithmes',
+      'Fonction exponentielle',
+      'Propriétés',
+      'Dérivée',
+      'Fonction logarithme népérien',
+      'Propriétés algébriques',
+      'Primitives et intégrales',
+      'Primitives usuelles',
+      'Intégrale définie',
+      'Calcul d\'aires'
+    ],
+    'Trimestre 2': [
+      'Équations différentielles',
+      'Équations du premier ordre',
+      'Équations linéaires',
+      'Solutions générales',
+      'Solutions particulières',
+      'Nombres complexes avancés',
+      'Forme exponentielle',
+      'Formule de Moivre',
+      'Racines n-ièmes',
+      'Applications géométriques'
+    ],
+    'Trimestre 3': [
+      'Calcul intégral',
+      'Intégration par parties',
+      'Changement de variable',
+      'Calcul d\'aires',
+      'Calcul de volumes',
+      'Probabilités continues',
+      'Loi normale',
+      'Loi exponentielle',
+      'Préparation BAC',
+      'Problèmes de synthèse'
+    ]
+  },
+'Physique-Chimie-2nde C': {
+    'Trimestre 1': [
+      'Mécanique : cinématique',
+      'Le mouvement',
+      'Trajectoire',
+      'Vitesse moyenne',
+      'Vitesse instantanée',
+      'Mouvement rectiligne uniforme',
+      'Mouvement rectiligne uniformément varié',
+      'Électricité : circuits',
+      'Loi d\'Ohm',
+      'Résistances en série et en dérivation'
+    ],
+    'Trimestre 2': [
+      'Optique géométrique',
+      'Propagation de la lumière',
+      'Réflexion',
+      'Lois de la réflexion',
+      'Miroirs plans',
+      'Réfraction',
+      'Lois de Snell-Descartes',
+      'Chimie : atome et molécule',
+      'Structure de l\'atome',
+      'Configuration électronique'
+    ],
+    'Trimestre 3': [
+      'Forces et mouvement',
+      'Les forces',
+      'Principe d\'inertie',
+      'Centre de gravité',
+      'Équilibre d\'un solide',
+      'Réactions chimiques',
+      'Équation de réaction',
+      'Conservation de la masse',
+      'Bilan de matière',
+      'Stœchiométrie'
+    ]
+  },
+  'Physique-Chimie-1ère C': {
+    'Trimestre 1': [
+      'Dynamique : lois de Newton',
+      'Première loi de Newton',
+      'Deuxième loi de Newton',
+      'Troisième loi de Newton',
+      'Applications',
+      'Mouvement dans un champ de pesanteur',
+      'Électromagnétisme',
+      'Champ magnétique',
+      'Force de Laplace',
+      'Loi de Lenz'
+    ],
+    'Trimestre 2': [
+      'Thermodynamique',
+      'Température et chaleur',
+      'Transferts thermiques',
+      'Premier principe',
+      'Travail et énergie interne',
+      'Transformations',
+      'Chimie organique',
+      'Hydrocarbures',
+      'Alcanes',
+      'Alcènes'
+    ],
+    'Trimestre 3': [
+      'Optique ondulatoire',
+      'Nature ondulatoire de la lumière',
+      'Interférences',
+      'Diffraction',
+      'Dispersion',
+      'Cinétique chimique',
+      'Vitesse de réaction',
+      'Facteurs cinétiques',
+      'Catalyse',
+      'Mécanismes réactionnels'
+    ]
+  },
+  'Physique-Chimie-Terminale C': {
+    'Trimestre 1': [
+      'Mécanique du solide',
+      'Moment d\'une force',
+      'Théorème du moment cinétique',
+      'Rotation d\'un solide',
+      'Énergie cinétique de rotation',
+      'Pendule simple',
+      'Électricité avancée',
+      'Dipôles RC',
+      'Dipôles RL',
+      'Oscillations électriques'
+    ],
+    'Trimestre 2': [
+      'Ondes et vibrations',
+      'Ondes mécaniques',
+      'Ondes progressives',
+      'Ondes stationnaires',
+      'Ondes sonores',
+      'Effet Doppler',
+      'Chimie : acides et bases',
+      'pH et pKa',
+      'Couples acide-base',
+      'Titrages acido-basiques'
+    ],
+    'Trimestre 3': [
+      'Physique nucléaire',
+      'Radioactivité',
+      'Lois de conservation',
+      'Décroissance radioactive',
+      'Réactions nucléaires',
+      'Chimie organique avancée',
+      'Fonctions organiques',
+      'Réactions en chimie organique',
+      'Mécanismes',
+      'Préparation BAC'
+    ]
+  },
+  'SVT-2nde C': {
+    'Trimestre 1': [
+      'La cellule',
+      'La théorie cellulaire',
+      'La cellule eucaryote',
+      'La cellule procaryote',
+      'Les organites cellulaires',
+      'Le noyau',
+      'Les mitochondries',
+      'Organisation du vivant',
+      'Niveaux d\'organisation',
+      'Unicellulaires et pluricellulaires'
+    ],
+    'Trimestre 2': [
+      'Nutrition et métabolisme',
+      'La nutrition cellulaire',
+      'Le métabolisme',
+      'Anabolisme',
+      'Catabolisme',
+      'Les enzymes',
+      'Génétique de base',
+      'L\'ADN',
+      'Les chromosomes',
+      'Les gènes'
+    ],
+    'Trimestre 3': [
+      'Écologie',
+      'Les écosystèmes',
+      'Flux de matière',
+      'Flux d\'énergie',
+      'Cycles biogéochimiques',
+      'Géologie',
+      'Structure de la Terre',
+      'Les roches',
+      'Le cycle des roches',
+      'Tectonique des plaques (introduction)'
+    ]
+  },
+  'SVT-1ère C': {
+    'Trimestre 1': [
+      'Génétique moléculaire',
+      'Structure de l\'ADN',
+      'Réplication de l\'ADN',
+      'Transcription',
+      'Traduction',
+      'Code génétique',
+      'Mutations',
+      'Physiologie animale',
+      'La digestion',
+      'L\'absorption'
+    ],
+    'Trimestre 2': [
+      'Évolution',
+      'Théories de l\'évolution',
+      'Sélection naturelle',
+      'Dérive génétique',
+      'Spéciation',
+      'Immunologie',
+      'Le système immunitaire',
+      'Immunité innée',
+      'Immunité adaptative',
+      'Réponse immunitaire'
+    ],
+    'Trimestre 3': [
+      'Géologie : tectonique',
+      'Structure interne de la Terre',
+      'La lithosphère',
+      'Les plaques tectoniques',
+      'Les limites de plaques',
+      'Dorsales océaniques',
+      'Zones de subduction',
+      'Écosystèmes',
+      'Dynamique des populations',
+      'Relations interspécifiques'
+    ]
+  },
+  'SVT-Terminale C': {
+    'Trimestre 1': [
+      'Génétique des populations',
+      'Fréquences alléliques',
+      'Loi de Hardy-Weinberg',
+      'Facteurs d\'évolution',
+      'Migration',
+      'Sélection',
+      'Biologie cellulaire avancée',
+      'Le cycle cellulaire',
+      'Mitose',
+      'Méiose'
+    ],
+    'Trimestre 2': [
+      'Neurobiologie',
+      'Le neurone',
+      'Le potentiel d\'action',
+      'La synapse',
+      'Neurotransmetteurs',
+      'Systèmes nerveux',
+      'Géologie : magmatisme',
+      'Formation des magmas',
+      'Types de magmas',
+      'Roches magmatiques'
+    ],
+    'Trimestre 3': [
+      'Biotechnologies',
+      'Génie génétique',
+      'OGM',
+      'Clonage',
+      'PCR',
+      'Séquençage',
+      'Enjeux environnementaux',
+      'Biodiversité et conservation',
+      'Changements climatiques',
+      'Préparation BAC'
+    ]
+  },
+'Français-2nde C': {
+    'Trimestre 1': [
+      'Le roman et le récit',
+      'Le récit du XIXe siècle',
+      'Balzac',
+      'Stendhal',
+      'Le réalisme',
+      'Grammaire avancée',
+      'Analyse de la phrase complexe',
+      'Les propositions',
+      'Les fonctions',
+      'Lecture analytique'
+    ],
+    'Trimestre 2': [
+      'La poésie',
+      'Poésie du XIXe siècle',
+      'Le romantisme',
+      'Le symbolisme',
+      'Baudelaire',
+      'L\'argumentation',
+      'Thèse et arguments',
+      'Convaincre et persuader',
+      'Les procédés',
+      'La dissertation'
+    ],
+    'Trimestre 3': [
+      'Le théâtre',
+      'Théâtre classique',
+      'Racine',
+      'Molière',
+      'Théâtre moderne',
+      'Dissertation',
+      'Méthodologie',
+      'Plan dialectique',
+      'Plan thématique',
+      'Expression écrite'
+    ]
+  },
+  'Français-1ère C': {
+    'Trimestre 1': [
+      'Le roman du XIXe siècle',
+      'Flaubert : Madame Bovary',
+      'Le réalisme',
+      'Le naturalisme',
+      'Zola',
+      'Commentaire composé',
+      'Axes d\'analyse',
+      'Introduction',
+      'Développement',
+      'Conclusion'
+    ],
+    'Trimestre 2': [
+      'La poésie moderne',
+      'Apollinaire',
+      'Le surréalisme',
+      'Éluard',
+      'L\'essai',
+      'Montaigne',
+      'Les Essais',
+      'Argumentation directe',
+      'Dissertation littéraire',
+      'Problématique'
+    ],
+    'Trimestre 3': [
+      'Le théâtre contemporain',
+      'Ionesco',
+      'Beckett',
+      'Le théâtre de l\'absurde',
+      'Techniques d\'écriture',
+      'Le commentaire',
+      'La dissertation',
+      'L\'écriture d\'invention',
+      'Préparation aux épreuves',
+      'Méthodologie complète'
+    ]
+  },
+  'Philosophie-1ère C': {
+    'Trimestre 1': [
+      'Introduction à la philosophie',
+      'Qu\'est-ce que philosopher ?',
+      'Les grands philosophes',
+      'Socrate',
+      'Platon',
+      'Aristote',
+      'La conscience',
+      'Conscience et inconscient',
+      'Descartes',
+      'Freud'
+    ],
+    'Trimestre 2': [
+      'La perception',
+      'Les sens et la connaissance',
+      'L\'illusion',
+      'La vérité perceptive',
+      'Autrui',
+      'La reconnaissance',
+      'Le regard d\'autrui',
+      'Sartre',
+      'L\'altérité',
+      'Être-pour-autrui'
+    ],
+    'Trimestre 3': [
+      'Le désir',
+      'Désir et besoin',
+      'Platon : le mythe de la caverne',
+      'Spinoza',
+      'L\'existence',
+      'Être et existence',
+      'Heidegger',
+      'Sartre : l\'existentialisme',
+      'Dissertation',
+      'Méthodologie'
+    ]
+  },
+  'Philosophie-Terminale C': {
+    'Trimestre 1': [
+      'La vérité',
+      'Vérité et opinion',
+      'Les critères de vérité',
+      'La science et la vérité',
+      'La raison et le réel',
+      'Rationalisme',
+      'Empirisme',
+      'Kant',
+      'Théorie et expérience',
+      'La démonstration'
+    ],
+    'Trimestre 2': [
+      'La morale',
+      'Les fondements de la morale',
+      'Kant : l\'impératif catégorique',
+      'L\'utilitarisme',
+      'La liberté',
+      'Déterminisme et libre arbitre',
+      'Sartre : liberté et responsabilité',
+      'Le devoir',
+      'Obligation morale',
+      'Conscience morale'
+    ],
+    'Trimestre 3': [
+      'La politique',
+      'L\'État',
+      'Le contrat social',
+      'Hobbes',
+      'Rousseau',
+      'La démocratie',
+      'Justice et droit',
+      'Préparation intensive au BAC',
+      'Révision des notions',
+      'Dissertations types'
+    ]
+  },
+  'Anglais-2nde C': {
+    'Trimestre 1': [
+      'Grammar review',
+      'Tenses overview',
+      'Present perfect',
+      'Past perfect',
+      'Future forms',
+      'Reading comprehension',
+      'Scientific texts',
+      'Technical vocabulary',
+      'Vocabulary expansion',
+      'Academic vocabulary'
+    ],
+    'Trimestre 2': [
+      'Writing skills',
+      'Essay writing',
+      'Scientific reports',
+      'Description of experiments',
+      'Oral expression',
+      'Presentations',
+      'Scientific debates',
+      'Literature introduction',
+      'Short stories',
+      'Science fiction'
+    ],
+    'Trimestre 3': [
+      'Advanced reading',
+      'Analyzing texts',
+      'Critical reading',
+      'Inferencing',
+      'Debate and discussion',
+      'Expressing opinions',
+      'Scientific controversies',
+      'Technology vocabulary',
+      'Innovation',
+      'Discoveries'
+    ]
+  },
+  'Anglais-1ère C': {
+    'Trimestre 1': [
+      'Advanced grammar',
+      'Complex sentences',
+      'Relative clauses',
+      'Passive voice',
+      'Essay writing',
+      'Argumentative essays',
+      'Research papers',
+      'British literature',
+      'Victorian era',
+      'Scientific revolution'
+    ],
+    'Trimestre 2': [
+      'Scientific English',
+      'Technical vocabulary',
+      'Reading scientific articles',
+      'Abstract writing',
+      'Debate and discussion',
+      'Scientific ethics',
+      'Environmental issues',
+      'Translation',
+      'Technical translation',
+      'Version and thème'
+    ],
+    'Trimestre 3': [
+      'American literature',
+      'Science fiction',
+      'Isaac Asimov',
+      'Arthur C. Clarke',
+      'Presentation skills',
+      'Scientific presentations',
+      'Critical thinking',
+      'Analyzing data',
+      'Statistics',
+      'Graphs and charts'
+    ]
+  },
+  'Anglais-Terminale C': {
+    'Trimestre 1': [
+      'Literary analysis',
+      'Science in literature',
+      'Frankenstein',
+      'Brave New World',
+      'Advanced writing',
+      'Scientific papers',
+      'Literature review',
+      'Research methodology',
+      'Citations',
+      'References'
+    ],
+    'Trimestre 2': [
+      'Contemporary issues',
+      'Biotechnology',
+      'Artificial intelligence',
+      'Climate change',
+      'Debate preparation',
+      'Advanced argumentation',
+      'Refutation',
+      'Public speaking',
+      'Scientific conferences',
+      'Poster presentations'
+    ],
+    'Trimestre 3': [
+      'BAC preparation',
+      'Exam strategies',
+      'Scientific texts',
+      'Technical vocabulary review',
+      'Oral exam',
+      'Presenting research',
+      'Mock exams',
+      'Time management',
+      'Final revision',
+      'Success strategies'
+    ]
+  },
+
+  'Mathématiques-2nde D': {
+    'Trimestre 1': [
+      'Ensembles et applications',
+      'Ensembles de nombres',
+      'Opérations ensemblistes',
+      'Applications',
+      'Injections et surjections',
+      'Nombres et calculs',
+      'Calcul algébrique',
+      'Puissances',
+      'Radicaux',
+      'Valeur absolue'
+    ],
+    'Trimestre 2': [
+      'Fonctions numériques',
+      'Définition et généralités',
+      'Domaine de définition',
+      'Image',
+      'Fonctions de référence',
+      'Fonction affine',
+      'Géométrie analytique',
+      'Repérage dans le plan',
+      'Équations de droites',
+      'Systèmes linéaires'
+    ],
+    'Trimestre 3': [
+      'Statistiques',
+      'Séries statistiques',
+      'Paramètres de position',
+      'Paramètres de dispersion',
+      'Vecteurs',
+      'Définition',
+      'Opérations',
+      'Coordonnées',
+      'Colinéarité',
+      'Applications géométriques'
+    ]
+  },
+  'Mathématiques-1ère D': {
+    'Trimestre 1': [
+      'Nombres complexes',
+      'Forme algébrique',
+      'Opérations',
+      'Conjugué et module',
+      'Forme trigonométrique',
+      'Argument',
+      'Suites numériques',
+      'Suites arithmétiques',
+      'Suites géométriques',
+      'Limite'
+    ],
+    'Trimestre 2': [
+      'Fonctions et limites',
+      'Limite d\'une fonction',
+      'Continuité',
+      'Asymptotes',
+      'Dérivées',
+      'Dérivées usuelles',
+      'Dérivées composées',
+      'Étude de fonctions',
+      'Variations',
+      'Extremums'
+    ],
+    'Trimestre 3': [
+      'Probabilités',
+      'Dénombrement',
+      'Arrangements',
+      'Combinaisons',
+      'Probabilités',
+      'Probabilités conditionnelles',
+      'Géométrie dans l\'espace',
+      'Droites et plans',
+      'Vecteurs de l\'espace',
+      'Produit scalaire'
+    ]
+  },
+  'Mathématiques-Terminale D': {
+    'Trimestre 1': [
+      'Fonctions exponentielles et logarithmes',
+      'Fonction exponentielle',
+      'Propriétés',
+      'Dérivée',
+      'Fonction logarithme népérien',
+      'Propriétés du logarithme',
+      'Primitives et intégrales',
+      'Primitives usuelles',
+      'Calcul intégral',
+      'Applications'
+    ],
+    'Trimestre 2': [
+      'Équations différentielles',
+      'Équations du premier ordre',
+      'Équations linéaires',
+      'Solutions',
+      'Nombres complexes avancés',
+      'Forme exponentielle',
+      'Formules d\'Euler',
+      'Applications',
+      'Racines n-ièmes',
+      'Résolution d\'équations'
+    ],
+    'Trimestre 3': [
+      'Calcul intégral',
+      'Intégration par parties',
+      'Changement de variable',
+      'Calcul d\'aires',
+      'Probabilités continues',
+      'Variables aléatoires continues',
+      'Loi normale',
+      'Loi exponentielle',
+      'Préparation BAC',
+      'Exercices de synthèse'
+    ]
+  },
+'Physique-Chimie-2nde D': {
+    'Trimestre 1': [
+      'Mécanique : cinématique',
+      'Position et trajectoire',
+      'Vitesse',
+      'Accélération',
+      'Mouvements rectilignes',
+      'Mouvements circulaires',
+      'Électricité : circuits',
+      'Circuits en série',
+      'Circuits en dérivation',
+      'Loi d\'Ohm'
+    ],
+    'Trimestre 2': [
+      'Optique géométrique',
+      'Propagation rectiligne',
+      'Réflexion',
+      'Miroirs',
+      'Réfraction',
+      'Lois de Snell-Descartes',
+      'Chimie : atome et molécule',
+      'Structure atomique',
+      'Tableau périodique',
+      'Liaisons chimiques'
+    ],
+    'Trimestre 3': [
+      'Forces et mouvement',
+      'Les forces',
+      'Principe d\'inertie',
+      'Centre de gravité',
+      'Équilibre',
+      'Réactions chimiques',
+      'Équation-bilan',
+      'Conservation',
+      'Stœchiométrie',
+      'Réactions acido-basiques'
+    ]
+  },
+  'Physique-Chimie-1ère D': {
+    'Trimestre 1': [
+      'Dynamique : lois de Newton',
+      'Première loi',
+      'Deuxième loi',
+      'Troisième loi',
+      'Applications',
+      'Chute libre',
+      'Électromagnétisme',
+      'Champ magnétique',
+      'Force de Laplace',
+      'Induction'
+    ],
+    'Trimestre 2': [
+      'Thermodynamique',
+      'Température',
+      'Chaleur',
+      'Premier principe',
+      'Transformations',
+      'Machines thermiques',
+      'Chimie organique',
+      'Hydrocarbures',
+      'Nomenclature',
+      'Réactions'
+    ],
+    'Trimestre 3': [
+      'Optique ondulatoire',
+      'Nature ondulatoire',
+      'Interférences',
+      'Diffraction',
+      'Cinétique chimique',
+      'Vitesse de réaction',
+      'Facteurs cinétiques',
+      'Catalyse',
+      'Mécanismes',
+      'Équilibre chimique'
+    ]
+  },
+  'Physique-Chimie-Terminale D': {
+    'Trimestre 1': [
+      'Mécanique du solide',
+      'Moment d\'une force',
+      'Moment cinétique',
+      'Rotation',
+      'Pendule',
+      'Électricité avancée',
+      'Circuits RC',
+      'Circuits RL',
+      'Oscillations',
+      'Circuit RLC'
+    ],
+    'Trimestre 2': [
+      'Ondes et vibrations',
+      'Ondes mécaniques',
+      'Ondes progressives',
+      'Ondes stationnaires',
+      'Ondes sonores',
+      'Chimie : acides et bases',
+      'pH',
+      'pKa',
+      'Titrages',
+      'Indicateurs colorés'
+    ],
+    'Trimestre 3': [
+      'Physique nucléaire',
+      'Noyau atomique',
+      'Radioactivité',
+      'Lois de conservation',
+      'Énergie nucléaire',
+      'Chimie organique avancée',
+      'Fonctions organiques',
+      'Réactivité',
+      'Synthèses',
+      'Préparation BAC'
+    ]
+  },
+  'SVT-2nde D': {
+    'Trimestre 1': [
+      'La cellule',
+      'Cellule eucaryote',
+      'Cellule procaryote',
+      'Organites',
+      'Membrane plasmique',
+      'Organisation du vivant',
+      'Niveaux d\'organisation',
+      'Tissus',
+      'Organes',
+      'Systèmes'
+    ],
+    'Trimestre 2': [
+      'Nutrition et métabolisme',
+      'Nutrition cellulaire',
+      'Métabolisme',
+      'Respiration cellulaire',
+      'Photosynthèse',
+      'Génétique de base',
+      'ADN',
+      'Gènes',
+      'Chromosomes',
+      'Caryotype'
+    ],
+    'Trimestre 3': [
+      'Écologie',
+      'Écosystèmes',
+      'Chaînes alimentaires',
+      'Réseaux trophiques',
+      'Cycles',
+      'Géologie',
+      'Structure terrestre',
+      'Roches',
+      'Minéraux',
+      'Tectonique'
+    ]
+  },
+  'SVT-1ère D': {
+    'Trimestre 1': [
+      'Génétique moléculaire',
+      'Structure ADN',
+      'Réplication',
+      'Transcription',
+      'Traduction',
+      'Code génétique',
+      'Physiologie animale',
+      'Digestion',
+      'Circulation',
+      'Respiration'
+    ],
+    'Trimestre 2': [
+      'Évolution',
+      'Théories',
+      'Sélection naturelle',
+      'Adaptation',
+      'Spéciation',
+      'Immunologie',
+      'Système immunitaire',
+      'Immunité innée',
+      'Immunité acquise',
+      'Vaccins'
+    ],
+    'Trimestre 3': [
+      'Géologie : tectonique',
+      'Structure interne Terre',
+      'Plaques lithosphériques',
+      'Limites de plaques',
+      'Séismes',
+      'Volcans',
+      'Écosystèmes',
+      'Dynamique',
+      'Successions écologiques',
+      'Biodiversité'
+    ]
+  },
+  'SVT-Terminale D': {
+    'Trimestre 1': [
+      'Génétique des populations',
+      'Fréquences alléliques',
+      'Hardy-Weinberg',
+      'Dérive génétique',
+      'Sélection',
+      'Migration',
+      'Biologie cellulaire avancée',
+      'Cycle cellulaire',
+      'Mitose',
+      'Méiose'
+    ],
+    'Trimestre 2': [
+      'Neurobiologie',
+      'Neurone',
+      'Potentiel d\'action',
+      'Synapse',
+      'Neurotransmetteurs',
+      'Systèmes nerveux',
+      'Géologie : magmatisme',
+      'Formation magmas',
+      'Types de magmas',
+      'Roches magmatiques'
+    ],
+    'Trimestre 3': [
+      'Biotechnologies',
+      'Génie génétique',
+      'OGM',
+      'Clonage',
+      'Applications',
+      'Enjeux environnementaux',
+      'Conservation',
+      'Changements climatiques',
+      'Développement durable',
+      'Préparation BAC'
+    ]
+  },
+  'Français-2nde D': {
+    'Trimestre 1': [
+      'Le roman et le récit',
+      'Le réalisme',
+      'Le naturalisme',
+      'Auteurs du XIXe',
+      'Analyse narrative',
+      'Grammaire avancée',
+      'Phrase complexe',
+      'Propositions',
+      'Fonctions',
+      'Méthodologie'
+    ],
+    'Trimestre 2': [
+      'La poésie',
+      'Romantisme',
+      'Symbolisme',
+      'Versification',
+      'Figures de style',
+      'L\'argumentation',
+      'Convaincre',
+      'Persuader',
+      'Procédés',
+      'Dissertation'
+    ],
+    'Trimestre 3': [
+      'Le théâtre',
+      'Théâtre classique',
+      'Tragédie',
+      'Comédie',
+      'Mise en scène',
+      'Dissertation',
+      'Plans',
+      'Développement',
+      'Expression écrite',
+      'Commentaire'
+    ]
+  },
+  'Français-1ère D': {
+    'Trimestre 1': [
+      'Le roman du XIXe siècle',
+      'Madame Bovary',
+      'Techniques narratives',
+      'Personnages',
+      'Commentaire composé',
+      'Axes',
+      'Introduction',
+      'Développement',
+      'Conclusion',
+      'Transitions'
+    ],
+    'Trimestre 2': [
+      'La poésie moderne',
+      'Apollinaire',
+      'Surréalisme',
+      'Analyse poétique',
+      'L\'essai',
+      'Montaigne',
+      'Argumentation',
+      'Dissertation',
+      'Problématique',
+      'Plan'
+    ],
+    'Trimestre 3': [
+      'Le théâtre contemporain',
+      'Absurde',
+      'Ionesco',
+      'Beckett',
+      'Techniques d\'écriture',
+      'Commentaire',
+      'Dissertation',
+      'Invention',
+      'Préparation épreuves',
+      'Méthodologie'
+    ]
+  },
+  'Philosophie-1ère D': {
+    'Trimestre 1': [
+      'Introduction à la philosophie',
+      'Philosopher',
+      'Grands philosophes',
+      'Antiquité',
+      'Modernité',
+      'La conscience',
+      'Conscience de soi',
+      'Inconscient',
+      'Descartes',
+      'Freud'
+    ],
+    'Trimestre 2': [
+      'La perception',
+      'Sens et connaissance',
+      'Illusion',
+      'Vérité perceptive',
+      'Autrui',
+      'Reconnaissance',
+      'Regard d\'autrui',
+      'Intersubjectivité',
+      'Sartre',
+      'Levinas'
+    ],
+    'Trimestre 3': [
+      'Le désir',
+      'Désir et besoin',
+      'Manque',
+      'Satisfaction',
+      'L\'existence',
+      'Être',
+      'Essence',
+      'Existentialisme',
+      'Dissertation',
+      'Méthodologie'
+    ]
+  },
+  'Philosophie-Terminale D': {
+    'Trimestre 1': [
+      'La vérité',
+      'Vérité et opinion',
+      'Science et vérité',
+      'Critères',
+      'La raison et le réel',
+      'Rationalisme',
+      'Empirisme',
+      'Kant',
+      'Théorie et expérience',
+      'Démonstration'
+    ],
+    'Trimestre 2': [
+      'La morale',
+      'Fondements',
+      'Kant',
+      'Utilitarisme',
+      'La liberté',
+      'Libre arbitre',
+      'Déterminisme',
+      'Sartre',
+      'Le devoir',
+      'Obligation'
+    ],
+    'Trimestre 3': [
+      'La politique',
+      'L\'État',
+      'Contrat social',
+      'Hobbes',
+      'Rousseau',
+      'Démocratie',
+      'Justice',
+      'Préparation BAC',
+      'Révisions',
+      'Dissertations'
+    ]
+  },
+  'Anglais-2nde D': {
+    'Trimestre 1': [
+      'Grammar review',
+      'All tenses',
+      'Perfect tenses',
+      'Future forms',
+      'Reading comprehension',
+      'Scientific texts',
+      'Vocabulary',
+      'Academic words',
+      'Technical terms',
+      'Word formation'
+    ],
+      'Trimestre 2': [
+      'Writing skills',
+    'Essays',
+'Reports',
+'Descriptions',
+'Oral expression',
+'Presentations',
+'Debates',
+'Literature',
+'Short stories',
+'Poetry'
+],
+'Trimestre 3': [
+'Advanced reading',
+'Text analysis',
+'Critical reading',
+'Discussion',
+'Opinions',
+'Arguments',
+'Technology',
+'Science',
+'Environment',
+'Society'
+]
+},
+'Anglais-1ère D': {
+'Trimestre 1': [
+'Advanced grammar',
+'Complex structures',
+'Conditionals',
+'Modals',
+'Essay writing',
+'Structure',
+'Argumentation',
+'British literature',
+'Victorian',
+'Modern'
+],
+'Trimestre 2': [
+'Scientific English',
+'Vocabulary',
+'Reading articles',
+'Writing abstracts',
+'Debate',
+'Ethics',
+'Environment',
+'Translation',
+'Technical',
+'Academic'
+],
+'Trimestre 3': [
+'American literature',
+'Science fiction',
+'Contemporary',
+'Presentations',
+'Scientific',
+'Critical thinking',
+'Analysis',
+'Data',
+'Graphs',
+'Statistics'
+]
+},
+'Anglais-Terminale D': {
+'Trimestre 1': [
+'Literary analysis',
+'Science themes',
+'Classic sci-fi',
+'Modern sci-fi',
+'Advanced writing',
+'Research papers',
+'Methodology',
+'Citations',
+'References',
+'Academic style'
+],
+'Trimestre 2': [
+'Contemporary issues',
+'Biotechnology',
+'AI',
+'Climate',
+'Debate',
+'Argumentation',
+'Refutation',
+'Public speaking',
+'Conferences',
+'Posters'
+],
+'Trimestre 3': [
+'BAC preparation',
+'Strategies',
+'Scientific texts',
+'Vocabulary review',
+'Oral exam',
+'Presentation',
+'Mock exams',
+'Time management',
+'Revision',
+'Success tips'
+]
+},
