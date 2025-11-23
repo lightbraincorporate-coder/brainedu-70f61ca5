@@ -130,25 +130,28 @@ const coursesData = coursesBySubject[key];
   };
 
   const getAvailableProducts = () => {
-    if (!selectedLevel || !selectedClass) return Object.entries(products);
+  if (selectedLevel === 'universite') {
+    return Object.entries(productsUniversite);
+  }
+  if (!selectedLevel || !selectedClass) return Object.entries(products);
+  
+  return Object.entries(products).filter(([_, product]) => {
+    if (!product.availableFrom) return true;
     
-    return Object.entries(products).filter(([_, product]) => {
-      if (!product.availableFrom) return true;
-      
-      if (product.availableFrom === 'college') {
-        return ['college', 'lycee', 'universite'].includes(selectedLevel);
+    if (product.availableFrom === 'college') {
+      return ['college', 'lycee'].includes(selectedLevel);
+    }
+    
+    if (product.availableFrom === 'CM1') {
+      if (selectedLevel === 'primaire') {
+        return ['CM1', 'CM2'].includes(selectedClass || '');
       }
-      
-      if (product.availableFrom === 'CM1') {
-        if (selectedLevel === 'primaire') {
-          return ['CM1', 'CM2'].includes(selectedClass || '');
-        }
-        return ['college', 'lycee', 'universite'].includes(selectedLevel);
-      }
-      
-      return true;
-    });
-  };
+      return ['college', 'lycee'].includes(selectedLevel);
+    }
+    
+    return true;
+  });
+};
 
   return (
     <div className="min-h-screen py-8 px-4">
