@@ -5,7 +5,7 @@ import { Badge } from '@/components/ui/badge';
 import { ArrowLeft, ShoppingCart, BookOpen } from 'lucide-react';
 import { levels } from '@/data/levels';
 import { subjects, coursesBySubject } from '@/data/subjects';
-import { products } from '@/data/products';
+import { products, productsUniversite } from '@/data/products';
 import { CartItem } from '@/types';
 import { toast } from 'sonner';
 
@@ -94,7 +94,6 @@ const CatalogPage = ({ onAddToCart }: CatalogPageProps) => {
     } else if (selectedLevel === 'college') {
       key = `${selectedSubject}-${selectedClass}`;
     } else if (selectedLevel === 'lycee') {
-      // ✅ CORRECTION ICI - utilise selectedClass au lieu de "Lycée"
       key = `${selectedSubject}-${selectedClass}`;
     } else if (selectedLevel === 'universite') {
       if (needsBranchSelection() && selectedBranch) {
@@ -117,7 +116,6 @@ const CatalogPage = ({ onAddToCart }: CatalogPageProps) => {
     } else if (selectedLevel === 'college') {
       key = `${selectedSubject}-${selectedClass}`;
     } else if (selectedLevel === 'lycee') {
-      // ✅ CORRECTION ICI - utilise selectedClass au lieu de "Lycée"
       key = `${selectedSubject}-${selectedClass}`;
     } else if (selectedLevel === 'universite') {
       if (needsBranchSelection() && selectedBranch) {
