@@ -3963,3 +3963,2288 @@ export const coursesBySubject: Record<string, Record<string, string[]>> = {
 'Success tips'
 ]
 },
+'Mathématiques-2nde F1': {
+    'Trimestre 1': [
+      'Calcul numérique et algébrique',
+      'Opérations sur les nombres',
+      'Fractions',
+      'Puissances',
+      'Racines carrées',
+      'Calcul littéral',
+      'Identités remarquables',
+      'Fonctions linéaires',
+      'Représentation graphique',
+      'Applications techniques'
+    ],
+    'Trimestre 2': [
+      'Géométrie plane',
+      'Figures géométriques',
+      'Triangles',
+      'Quadrilatères',
+      'Cercle',
+      'Trigonométrie',
+      'Cosinus, sinus, tangente',
+      'Résolution de triangles',
+      'Applications en mécanique',
+      'Calculs d\'angles'
+    ],
+    'Trimestre 3': [
+      'Statistiques',
+      'Séries statistiques',
+      'Moyenne, médiane',
+      'Représentations graphiques',
+      'Vecteurs',
+      'Définition',
+      'Opérations',
+      'Applications en mécanique',
+      'Forces',
+      'Résultante'
+    ]
+  },
+  'Mathématiques-1ère F1': {
+    'Trimestre 1': [
+      'Suites numériques',
+      'Suites arithmétiques',
+      'Suites géométriques',
+      'Applications',
+      'Progressions',
+      'Dérivées',
+      'Nombre dérivé',
+      'Fonction dérivée',
+      'Applications cinématiques',
+      'Vitesse et accélération'
+    ],
+    'Trimestre 2': [
+      'Fonctions polynômes',
+      'Fonction du second degré',
+      'Équations',
+      'Factorisation',
+      'Résolution graphique',
+      'Probabilités',
+      'Dénombrement',
+      'Calcul de probabilités',
+      'Applications',
+      'Fiabilité'
+    ],
+    'Trimestre 3': [
+      'Géométrie dans l\'espace',
+      'Droites et plans',
+      'Positions relatives',
+      'Volumes',
+      'Équations différentielles simples',
+      'Équations du premier ordre',
+      'Résolution',
+      'Applications mécaniques',
+      'Mouvement',
+      'Oscillations'
+    ]
+  },
+  'Mathématiques-Terminale F1': {
+    'Trimestre 1': [
+      'Calcul intégral',
+      'Primitives',
+      'Intégrales',
+      'Calcul d\'aires',
+      'Applications',
+      'Nombres complexes',
+      'Forme algébrique',
+      'Forme trigonométrique',
+      'Applications en électricité',
+      'Impédance'
+    ],
+    'Trimestre 2': [
+      'Équations différentielles',
+      'Équations linéaires',
+      'Solutions',
+      'Applications mécaniques',
+      'Oscillateurs',
+      'Statistiques avancées',
+      'Séries doubles',
+      'Corrélation',
+      'Régression linéaire',
+      'Ajustement affine'
+    ],
+    'Trimestre 3': [
+      'Mathématiques appliquées',
+      'Calculs techniques',
+      'Résistance des matériaux',
+      'Calculs de structures',
+      'Dimensionnement',
+      'Préparation BAC',
+      'Exercices types',
+      'Problèmes de synthèse',
+      'Applications industrielles',
+      'Projets techniques'
+    ]
+  },
+  'Physique-2nde F1': {
+    'Trimestre 1': [
+      'Mécanique : forces et mouvements',
+      'Les forces',
+      'Représentation vectorielle',
+      'Composition de forces',
+      'Résultante',
+      'Statique',
+      'Équilibre d\'un solide',
+      'Moment d\'une force',
+      'Théorème des moments',
+      'Applications pratiques'
+    ],
+    'Trimestre 2': [
+      'Dynamique',
+      'Principe fondamental',
+      'Lois de Newton',
+      'Mouvement rectiligne',
+      'Chute libre',
+      'Travail et énergie',
+      'Travail d\'une force',
+      'Énergie cinétique',
+      'Énergie potentielle',
+      'Conservation de l\'énergie'
+    ],
+    'Trimestre 3': [
+      'Électricité : circuits DC',
+      'Courant continu',
+      'Loi d\'Ohm',
+      'Résistances',
+      'Associations de résistances',
+      'Lois de Kirchhoff',
+      'Puissance électrique',
+      'Effet Joule',
+      'Rendement',
+      'Applications industrielles'
+    ]
+  },
+  'Physique-1ère F1': {
+    'Trimestre 1': [
+      'Cinématique',
+      'Mouvement rectiligne',
+      'Mouvement circulaire',
+      'Vitesse angulaire',
+      'Accélération',
+      'Lois de Newton',
+      'Dynamique du point',
+      'Frottement',
+      'Plan incliné',
+      'Applications mécaniques'
+    ],
+    'Trimestre 2': [
+      'Électromagnétisme',
+      'Champ magnétique',
+      'Force de Laplace',
+      'Induction électromagnétique',
+      'Loi de Lenz',
+      'Circuits AC',
+      'Courant alternatif',
+      'Valeur efficace',
+      'Déphasage',
+      'Puissance en AC'
+    ],
+    'Trimestre 3': [
+      'Thermodynamique',
+      'Température et chaleur',
+      'Transferts thermiques',
+      'Dilatation',
+      'Premier principe',
+      'Optique géométrique',
+      'Lentilles',
+      'Formation d\'images',
+      'Instruments optiques',
+      'Applications'
+    ]
+  },
+  'Physique-Terminale F1': {
+    'Trimestre 1': [
+      'Mécanique des fluides',
+      'Hydrostatique',
+      'Pression',
+      'Principe d\'Archimède',
+      'Hydrodynamique',
+      'Équation de Bernoulli',
+      'Électricité industrielle',
+      'Transformateurs',
+      'Redressement',
+      'Moteurs électriques'
+    ],
+    'Trimestre 2': [
+      'Ondes',
+      'Ondes mécaniques',
+      'Propagation',
+      'Ondes sonores',
+      'Acoustique',
+      'Machines électriques',
+      'Moteurs',
+      'Génératrices',
+      'Rendement',
+      'Maintenance'
+    ],
+    'Trimestre 3': [
+      'Automatismes',
+      'Systèmes automatisés',
+      'Capteurs',
+      'Actionneurs',
+      'Régulation',
+      'Préparation BAC',
+      'Exercices appliqués',
+      'Études de cas',
+      'Projets techniques',
+      'Dossier professionnel'
+    ]
+  },
+'Technologie-2nde F1': {
+    'Trimestre 1': [
+      'Initiation aux systèmes mécaniques',
+      'Les machines simples',
+      'Leviers',
+      'Poulies',
+      'Plans inclinés',
+      'Outils et mesures',
+      'Instruments de mesure',
+      'Pied à coulisse',
+      'Micromètre',
+      'Lectures de mesures'
+    ],
+    'Trimestre 2': [
+      'Matériaux et leurs propriétés',
+      'Matériaux métalliques',
+      'Aciers',
+      'Alliages',
+      'Propriétés mécaniques',
+      'Procédés de fabrication',
+      'Moulage',
+      'Forgeage',
+      'Usinage',
+      'Soudage'
+    ],
+    'Trimestre 3': [
+      'Dessin technique de base',
+      'Normes de dessin',
+      'Traits',
+      'Échelles',
+      'Vues',
+      'Sécurité en atelier',
+      'Règles de sécurité',
+      'EPI',
+      'Prévention des risques',
+      'Premiers secours'
+    ]
+  },
+  'Technologie-1ère F1': {
+    'Trimestre 1': [
+      'Systèmes mécaniques avancés',
+      'Transmission de mouvement',
+      'Engrenages',
+      'Courroies',
+      'Chaînes',
+      'Résistance des matériaux',
+      'Contraintes',
+      'Déformations',
+      'Traction',
+      'Compression'
+    ],
+    'Trimestre 2': [
+      'Machines-outils',
+      'Tour',
+      'Fraiseuse',
+      'Perceuse',
+      'Rectifieuse',
+      'CAO introduction',
+      'Logiciels de DAO',
+      'Modélisation 2D',
+      'Cotation',
+      'Mise en plan'
+    ],
+    'Trimestre 3': [
+      'Maintenance industrielle',
+      'Maintenance préventive',
+      'Maintenance corrective',
+      'Diagnostic de pannes',
+      'Automatisation',
+      'Vérins pneumatiques',
+      'Électrovannes',
+      'Circuits pneumatiques',
+      'Grafcet',
+      'Programmation'
+    ]
+  },
+  'Technologie-Terminale F1': {
+    'Trimestre 1': [
+      'Conception mécanique',
+      'Cahier des charges',
+      'Analyse fonctionnelle',
+      'Solutions constructives',
+      'Choix des matériaux',
+      'Étude de fabrication',
+      'Gamme de fabrication',
+      'Temps de fabrication',
+      'Coûts',
+      'Optimisation'
+    ],
+    'Trimestre 2': [
+      'Systèmes automatisés',
+      'Automates programmables',
+      'Capteurs industriels',
+      'Actionneurs',
+      'Supervision',
+      'Gestion de production',
+      'Ordonnancement',
+      'Planning',
+      'Stocks',
+      'Qualité'
+    ],
+    'Trimestre 3': [
+      'Projet technique',
+      'Définition du projet',
+      'Étude préliminaire',
+      'Conception',
+      'Réalisation',
+      'Tests',
+      'Préparation BAC',
+      'Dossier technique',
+      'Soutenance',
+      'Présentation orale'
+    ]
+  },
+  'Dessin Technique-2nde F1': {
+    'Trimestre 1': [
+      'Normes de dessin',
+      'Format des feuilles',
+      'Cartouche',
+      'Échelles normalisées',
+      'Traits',
+      'Projections orthogonales',
+      'Vue de face',
+      'Vue de dessus',
+      'Vue de gauche',
+      'Correspondance des vues'
+    ],
+    'Trimestre 2': [
+      'Coupes et sections',
+      'Plans de coupe',
+      'Coupes simples',
+      'Demi-coupes',
+      'Sections',
+      'Cotation',
+      'Cotation linéaire',
+      'Cotation angulaire',
+      'Cotation de diamètres',
+      'Cotation fonctionnelle'
+    ],
+    'Trimestre 3': [
+      'Perspective',
+      'Perspective cavalière',
+      'Perspective isométrique',
+      'Croquis',
+      'Lecture de plans',
+      'Analyse de plans',
+      'Nomenclature',
+      'Repérage',
+      'Interprétation',
+      'Réalisation de croquis'
+    ]
+  },
+  'Dessin Technique-1ère F1': {
+    'Trimestre 1': [
+      'Dessin d\'ensemble',
+      'Représentation complète',
+      'Assemblages',
+      'Liaisons mécaniques',
+      'Nomenclature',
+      'Dessin de définition',
+      'Pièce isolée',
+      'Cotation complète',
+      'Spécifications',
+      'États de surface'
+    ],
+    'Trimestre 2': [
+      'Schémas cinématiques',
+      'Symbolisation',
+      'Liaisons',
+      'Mouvements',
+      'Graphe des liaisons',
+      'DAO',
+      'Logiciels DAO',
+      'Dessin assisté',
+      'Modification',
+      'Bibliothèques'
+    ],
+    'Trimestre 3': [
+      'Tolérances et ajustements',
+      'Tolérances dimensionnelles',
+      'Ajustements',
+      'Système ISO',
+      'Choix des ajustements',
+      'Plans de montage',
+      'Ordre de montage',
+      'Instructions',
+      'Vue éclatée',
+      'Documentation technique'
+    ]
+  },
+  'Dessin Technique-Terminale F1': {
+    'Trimestre 1': [
+      'CAO avancée',
+      'Modélisation 3D',
+      'Solides',
+      'Assemblages 3D',
+      'Contraintes',
+      'Modélisation 3D',
+      'Surfaces',
+      'Volumes',
+      'Rendus',
+      'Animations'
+    ],
+    'Trimestre 2': [
+      'Plans d\'exécution',
+      'Plans de détails',
+      'Plans d\'implantation',
+      'Plans de fabrication',
+      'Nomenclatures',
+      'Listes de pièces',
+      'Matières premières',
+      'Coûts',
+      'Approvisionnement'
+    ],
+    'Trimestre 3': [
+      'Dossier technique complet',
+      'Analyse fonctionnelle',
+      'Dessins d\'ensemble',
+      'Dessins de définition',
+      'Schémas',
+      'Préparation BAC',
+      'Constitution du dossier',
+      'Présentation',
+      'Défense du projet',
+      'Méthodologie'
+    ]
+  },
+'Français-2nde F1': {
+    'Trimestre 1': [
+      'Communication professionnelle',
+      'Expression écrite professionnelle',
+      'La lettre professionnelle',
+      'Le courriel',
+      'Compte-rendu technique',
+      'Structure',
+      'Rédaction',
+      'Clarté',
+      'Précision',
+      'Vocabulaire technique'
+    ],
+    'Trimestre 2': [
+      'Correspondance administrative',
+      'Demandes',
+      'Réclamations',
+      'Réponses',
+      'Rapport de stage',
+      'Structure du rapport',
+      'Introduction',
+      'Développement',
+      'Conclusion',
+      'Présentation'
+    ],
+    'Trimestre 3': [
+      'Expression orale professionnelle',
+      'Présentation orale',
+      'Exposé technique',
+      'Argumentation',
+      'Note de synthèse',
+      'Analyse de documents',
+      'Synthèse',
+      'Rédaction',
+      'Objectivité',
+      'Concision'
+    ]
+  },
+  'Français-1ère F1': {
+    'Trimestre 1': [
+      'Rédaction technique',
+      'Le rapport technique',
+      'Analyse',
+      'Description',
+      'Préconisations',
+      'Documentation professionnelle',
+      'Notice technique',
+      'Mode d\'emploi',
+      'Cahier des charges',
+      'Spécifications'
+    ],
+    'Trimestre 2': [
+      'Argumentation',
+      'Thèse',
+      'Arguments',
+      'Exemples',
+      'Présentation orale',
+      'Préparer un exposé',
+      'Supports visuels',
+      'Expression',
+      'Gestuelle',
+      'Interaction'
+    ],
+    'Trimestre 3': [
+      'Dossier professionnel',
+      'Projet technique',
+      'Rédaction',
+      'Organisation',
+      'Communication en entreprise',
+      'Relations professionnelles',
+      'Travail en équipe',
+      'Réunions',
+      'Comptes-rendus',
+      'Efficacité'
+    ]
+  },
+  'Français-Terminale F1': {
+    'Trimestre 1': [
+      'Rapport de projet',
+      'Projet de fin d\'études',
+      'Méthodologie',
+      'Rédaction',
+      'Argumentation',
+      'Communication technique',
+      'Vocabulaire spécialisé',
+      'Schémas',
+      'Graphiques',
+      'Annexes'
+    ],
+    'Trimestre 2': [
+      'Synthèse documentaire',
+      'Recherche documentaire',
+      'Analyse',
+      'Synthèse',
+      'Soutenance de projet',
+      'Préparation',
+      'Diaporama',
+      'Oral',
+      'Questions',
+      'Défense'
+    ],
+    'Trimestre 3': [
+      'Préparation BAC',
+      'Résumé de texte',
+      'Discussion',
+      'Argumentation',
+      'Insertion professionnelle',
+      'CV',
+      'Lettre de motivation',
+      'Entretien',
+      'Projet professionnel',
+      'Orientation'
+    ]
+  },
+
+  'Mathématiques-2nde F2': {
+    'Trimestre 1': [
+      'Calcul numérique',
+      'Opérations',
+      'Fractions',
+      'Puissances',
+      'Racines',
+      'Algèbre de base',
+      'Équations',
+      'Inéquations',
+      'Systèmes',
+      'Applications électroniques'
+    ],
+    'Trimestre 2': [
+      'Fonctions',
+      'Définition',
+      'Représentation graphique',
+      'Fonction affine',
+      'Applications',
+      'Trigonométrie',
+      'Cercle trigonométrique',
+      'Fonctions circulaires',
+      'Déphasage',
+      'Signaux sinusoïdaux'
+    ],
+    'Trimestre 3': [
+      'Nombres complexes introduction',
+      'Forme algébrique',
+      'Opérations',
+      'Représentation',
+      'Applications en électricité',
+      'Vecteurs',
+      'Vecteurs de Fresnel',
+      'Impédance complexe',
+      'Calculs en AC',
+      'Diagrammes'
+    ]
+  },
+  'Mathématiques-1ère F2': {
+    'Trimestre 1': [
+      'Nombres complexes',
+      'Forme algébrique',
+      'Forme trigonométrique',
+      'Module et argument',
+      'Applications',
+      'Suites',
+      'Arithmétiques',
+      'Géométriques',
+      'Progressions',
+      'Applications'
+    ],
+    'Trimestre 2': [
+      'Dérivation',
+      'Nombre dérivé',
+      'Fonction dérivée',
+      'Applications',
+      'Étude de signaux',
+      'Fonctions exponentielles',
+      'Propriétés',
+      'Dérivée',
+      'Croissance',
+      'Décroissance'
+    ],
+    'Trimestre 3': [
+      'Équations différentielles',
+      'Premier ordre',
+      'Solutions',
+      'Applications en électronique',
+      'Circuits RC, RL',
+      'Probabilités',
+      'Calculs',
+      'Lois de probabilité',
+      'Fiabilité',
+      'Composants'
+    ]
+  },
+  'Mathématiques-Terminale F2': {
+    'Trimestre 1': [
+      'Intégrales',
+      'Primitives',
+      'Calcul intégral',
+      'Applications',
+      'Signaux',
+      'Transformées',
+      'Transformée de Fourier',
+      'Transformée de Laplace',
+      'Applications',
+      'Filtrage'
+    ],
+    'Trimestre 2': [
+      'Mathématiques pour l\'électronique',
+      'Calculs d\'impédances',
+      'Fonction de transfert',
+      'Diagrammes de Bode',
+      'Résonance',
+      'Statistiques',
+      'Séries statistiques',
+      'Ajustement',
+      'Corrélation',
+      'Mesures'
+    ],
+    'Trimestre 3': [
+      'Applications pratiques',
+      'Résolution de problèmes',
+      'Circuits électroniques',
+      'Amplificateurs',
+      'Filtres',
+      'Préparation BAC',
+      'Exercices types',
+      'Problèmes de synthèse',
+      'Applications',
+      'Projets'
+    ]
+  }, 
+'Physique-2nde F2': {
+    'Trimestre 1': [
+      'Électricité de base',
+      'Courant électrique',
+      'Tension',
+      'Intensité',
+      'Loi d\'Ohm',
+      'Résistance',
+      'Code des couleurs',
+      'Puissance',
+      'Énergie',
+      'Applications'
+    ],
+    'Trimestre 2': [
+      'Circuits électriques',
+      'Circuits série',
+      'Circuits parallèle',
+      'Lois de Kirchhoff',
+      'Diviseurs',
+      'Puissance électrique',
+      'Calcul de puissance',
+      'Rendement',
+      'Effet Joule',
+      'Dissipation thermique'
+    ],
+    'Trimestre 3': [
+      'Magnétisme',
+      'Champ magnétique',
+      'Aimants',
+      'Bobines',
+      'Électromagnétisme',
+      'Force de Laplace',
+      'Induction',
+      'Loi de Lenz',
+      'Transformateurs',
+      'Applications'
+    ]
+  },
+  'Physique-1ère F2': {
+    'Trimestre 1': [
+      'Circuits AC',
+      'Courant alternatif',
+      'Valeur efficace',
+      'Fréquence',
+      'Période',
+      'Impédance',
+      'Résistance',
+      'Réactance',
+      'Déphasage',
+      'Calculs'
+    ],
+    'Trimestre 2': [
+      'Transformateurs',
+      'Principe',
+      'Rapport de transformation',
+      'Rendement',
+      'Applications',
+      'Machines électriques',
+      'Moteurs',
+      'Génératrices',
+      'Fonctionnement',
+      'Caractéristiques'
+    ],
+    'Trimestre 3': [
+      'Électronique analogique',
+      'Diodes',
+      'Redressement',
+      'Filtrage',
+      'Semiconducteurs',
+      'Transistors',
+      'Polarisation',
+      'Amplification',
+      'Montages de base',
+      'Applications'
+    ]
+  },
+  'Physique-Terminale F2': {
+    'Trimestre 1': [
+      'Électronique de puissance',
+      'Redresseurs',
+      'Thyristors',
+      'Triacs',
+      'Hacheurs',
+      'Filtres',
+      'Filtres passifs',
+      'Filtres actifs',
+      'Fonction de transfert',
+      'Diagrammes de Bode'
+    ],
+    'Trimestre 2': [
+      'Amplificateurs',
+      'Amplificateurs opérationnels',
+      'Montages de base',
+      'Applications',
+      'Oscillateurs',
+      'Principe',
+      'Oscillateurs sinusoïdaux',
+      'Oscillateurs à relaxation',
+      'Fréquence',
+      'Stabilité'
+    ],
+    'Trimestre 3': [
+      'Systèmes électroniques',
+      'Alimentations',
+      'Régulateurs',
+      'Convertisseurs',
+      'Préparation BAC',
+      'Études de systèmes',
+      'Diagnostic',
+      'Mesures',
+      'Projets',
+      'Dossier technique'
+    ]
+  },
+  'Électronique-2nde F2': {
+    'Trimestre 1': [
+      'Composants passifs',
+      'Résistances',
+      'Condensateurs',
+      'Bobines',
+      'Associations',
+      'Diodes',
+      'Diode à jonction',
+      'Caractéristiques',
+      'Redressement',
+      'Régulation Zener'
+    ],
+    'Trimestre 2': [
+      'Transistors',
+      'Transistor bipolaire',
+      'Structure',
+      'Fonctionnement',
+      'Polarisation',
+      'Circuits de base',
+      'Montage émetteur commun',
+      'Montage collecteur commun',
+      'Montage base commune',
+      'Applications'
+    ],
+    'Trimestre 3': [
+      'Amplification',
+      'Principe',
+      'Gain',
+      'Bande passante',
+      'Distorsion',
+      'Alimentation',
+      'Alimentation linéaire',
+      'Transformateur',
+      'Redressement',
+      'Filtrage'
+    ]
+  },
+  'Électronique-1ère F2': {
+    'Trimestre 1': [
+      'Amplificateurs opérationnels',
+      'Structure',
+      'Caractéristiques',
+      'Montage inverseur',
+      'Montage non inverseur',
+      'Filtres actifs',
+      'Filtre passe-bas',
+      'Filtre passe-haut',
+      'Filtre passe-bande',
+      'Applications'
+    ],
+    'Trimestre 2': [
+      'Oscillateurs',
+      'Oscillateur à pont de Wien',
+      'Oscillateur à déphasage',
+      'Stabilité',
+      'Modulation',
+      'Modulation d\'amplitude',
+      'Modulation de fréquence',
+      'Démodulation',
+      'Applications',
+      'Télécommunications'
+    ],
+    'Trimestre 3': [
+      'Électronique numérique',
+      'Systèmes de numération',
+      'Algèbre de Boole',
+      'Portes logiques',
+      'Logique combinatoire',
+      'Tables de vérité',
+      'Simplification',
+      'Circuits combinatoires',
+      'Additionneur',
+      'Décodeur'
+    ]
+  },
+  'Électronique-Terminale F2': {
+    'Trimestre 1': [
+      'Circuits intégrés',
+      'Technologies',
+      'Familles logiques',
+      'TTL, CMOS',
+      'Microcontrôleurs',
+      'Architecture',
+      'Mémoires',
+      'Ports d\'entrée/sortie',
+      'Timers',
+      'Interruptions'
+    ],
+    'Trimestre 2': [
+      'Systèmes embarqués',
+      'Conception',
+      'Programmation',
+      'Assembleur',
+      'Langage C',
+      'Applications',
+      'Capteurs',
+      'Actionneurs',
+      'Communication',
+      'Protocoles'
+    ],
+    'Trimestre 3': [
+      'Projet électronique',
+      'Cahier des charges',
+      'Conception',
+      'Schémas',
+      'Réalisation',
+      'Tests',
+      'Préparation BAC',
+      'Dossier technique',
+      'Soutenance',
+      'Présentation'
+    ]
+  },
+  'Technologie-2nde F2': {
+    'Trimestre 1': [
+      'Technologie des composants',
+      'Résistances',
+      'Condensateurs',
+      'Semi-conducteurs',
+      'Circuits intégrés',
+      'Lecture de schémas',
+      'Symboles',
+      'Schémas de principe',
+      'Schémas de montage',
+      'Nomenclature'
+    ],
+    'Trimestre 2': [
+      'Montage électronique',
+      'Circuits imprimés',
+      'Plaques d\'essai',
+      'Composants CMS',
+      'Soudure',
+      'Techniques de soudure',
+      'Fer à souder',
+      'Station de soudage',
+      'Dessoudage',
+      'Qualité'
+    ],
+    'Trimestre 3': [
+      'Mesures électroniques',
+      'Multimètre',
+      'Oscilloscope',
+      'Utilisation',
+      'Mesures',
+      'Générateur de fonctions',
+      'Signaux',
+      'Fréquence',
+      'Amplitude',
+      'Documentation'
+    ]
+  },
+  'Technologie-1ère F2': {
+    'Trimestre 1': [
+      'Systèmes électroniques',
+      'Analyse fonctionnelle',
+      'Blocs fonctionnels',
+      'Interfaces',
+      'CAO électronique',
+      'Logiciels',
+      'Saisie de schémas',
+      'Simulation',
+      'Routage',
+      'Fabrication'
+    ],
+    'Trimestre 2': [
+      'Circuits imprimés',
+      'Conception',
+      'Simple face',
+      'Double face',
+      'Tests et mesures',
+      'Protocoles de test',
+      'Vérification',
+      'Validation',
+      'Caractérisation',
+      'Rapport'
+    ],
+    'Trimestre 3': [
+      'Maintenance électronique',
+      'Diagnostic',
+      'Méthodes',
+      'Outils',
+      'Diagnostic de pannes',
+      'Localisation',
+      'Réparation',
+      'Remplacement',
+      'Tests',
+      'Documentation'
+    ]
+  },
+  'Technologie-Terminale F2': {
+    'Trimestre 1': [
+      'Conception de systèmes',
+      'Analyse du besoin',
+      'Spécifications',
+      'Architecture',
+      'Choix technologiques',
+      'Prototypage',
+      'Maquette',
+      'Prototype',
+      'Tests préliminaires',
+      'Améliorations'
+    ],
+    'Trimestre 2': [
+      'Automatisation',
+      'Systèmes automatisés',
+      'Capteurs',
+      'Act ionneurs',
+      'Commande',
+      'Interfaçage',
+      'Acquisition de données',
+      'Conversion A/N',
+      'Traitement',
+      'Communication série'
+    ],
+    'Trimestre 3': [
+      'Projet technique',
+      'Projet de fin d\'études',
+      'Étude préalable',
+      'Réalisation',
+      'Tests et validation',
+      'Préparation BAC',
+      'Dossier projet',
+      'Documentation',
+      'Soutenance',
+      'Évaluation'
+    ]
+  },
+  'Français-2nde F2': {
+    'Trimestre 1': [
+      'Communication technique',
+      'Vocabulaire technique',
+      'Expression écrite',
+      'Clarté',
+      'Précision',
+      'Documentation',
+      'Notice technique',
+      'Fiche technique',
+      'Spécifications',
+      'Normes'
+    ],
+    'Trimestre 2': [
+      'Rapport technique',
+      'Structure',
+      'Introduction',
+      'Développement',
+      'Conclusion',
+      'Correspondance',
+      'Lettre professionnelle',
+      'Courriel',
+      'Demande',
+      'Réponse'
+    ],
+    'Trimestre 3': [
+      'Expression professionnelle',
+      'Présentation orale',
+      'Supports visuels',
+      'Argumentation',
+      'Compte-rendu',
+      'Réunion',
+      'Intervention',
+      'Observation',
+      'Synthèse',
+      'Diffusion'
+    ]
+  },
+  'Français-1ère F2': {
+    'Trimestre 1': [
+      'Rédaction technique',
+      'Rapport d\'étude',
+      'Analyse',
+      'Résultats',
+      'Interprétation',
+      'Note de synthèse',
+      'Documents techniques',
+      'Analyse',
+      'Synthèse',
+      'Recommandations'
+    ],
+    'Trimestre 2': [
+      'Argumentation',
+      'Convaincre',
+      'Persuader',
+      'Exemples techniques',
+      'Présentation orale',
+      'Exposé technique',
+      'Démonstration',
+      'Questions-réponses',
+      'Débat',
+      'Discussion technique'
+    ],
+    'Trimestre 3': [
+      'Dossier technique',
+      'Organisation',
+      'Présentation',
+      'Annexes',
+      'Communication',
+      'Travail en équipe',
+      'Coordination',
+      'Échanges',
+      'Documentation partagée',
+      'Efficacité'
+    ]
+  },
+  'Français-Terminale F2': {
+    'Trimestre 1': [
+      'Rapport de projet',
+      'Projet électronique',
+      'Méthodologie',
+      'Rédaction technique',
+      'Schémas',
+      'Documentation technique',
+      'Cahier des charges',
+      'Documentation complète',
+      'Manuel d\'utilisation',
+      'Maintenance'
+    ],
+    'Trimestre 2': [
+      'Synthèse',
+      'Analyse documentaire',
+      'Veille technologique',
+      'Synthèse technique',
+      'Soutenance',
+      'Préparation',
+      'Présentation PowerPoint',
+      'Argumentation orale',
+      'Défense du projet',
+      'Gestion du temps'
+    ],
+    'Trimestre 3': [
+      'Préparation BAC',
+      'Méthodologie',
+      'Exercices types',
+      'Entraînement',
+      'Communication professionnelle',
+      'CV technique',
+      'Portfolio',
+      'Entretien d\'embauche',
+      'Projet professionnel',
+      'Insertion'
+    ]
+  },
+
+  'Mathématiques-2nde F3': {
+    'Trimestre 1': [
+      'Calcul pour l\'électricité',
+      'Nombres complexes en électricité',
+      'Impédances',
+      'Calculs de circuits',
+      'Loi d\'Ohm généralisée',
+      'Algèbre appliquée',
+      'Équations',
+      'Systèmes linéaires',
+      'Applications',
+      'Résolution de circuits'
+    ],
+    'Trimestre 2': [
+      'Trigonométrie pour l\'électrotechnique',
+      'Angles et déphasages',
+      'Fonctions sinusoïdales',
+      'Représentation de Fresnel',
+      'Nombres complexes',
+      'Forme algébrique',
+      'Forme trigonométrique',
+      'Opérations',
+      'Applications en AC',
+      'Puissance complexe'
+    ],
+    'Trimestre 3': [
+      'Vecteurs de Fresnel',
+      'Représentation vectorielle',
+      'Diagrammes',
+      'Somme vectorielle',
+      'Applications',
+      'Statistiques',
+      'Mesures électriques',
+      'Séries de mesures',
+      'Moyenne',
+      'Incertitudes'
+    ]
+  },
+  'Mathématiques-1ère F3': {
+    'Trimestre 1': [
+      'Nombres complexes en électricité',
+      'Impédance complexe',
+      'Admittance',
+      'Calculs en régime AC',
+      'Puissance',
+      'Suites',
+      'Progressions',
+      'Applications',
+      'Phénomènes périodiques',
+      'Harmoniques'
+    ],
+    'Trimestre 2': [
+      'Dérivation',
+      'Dérivées usuelles',
+      'Applications',
+      'Variation de courant',
+      'Variation de tension',
+      'Fonctions sinusoïdales',
+      'Amplitude',
+      'Fréquence',
+      'Déphasage',
+      'Valeur efficace'
+    ],
+    'Trimestre 3': [
+      'Équations différentielles',
+      'Premier ordre',
+      'Circuits RC, RL',
+      'Régime transitoire',
+      'Transformées',
+      'Transformée de Laplace',
+      'Applications',
+      'Analyse de circuits',
+      'Fonction de transfert',
+      'Réponse fréquentielle'
+    ]
+  },
+  'Mathématiques-Terminale F3': {
+    'Trimestre 1': [
+      'Calcul vectoriel',
+      'Vecteurs tournants',
+      'Champ magnétique',
+      'Force électromagnétique',
+      'Intégrales',
+      'Primitives',
+      'Calcul intégral',
+      'Valeur moyenne',
+      'Valeur efficace',
+      'Puissance moyenne'
+    ],
+    'Trimestre 2': [
+      'Mathématiques pour l\'électrotechnique',
+      'Calculs de puissance',
+      'Facteur de puissance',
+      'Rendement',
+      'Pertes',
+      'Fourier',
+      'Série de Fourier',
+      'Analyse harmonique',
+      'Distorsion',
+      'THD'
+    ],
+    'Trimestre 3': [
+      'Applications pratiques',
+      'Dimensionnement',
+      'Calculs de section',
+      'Chute de tension',
+      'Court-circuit',
+      'Préparation BAC',
+      'Problèmes de synthèse',
+      'Installations électriques',
+      'Normes',
+      'Sécurité'
+    ]
+  },
+'Électricité-2nde F3': {
+    'Trimestre 1': [
+      'Électricité de base',
+      'Courant électrique',
+      'Tension',
+      'Résistance',
+      'Lois fondamentales',
+      'Loi d\'Ohm',
+      'Loi de Joule',
+      'Lois de Kirchhoff',
+      'Loi des nœuds',
+      'Loi des mailles'
+    ],
+    'Trimestre 2': [
+      'Circuits électriques',
+      'Circuits série',
+      'Circuits parallèle',
+      'Circuits mixtes',
+      'Analyse de circuits',
+      'Méthodes de résolution',
+      'Théorème de Thévenin',
+      'Théorème de Norton',
+      'Superposition',
+      'Millman'
+    ],
+    'Trimestre 3': [
+      'Puissance électrique',
+      'Puissance active',
+      'Puissance réactive',
+      'Puissance apparente',
+      'Facteur de puissance',
+      'Triangle des puissances',
+      'Compensation',
+      'Rendement',
+      'Pertes',
+      'Économie d\'énergie'
+    ]
+  },
+  'Électricité-1ère F3': {
+    'Trimestre 1': [
+      'Régimes sinusoïdaux',
+      'Courant alternatif',
+      'Valeurs instantanées',
+      'Valeurs efficaces',
+      'Déphasage',
+      'Triphasé',
+      'Systèmes triphasés',
+      'Couplage étoile',
+      'Couplage triangle',
+      'Puissance en triphasé'
+    ],
+    'Trimestre 2': [
+      'Transformateurs',
+      'Principe',
+      'Rapport de transformation',
+      'Essais',
+      'Rendement',
+      'Machines électriques',
+      'Machines à courant continu',
+      'Moteurs',
+      'Génératrices',
+      'Caractéristiques'
+    ],
+    'Trimestre 3': [
+      'Distribution électrique',
+      'Réseaux',
+      'Schémas',
+      'Calculs',
+      'Protection',
+      'Fusibles',
+      'Disjoncteurs',
+      'Relais',
+      'Différentiels',
+      'Sélectivité'
+    ]
+  },
+  'Électricité-Terminale F3': {
+    'Trimestre 1': [
+      'Électrotechnique industrielle',
+      'Machines asynchrones',
+      'Principe',
+      'Démarrage',
+      'Variation de vitesse',
+      'Automatismes électriques',
+      'Contacteurs',
+      'Relais',
+      'Temporisateurs',
+      'Schémas de commande'
+    ],
+    'Trimestre 2': [
+      'Variation de vitesse',
+      'Variateurs électroniques',
+      'Convertisseurs',
+      'Onduleurs',
+      'Électronique de puissance',
+      'Redresseurs',
+      'Hacheurs',
+      'Gradateurs',
+      'Applications',
+      'Commande de moteurs'
+    ],
+    'Trimestre 3': [
+      'Installation électrique',
+      'Conception',
+      'Dimensionnement',
+      'Protection',
+      'Réalisation',
+      'Préparation BAC',
+      'Études de cas',
+      'Normes NF C 15-100',
+      'Schémas électriques',
+      'Projet d\'installation'
+    ]
+  },
+  'Électronique-2nde F3': {
+    'Trimestre 1': [
+      'Composants électroniques',
+      'Diodes',
+      'Redressement',
+      'Régulation',
+      'Semiconducteurs',
+      'Structure',
+      'Dopage',
+      'Jonction PN',
+      'Caractéristiques',
+      'Applications'
+    ],
+    'Trimestre 2': [
+      'Circuits électroniques de base',
+      'Alimentation',
+      'Transformateur',
+      'Redressement',
+      'Filtrage',
+      'Amplification',
+      'Transistors',
+      'Polarisation',
+      'Montages',
+      'Gain'
+    ],
+    'Trimestre 3': [
+      'Alimentation électronique',
+      'Alimentation linéaire',
+      'Régulateurs',
+      'Protection',
+      'Redressement',
+      'Simple alternance',
+      'Double alternance',
+      'Pont de Graetz',
+      'Filtrage',
+      'Ondulation'
+    ]
+  },
+  'Électronique-1ère F3': {
+    'Trimestre 1': [
+      'Électronique de puissance',
+      'Thyristors',
+      'Amorçage',
+      'Blocage',
+      'Applications',
+      'Redressement commandé',
+      'Variateurs électroniques',
+      'Gradateurs',
+      'Hacheurs',
+      'Commande',
+      'Variation de vitesse'
+    ],
+    'Trimestre 2': [
+      'Commande',
+      'Circuits de commande',
+      'Optocoupleurs',
+      'Drivers',
+      'Régulation',
+      'Régulation de tension',
+      'Régulation de courant',
+      'Régulation de vitesse',
+      'Asservissement',
+      'Boucle fermée'
+    ],
+    'Trimestre 3': [
+      'Régulation',
+      'PID',
+      'Correcteurs',
+      'Stabilité',
+      'Asservissement',
+      'Capteurs',
+      'Traitement du signal',
+      'Commande de moteurs',
+      'Applications industrielles',
+      'Systèmes asservis'
+    ]
+  },
+  'Électronique-Terminale F3': {
+    'Trimestre 1': [
+      'Systèmes de commande',
+      'Commande par relais',
+      'Commande électronique',
+      'Interfaces de puissance',
+      'Automates',
+      'Automates programmables',
+      'Programmation',
+      'Ladder',
+      'Grafcet',
+      'Applications'
+    ],
+    'Trimestre 2': [
+      'Supervision',
+      'IHM',
+      'SCADA',
+      'Monitoring',
+      'Communication industrielle',
+      'Protocoles',
+      'Modbus',
+      'Profibus',
+      'Ethernet industriel',
+      'Réseaux'
+    ],
+    'Trimestre 3': [
+      'Projet électrotechnique',
+      'Installation automatisée',
+      'Conception',
+      'Réalisation',
+      'Programmation',
+      'Préparation BAC',
+      'Dossier technique',
+      'Schémas',
+      'Programmes',
+      'Soutenance'
+    ]
+  },
+  'Technologie-2nde F3': {
+    'Trimestre 1': [
+      'Technologie des installations',
+      'Composants électriques',
+      'Appareillage',
+      'Matériel',
+      'Schémas électriques',
+      'Symboles normalisés',
+      'Schémas de principe',
+      'Schémas de câblage',
+      'Plans',
+      'Lecture de schémas'
+    ],
+    'Trimestre 2': [
+      'Appareillage électrique',
+      'Interrupteurs',
+      'Contacteurs',
+      'Relais',
+      'Disjoncteurs',
+      'Câblage',
+      'Conducteurs',
+      'Sections',
+      'Cheminements',
+      'Raccordements'
+    ],
+    'Trimestre 3': [
+      'Mesures électriques',
+      'Multimètre',
+      'Pince ampèremétrique',
+      'Wattmètre',
+      'Oscilloscope',
+      'Sécurité électrique',
+      'Risques',
+      'Habilitation',
+      'EPI',
+      'Consignation'
+    ]
+  },
+  'Technologie-1ère F3': {
+    'Trimestre 1': [
+      'Installations industrielles',
+      'Tableaux électriques',
+      'Armoires',
+      'Câblage',
+      'Distribution',
+      'Distribution BT',
+      'Schémas unifilaires',
+      'Protection',
+      'Sélectivité',
+      'Filiation'
+    ],
+    'Trimestre 2': [
+      'Automatismes',
+      'Circuits de commande',
+      'Circuits de puissance',
+      'Démarreurs',
+      'Commande',
+      'Commande manuelle',
+      'Commande automatique',
+      'Capteurs',
+      'Détecteurs',
+      'Fin de course'
+    ],
+    'Trimestre 3': [
+      'Maintenance électrique',
+      'Maintenance préventive',
+      'Maintenance corrective',
+      'Diagnostic',
+      'Recherche de pannes',
+      'Mesures',
+      'Tests',
+      'Réparation',
+      'Remplacement',
+      'Compte-rendu'
+    ]
+  },
+  'Technologie-Terminale F3': {
+    'Trimestre 1': [
+      'Conception d\'installations',
+      'Cahier des charges',
+      'Schémas',
+      'Calculs',
+      'Dimensionnement',
+      'Sections de câbles',
+      'Protection',
+      'Disjoncteurs',
+      'Fusibles',
+      'Sélectivité'
+    ],
+    'Trimestre 2': [
+      'Gestion de l\'énergie',
+      'Comptage',
+      'Tarification',
+      'Économies',
+      'Qualité de l\'énergie',
+      'Harmoniques',
+      'Compensation',
+      'Filtrage',
+      'Stabilité',
+      'Continuité'
+    ],
+    'Trimestre 3': [
+      'Projet d\'installation',
+      'Étude complète',
+      'Plans',
+      'Devis',
+      'Réalisation',
+      'Préparation BAC',
+      'Dossier professionnel',
+      'Schémas électriques',
+      'Notice technique',
+      'Soutenance'
+    ]
+  },
+'Français-2nde F3': {
+    'Trimestre 1': [
+      'Communication technique',
+      'Vocabulaire professionnel',
+      'Termes électriques',
+      'Normes',
+      'Expression écrite',
+      'Vocabulaire professionnel',
+      'Rapport d\'intervention',
+      'Structure',
+      'Rédaction',
+      'Précision'
+    ],
+    'Trimestre 2': [
+      'Rapport d\'intervention',
+      'Contexte',
+      'Description',
+      'Actions',
+      'Résultats',
+      'Compte-rendu',
+      'Observations',
+      'Mesures',
+      'Anomalies',
+      'Recommandations'
+    ],
+    'Trimestre 3': [
+      'Expression professionnelle',
+      'Communication orale',
+      'Explications techniques',
+      'Consignes',
+      'Documentation',
+      'Notice d\'utilisation',
+      'Fiche technique',
+      'Plan',
+      'Schéma annoté',
+      'Légende'
+    ]
+  },
+  'Français-1ère F3': {
+    'Trimestre 1': [
+      'Rédaction technique',
+      'Rapport de chantier',
+      'Descriptif',
+      'Bilan',
+      'Dossier technique',
+      'Constitution',
+      'Organisation',
+      'Présentation',
+      'Annexes',
+      'Schémas'
+    ],
+    'Trimestre 2': [
+      'Argumentation',
+      'Justification technique',
+      'Choix de solutions',
+      'Comparaison',
+      'Présentation',
+      'Exposé technique',
+      'Supports',
+      'Démonstration',
+      'Questions',
+      'Débat'
+    ],
+    'Trimestre 3': [
+      'Communication en entreprise',
+      'Relations clients',
+      'Devis',
+      'Factures',
+      'Rapport',
+      'Rapport d\'activité',
+      'Bilan de stage',
+      'Réalisations',
+      'Compétences',
+      'Projet professionnel'
+    ]
+  },
+  'Français-Terminale F3': {
+    'Trimestre 1': [
+      'Rapport de projet',
+      'Projet d\'installation',
+      'Étude préalable',
+      'Réalisation',
+      'Bilan',
+      'Documentation technique',
+      'Dossier d\'installation',
+      'Plans',
+      'Schémas',
+      'Notice'
+    ],
+    'Trimestre 2': [
+      'Note de synthèse',
+      'Veille technologique',
+      'Analyse',
+      'Synthèse',
+      'Soutenance',
+      'Préparation',
+      'Diaporama',
+      'Présentation orale',
+      'Argumentation',
+      'Défense'
+    ],
+    'Trimestre 3': [
+      'Préparation BAC',
+      'Méthodologie',
+      'Entraînement',
+      'Révisions',
+      'Insertion professionnelle',
+      'CV',
+      'Lettre de motivation',
+      'Portfolio',
+      'Entretien',
+      'Projet professionnel'
+    ]
+  },
+
+  'Économie-2nde G': {
+    'Trimestre 1': [
+      'Introduction à l\'économie',
+      'Qu\'est-ce que l\'économie ?',
+      'Besoins et ressources',
+      'Rareté',
+      'Choix économiques',
+      'Les agents économiques',
+      'Ménages',
+      'Entreprises',
+      'État',
+      'Reste du monde'
+    ],
+    'Trimestre 2': [
+      'Le marché',
+      'Offre et demande',
+      'Prix d\'équilibre',
+      'Élasticité',
+      'La production',
+      'Facteurs de production',
+      'Productivité',
+      'Rendements',
+      'Coûts de production',
+      'Profit'
+    ],
+    'Trimestre 3': [
+      'La consommation',
+      'Fonction de consommation',
+      'Propension à consommer',
+      'Déterminants',
+      'L\'épargne',
+      'Fonction d\'épargne',
+      'Motifs d\'épargne',
+      'Placement',
+      'Investissement',
+      'Circuit économique'
+    ]
+  },
+  'Économie-1ère G': {
+    'Trimestre 1': [
+      'Microéconomie',
+      'Comportement du consommateur',
+      'Utilité',
+      'Courbes d\'indifférence',
+      'La concurrence',
+      'Concurrence pure et parfaite',
+      'Monopole',
+      'Oligopole',
+      'Concurrence monopolistique',
+      'Structures de marché'
+    ],
+    'Trimestre 2': [
+      'Macroéconomie',
+      'Agrégats économiques',
+      'PIB',
+      'PNB',
+      'Revenu national',
+      'Croissance économique',
+      'Indicateurs',
+      'Sources',
+      'Facteurs',
+      'Développement'
+    ],
+    'Trimestre 3': [
+      'Commerce international',
+      'Théories du commerce',
+      'Avantages comparatifs',
+      'Balance commerciale',
+      'Monnaie et crédit',
+      'Fonctions de la monnaie',
+      'Création monétaire',
+      'Banques',
+      'Politique monétaire',
+      'Inflation'
+    ]
+  },
+  'Économie-Terminale G': {
+    'Trimestre 1': [
+      'Politiques économiques',
+      'Politique budgétaire',
+      'Politique monétaire',
+      'Politique de l\'emploi',
+      'Développement économique',
+      'Croissance et développement',
+      'Sous-développement',
+      'Indicateurs de développement',
+      'Stratégies',
+      'Aide au développement'
+    ],
+    'Trimestre 2': [
+      'Économie internationale',
+      'Balance des paiements',
+      'Taux de change',
+      'Systèmes monétaires',
+      'Mondialisation',
+      'Globalisation',
+      'OMC',
+      'FMI',
+      'Banque mondiale',
+      'Intégration régionale'
+    ],
+    'Trimestre 3': [
+      'Économie du développement',
+      'Pays en développement',
+      'Pays émergents',
+      'Défis',
+      'Opportunités',
+      'Préparation BAC',
+      'Révisions',
+      'Dissertations',
+      'Études de cas',
+      'Actualité économique'
+    ]
+  },
+  'Comptabilité-2nde G': {
+    'Trimestre 1': [
+      'Introduction à la comptabilité',
+      'Rôle de la comptabilité',
+      'Principes comptables',
+      'Normalisation',
+      'Le bilan',
+      'Actif',
+      'Passif',
+      'Équation comptable',
+      'Patrimoine',
+      'Situation nette'
+    ],
+    'Trimestre 2': [
+      'Le compte de résultat',
+      'Charges',
+      'Produits',
+      'Résultat',
+      'Les opérations courantes',
+      'Achats',
+      'Ventes',
+      'Règlements',
+      'Comptes de tiers',
+      'Comptes de trésorerie'
+    ],
+    'Trimestre 3': [
+      'La TVA',
+      'Principe',
+      'TVA collectée',
+      'TVA déductible',
+      'Déclaration',
+      'Les salaires',
+      'Bulletin de paie',
+      'Charges sociales',
+      'Comptabilisation',
+      'Déclarations sociales'
+    ]
+  },
+  'Comptabilité-1ère G': {
+    'Trimestre 1': [
+      'Comptabilité approfondie',
+      'Opérations de fin d\'exercice',
+      'Amortissements',
+      'Provisions',
+      'Les immobilisations',
+      'Acquisitions',
+      'Amortissements',
+      'Cessions',
+      'Réévaluations',
+      'Dépréciation'
+    ],
+    'Trimestre 2': [
+      'Les stocks',
+      'Évaluation',
+      'Inventaire',
+      'Méthodes de valorisation',
+      'Les provisions',
+      'Provisions pour risques',
+      'Provisions pour charges',
+      'Provisions réglementées',
+      'Comptabilisation',
+      'Ajustements'
+    ],
+    'Trimestre 3': [
+      'Comptabilité analytique',
+      'Coûts complets',
+      'Coûts partiels',
+      'Seuil de rentabilité',
+      'Calcul des coûts',
+      'Coût d\'achat',
+      'Coût de production',
+      'Coût de revient',
+      'Marges',
+      'Résultats analytiques'
+    ]
+  },
+  'Comptabilité-Terminale G': {
+    'Trimestre 1': [
+      'Analyse financière',
+      'Bilan fonctionnel',
+      'Fonds de roulement',
+      'BFR',
+      'Trésorerie',
+      'Les ratios',
+      'Ratios de structure',
+      'Ratios de gestion',
+      'Ratios de rentabilité',
+      'Interprétation'
+    ],
+    'Trimestre 2': [
+      'Gestion budgétaire',
+      'Budgets',
+      'Prévisions',
+      'Écarts',
+      'Contrôle de gestion',
+      'Tableaux de bord',
+      'Indicateurs',
+      'Suivi',
+      'Analyse des écarts',
+      'Actions correctives'
+    ],
+    'Trimestre 3': [
+      'Audit comptable',
+      'Contrôle interne',
+      'Audit externe',
+      'Certification',
+      'Préparation BAC',
+      'Études de cas',
+      'Synthèses',
+      'Analyses',
+      'Recommandations',
+      'Présentation'
+    ]
+  },
+'Mathématiques-2nde G': {
+    'Trimestre 1': [
+      'Mathématiques financières',
+      'Intérêts simples',
+      'Calcul d\'intérêts',
+      'Taux',
+      'Durée',
+      'Pourcentages',
+      'Calculs commerciaux',
+      'Remises',
+      'Escomptes',
+      'TVA'
+    ],
+    'Trimestre 2': [
+      'Proportionnalité',
+      'Règle de trois',
+      'Partages proportionnels',
+      'Échelles',
+      'Statistiques',
+      'Séries statistiques',
+      'Paramètres',
+      'Représentations',
+      'Interprétation',
+      'Applications commerciales'
+    ],
+    'Trimestre 3': [
+      'Fonctions',
+      'Fonction affine',
+      'Fonction du second degré',
+      'Représentation',
+      'Graphiques',
+      'Diagrammes',
+      'Histogrammes',
+      'Courbes',
+      'Lecture',
+      'Interprétation'
+    ]
+  },
+  'Mathématiques-1ère G': {
+    'Trimestre 1': [
+      'Intérêts simples et composés',
+      'Formules',
+      'Calculs',
+      'Applications',
+      'Annuités',
+      'Valeur acquise',
+      'Valeur actuelle',
+      'Emprunts',
+      'Remboursements',
+      'Tableau d\'amortissement'
+    ],
+    'Trimestre 2': [
+      'Amortissements',
+      'Amortissement linéaire',
+      'Amortissement dégressif',
+      'Tableaux',
+      'Probabilités',
+      'Calcul de probabilités',
+      'Arbres',
+      'Lois de probabilité',
+      'Espérance',
+      'Applications commerciales'
+    ],
+    'Trimestre 3': [
+      'Statistiques descriptives',
+      'Séries à deux variables',
+      'Corrélation',
+      'Régression',
+      'Indices',
+      'Indices simples',
+      'Indices synthétiques',
+      'Évolution',
+      'Taux de variation',
+      'Applications économiques'
+    ]
+  },
+  'Mathématiques-Terminale G': {
+    'Trimestre 1': [
+      'Mathématiques appliquées à la gestion',
+      'Calculs financiers avancés',
+      'Actualisation',
+      'Rentabilité',
+      'Programmation linéaire',
+      'Modélisation','Optimisation',
+      'Contraintes',
+      'Solutions optimales',
+      'Applications gestion'
+    ],
+    'Trimestre 2': [
+      'Statistiques inférentielles',
+      'Échantillonnage',
+      'Estimation',
+      'Tests d\'hypothèses',
+      'Intervalles de confiance',
+      'Échantillonnage',
+      'Méthodes',
+      'Sondages',
+      'Représentativité',
+      'Marges d\'erreur'
+    ],
+    'Trimestre 3': [
+      'Recherche opérationnelle',
+      'Programmation linéaire',
+      'Graphes',
+      'Ordonnancement',
+      'PERT',
+      'Préparation BAC',
+      'Problèmes de gestion',
+      'Études de cas',
+      'Optimisation',
+      'Décisions'
+    ]
+  },
+  'Droit-2nde G': {
+    'Trimestre 1': [
+      'Introduction au droit',
+      'Définition du droit',
+      'Rôle du droit',
+      'Branches du droit',
+      'Les sources du droit',
+      'Loi',
+      'Règlements',
+      'Jurisprudence',
+      'Coutume',
+      'Hiérarchie des normes'
+    ],
+    'Trimestre 2': [
+      'Les personnes',
+      'Personne physique',
+      'Personne morale',
+      'Identification',
+      'La capacité juridique',
+      'Capacité de jouissance',
+      'Capacité d\'exercice',
+      'Incapacités',
+      'Protection',
+      'Représentation'
+    ],
+    'Trimestre 3': [
+      'Les biens',
+      'Classification',
+      'Biens meubles',
+      'Biens immeubles',
+      'La propriété',
+      'Droit de propriété',
+      'Attributs',
+      'Démembrements',
+      'Usufruit',
+      'Servitudes'
+    ]
+  },
+  'Droit-1ère G': {
+    'Trimestre 1': [
+      'Droit civil',
+      'Obligations',
+      'Sources des obligations',
+      'Classification',
+      'Les contrats',
+      'Formation',
+      'Conditions de validité',
+      'Effets',
+      'Exécution',
+      'Inexécution'
+    ],
+    'Trimestre 2': [
+      'Droit commercial',
+      'Actes de commerce',
+      'Commerçants',
+      'Obligations',
+      'Les sociétés',
+      'Définition',
+      'Classification',
+      'Constitution',
+      'Fonctionnement',
+      'Dissolution'
+    ],
+    'Trimestre 3': [
+      'Droit du travail',
+      'Relations individuelles',
+      'Le contrat de travail',
+      'Formation',
+      'Exécution',
+      'Rupture',
+      'Relations collectives',
+      'Syndicats',
+      'Conventions collectives',
+      'Conflits',
+      'Négociation'
+    ]
+  },
+  'Droit-Terminale G': {
+    'Trimestre 1': [
+      'Droit des affaires',
+      'Contrats commerciaux',
+      'Vente commerciale',
+      'Bail commercial',
+      'Droit fiscal',
+      'Impôts directs',
+      'Impôts indirects',
+      'TVA',
+      'Déclarations',
+      'Contentieux'
+    ],
+    'Trimestre 2': [
+      'Droit social avancé',
+      'Protection sociale',
+      'Sécurité sociale',
+      'Accidents du travail',
+      'Droit de la concurrence',
+      'Pratiques anticoncurrentielles',
+      'Concentrations',
+      'Règles',
+      'Sanctions',
+      'Autorités'
+    ],
+    'Trimestre 3': [
+      'Contentieux',
+      'Procédures',
+      'Juridictions',
+      'Voies de recours',
+      'Préparation BAC',
+      'Cas pratiques',
+      'Dissertations juridiques',
+      'Commentaires d\'arrêts',
+      'Méthodologie',
+      'Actualité juridique'
+    ]
+  },
+  'Français-2nde G': {
+    'Trimestre 1': [
+      'Communication professionnelle',
+      'Expression écrite',
+      'Style professionnel',
+      'Clarté',
+      'Correspondance commerciale',
+      'La lettre commerciale',
+      'Structure',
+      'Formules',
+      'Objet',
+      'Références'
+    ],
+    'Trimestre 2': [
+      'Le rapport',
+      'Rapport d\'activité',
+      'Rapport de stage',
+      'Structure',
+      'Présentation',
+      'La note de service',
+      'Rédaction',
+      'Diffusion',
+      'Objectif',
+      'Concision',
+      'Efficacité'
+    ],
+    'Trimestre 3': [
+      'Expression écrite professionnelle',
+      'Le compte-rendu',
+      'Réunion',
+      'Visite',
+      'Synthèse',
+      'Compte-rendu',
+      'Prise de notes',
+      'Organisation',
+      'Rédaction',
+      'Objectivité',
+      'Exactitude'
+    ]
+  },
+  'Français-1ère G': {
+    'Trimestre 1': [
+      'Rédaction administrative',
+      'Documents administratifs',
+      'Demandes',
+      'Réclamations',
+      'Le procès-verbal',
+      'Assemblée',
+      'Réunion',
+      'Délibérations',
+      'Votes',
+      'Signature'
+    ],
+    'Trimestre 2': [
+      'Argumentation commerciale',
+      'Lettre de prospection',
+      'Argumentaire',
+      'Conviction',
+      'Présentation orale',
+      'Pitch commercial',
+      'Négociation',
+      'Objections',
+      'Conclusion',
+      'Suivi'
+    ],
+    'Trimestre 3': [
+      'Communication d\'entreprise',
+      'Communication interne',
+      'Communication externe',
+      'Image',
+      'Dossier professionnel',
+      'Portfolio',
+      'CV',
+      'Lettre de motivation',
+      'Entretien',
+      'Présentation'
+    ]
+  },
+  'Français-Terminale G': {
+    'Trimestre 1': [
+      'Communication managériale',
+      'Leadership',
+      'Motivation',
+      'Conduite de réunion',
+      'Négociation',
+      'Techniques de négociation',
+      'Préparation',
+      'Stratégies',
+      'Compromis',
+      'Accords'
+    ],
+    'Trimestre 2': [
+      'Synthèse documentaire',
+      'Analyse de documents',
+      'Confrontation',
+      'Synthèse',
+      'Soutenance',
+      'Préparation orale',
+      'Supports',
+      'Présentation',
+      'Argumentation',
+      'Questions'
+    ],
+    'Trimestre 3': [
+      'Préparation BAC',
+      'Méthodologie',
+      'Exercices types',
+      'Entraînement',
+      'Techniques de communication',
+      'Communication écrite',
+      'Communication orale',
+      'Gestion du stress',
+      'Efficacité',
+      'Professionnalisme'
+    ]
+  },
