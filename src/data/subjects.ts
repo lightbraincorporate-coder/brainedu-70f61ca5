@@ -562,7 +562,7 @@ export const coursesBySubject: Record<string, Record<string, string[]>> = {
       'Les montagnes',
       'Les villes principales',
       'Les régions de mon pays'
-    ]
+    ],
 },
   'Sciences-CE2': {
     'Trimestre 1': [
