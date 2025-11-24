@@ -555,13 +555,6 @@ export const coursesBySubject: Record<string, Record<string, string[]>> = {
     'Trimestre 3': [
       'Cartes et paysages de mon pays',
       'Lire une carte',
-      'L\'hydrographie de mon pays',
-      'Le fleuve principal de mon pays',
-      'Les forêts',
-      'La savane',
-      'Les montagnes',
-      'Les villes principales',
-      'Les régions de mon pays'
     ],
 },
   'Sciences-CE2': {
