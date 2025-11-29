@@ -436,4 +436,4 @@ const ExposeCatalogPage = ({ onNavigate, linkedCourseId }: ExposeCatalogPageProp
   );
 };
 
-export default ExposeCatalogPage;
+export default SummaryCatalogPage;
