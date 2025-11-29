@@ -9,7 +9,7 @@ export default function BrainCorpInfo() {
       icon: BookOpen,
       description: 'Votre plateforme éducative complète pour réussir à tous les niveaux. Cours, résumés, exercices et bien plus encore.',
       color: 'from-blue-500 to-blue-600',
-      url: 'https://brainedu.lovable.app',
+      url: 'https://brainedu.vercel.app',
       current: true
     },
     {
@@ -17,7 +17,7 @@ export default function BrainCorpInfo() {
       icon: GraduationCap,
       description: 'Plateforme dédiée à la formation continue des enseignants et au suivi pédagogique. Développez vos compétences d\'enseignement.',
       color: 'from-green-500 to-green-600',
-      url: 'https://brainteaching.lovable.app',
+      url: 'https://brainteaching.vercel.app',
       current: false
     },
     {
@@ -25,7 +25,7 @@ export default function BrainCorpInfo() {
       icon: Shield,
       description: 'Aidez vos enfants à progresser grâce à un suivi personnalisé, des tests adaptés et une analyse approfondie de leur parcours scolaire.',
       color: 'from-purple-500 to-purple-600',
-      url: 'https://brainsecure.lovable.app',
+      url: 'https://brainsecure.vercel.app',
       current: false
     }
   ];
