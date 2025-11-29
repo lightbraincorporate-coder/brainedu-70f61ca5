@@ -3,23 +3,23 @@ import { FAQItem } from '@/types';
 export const faqData: FAQItem[] = [
   {
     question: "Comment puis-je passer commande ?",
-    answer: "Parcourez le catalogue, ajoutez les produits à votre panier, procédez au paiement via Mobile Money (Moov, Wave, Airtel Money), puis entrez l'ID de transaction pour validation. Important : Les flashcards physiques ne sont disponibles qu'à Brazzaville, République du Congo."
+    answer: "Parcourez le catalogue, ajoutez les produits à votre panier, procédez au paiement via la plateforme disponible dans votre pays, puis entrez l'ID de transaction, le message de transaction ou une capture d'écran pour validation. Important : Les flashcards physiques ne sont disponibles qu'à Brazzaville, République du Congo dans certaines zones."
   },
   {
     question: "Quels sont les modes de paiement acceptés ?",
-    answer: "Nous acceptons Moov Money, Wave, Airtel Money et Mobile Money."
+    answer: "Nous acceptons tous les modes de paiement spécifiés sur l'interface dédiée aux paiements ."
   },
   {
     question: "Combien de temps pour recevoir mon contenu après paiement ?",
-    answer: "Quelques minutes après validation de votre ID de transaction. Le téléchargement se fera automatiquement."
+    answer: "Quelques minutes après validation de votre transaction. Le téléchargement se fera automatiquement."
   },
   {
     question: "Sous quel format sont livrés les cours et résumés ?",
-    answer: "Les contenus sont disponibles en format PDF, EPUB et TXT selon votre préférence."
+    answer: "Les contenus sont disponibles en format fichiers."
   },
   {
     question: "Puis-je demander un remboursement ?",
-    answer: "Contactez-nous à LightBrain03@gmail.com dans les 24h suivant votre achat pour toute demande de remboursement."
+    answer: "Non, une fois que vous avez payé, aucun remboursement n'est possible, donc prenez bien soin d'obtenir ce que vous voulez. Si le désagrément vient de nous alors nous vous autoriserons à télécharger un autre fichier."
   },
   {
     question: "Quelle est la différence entre les abonnements Premium ?",
