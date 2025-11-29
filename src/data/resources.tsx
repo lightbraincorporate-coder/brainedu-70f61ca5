@@ -6,7 +6,7 @@ export interface Course {
   class: string;
   subject: string;
   trimester: string;
-  driveLink?: string; // Lien Google Drive du fichier du cours
+  driveLink?: string;
   description?: string;
 }
  
