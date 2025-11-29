@@ -9,7 +9,7 @@ export interface Course {
   driveLink?: string; // Lien Google Drive du fichier du cours
   description?: string;
 }
-
+ 
 export interface Exercise {
   id: string;
   title: string;
