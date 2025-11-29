@@ -614,7 +614,7 @@ export const coursesBySubject: Record<string, Record<string, string[]>> = {
       'Les personnes handicapées',
       'L\'accessibilité',
       'Être solidaire au quotidien'
-   ],
+    ],
     'Trimestre 3': [
       'Les dangers domestiques',
       'Les dangers électriques',
@@ -625,8 +625,8 @@ export const coursesBySubject: Record<string, Record<string, string[]>> = {
       'Les coupures',
       'Les numéros d\'urgence',
       'Prévenir les accidents'
-    ],
-  } 
+    ] 
+  }
 },
 'Mathématiques-CM1': {
     'Trimestre 1': [
@@ -641,6 +641,7 @@ export const coursesBySubject: Record<string, Record<string, string[]>> = {
       'Les nombres décimaux : introduction',
       'Lire et écrire les décimaux'
     ],
+    
     'Trimestre 2': [
       'Addition de nombres décimaux',
       'Soustraction de nombres décimaux',
