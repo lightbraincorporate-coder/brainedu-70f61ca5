@@ -179,4 +179,4 @@ export const getSummariesByCourse = (courseId: string) => {
 
 export const getExposesByCourse = (courseId: string) => {
   return exposes.filter(e => e.linkedCourseId === courseId);
-};
+}; 
