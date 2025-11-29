@@ -1,301 +1,128 @@
-import { useState, useEffect } from 'react';
-import { Menu, X, ShoppingCart, Search, BookOpen, Sparkles, Crown, HelpCircle, Info, Book, User, Download, Target, Shield } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
-import { ThemeToggle } from './ThemeToggle';
-import { useNavigate } from 'react-router-dom';
-import { useAdminPendingPayments } from '@/hooks/useAdminPendingPayments';
+import { ShoppingCart, Menu, X, LogIn } from 'lucide-react';
+import { useState } from 'react';
 
 interface NavbarProps {
-  currentPage: string;
-  cartItemCount: number;
   onNavigate: (page: string) => void;
-  onSearch: () => void;
-  onShowFAQ: () => void;
-  onShowAbout: () => void;
-  onShowGuide: () => void;
-  onShowAccount: () => void;
-  onShowCustomCourse: () => void;
+  cartItemsCount?: number;
 }
 
-const Navbar = ({ 
-  currentPage, 
-  cartItemCount, 
-  onNavigate, 
-  onSearch,
-  onShowFAQ,
-  onShowAbout,
-  onShowGuide,
-  onShowAccount,
-  onShowCustomCourse
-}: NavbarProps) => {
-  const navigate = useNavigate();
-  const [showMenu, setShowMenu] = useState(false);
-  const [deferredPrompt, setDeferredPrompt] = useState<any>(null);
-  const [showInstallButton, setShowInstallButton] = useState(false);
-  const adminPendingCount = useAdminPendingPayments();
-
-  useEffect(() => {
-    const handler = (e: Event) => {
-      e.preventDefault();
-      setDeferredPrompt(e);
-      setShowInstallButton(true);
-    };
-
-    window.addEventListener('beforeinstallprompt', handler);
-
-    // Check if already installed
-    if (window.matchMedia('(display-mode: standalone)').matches) {
-      setShowInstallButton(false);
-    }
-
-    return () => window.removeEventListener('beforeinstallprompt', handler);
-  }, []);
-
-  const handleInstallClick = async () => {
-    if (!deferredPrompt) {
-      // Show manual installation instructions
-      alert(
-        "Pour installer BrainEdu:\n\n" +
-        "📱 Sur mobile:\n" +
-        "• iPhone: Appuyez sur le bouton Partager puis 'Sur l'écran d'accueil'\n" +
-        "• Android: Menu ⋮ puis 'Installer l'application'\n\n" +
-        "💻 Sur ordinateur:\n" +
-        "• Chrome: Cliquez sur l'icône ⊕ dans la barre d'adresse\n" +
-        "• Edge: Menu ... puis 'Applications' > 'Installer BrainEdu'"
-      );
-      return;
-    }
-
-    deferredPrompt.prompt();
-    const { outcome } = await deferredPrompt.userChoice;
-    
-    if (outcome === 'accepted') {
-      setShowInstallButton(false);
-    }
-    
-    setDeferredPrompt(null);
-  };
-
-  const navItems = [
-    { id: 'home', label: 'Accueil', icon: BookOpen },
-    { id: 'catalog', label: 'Catalogue', icon: Book },
-    { id: 'special', label: 'Développement', icon: Sparkles },
-    { id: 'premium', label: 'Premium', icon: Crown },
-  ];
+const Navbar = ({ onNavigate, cartItemsCount = 0 }: NavbarProps) => {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <nav className="bg-card shadow-lg sticky top-0 z-40 border-b border-border">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <div 
-            className="flex items-center space-x-2 cursor-pointer group"
-            onClick={() => onNavigate('home')}
+    <nav className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b">
+      <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+        {/* Logo */}
+        <div 
+          className="flex items-center gap-2 cursor-pointer hover:opacity-80 transition-opacity"
+          onClick={() => {
+            onNavigate('home');
+            setMobileMenuOpen(false);
+          }}
+        >
+          <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center">
+            <span className="text-white font-bold text-lg">B</span>
+          </div>
+          <span className="font-bold text-lg hidden sm:inline">BrainEdu</span>
+        </div>
+
+        {/* Desktop Navigation */}
+        <div className="hidden md:flex items-center gap-6">
+          <Button 
+            variant="ghost"
+            onClick={() => onNavigate('resourceType')}
           >
-            <div className="w-10 h-10 bg-gradient-primary rounded-xl flex items-center justify-center transform group-hover:scale-110 transition-transform">
-              <span className="text-2xl font-bold text-primary-foreground">B</span>
-            </div>
-            <div className="hidden sm:block">
-              <span className="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                BrainEdu
+            Catalogues
+          </Button>
+          <Button 
+            variant="ghost"
+            onClick={() => onNavigate('premium')}
+          >
+            Premium
+          </Button>
+          <Button 
+            variant="ghost"
+            onClick={() => onNavigate('special')}
+          >
+            Spécial
+          </Button>
+        </div>
+
+        {/* Right Section */}
+        <div className="flex items-center gap-4">
+          {/* Cart Button */}
+          <Button
+            variant="outline"
+            size="icon"
+            className="relative"
+            onClick={() => onNavigate('cart')}
+          >
+            <ShoppingCart className="w-5 h-5" />
+            {cartItemsCount > 0 && (
+              <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center font-bold">
+                {cartItemsCount}
               </span>
-            </div>
-          </div>
+            )}
+          </Button>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-1">
-            {navItems.map((item) => {
-              const Icon = item.icon;
-              return (
-                <Button
-                  key={item.id}
-                  variant={currentPage === item.id ? 'default' : 'ghost'}
-                  onClick={() => {
-                    onNavigate(item.id);
-                    setShowMenu(false);
-                  }}
-                  className="gap-2"
-                >
-                  <Icon className="w-4 h-4" />
-                  {item.label}
-                </Button>
-              );
-            })}
-          </div>
+          {/* Login Button */}
+          <Button
+            variant="ghost"
+            size="icon"
+          >
+            <LogIn className="w-5 h-5" />
+          </Button>
 
-          {/* Actions */}
-          <div className="flex items-center space-x-2">
-            <ThemeToggle />
-
-            <Button
-              variant="default"
-              size="icon"
-              onClick={handleInstallClick}
-              className={showInstallButton ? "relative animate-pulse" : "relative"}
-              title="Installer l'application"
-            >
-              <Download className="w-5 h-5" />
-            </Button>
-            
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={onSearch}
-              className="relative"
-            >
-              <Search className="w-5 h-5" />
-            </Button>
-
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={onShowFAQ}
-              className="hidden sm:flex"
-            >
-              <HelpCircle className="w-5 h-5" />
-            </Button>
-
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={onShowCustomCourse}
-              className="relative"
-              title="Cours Personnalisé"
-            >
-              <Target className="w-5 h-5" />
-            </Button>
-
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => navigate('/admin-login')}
-              className="relative"
-              title="Administration"
-            >
-              <Shield className="w-5 h-5" />
-              {adminPendingCount > 0 && (
-                <Badge 
-                  variant="destructive" 
-                  className="absolute -top-1 -right-1 h-5 w-5 flex items-center justify-center p-0 text-xs"
-                >
-                  {adminPendingCount}
-                </Badge>
-              )}
-            </Button>
-
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={onShowAccount}
-              className="relative"
-              title="Compte Premium"
-            >
-              <User className="w-5 h-5" />
-            </Button>
-
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => onNavigate('cart')}
-              className="relative"
-            >
-              <ShoppingCart className="w-5 h-5" />
-              {cartItemCount > 0 && (
-                <Badge 
-                  variant="destructive" 
-                  className="absolute -top-1 -right-1 h-5 w-5 flex items-center justify-center p-0 text-xs"
-                >
-                  {cartItemCount}
-                </Badge>
-              )}
-            </Button>
-
-            {/* Mobile Menu Button */}
-            <Button
-              variant="ghost"
-              size="icon"
-              className="md:hidden"
-              onClick={() => setShowMenu(!showMenu)}
-            >
-              {showMenu ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </Button>
-          </div>
+          {/* Mobile Menu Toggle */}
+          <Button
+            variant="ghost"
+            size="icon"
+            className="md:hidden"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          >
+            {mobileMenuOpen ? (
+              <X className="w-5 h-5" />
+            ) : (
+              <Menu className="w-5 h-5" />
+            )}
+          </Button>
         </div>
       </div>
 
-      {/* Mobile Menu */}
-      {showMenu && (
-        <div className="md:hidden bg-card border-t border-border animate-fade-in">
-          <div className="px-2 pt-2 pb-3 space-y-1">
-            {navItems.map((item) => {
-              const Icon = item.icon;
-              return (
-                <Button
-                  key={item.id}
-                  variant={currentPage === item.id ? 'default' : 'ghost'}
-                  onClick={() => {
-                    onNavigate(item.id);
-                    setShowMenu(false);
-                  }}
-                  className="w-full justify-start gap-2"
-                >
-                  <Icon className="w-4 h-4" />
-                  {item.label}
-                </Button>
-              );
-            })}
-            <Button
-              variant="ghost"
+      {/* Mobile Navigation */}
+      {mobileMenuOpen && (
+        <div className="md:hidden border-t bg-background">
+          <div className="max-w-7xl mx-auto px-4 py-4 space-y-2">
+            <Button 
+              variant="ghost" 
+              className="w-full justify-start"
               onClick={() => {
-                onShowFAQ();
-                setShowMenu(false);
+                onNavigate('resourceType');
+                setMobileMenuOpen(false);
               }}
-              className="w-full justify-start gap-2"
             >
-              <HelpCircle className="w-4 h-4" />
-              FAQ
+              Catalogues
             </Button>
-            <Button
-              variant="ghost"
+            <Button 
+              variant="ghost" 
+              className="w-full justify-start"
               onClick={() => {
-                onShowAbout();
-                setShowMenu(false);
+                onNavigate('premium');
+                setMobileMenuOpen(false);
               }}
-              className="w-full justify-start gap-2"
             >
-              <Info className="w-4 h-4" />
-              À propos
+              Premium
             </Button>
-            <Button
-              variant="ghost"
+            <Button 
+              variant="ghost" 
+              className="w-full justify-start"
               onClick={() => {
-                onShowCustomCourse();
-                setShowMenu(false);
+                onNavigate('special');
+                setMobileMenuOpen(false);
               }}
-              className="w-full justify-start gap-2"
             >
-              <Target className="w-4 h-4" />
-              Cours Personnalisé
-            </Button>
-            <Button
-              variant="ghost"
-              onClick={() => {
-                navigate('/admin-login');
-                setShowMenu(false);
-              }}
-              className="w-full justify-start gap-2 relative"
-            >
-              <Shield className="w-4 h-4" />
-              Administration
-              {adminPendingCount > 0 && (
-                <Badge 
-                  variant="destructive" 
-                  className="ml-auto h-5 w-5 flex items-center justify-center p-0 text-xs"
-                >
-                  {adminPendingCount}
-                </Badge>
-              )}
+              Spécial
             </Button>
           </div>
         </div>
