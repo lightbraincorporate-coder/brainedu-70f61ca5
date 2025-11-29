@@ -59,7 +59,7 @@ const HomePage = ({ onNavigate }: HomePageProps) => {
               <Button 
                 size="lg" 
                 variant="secondary"
-                onClick={() => onNavigate('catalog')}
+                onClick={() => onNavigate('resourceType')}
                 className="text-lg px-8 py-6 shadow-lg hover:shadow-xl transition-shadow"
               >
                 <BookOpen className="mr-2 w-5 h-5" />
@@ -132,7 +132,7 @@ const HomePage = ({ onNavigate }: HomePageProps) => {
                 key={index}
                 className="text-center hover:shadow-lg transition-all hover:-translate-y-1 cursor-pointer group border-2 animate-fade-in"
                 style={{ animationDelay: `${index * 100}ms` }}
-                onClick={() => onNavigate('catalog')}
+                onClick={() => onNavigate('resourceType')}
               >
                 <CardContent className="pt-8 pb-6">
                   <div className="text-5xl mb-4 group-hover:scale-110 transition-transform">
@@ -163,7 +163,7 @@ const HomePage = ({ onNavigate }: HomePageProps) => {
           <Button 
             size="lg"
             variant="secondary"
-            onClick={() => onNavigate('catalog')}
+            onClick={() => onNavigate('resourceType')}
             className="text-lg px-8 py-6"
           >
             <GraduationCap className="mr-2 w-5 h-5" />
