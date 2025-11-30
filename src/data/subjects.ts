@@ -6244,4 +6244,4 @@ export const coursesBySubject: Record<string, Record<string, string[]>> = {
       'Professionnalisme'
     ]
    }
-  },
+  };
