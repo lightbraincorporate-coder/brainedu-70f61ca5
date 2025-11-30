@@ -1927,7 +1927,7 @@ export const coursesBySubject: Record<string, Record<string, string[]>> = {
       'L\'anatomie comparée',
       'Les parentés',
       'La classification phylogénétique',
-      'L'évolution humaine',
+      'L\'évolution humaine',
       'Homo sapiens'
 ],
 'Trimestre 3': [
@@ -1948,10 +1948,10 @@ export const coursesBySubject: Record<string, Record<string, string[]>> = {
 'Électricité : puissance et énergie',
 'La puissance électrique',
 'Relation P = U × I',
-'L'énergie électrique',
+'L\'énergie électrique',
 'Relation E = P × t',
-'Le coût de l'énergie',
-'Économiser l'énergie',
+'Le coût de l\'énergie',
+'Économiser l\'énergie',
 'Les appareils électriques',
 'La sécurité électrique',
 'Les fusibles et disjoncteurs'
@@ -1974,11 +1974,11 @@ export const coursesBySubject: Record<string, Record<string, string[]>> = {
 'Calculer une vitesse',
 'La gravitation',
 'Le poids',
-'L'énergie cinétique',
-'L'énergie potentielle',
-'La conservation de l'énergie',
-'Les transferts d'énergie',
-'Les sources d'énergie'
+'L\'énergie cinétique',
+'L\'énergie potentielle',
+'La conservation de l\'énergie',
+'Les transferts d\'énergie',
+'Les sources d\'énergie'
 ]
 },
 'Histoire-Géo-3ème': {
@@ -1996,7 +1996,7 @@ export const coursesBySubject: Record<string, Record<string, string[]>> = {
 ],
 'Trimestre 2': [
 'La Guerre froide',
-'L'opposition Est-Ouest',
+'L\'opposition Est-Ouest',
 'Le bloc de l'Ouest',
 'Le bloc de l'Est',
 'Le mur de Berlin',
@@ -2010,23 +2010,23 @@ export const coursesBySubject: Record<string, Record<string, string[]>> = {
 'Géographie : l'Union Européenne',
 'La construction européenne',
 'Les institutions',
-'L'euro',
+'L\'euro',
 'La France',
 'Les territoires français',
 'Les régions',
-'L'aménagement du territoire',
+'L\'aménagement du territoire',
 'Les défis de la France',
 'Préparation au brevet'
 ]
 },
 'EPS-3ème': {
 'Trimestre 1': [
-'Course d'orientation',
+'Course d\'orientation',
 'Lire une carte',
 'Les symboles',
-'L'échelle',
+'L\'échelle',
 'La boussole',
-'S'orienter',
+'S\'orienter',
 'Les azimuts',
 'Établir un itinéraire',
 'Les balises',
@@ -2046,12 +2046,12 @@ export const coursesBySubject: Record<string, Record<string, string[]>> = {
 ],
 'Trimestre 3': [
 'Préparation physique au brevet',
-'Course d'endurance',
+'Course d\'endurance',
 'Natation de distance',
 'Les épreuves du brevet',
-'S'entraîner efficacement',
-'L'alimentation du sportif',
-'L'hydratation',
+'S\'entraîner efficacement',
+'L\'alimentation du sportif',
+'L\'hydratation',
 'Gérer son stress',
 'La récupération',
 'Objectif brevet'
