@@ -1997,8 +1997,8 @@ export const coursesBySubject: Record<string, Record<string, string[]>> = {
 'Trimestre 2': [
 'La Guerre froide',
 'L\'opposition Est-Ouest',
-'Le bloc de l'Ouest',
-'Le bloc de l'Est',
+'Le bloc de l\'Ouest',
+'Le bloc de l\'Est',
 'Le mur de Berlin',
 'La crise de Cuba',
 'La course aux armements',
@@ -2007,7 +2007,7 @@ export const coursesBySubject: Record<string, Record<string, string[]>> = {
 'Les nouveaux États'
 ],
 'Trimestre 3': [
-'Géographie : l'Union Européenne',
+'Géographie : l\'Union Européenne',
 'La construction européenne',
 'Les institutions',
 'L\'euro',
