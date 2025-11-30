@@ -1924,11 +1924,11 @@ export const coursesBySubject: Record<string, Record<string, string[]>> = {
       'Darwin et la sélection naturelle',
       'Les preuves de l\'évolution',
       'Les fossiles',
-'L'anatomie comparée',
-'Les parentés',
-'La classification phylogénétique',
-'L'évolution humaine',
-'Homo sapiens'
+      'L\'anatomie comparée',
+      'Les parentés',
+      'La classification phylogénétique',
+      'L'évolution humaine',
+      'Homo sapiens'
 ],
 'Trimestre 3': [
 'Responsabilité humaine en santé',
