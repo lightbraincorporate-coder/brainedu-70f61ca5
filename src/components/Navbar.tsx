@@ -12,7 +12,7 @@ import {
   Crown,
   LogOut
 } from 'lucide-react';
-import { getCurrentAdmin, getPendingPaymentProofs, getCartItems } from '@/lib/localStorageDB';
+import { getCurrentAdmin, getPendingPaymentProofs, getCartItems } from '@/lib/localStorageDB.ts';
 import {
   DropdownMenu,
   DropdownMenuContent,
