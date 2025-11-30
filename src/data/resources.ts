@@ -305,3 +305,45 @@ export const getCourseById = (courseId: string) => {
 export const getExercisesByCourse = (courseId: string) => {
   return exercises.filter(e => e.linkedCourseId === courseId);
 }; 
+
+export const getSummariesByCourse = (courseId: string) => {
+  return summaries.filter(s => s.linkedCourseId === courseId);
+};
+
+export const getExposesByCourse = (courseId: string) => {
+  return exposes.filter(e => e.linkedCourseId === courseId);
+};
+
+export const updateCourseDriveLink = (courseId: string, driveLink: string) => {
+  const course = getCourseById(courseId);
+  if (course) {
+    course.driveLink = driveLink;
+  }
+};
+
+export const addExercise = (exercise: Omit<Exercise, 'id'>) => {
+  const newExercise: Exercise = {
+    ...exercise,
+    id: exercise_${Date.now()}_${Math.random().toString(36).substr(2, 9)},
+  };
+  exercises.push(newExercise);
+  return newExercise;
+};
+
+export const addSummary = (summary: Omit<Summary, 'id'>) => {
+  const newSummary: Summary = {
+    ...summary,
+    id: summary_${Date.now()}_${Math.random().toString(36).substr(2, 9)},
+  };
+  summaries.push(newSummary);
+  return newSummary;
+};
+
+export const addExpose = (expose: Omit<Expose, 'id'>) => {
+  const newExpose: Expose = {
+    ...expose,
+    id: expose_${Date.now()}_${Math.random().toString(36).substr(2, 9)},
+  };
+  exposes.push(newExpose);
+  return newExpose;
+};
