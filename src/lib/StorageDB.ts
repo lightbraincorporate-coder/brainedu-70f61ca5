@@ -1,5 +1,5 @@
 import { Admin, PaymentProof, AdminStats } from '@/types/admin';
-
+ 
 const KEYS = {
   SECONDARY_ADMINS: 'secondaryAdmins',
   PAYMENT_PROOFS: 'paymentProofs',
