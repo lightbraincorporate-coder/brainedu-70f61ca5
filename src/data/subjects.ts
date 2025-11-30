@@ -626,7 +626,6 @@ export const coursesBySubject: Record<string, Record<string, string[]>> = {
       'Les numéros d\'urgence',
       'Prévenir les accidents'
     ] 
-  }
 },
 'Mathématiques-CM1': {
     'Trimestre 1': [
