@@ -1,13 +1,30 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { BookOpen, Sparkles, Crown, GraduationCap, FileText, Presentation, Brain } from 'lucide-react';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { BookOpen, Sparkles, Crown, GraduationCap, FileText, Presentation, Brain, Mail, Phone, MapPin, MessageCircle } from 'lucide-react';
 import BrainCorpInfo from './BrainCorpInfo';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from '@/components/ui/accordion';
+import { useState } from 'react';
+import { toast } from 'sonner';
 
 interface HomePageProps {
   onNavigate: (page: string) => void;
 }
 
 const HomePage = ({ onNavigate }: HomePageProps) => {
+  const [contactForm, setContactForm] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: '',
+  });
+
   const features = [
     {
       icon: BookOpen,
@@ -29,8 +46,8 @@ const HomePage = ({ onNavigate }: HomePageProps) => {
     },
     {
       icon: Brain,
-      title: 'Flashcards',
-      description: 'Mémorisez rapidement avec nos flashcards personnalisées',
+      title: 'Exercices',
+      description: 'Pratiquez avec nos exercices corrigés',
       color: 'from-orange-500 to-orange-600'
     }
   ];
@@ -41,6 +58,64 @@ const HomePage = ({ onNavigate }: HomePageProps) => {
     { name: 'Lycée', icon: '📖', description: 'Toutes séries' },
     { name: 'Université', icon: '🎯', description: 'Licence & Master' }
   ];
+
+  const faqItems = [
+    {
+      question: "Comment accéder aux cours ?",
+      answer: "Parcourez notre catalogue en cliquant sur 'Explorer le catalogue', sélectionnez votre niveau, votre classe, votre matière et le trimestre. Vous trouverez tous les cours disponibles organisés par thème."
+    },
+    {
+      question: "Les cours sont-ils gratuits ?",
+      answer: "Nous proposons une version gratuite avec accès limité et une version Premium avec accès complet à tous les contenus, exercices corrigés, résumés et exposés."
+    },
+    {
+      question: "Comment fonctionne le paiement ?",
+      answer: "Après avoir sélectionné vos ressources, vous procédez au paiement via Mobile Money. Choisissez votre pays et votre mode de paiement, puis suivez les instructions pour envoyer le paiement. Un administrateur validera votre paiement et vous aurez accès immédiat au téléchargement."
+    },
+    {
+      question: "Quels sont les modes de paiement acceptés ?",
+      answer: "Nous acceptons tous les principaux modes de paiement mobile en Afrique : MTN Mobile Money, Airtel Money, Orange Money, Moov Money, Wave, et bien d'autres selon votre pays."
+    },
+    {
+      question: "Combien de temps faut-il pour valider mon paiement ?",
+      answer: "La validation est généralement instantanée ou prend quelques minutes. Nos administrateurs travaillent en continu pour valider les paiements rapidement."
+    },
+    {
+      question: "Puis-je télécharger les cours pour les consulter hors ligne ?",
+      answer: "Oui ! Une fois votre paiement validé, vous pouvez télécharger tous les fichiers (cours, exercices, résumés, exposés) et les consulter à tout moment, même sans connexion internet."
+    },
+    {
+      question: "Les cours sont-ils conformes aux programmes officiels ?",
+      answer: "Oui, tous nos contenus sont créés en conformité avec les programmes scolaires officiels de votre pays et sont régulièrement mis à jour."
+    },
+    {
+      question: "Y a-t-il des exercices corrigés ?",
+      answer: "Absolument ! Chaque cours est accompagné d'exercices avec leurs corrections détaillées pour vous permettre de pratiquer et de progresser."
+    },
+  ];
+
+  const handleSubmitContact = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!contactForm.name || !contactForm.email || !contactForm.message) {
+      toast.error('Veuillez remplir tous les champs obligatoires');
+      return;
+    }
+
+    // TODO: Implémenter l'envoi du formulaire
+    console.log('Contact form:', contactForm);
+    toast.success('Message envoyé !', {
+      description: 'Nous vous répondrons dans les plus brefs délais'
+    });
+
+    // Reset form
+    setContactForm({
+      name: '',
+      email: '',
+      subject: '',
+      message: '',
+    });
+  };
 
   return (
     <div className="min-h-screen">
@@ -143,6 +218,139 @@ const HomePage = ({ onNavigate }: HomePageProps) => {
                 </CardContent>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-16 px-4 bg-muted/30">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Questions Fréquentes
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              Tout ce que vous devez savoir sur BrainEdu
+            </p>
+          </div>
+
+          <Accordion type="single" collapsible className="space-y-4">
+            {faqItems.map((item, index) => (
+              <AccordionItem key={index} value={`item-${index}`} className="bg-background border-2 rounded-lg px-6">
+                <AccordionTrigger className="text-left hover:no-underline">
+                  <span className="font-semibold">{item.question}</span>
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">
+                  {item.answer}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section className="py-16 px-4">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Contactez-nous
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              Une question ? Nous sommes là pour vous aider
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Contact Info */}
+            <div className="space-y-6">
+              <Card>
+                <CardHeader>
+                  <CardTitle>Nos coordonnées</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <div className="flex items-start gap-3">
+                    <Phone className="w-5 h-5 text-primary mt-1" />
+                    <div>
+                      <p className="font-semibold">Téléphone</p>
+                      <p className="text-muted-foreground">+242 06 607 01 76</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <Mail className="w-5 h-5 text-primary mt-1" />
+                    <div>
+                      <p className="font-semibold">Email</p>
+                      <p className="text-muted-foreground">contact@brainedu.com</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <MapPin className="w-5 h-5 text-primary mt-1" />
+                    <div>
+                      <p className="font-semibold">Localisation</p>
+                      <p className="text-muted-foreground">Congo, Afrique</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <MessageCircle className="w-5 h-5 text-primary mt-1" />
+                    <div>
+                      <p className="font-semibold">WhatsApp</p>
+                      <p className="text-muted-foreground">Disponible 7j/7</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* Contact Form */}
+            <Card>
+              <CardHeader>
+                <CardTitle>Envoyez-nous un message</CardTitle>
+                <CardDescription>
+                  Nous vous répondrons dans les plus brefs délais
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <form onSubmit={handleSubmitContact} className="space-y-4">
+                  <div>
+                    <Input
+                      placeholder="Votre nom *"
+                      value={contactForm.name}
+                      onChange={(e) => setContactForm({ ...contactForm, name: e.target.value })}
+                      required
+                    />
+                  </div>
+                  <div>
+                    <Input
+                      type="email"
+                      placeholder="Votre email *"
+                      value={contactForm.email}
+                      onChange={(e) => setContactForm({ ...contactForm, email: e.target.value })}
+                      required
+                    />
+                  </div>
+                  <div>
+                    <Input
+                      placeholder="Sujet"
+                      value={contactForm.subject}
+                      onChange={(e) => setContactForm({ ...contactForm, subject: e.target.value })}
+                    />
+                  </div>
+                  <div>
+                    <Textarea
+                      placeholder="Votre message *"
+                      value={contactForm.message}
+                      onChange={(e) => setContactForm({ ...contactForm, message: e.target.value })}
+                      rows={5}
+                      required
+                    />
+                  </div>
+                  <Button type="submit" className="w-full">
+                    <Mail className="mr-2 w-4 h-4" />
+                    Envoyer le message
+                  </Button>
+                </form>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
