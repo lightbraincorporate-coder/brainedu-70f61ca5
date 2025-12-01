@@ -2,14 +2,14 @@ import { Product, PremiumPlan } from '@/types';
 
 export const products: Record<string, Product> = {
   cours: { name: 'Cours complet', price: 50, icon: '📚' },
-  resume_cours: { name: 'Résumé de cours', price: 200, icon: '📄', availableFrom: 'CM1' },
+  resume_cours: { name: 'Résumé de cours', price: 100, icon: '📄', availableFrom: 'CM1' },
   exercices: { name: 'Exercices et corrigés', price: 150, icon: '✏️' },
   expose_simple: { name: 'Exposé simple', price: 350, icon: '📊', availableFrom: 'college' },
   expose_complet: { name: 'Exposé complet', price: 700, icon: '📑', availableFrom: 'college' }
 };
 
 export const productsUniversite: Record<string, Product> = {
-  cours: { name: 'Cours complet', price: 350, icon: '📚' },
+  cours: { name: 'Cours complet', price: 250, icon: '📚' },
   resume_cours: { name: 'Résumé de cours', price: 400, icon: '📄' },
   exercices: { name: 'Exercices et corrigés', price: 300, icon: '✏️' },
   expose_simple: { name: 'Exposé simple', price: 1000, icon: '📊' },
