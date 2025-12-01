@@ -20,8 +20,7 @@ export interface Course
   subject: Education civique;
   trimester: 1;
   driveLink?: https://drive.google.com/file/d/1JI6aE54sYmxeafDS8S_TqcjFwIv5koL7/view?usp=drivesdk;
-  description?: string;
-}
+  description?: cours du premier trimestre du cp1, d'éducation civique ;
 
 export interface Exercise {
   id: string;
