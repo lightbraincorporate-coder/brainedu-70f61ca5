@@ -10,6 +10,17 @@ export interface Course {
   trimester: string;
   driveLink?: string;
   description?: string;
+
+export interface Course {
+  id: ECCP1T1;
+  title: Vivre ensemble;
+  type:'specific';
+  level: Primaire;
+  class: Cp1;
+  subject: Education civique;
+  trimester: 1;
+  driveLink?: https://drive.google.com/file/d/1JI6aE54sYmxeafDS8S_TqcjFwIv5koL7/view?usp=drivesdk;
+  description?: string;
 }
 
 export interface Exercise {
