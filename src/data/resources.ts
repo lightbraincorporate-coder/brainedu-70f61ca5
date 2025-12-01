@@ -10,18 +10,7 @@ export interface Course {
   trimester: string;
   driveLink?: string;
   description?: string;
-
-export interface Course {
-  id: ECCP1T1;
-  title: 'Vivre ensemble';
-  type:'specific';
-  level: 'Primaire';
-  class: 'Cp1';
-  subject: 'Education civique';
-  trimester: 'trimestre 1';
-  driveLink: 'https://drive.google.com/file/d/1JI6aE54sYmxeafDS8S_TqcjFwIv5koL7/view?usp=drivesdk',
-  description: 'cours du premier trimestre du cp1, d\'éducation civique'
- };
+}
 
 export interface Exercise {
   id: string;
@@ -57,15 +46,33 @@ export interface Expose {
   driveLink?: string;
 }
 
-export const specificCourses: Course[] = [];
+export const specificCourses: Course[] = [
+  {
+    id: 'ECCP1T1',
+    title: 'Vivre ensemble',
+    type: 'specific',
+    level: 'Primaire',
+    class: 'Cp1',
+    subject: 'Education civique',
+    trimester: 'trimestre 1',
+    driveLink: 'https://drive.google.com/file/d/1JI6aE54sYmxeafDS8S_TqcjFwIv5koL7/view?usp=drivesdk',
+    description: 'cours du premier trimestre du cp1, d\'éducation civique'
+  }
+];
+
 export const generalCourses: Course[] = [];
 export const exercises: Exercise[] = [];
 export const summaries: Summary[] = [];
 export const exposes: Expose[] = [];
 
 export const initializeCourses = () => {
+  // On garde les cours manuels et on ajoute les cours générés
+  const manualCourses = [...specificCourses];
   specificCourses.length = 0;
   generalCourses.length = 0;
+
+  // Remettre les cours manuels
+  manualCourses.forEach(course => specificCourses.push(course));
 
   Object.entries(coursesBySubject).forEach(([key, trimesters]) => {
     const parts = key.split('-');
