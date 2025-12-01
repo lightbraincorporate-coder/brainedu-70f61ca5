@@ -11,7 +11,7 @@ export interface Course {
   driveLink?: string;
   description?: string;
 
-export interface Course {
+export interface Course 
   id: ECCP1T1;
   title: Vivre ensemble;
   type:'specific';
