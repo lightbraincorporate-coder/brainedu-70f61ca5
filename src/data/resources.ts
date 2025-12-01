@@ -22,7 +22,7 @@ export interface Course
   driveLink: 'https://drive.google.com/file/d/1JI6aE54sYmxeafDS8S_TqcjFwIv5koL7/view?usp=drivesdk',
   description?: 'cours du premier trimestre du cp1, d\'éducation civique' ;
 
-export interface Exercise {
+export interface Exercise 
   id: string;
   title: string;
   linkedCourseId: string;
@@ -34,7 +34,7 @@ export interface Exercise {
   driveLink?: string;
 }
 
-export interface Summary {
+export interface Summary 
   id: string;
   title: string;
   linkedCourseId: string;
@@ -45,7 +45,7 @@ export interface Summary {
   driveLink?: string;
 }
 
-export interface Expose {
+export interface Expose 
   id: string;
   title: string;
   linkedCourseId: string;
