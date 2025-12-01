@@ -19,7 +19,7 @@ export interface Course
   class: 'Cp1';
   subject: 'Education civique';
   trimester: 'trimestre 1';
-  driveLink?: https://drive.google.com/file/d/1JI6aE54sYmxeafDS8S_TqcjFwIv5koL7/view?usp=drivesdk;
+  driveLink: 'https://drive.google.com/file/d/1JI6aE54sYmxeafDS8S_TqcjFwIv5koL7/view?usp=drivesdk',
   description?: 'cours du premier trimestre du cp1, d'\'éducation civique' ;
 
 export interface Exercise {
