@@ -1,4 +1,5 @@
 import { subjects, coursesBySubject } from '@/data/subjects';
+import { generalCoursesData, generateGeneralCourseId } from '@/data/generalCourses';
 
 export interface Course {
   id: string;
@@ -76,7 +77,6 @@ const generateShortId = (subject: string, className: string, trimester: string, 
   
   return `${abbr}${className}${trimesterNum}${courseNum}`;
 };
-
 export const specificCourses: Course[] = [];
 
 Object.entries(coursesBySubject).forEach(([key, trimesters]) => {
@@ -113,12 +113,41 @@ Object.entries(coursesBySubject).forEach(([key, trimesters]) => {
 });
 
 export const generalCourses: Course[] = [];
+
+generalCoursesData.forEach(courseDefinition => {
+  for (let i = 1; i <= courseDefinition.count; i++) {
+    const courseId = generateGeneralCourseId(
+      courseDefinition.level,
+      courseDefinition.class,
+      courseDefinition.subject,
+      courseDefinition.trimester,
+      i
+    );
+
+    const course: Course = {
+      id: courseId,
+      title: `Cours ${i}`, 
+      type: 'general',
+      level: courseDefinition.level,
+      class: courseDefinition.class,
+      subject: courseDefinition.subject,
+      trimester: courseDefinition.trimester,
+      driveLink: courseDefinition.driveLinks?.[i - 1] || '',
+      description: `Cours général ${i} - ${courseDefinition.class} - ${courseDefinition.subject} - ${courseDefinition.trimester}`
+    };
+
+    generalCourses.push(course);
+  }
+});
+
 export const exercises: Exercise[] = [];
 export const summaries: Summary[] = [];
 export const exposes: Expose[] = [];
 
 export const initializeCourses = () => {
   console.log(`${specificCourses.length} cours spécifiques chargés`);
+  console.log(`${generalCourses.length} cours généraux chargés`);
+  console.log(`Total: ${specificCourses.length + generalCourses.length} cours disponibles`);
 };
 
 export const getCoursesByLevel = (level: string, courseType: 'general' | 'specific') => {
@@ -199,3 +228,4 @@ export const addExpose = (expose: Omit<Expose, 'id'>) => {
 initializeCourses();
 
 updateCourseDriveLink('ECCP1T1', 'https://drive.google.com/file/d/1JI6aE54sYmxeafDS8S_TqcjFwIv5koL7/view?usp=drivesdk');
+
