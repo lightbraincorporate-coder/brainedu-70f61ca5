@@ -24,26 +24,26 @@ export const coursesBySubject: Record<string, Record<string, string[]>> = {
   'Mathématiques-CP1': {
     'Trimestre 1': [
       'Compter et dénombrer jusqu\'à 5',
-      'Écriture des chiffres 0 à 5',
+      'Écriture des chiffres 0 à 5'
     ],
     'Trimestre 2': [
       'Addition simple (1 à 5)',
-      'Les nombres de 1 à 10',
+      'Les nombres de 1 à 10'
     ],
     'Trimestre 3': [
       'Soustraction simple'
-      'Les formes géométriques',
+      'Les formes géométriques'
     ]
   },
 'Français-CP1': {
     'Trimestre 1': [
       'Sons simples',
       'Alphabet de A à M',
-      'Les voyelles',
+      'Les voyelles'
     ],
     'Trimestre 2': [
       'L\'alphabet (lettres A à Z)',
-      'Lecture de syllabes',
+      'Lecture de syllabes'
     ],
     'Trimestre 3': [   
       'Écriture de lettres',
@@ -52,142 +52,64 @@ export const coursesBySubject: Record<string, Record<string, string[]>> = {
   },
   'Sciences-CP1': {
     'Trimestre 1': [
-      'Mon corps et les 5 sens',
+      'Mon corps et les 5 sens'
     ],
     'Trimestre 2': [
-      'Les animaux familiers',
+      'Les animaux familiers'
     ],
     'Trimestre 3': [
-      'Les plantes autour de moi',
+      'Les plantes autour de moi'
     ]
   },
 'Education Civique-CP1': {
     'Trimestre 1': [
-      'Vivre ensemble à l\'école',
-      'Les règles de la classe',
-      'Dire bonjour et au revoir',
-      'Lever la main pour parler',
-      'Respecter le matériel',
-      'Les adultes de l\'école',
-      'Le rôle de la maîtresse',
-      'Jouer ensemble sans se disputer'
+      'Vivre ensemble à l\'école'
     ],
     'Trimestre 2': [
       'Le respect des camarades',
-      'Ne pas se moquer',
-      'Aider un camarade',
-      'Partager',
-      'Dire pardon et merci',
-      'Écouter les autres',
-      'Accepter les différences',
-      'Jouer avec tout le monde'
     ],
     'Trimestre 3': [
-      'Les règles de propreté',
-      'Jeter les déchets à la poubelle',
-      'Garder la classe propre',
-      'Se moucher correctement',
-      'Les toilettes : propreté',
-      'Ranger ses affaires',
-      'Respecter l\'environnement',
-      'Économiser le papier'
+      'Les règles de propreté'
     ]
   },
 
   'Mathématiques-CP2': {
     'Trimestre 1': [
-      'Les nombres de 0 à 20',
-      'Écriture en lettres jusqu\'à 20',
-      'Décomposition des nombres',
       'Addition sans retenue (0 à 10)',
-      'La droite numérique',
-      'Comparer et ranger',
-      'Les dizaines',
-      'Problèmes additifs simples'
+      'Les nombres de 0 à 20'
     ],
     'Trimestre 2': [
       'Les nombres de 20 à 50',
-      'Dizaines et unités',
-      'Soustraction sans retenue',
-      'Addition avec retenue',
-      'La monnaie (initiation)',
-      'Mesure de longueurs',
-      'La règle graduée',
-      'Problèmes soustractifs'
+      'La soustraction de 0 à 10'
     ],
     'Trimestre 3': [
-      'Les nombres jusqu\'à 100',
-      'Les doubles',
-      'Les moitiés',
       'Introduction à la multiplication',
-      'Table de 2',
-      'Symétrie',
-      'Reproduction sur quadrillage',
-      'Lire l\'heure (heures entières)'
+      'Les doubles'
     ]
   },
  'Français-CP2': {
     'Trimestre 1': [
       'Lecture de phrases simples',
       'Les sons complexes : ch, ou, on',
-      'Le son [oi]',
-      'Le son [an]/[en]',
-      'Le son [in]',
-      'L\'écriture cursive',
-      'La phrase : majuscule et point',
-      'Comprendre une consigne écrite'
     ],
     'Trimestre 2': [
       'Compréhension de textes courts',
-      'Les sons : gu, gn',
-      'Les sons : è, ê, ai, ei',
-      'Le masculin et le féminin',
-      'Le singulier et le pluriel',
-      'Les articles : le, la, les, un, une, des',
-      'Production de phrases',
-      'Raconter une histoire lue'
+      'L\'écriture cursive'
     ],
     'Trimestre 3': [
       'Conjugaison : présent simple (être, avoir)',
-      'Les verbes du 1er groupe au présent',
-      'La phrase négative',
-      'La phrase interrogative',
-      'Les accents : é, è, ê',
-      'Les lettres muettes',
-      'Écrire une courte histoire',
-      'Réciter un poème'
+      'Ecrire une phrase'
     ]
   },
   'Sciences-CP2': {
     'Trimestre 1': [
-      'L\'eau dans la nature',
-      'Les états de l\'eau',
-      'Le cycle de l\'eau (simplifié)',
-      'L\'eau potable',
-      'Les rivières et les lacs',
-      'La mer et l\'océan',
-      'Économiser l\'eau',
-      'Expérience : l\'eau coule'
+      'L\'eau dans la nature'
     ],
     'Trimestre 2': [
-      'Le cycle de vie des plantes',
-      'La germination',
-      'Les parties d\'une plante',
-      'De quoi a besoin une plante ?',
-      'Les fruits et les légumes',
-      'L\'arbre au fil des saisons',
-      'Planter et observer',
-      'Les jardins et la nature'
+      'Le cycle de vie des plantes'
     ],
     'Trimestre 3': [
-      'Les saisons : le printemps',
-      'Les saisons : l\'été',
-      'Les saisons : l\'automne',
-      'Les saisons : l\'hiver',
-      'Le temps qu\'il fait',
-      'Le soleil et la chaleur',
-      'La météo',
-      'S\'habiller selon la saison'
+      'Les saisons'
     ]
   },
   'Education Civique-CP2': {
