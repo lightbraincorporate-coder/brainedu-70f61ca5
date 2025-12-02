@@ -46,7 +46,6 @@ export interface Expose {
   driveLink?: string;
 }
 
-// Fonction pour générer l'ID court selon ton format
 const generateShortId = (subject: string, className: string, trimester: string, courseIndex: number): string => {
   const subjectAbbr: Record<string, string> = {
     'Mathématiques': 'M',
@@ -78,10 +77,8 @@ const generateShortId = (subject: string, className: string, trimester: string, 
   return `${abbr}${className}${trimesterNum}${courseNum}`;
 };
 
-// Génération automatique de tous les cours
 export const specificCourses: Course[] = [];
 
-// Initialisation des cours à partir de coursesBySubject
 Object.entries(coursesBySubject).forEach(([key, trimesters]) => {
   const parts = key.split('-');
   const subject = parts[0];
@@ -121,7 +118,6 @@ export const summaries: Summary[] = [];
 export const exposes: Expose[] = [];
 
 export const initializeCourses = () => {
-  // Les cours sont déjà initialisés au chargement du module
   console.log(`${specificCourses.length} cours spécifiques chargés`);
 };
 
@@ -201,3 +197,5 @@ export const addExpose = (expose: Omit<Expose, 'id'>) => {
 };
 
 initializeCourses();
+
+updateCourseDriveLink('ECCP1T1', 'https://drive.google.com/file/d/1JI6aE54sYmxeafDS8S_TqcjFwIv5koL7/view?usp=drivesdk');
