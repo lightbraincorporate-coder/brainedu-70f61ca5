@@ -46,19 +46,74 @@ export interface Expose {
   driveLink?: string;
 }
 
-export const specificCourses: Course[] = [
-  {
-    id: 'ECCP1T1',
-    title: 'Vivre ensemble',
-    type: 'specific',
-    level: 'Primaire',
-    class: 'Cp1',
-    subject: 'Education civique',
-    trimester: 'trimestre 1',
-    driveLink: 'https://drive.google.com/file/d/1JI6aE54sYmxeafDS8S_TqcjFwIv5koL7/view?usp=drivesdk',
-    description: 'cours du premier trimestre du cp1, d\'éducation civique'
+// Fonction pour générer l'ID court selon ton format
+const generateShortId = (subject: string, className: string, trimester: string, courseIndex: number): string => {
+  const subjectAbbr: Record<string, string> = {
+    'Mathématiques': 'M',
+    'Français': 'F',
+    'Sciences': 'S',
+    'Education Civique': 'EC',
+    'Histoire-Géographie': 'HG',
+    'Anglais': 'A',
+    'SVT': 'SVT',
+    'Physique-Chimie': 'PC',
+    'Histoire-Géo': 'HG',
+    'EPS': 'EPS',
+    'Philosophie': 'P',
+    'Espagnol': 'E',
+    'Physique': 'PH',
+    'Technologie': 'T',
+    'Dessin Technique': 'DT',
+    'Électronique': 'EL',
+    'Électricité': 'ELEC',
+    'Économie': 'ECO',
+    'Comptabilité': 'COMPT',
+    'Droit': 'DR'
+  };
+
+  const abbr = subjectAbbr[subject] || subject.substring(0, 2).toUpperCase();
+  const trimesterNum = trimester.replace('Trimestre ', 'T');
+  const courseNum = `C${courseIndex + 1}`;
+  
+  return `${abbr}${className}${trimesterNum}${courseNum}`;
+};
+
+// Génération automatique de tous les cours
+export const specificCourses: Course[] = [];
+
+// Initialisation des cours à partir de coursesBySubject
+Object.entries(coursesBySubject).forEach(([key, trimesters]) => {
+  const parts = key.split('-');
+  const subject = parts[0];
+  const className = parts.slice(1).join('-');
+
+  let level = 'primaire';
+  if (['6ème', '5ème', '4ème', '3ème'].some(c => className.includes(c.replace('ème', '')))) {
+    level = 'college';
+  } else if (className.includes('nde') || className.includes('ère') || className.includes('Terminale')) {
+    level = 'lycee';
   }
-];
+
+  Object.entries(trimesters).forEach(([trimester, courseList]) => {
+    courseList.forEach((courseTitle, index) => {
+      const courseId = generateShortId(subject, className, trimester, index);
+      
+      const course: Course = {
+        id: courseId,
+        title: courseTitle,
+        type: 'specific',
+        level,
+        class: className,
+        subject,
+        trimester,
+        driveLink: '',
+        description: `Cours ${index + 1} du ${trimester.toLowerCase()} de ${className} en ${subject}`
+      };
+
+      specificCourses.push(course);
+    });
+  });
+});
 
 export const generalCourses: Course[] = [];
 export const exercises: Exercise[] = [];
@@ -66,47 +121,8 @@ export const summaries: Summary[] = [];
 export const exposes: Expose[] = [];
 
 export const initializeCourses = () => {
-  // On garde les cours manuels et on ajoute les cours générés
-  const manualCourses = [...specificCourses];
-  specificCourses.length = 0;
-  generalCourses.length = 0;
-
-  // Remettre les cours manuels
-  manualCourses.forEach(course => specificCourses.push(course));
-
-  Object.entries(coursesBySubject).forEach(([key, trimesters]) => {
-    const parts = key.split('-');
-    const subject = parts[0];
-    const className = parts[1];
-
-    let level = 'primaire';
-    if (['6e', '5e', '4e', '3e'].some(c => key.includes(c))) {
-      level = 'college';
-    } else if (key.includes('nde') || key.includes('ère') || key.includes('Terminale')) {
-      level = 'lycee';
-    } else if (key.includes('Licence') || key.includes('Master')) {
-      level = 'universite';
-    }
-
-    Object.entries(trimesters).forEach(([trimester, courseList]) => {
-      courseList.forEach((courseTitle, index) => {
-        const courseId = `course_${level}_${className}_${subject}_${trimester}_${index}`.replace(/\s+/g, '_');
-        
-        const course: Course = {
-          id: courseId,
-          title: courseTitle,
-          type: 'specific',
-          level,
-          class: className,
-          subject,
-          trimester,
-          driveLink: undefined,
-        };
-
-        specificCourses.push(course);
-      });
-    });
-  });
+  // Les cours sont déjà initialisés au chargement du module
+  console.log(`${specificCourses.length} cours spécifiques chargés`);
 };
 
 export const getCoursesByLevel = (level: string, courseType: 'general' | 'specific') => {
@@ -183,3 +199,5 @@ export const addExpose = (expose: Omit<Expose, 'id'>) => {
   exposes.push(newExpose);
   return newExpose;
 };
+
+initializeCourses();
