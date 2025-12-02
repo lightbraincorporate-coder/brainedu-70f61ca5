@@ -23,98 +23,42 @@ export const subjects: Record<string, string[] | Record<string, string[]>> = {
 export const coursesBySubject: Record<string, Record<string, string[]>> = {
   'Mathématiques-CP1': {
     'Trimestre 1': [
-      'Les nombres de 0 à 5',
       'Compter et dénombrer jusqu\'à 5',
       'Écriture des chiffres 0 à 5',
-      'Comparaison de quantités',
-      'Plus grand, plus petit',
-      'Les formes : carré et cercle',
-      'Se repérer dans l\'espace',
-      'Gauche et droite'
     ],
     'Trimestre 2': [
-      'Les nombres de 6 à 10',
-      'Écriture des chiffres 6 à 10',
-      'Addition simple (0 à 5)',
-      'Décomposition des nombres',
-      'Les formes : triangle et rectangle',
-      'Reproduction de figures simples',
-      'Ranger dans l\'ordre croissant',
-      'Les tableaux à double entrée'
+      'Addition simple (1 à 5)',
+      'Les nombres de 1 à 10',
     ],
     'Trimestre 3': [
-      'Révision des nombres 0 à 10',
-      'Soustraction simple',
-      'Problèmes simples d\'addition',
-      'Problèmes simples de soustraction',
-      'Les formes géométriques : révision',
-      'Mesurer avec ses mains',
-      'Long et court',
-      'Lourd et léger'
+      'Soustraction simple'
+      'Les formes géométriques',
     ]
   },
 'Français-CP1': {
     'Trimestre 1': [
-      'L\'alphabet (lettres A à M)',
-      'Les voyelles : a, e, i, o, u',
-      'Sons simples : a, i, o',
-      'Reconnaissance des lettres',
-      'Écriture des lettres en majuscules',
-      'Les prénoms de la classe',
-      'Écoute et compréhension d\'histoires',
-      'Expression orale : se présenter'
+      'Sons simples',
+      'Alphabet de A à M',
+      'Les voyelles',
     ],
     'Trimestre 2': [
-      'L\'alphabet (lettres N à Z)',
-      'Lecture de syllabes simples',
-      'Sons : m, l, r, s',
-      'Formation de mots simples',
-      'Écriture cursive (initiation)',
-      'Lecture de phrases courtes',
-      'Compréhension de textes très simples',
-      'Raconter une histoire avec ses mots'
+      'L\'alphabet (lettres A à Z)',
+      'Lecture de syllabes',
     ],
-    'Trimestre 3': [
-      'Lecture de mots simples',
-      'Sons complexes : ou, on, an',
-      'Écriture de lettres minuscules',
-      'Écriture de mots simples',
-      'Copie de phrases',
-      'Le point et la majuscule',
-      'Lecture autonome de courtes phrases',
-      'Production d\'une phrase simple'
+    'Trimestre 3': [   
+      'Écriture de lettres',
+      'Lecture de mots simples'
     ]
   },
   'Sciences-CP1': {
     'Trimestre 1': [
-      'Mon corps : la tête',
-      'Mon corps : les bras et les jambes',
-      'Les 5 sens : la vue',
-      'Les 5 sens : l\'ouïe',
-      'Les 5 sens : le toucher',
-      'Hygiène du corps',
-      'Se laver les mains',
-      'Les dangers à la maison'
+      'Mon corps et les 5 sens',
     ],
     'Trimestre 2': [
-      'Les animaux familiers : le chat',
-      'Les animaux familiers : le chien',
-      'Les oiseaux',
-      'Les poissons',
-      'Où vivent les animaux ?',
-      'Que mangent les animaux ?',
-      'Les bébés animaux',
-      'Respecter les animaux'
+      'Les animaux familiers',
     ],
     'Trimestre 3': [
       'Les plantes autour de moi',
-      'Les arbres',
-      'Les fleurs',
-      'Les fruits et légumes',
-      'De quoi a besoin une plante ?',
-      'Planter une graine',
-      'L\'eau dans la nature',
-      'Économiser l\'eau'
     ]
   },
 'Education Civique-CP1': {
