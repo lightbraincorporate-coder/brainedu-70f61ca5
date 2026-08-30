@@ -12,3 +12,12 @@ Allow: /
 
 User-agent: *
 Allow: /
+Disallow: /admin
+Disallow: /dashboard
+Disallow: /profile
+Disallow: /auth
+Disallow: /login
+Disallow: /signup
+Disallow: /payment
+Disallow: /settings
+Sitemap: https://brainedu.vercel.app/sitemap.xml

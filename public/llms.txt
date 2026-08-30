@@ -1,0 +1,8 @@
+# BrainEdu
+
+Plateforme éducative complète proposant des cours, résumés, exposés et flashcards pour tous les niveaux - du primaire à l'université. Services premium et développement personnel.
+
+## Page publique
+- Accueil: https://brainedu.vercel.app/
+
+Les espaces authentifiés, tableaux de bord, profils, paiements et données privées ne doivent pas être indexés.
