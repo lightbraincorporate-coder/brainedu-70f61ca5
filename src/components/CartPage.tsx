@@ -9,7 +9,7 @@ import { ShoppingCart, Trash2, ArrowLeft, AlertCircle, Check } from 'lucide-reac
 import { getCart, removeFromCart, getCartTotal, clearCart, getCartCourseIds } from '@/data/cart';
 import { africanCountries, getPaymentMethods } from '@/data/countries';
 import { findAdminByCountryAndPayment } from '@/data/admin';
-import { submitPayment, validatePaymentMessage } from '@/data/payments';
+import { submitPayment, validatePaymentMessage } from '@/data/payment';
 
 interface CartPageProps {
   onBack: () => void;
